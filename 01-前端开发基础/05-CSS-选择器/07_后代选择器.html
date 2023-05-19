@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* 后代选择器，之间以空格隔开，会选择所有的后代（包括直接后代和间接后代） */
-        .home span {
+        /* 直接子代选择器，以 > 隔开 */
+        .home>span {
             color: red;
         }
     </style>
@@ -16,6 +16,7 @@
 
 <body>
     <div class="home">
+        <span>哼哼哼</span>
         <div class="box">
             <p>我是p元素</p>
             <span>呵呵哒</span>
@@ -28,7 +29,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <span>嘻嘻嘻</span>
 
