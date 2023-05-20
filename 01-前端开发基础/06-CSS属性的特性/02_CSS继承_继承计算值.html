@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            color: red;
+            /* em 相对于自身字体（父元素的字体） */
+            /* 2em 就是 2 * 16px = 32px */
+            font-size: 2em;
+           
+        }
+
+        p {
+            /* 继承的是 32px ，而不是 2em */
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        我是box元素
+        <p>我是p元素</p>
+    </div>
+</body>
+
+</html>
