@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        span {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+        }
+
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>我是div元素</div>
+    <!-- 行内非替换元素不可以设置宽度和高度 -->
+    <span>我是span元素</span>
+
+    <!-- 
+        img 是 inline - replace 元素，即行内替换元素
+        行内替换元素的特点：
+            ① 可以和其它的行内级元素在同一行显示。
+            ② 可以设置宽度和高度。
+     -->
+    <img src="./images/头像.jpg" alt="">
+
+</body>
+
+</html>
