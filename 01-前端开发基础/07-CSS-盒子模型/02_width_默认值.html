@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: pink;
+            /* width 的默认值是 auto，表示交给浏览器来决定 */
+            /* 块级元素独占一行 */
+            width: auto;
+        }
+
+        .title {
+            /* 行内级元素：包裹内容 */
+            display: inline-block;
+            background-color: red;
+            width: auto;
+        }
+
+        img {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">我是div元素</div>
+    <span class="title">我是span元素</span>
+    <img src="./images/头像.jpg" alt="">
+</body>
+
+</html>
