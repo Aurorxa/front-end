@@ -13,13 +13,20 @@
             background-color: pink;
             border: 10px solid skyblue;
             /* 不占用空间，默认显示在 border 外边。 */
-            outline: 10px solid orange;
+            outline: 30px solid orange;
+        }
+
+        input {
+            margin-top: 50px;
+            /* outline 的应用场景：去除 a 或 input 的 focus 状态 */
+            outline: none;
         }
     </style>
 </head>
 
 <body>
     <div class="box"></div>
+    <input type="text">
 </body>
 
 </html>
