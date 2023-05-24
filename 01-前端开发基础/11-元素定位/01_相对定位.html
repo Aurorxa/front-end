@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text {
+            /* 相对定位 */
+            /* 
+                ① 元素还是按照标准流进行布局。
+                ② 可以通过 left、right、top、bottom 进行定位。
+                ③ 定位的参照对象是元素自己原来的位置。
+            */
+            position: relative;
+
+            left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>我是span元素</span>
+    <strong class="text">我是strong元素</strong>
+    <span>我是span元素</span>
+    <div>我是div元素</div>
+</body>
+
+</html>
