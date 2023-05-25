@@ -14,11 +14,30 @@
     /* 
       定位元素：position 不是 static 的元素，即 position 是 relative、absolute、fixed 的元素。
     */
+    .box {
+      margin: 200px auto;
+
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .box2 {
+      position: absolute;
+      left: 25%;
+      top: 25%;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
   </style>
 </head>
 
 <body>
-  <div class="box">我是div元素</div>
+  <div class="box">
+    <div class="box2"></div>
+  </div>
 </body>
 
 </html>
