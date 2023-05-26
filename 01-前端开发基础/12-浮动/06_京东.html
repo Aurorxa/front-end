@@ -42,25 +42,27 @@
     .item {
       float: left;
       width: 290px;
+      margin-right: calc(40px / 3);
+    }
+
+    .item.left {
       height: 370px;
       background-color: pink;
-      margin-right: calc(40px /3);
     }
 
-    .item:last-child {
-      margin-right: 0;
-    }
-
-    .item .top {
-      height: 180px;
-      background-color: sandybrown;
-      margin-bottom: 10px;
-    }
-
-    .item .bottom {
+    .item.right {
       background-color: red;
       height: 180px;
     }
+
+    .channel .right:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    .channel .right:nth-child(-n+4) {
+      margin-bottom: 10px;
+    }
+
   </style>
 </head>
 
@@ -68,15 +70,10 @@
   <div class="wrapper channel clearfix">
     <div class="item left">1</div>
     <div class="item left">2</div>
-    <div class="item right">
-      <div class="top">3</div>
-      <div class="bottom">4</div>
-    </div>
-    <div class="item right">
-      <div class="top">5</div>
-      <div class="bottom">6</div>
-    </div>
-
+    <div class="item right">3</div>
+    <div class="item right">4</div>
+    <div class="item right">5</div>
+    <div class="item right">6</div>
   </div>
 </body>
 
