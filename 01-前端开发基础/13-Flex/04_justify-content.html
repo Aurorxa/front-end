@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      /* 默认值 */
+      justify-content: flex-start;
+      /* 让元素和 main end 对齐 */
+      justify-content: flex-end;
+      /* 居中对齐 */
+      justify-content: center;
+      /* flex items 之间的距离相等，和 main start 以及 main end 两端对齐  */
+      justify-content: space-between;
+      /* flex items 之间的距离相等，flex items 和 main start 、main end 之间的距离是 flex items 之间距离的一半  */
+      justify-content: space-around;
+
+       /* flex items 之间的距离相等，flex items 和 main start 、main end 之间的距离等于 flex items 之间距离  */
+       justify-content: space-evenly;
+
+      width: 500px;
+      height: 500px;
+      background-color: orange;
+    }
+
+    .item {
+      width: 90px;
+      height: 120px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item item1 random-bg">1</div>
+    <div class="item item2 random-bg">2</div>
+    <div class="item item3 random-bg">3</div>
+  </div>
+
+  <script>
+    let randomBg = document.querySelectorAll('.random-bg');
+    for (let i = 0; i < randomBg.length; i++) {
+      let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      randomBg[i].style.backgroundColor = "#" + randomColor;
+    }
+  </script>
+</body>
+
+</html>
