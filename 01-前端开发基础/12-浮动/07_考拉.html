@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    body {
+      background-color: #f6f6f6;
+    }
+
+    .wrapper {
+      width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* .clearfix::before 作用：解决外边距塌陷问题 */
+    .clearfix::before,
+    .clearfix::after {
+      content: '';
+      display: table;
+    }
+
+    /* 真正清除浮动的标签 */
+    .clearfix::after {
+      clear: both;
+    }
+
+    .brand {
+      margin-top: 50px;
+    }
+
+    .brand .item a {
+      position: relative;
+      float: left;
+      width: 220px;
+      height: 167px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .item a img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper brand">
+    <ul>
+      <li class="item">
+        <a href="#" referrerpolicy="no-referrer">
+          <img
+            src="https://kaola-haitao.oss.kaolacdn.com/ii02po4970_300_300.jpg?x-oss-process=image/resize,w_120/quality,q_95"
+            alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#" referrerpolicy="no-referrer">
+          <img
+            src="https://kaola-haitao.oss.kaolacdn.com/ii02shtz66_300_300.jpg?x-oss-process=image/resize,w_120/quality,q_95"
+            alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#" referrerpolicy="no-referrer">
+          <img
+            src="https://kaola-haitao.oss.kaolacdn.com/1c2gohbio65_300_300.jpg?x-oss-process=image/resize,w_120/quality,q_95"
+            alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#" referrerpolicy="no-referrer">
+          <img
+            src="https://kaola-haitao.oss.kaolacdn.com/1cnij2nrr52_300_300.jpg?x-oss-process=image/resize,w_120/quality,q_95"
+            alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#" referrerpolicy="no-referrer">
+          <img
+            src="https://kaola-haitao.oss.kaolacdn.com/ir1s6rzz67_300_300.jpg?x-oss-process=image/resize,w_120/quality,q_95"
+            alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
