@@ -14,8 +14,7 @@
       .logo {
         width: 176px;
         height: 69px;
-        background: url(../images/topbar.png) no-repeat;
-        background-position: 0 0;
+        background: url(../images/topbar.png) no-repeat 0 0;
 
         a {
           display: block;
@@ -55,6 +54,16 @@
             background: url(../images/topbar.png) no-repeat -226px 0;
           }
         }
+
+        .download::after {
+          content: '';
+          position: absolute;
+          width: 28px;
+          height: 19px;
+          top: 21px;
+          left: 100px;
+          background: url(../images/topbar.png) no-repeat -190px 0
+        }
       }
 
       .right {
@@ -64,7 +73,6 @@
 
   .header-wrapper {
     width: 1100px;
-    // background-color: pink;
     margin: 0 auto;
   }
 }
