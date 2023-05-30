@@ -8,18 +8,50 @@
   justify-content: space-between;
   line-height: 70px;
 }
+.header .top-bar .left {
+  display: flex;
+}
 .header .top-bar .left .logo {
   width: 176px;
   height: 69px;
   background: url(../images/topbar.png) no-repeat;
   background-position: 0 0;
-  background-color: pink;
 }
 .header .top-bar .left .logo a {
   display: block;
   text-indent: -9999px;
 }
-.header-wrapper {
+.header .top-bar .left .list {
+  display: flex;
+}
+.header .top-bar .left .list .item {
+  position: relative;
+  display: block;
+  padding: 0 20px;
+  color: #ccc;
+  font-size: 14px;
+}
+.header .top-bar .left .list .item:hover {
+  color: #fff;
+  background-color: #000;
+}
+.header .top-bar .left .list .active {
+  color: #fff;
+  background-color: #000;
+}
+.header .top-bar .left .list .active::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  background: url(../images/topbar.png) no-repeat -226px 0;
+}
+.header .header-wrapper {
   width: 1100px;
   margin: 0 auto;
 }
+/*# sourceMappingURL=index.css.map */
