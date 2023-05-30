@@ -1,0 +1,33 @@
+.header {
+  width: 1903px;
+}
+.header .top-bar {
+  height: 70px;
+  background: #242424;
+  border-bottom: 1px solid #000;
+}
+.header .top-bar .wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1100px;
+  height: 69px;
+  line-height: 69px;
+  background-color: pink;
+}
+.header .top-bar .wrapper .left h2 {
+  width: 177px;
+  height: 69px;
+  line-height: 69px;
+}
+.header .top-bar .wrapper .left h2 a {
+  display: block;
+  background: url("../images/topbar.png") no-repeat 0 0;
+  text-indent: -9999px;
+}
+.header .top-nav {
+  height: 35px;
+  background-color: #C20C0C;
+  border-bottom: 1px solid #a40011;
+}
+/*# sourceMappingURL=index.css.map */
