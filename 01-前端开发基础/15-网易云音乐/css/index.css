@@ -11,16 +11,14 @@
   justify-content: space-between;
   margin: 0 auto;
   width: 1100px;
-  height: 69px;
   line-height: 69px;
   background-color: pink;
 }
-.header .top-bar .wrapper .left h2 {
+.header .top-bar .wrapper .left .logo {
   width: 177px;
   height: 69px;
-  line-height: 69px;
 }
-.header .top-bar .wrapper .left h2 a {
+.header .top-bar .wrapper .left .logo a {
   display: block;
   background: url("../images/topbar.png") no-repeat 0 0;
   text-indent: -9999px;
