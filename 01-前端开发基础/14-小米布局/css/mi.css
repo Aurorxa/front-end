@@ -1,0 +1,63 @@
+.wrapper {
+  width: 1226px;
+  margin: 50px auto;
+}
+
+.smart-wear {
+  background-color: pink;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+}
+
+.top .title {
+  font-size: 22px;
+}
+
+.top .right-area {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 614px;
+  background-color: #ccc;
+}
+
+.bottom .left {
+  width: 234px;
+  height: 614px;
+  background-color: red;
+}
+
+.bottom .right {
+  flex: 1;
+  height: 614px;
+  background-color: skyblue;
+}
+
+.bottom .right ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bottom .right .item {
+  width: 234px;
+  height: 300px;
+  background-color: saddlebrown;
+}
+
+.bottom .right .item:nth-child(-n+4){
+  margin-bottom: 14px;
+}
+
