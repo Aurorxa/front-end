@@ -22,4 +22,11 @@ input {
   outline: none;
   border: none;
 }
+body {
+  width: 1903px;
+  overflow-y: scroll;
+}
+img {
+  vertical-align: top;
+}
 /*# sourceMappingURL=reset.css.map */

@@ -136,6 +136,29 @@
 }
 .banner {
   height: 285px;
+  background: url("../images/banner-bg.jpg") no-repeat center center;
+  background-size: 6000px;
+}
+.banner .wrapper {
+  display: flex;
+  width: 982px;
+  height: 285px;
+  margin: 0 auto;
   background-color: pink;
+}
+.banner .wrapper .left .list {
+  display: flex;
+  width: 730px;
+  overflow: hidden;
+}
+.banner .wrapper .left .list li {
+  flex-shrink: 0;
+  width: 100%;
+}
+.banner .wrapper .left .list .item {
+  display: block;
+}
+.banner .wrapper .left .list .item img {
+  width: 100%;
 }
 /*# sourceMappingURL=index.css.map */

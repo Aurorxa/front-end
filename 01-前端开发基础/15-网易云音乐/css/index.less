@@ -168,5 +168,36 @@
 
 .banner {
   height: 285px;
-  background-color: pink;
+  background: url("../images/banner-bg.jpg") no-repeat center center;
+  background-size: 6000px;
+
+  .wrapper {
+    display: flex;
+    width: 982px;
+    height: 285px;
+    margin: 0 auto;
+    background-color: pink;
+
+    .left {
+      .list {
+        display: flex;
+        width: 730px;
+        overflow: hidden;
+
+        li {
+          flex-shrink: 0;
+          width: 100%;
+        }
+
+        .item {
+          display: block;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+    }
+  }
 }
