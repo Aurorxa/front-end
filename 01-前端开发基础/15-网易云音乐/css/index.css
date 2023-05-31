@@ -1,6 +1,3 @@
-.header {
-  width: 1903px;
-}
 .header .top-bar {
   height: 70px;
   background: #242424;
@@ -136,5 +133,9 @@
 }
 .header .top-nav .wrapper .list .active {
   background-color: #9B0909;
+}
+.banner {
+  height: 285px;
+  background-color: pink;
 }
 /*# sourceMappingURL=index.css.map */
