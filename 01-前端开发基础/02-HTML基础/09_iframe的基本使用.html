@@ -7,6 +7,9 @@
   <title>Title</title>
 </head>
 <body>
-  <iframe src="https://www.baidu.com"></iframe>
+  <!--
+    在响应头中设置 X-Frame-Options = "SAMEORIGIN | DENY" 可以用来屏蔽是否能被 iframe 嵌入
+   -->
+  <iframe height="600" referrerpolicy="no-referrer" src="https://www.taobao.com" width="800"></iframe>
 </body>
 </html>
