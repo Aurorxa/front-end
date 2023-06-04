@@ -7,16 +7,23 @@
   <title>Title</title>
   <style>
     .box {
+      width: 500px;
+      height: 300px;
+      background-color: pink;
+      /* a 元素水平居中 */
+      text-align: center;
+    }
+
+    .inner {
       width: 200px;
       height: 200px;
-      background-color: pink;
-
-      /* 文本水平居中 */
-      text-align: center;
+      background-color: red;
     }
   </style>
 </head>
 <body>
-  <div class="box">我是div元素</div>
+  <div class="box">
+    <a class="inner" href="#">百度一下</a>
+  </div>
 </body>
 </html>
