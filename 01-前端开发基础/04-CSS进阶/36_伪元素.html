@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    /* 伪元素默认是行内元素 */
+    .box::before {
+      /* content 必须添加，否则伪元素不生效 */
+      content: '老鼠';
+      background-color: sandybrown;
+    }
+
+    /* 伪元素默认是行内元素 */
+    .box::after {
+      /* content 必须添加，否则伪元素不生效 */
+      content: '大米';
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">爱</div>
+</body>
+</html>
