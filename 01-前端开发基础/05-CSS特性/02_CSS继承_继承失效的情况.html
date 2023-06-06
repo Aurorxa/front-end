@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      /*
+        a 元素的 color 会继承失败
+      */
+      color: red;
+      /*
+        h 系列元素的 font-size 会继承失败
+      */
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>我是h1元素</h1>
+    <a href="#">百度一下，你就知道</a>
+  </div>
+
+</body>
+</html>
