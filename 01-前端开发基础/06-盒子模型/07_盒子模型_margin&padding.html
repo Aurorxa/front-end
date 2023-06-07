@@ -25,6 +25,9 @@
 
       /* 外边距折叠问题 -- 塌陷问题 */
       margin-left: 100px;
+      /*
+        这种做法就是错的，两个元素在 margin-top 上是紧挨着，其实没有必要通过设置子元素的 margin-top 来使得两个元素隔开。
+      */
       margin-top: 100px;
     }
   </style>
