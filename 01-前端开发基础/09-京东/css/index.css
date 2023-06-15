@@ -56,7 +56,6 @@
 /* 头部 */
 .header {
   height: 120px;
-  background-color: pink;
 }
 .header .container {
   display: flex;
@@ -79,8 +78,6 @@
 .header .container .search a {
   width: 80px;
   height: 36px;
-  text-align: center;
-  line-height: 36px;
   font-size: 0;
   background: url(../assets/serch_icon.png) no-repeat center #DD302D;
 }
