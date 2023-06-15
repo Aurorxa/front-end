@@ -240,13 +240,11 @@
 }
 /* 秒杀 */
 .sec-kill {
-  margin-bottom: 10px;
+  margin-bottom: 48px;
 }
 .sec-kill .container {
   display: flex;
-}
-.sec-kill .container img {
-  margin-right: 10px;
+  justify-content: space-between;
 }
 .sec-kill .container img:last-child {
   margin: 0;
