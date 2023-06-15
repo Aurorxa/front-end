@@ -103,3 +103,167 @@
     }
   }
 }
+
+/* 主导航区 */
+.main-nav {
+  height: 48px;
+  border-bottom: 1px solid #DD302D;
+
+  .container {
+    display: flex;
+
+    .all-types {
+      width: 190px;
+      height: 48px;
+      text-align: center;
+      line-height: 48px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #DD302D;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+
+      li {
+        padding: 0 10px;
+
+        a {
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+/* 主内容区 */
+.main-content {
+  height: 458px;
+  margin: 10px 0;
+  //background-color: skyblue;
+
+  .container {
+    display: flex;
+
+    /* 侧边导航 */
+
+    .side-nav {
+      position: relative;
+      width: 190px;
+      height: 458px;
+      background-color: #f4f4f4;
+
+      li {
+        font-size: 14px;
+        height: 28px;
+        line-height: 28px;
+        padding-left: 16px;
+
+        &:hover {
+          background-color: #DD302D;
+
+          .second-menu {
+            display: block;
+          }
+        }
+
+        &:hover > a {
+          color: #fff;
+        }
+      }
+
+      /* 二级菜单 */
+
+      .second-menu {
+        display: none;
+        position: absolute;
+        left: 190px;
+        top: 0;
+        width: 700px;
+        height: 458px;
+        background-color: #f4f4f4;
+        padding-left: 20px;
+        padding-top: 8px;
+
+        dl {
+          display: flex;
+          height: 36px;
+          line-height: 36px;
+
+          &:first-child {
+            margin-top: 10px;
+          }
+
+          dt {
+            width: 70px;
+            margin-right: 10px;
+            font-weight: bold;
+          }
+
+          dd {
+            a {
+              margin-top: 8px;
+              padding: 0 10px;
+              border-left: 1px solid #333;
+            }
+          }
+        }
+      }
+
+    }
+
+    .banner {
+      width: 690px;
+      height: 458px;
+      margin: 0 10px;
+    }
+
+    .side-other {
+      width: 290px;
+      height: 458px;
+
+      .express {
+        width: 290px;
+        height: 158px;
+        padding: 0 14px;
+        border: 1px solid rgba(217, 217, 217, 1);
+
+        .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 39px;
+          border-bottom: 1px solid #D9D9D9;
+
+          h3 {
+            font-size: 14px;
+          }
+
+          .more {
+            font-size: 12px;
+            color: #999;
+          }
+        }
+
+        .info {
+          li {
+            height: 26px;
+            line-height: 28px;
+            color: #666;
+          }
+        }
+      }
+
+      .other-nav {
+        width: 290px;
+        height: 290px;
+        background: url("../assets/精灵图-侧边功能.png") no-repeat;
+      }
+
+
+    }
+  }
+
+}
