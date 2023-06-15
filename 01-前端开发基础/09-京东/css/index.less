@@ -292,13 +292,13 @@
 
             &:nth-child(3) {
               .pic {
-                background-position: -(48*2)px 0;
+                background-position: -48px*2 0;
               }
             }
 
             &:nth-child(4) {
               .pic {
-                background-position: -(48*3)px 0;
+                background-position: -48px*3 0;
               }
             }
           }
@@ -328,9 +328,36 @@
 
 /* 楼层 */
 .floor {
-  background-color: skyblue;
+  background-color: pink;
 
   .container {
+
+    .floor-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+      margin-bottom: 4px;
+
+      .floor-name {
+        font-size: 20px;
+      }
+
+      .floor-nav-list {
+        display: flex;
+
+        li {
+          padding: 0 10px;
+          border-right: 1px solid #666;
+
+          &:last-child {
+            padding-right: 0;
+            border-right: 0;
+          }
+        }
+      }
+    }
+
 
   }
 }

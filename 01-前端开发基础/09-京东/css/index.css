@@ -233,10 +233,10 @@
   background-position: -48px 0;
 }
 .main-content .container .side-other .other-nav ul li:nth-child(3) .pic {
-  background-position: -96 px 0;
+  background-position: -96px 0;
 }
 .main-content .container .side-other .other-nav ul li:nth-child(4) .pic {
-  background-position: -144 px 0;
+  background-position: -144px 0;
 }
 /* 秒杀 */
 .sec-kill {
@@ -251,6 +251,27 @@
 }
 /* 楼层 */
 .floor {
-  background-color: skyblue;
+  background-color: pink;
+}
+.floor .container .floor-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 4px;
+}
+.floor .container .floor-nav .floor-name {
+  font-size: 20px;
+}
+.floor .container .floor-nav .floor-nav-list {
+  display: flex;
+}
+.floor .container .floor-nav .floor-nav-list li {
+  padding: 0 10px;
+  border-right: 1px solid #666;
+}
+.floor .container .floor-nav .floor-nav-list li:last-child {
+  padding-right: 0;
+  border-right: 0;
 }
 /*# sourceMappingURL=index.css.map */
