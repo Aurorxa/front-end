@@ -257,12 +257,53 @@
       }
 
       .other-nav {
+        margin-top: 10px;
         width: 290px;
         height: 290px;
-        background: url("../assets/精灵图-侧边功能.png") no-repeat;
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: 48px;
+            height: 70px;
+            margin: 11px;
+            text-align: center;
+
+            i {
+              display: block;
+              width: 48px;
+              height: 48px;
+              font-style: normal;
+              background: url("../assets/精灵图-侧边功能.png") no-repeat;
+            }
+
+            p {
+              line-height: 22px;
+              font-size: 14px;
+            }
+
+            &:nth-child(2) {
+              i {
+                background-position: -50px 0;
+              }
+            }
+
+            &:nth-child(3) {
+              i {
+                background-position: -100px 0;
+              }
+            }
+
+            &:nth-child(4) {
+              i {
+                background-position: -148px 0;
+              }
+            }
+          }
+        }
       }
-
-
     }
   }
 
