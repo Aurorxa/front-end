@@ -238,4 +238,17 @@
 .main-content .container .side-other .other-nav ul li:nth-child(4) .pic {
   background-position: -144 px 0;
 }
+/* 秒杀 */
+.sec-kill {
+  margin-bottom: 10px;
+}
+.sec-kill .container {
+  display: flex;
+}
+.sec-kill .container img {
+  margin-right: 10px;
+}
+.sec-kill .container img:last-child {
+  margin: 0;
+}
 /*# sourceMappingURL=index.css.map */
