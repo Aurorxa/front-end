@@ -218,7 +218,7 @@
   margin: 11px;
   text-align: center;
 }
-.main-content .container .side-other .other-nav ul li i {
+.main-content .container .side-other .other-nav ul li .pic {
   display: block;
   width: 48px;
   height: 48px;
@@ -229,13 +229,13 @@
   line-height: 22px;
   font-size: 14px;
 }
-.main-content .container .side-other .other-nav ul li:nth-child(2) i {
+.main-content .container .side-other .other-nav ul li:nth-child(2) .pic {
   background-position: -48px 0;
 }
-.main-content .container .side-other .other-nav ul li:nth-child(3) i {
+.main-content .container .side-other .other-nav ul li:nth-child(3) .pic {
   background-position: -96 px 0;
 }
-.main-content .container .side-other .other-nav ul li:nth-child(4) i {
+.main-content .container .side-other .other-nav ul li:nth-child(4) .pic {
   background-position: -144 px 0;
 }
 /*# sourceMappingURL=index.css.map */
