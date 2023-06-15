@@ -1,7 +1,6 @@
 /* 公共样式 */
 .container {
   width: 1190px;
-  //background-color: pink;
   margin: 0 auto;
 }
 
@@ -62,9 +61,47 @@
 
         &:last-child {
           a {
-            border-right: 0;
+            padding-right: 0;
+            border: 0;
           }
         }
+      }
+    }
+  }
+}
+
+/* 头部 */
+.header {
+  height: 120px;
+  background-color: pink;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      height: 120px;
+    }
+
+    .search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        width: 510px;
+        height: 36px;
+        border: 1px solid #DD302D;
+      }
+
+      a {
+        width: 80px;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        font-size: 0;
+        background: url(../assets/serch_icon.png) no-repeat center #DD302D;
       }
     }
   }
