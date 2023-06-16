@@ -251,16 +251,17 @@
 }
 /* 楼层 */
 .floor {
-  background-color: pink;
+  margin-bottom: 48px;
 }
 .floor .container .floor-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 30px;
-  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #DD302D;
 }
-.floor .container .floor-nav .floor-name {
+.floor .container .floor-nav .floor-title {
   font-size: 20px;
 }
 .floor .container .floor-nav .floor-nav-list {
@@ -269,9 +270,120 @@
 .floor .container .floor-nav .floor-nav-list li {
   padding: 0 10px;
   border-right: 1px solid #666;
+  font-size: 14px;
 }
 .floor .container .floor-nav .floor-nav-list li:last-child {
   padding-right: 0;
   border-right: 0;
+}
+.floor .container .floor-info {
+  display: flex;
+}
+.floor .container .floor-info .item {
+  background-color: skyblue;
+}
+.floor .container .floor-info .item1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 230px;
+  height: 432px;
+  background-color: #F4F4F4;
+  padding: 20px;
+}
+.floor .container .floor-info .item1 ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.floor .container .floor-info .item1 ul li {
+  text-align: center;
+  margin-bottom: 14.4px;
+  width: 90px;
+  height: 22px;
+  padding-bottom: 3.5px;
+  border-bottom: 1px solid #666;
+}
+.floor .container .floor-info .item1 ul li:nth-child(2n+1) {
+  margin-right: 10px;
+}
+.floor .container .floor-info .item2 {
+  width: 340px;
+  height: 432px;
+}
+.floor .container .floor-info .item3 {
+  width: 206px;
+  height: 432px;
+  border-right: 1px solid #E2E2E2;
+}
+.floor .container .floor-info .item3 img {
+  border-bottom: 1px solid #E2E2E2;
+}
+.floor .container .floor-info .item4 {
+  width: 206px;
+  height: 432px;
+  border-right: 1px solid #E2E2E2;
+}
+.floor .container .floor-info .item4 img {
+  border: 1px solid #E2E2E2;
+}
+.floor .container .floor-info .item5 {
+  width: 206px;
+  height: 432px;
+  border-right: 1px solid #E2E2E2;
+}
+.floor .container .floor-info .item5 img {
+  border: 1px solid #E2E2E2;
+}
+/* 页脚 */
+.footer {
+  height: 440px;
+  background-color: #483E3E;
+}
+.footer .container {
+  /* 顶部链接 */
+}
+.footer .container .top-links {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 48px;
+  padding-bottom: 22px;
+}
+.footer .container .top-links .links-list {
+  width: 190px;
+  height: 176px;
+  font-size: 14px;
+}
+.footer .container .top-links .links-list a {
+  color: #fff;
+}
+.footer .container .line {
+  border: 1px solid #584D4D;
+}
+.footer .container .bottom-links {
+  font-size: 12px;
+  color: #fff;
+  height: 142px;
+}
+.footer .container .bottom-links .bottom-links-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 47px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.footer .container .bottom-links .bottom-links-list li {
+  padding: 0 26px;
+  border-right: 1px solid #fff;
+}
+.footer .container .bottom-links .bottom-links-list li:last-child {
+  border: 0;
+}
+.footer .container .bottom-links .bottom-links-list li a {
+  font-size: 12px;
+  color: #fff;
+}
+.footer .container .bottom-links .copyright {
+  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */
