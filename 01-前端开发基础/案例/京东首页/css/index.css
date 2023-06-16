@@ -82,7 +82,7 @@
   width: 80px;
   height: 36px;
   font-size: 0;
-  background: url(../assets/serch_icon.png) no-repeat center #DD302D;
+  background: url(serch_icon.png) no-repeat center #DD302D;
 }
 /* 主导航区 */
 .main-nav {
@@ -226,7 +226,7 @@
   width: 48px;
   height: 48px;
   font-style: normal;
-  background: url("../assets/精灵图-侧边功能.png") no-repeat;
+  background: url("assetspng") no-repeat;
 }
 .main-content .container .side-other .other-nav ul li p {
   line-height: 22px;
