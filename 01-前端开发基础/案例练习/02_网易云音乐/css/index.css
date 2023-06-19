@@ -66,7 +66,7 @@
 .top-bar .container .top-bar-nav .search input {
   color: #333;
   line-height: 32px;
-  text-indent: 30px;
+  text-indent: 2em;
   background-color: transparent;
 }
 .top-bar .container .top-bar-nav .login-nav {
