@@ -16,7 +16,7 @@
       width: 1000px;
       height: 900px;
       background-color: gray;
-      margin: 50px auto 0;
+      margin: 0 auto;
       /* 开启 Flex 布局 */
       display: flex;
       /* 主轴换行方式：换行 */
@@ -37,8 +37,30 @@
       /*
         侧轴对齐方式（对行）：侧轴的结束位置对齐
       */
-      align-content: flex-end;
+      /*align-content: flex-end;*/
 
+      /*
+        侧轴对齐方式（对行）：侧轴的中间位置对齐
+      */
+      /*align-content: center;*/
+
+      /*
+       侧轴对齐方式（对行）：伸缩项目之间的距离是相等的，且是边缘距离的2倍。
+     */
+      /*align-content: space-around;*/
+
+      /*
+      侧轴对齐方式（对行）：伸缩项目之间的距离是相等的，且没有边缘距离。
+    */
+      /*align-content: space-between;*/
+
+      /*
+      侧轴对齐方式（对行）：伸缩项目之间的距离是相等的.
+    */
+      /*align-content: space-evenly;*/
+
+      /* 侧轴对齐方式（对行）：拉伸，默认值。 */
+      align-content: stretch;
     }
 
     .inner {
