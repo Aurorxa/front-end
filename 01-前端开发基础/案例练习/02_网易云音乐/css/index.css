@@ -30,17 +30,31 @@
 .top-bar .container .top-links {
   display: flex;
 }
-.top-bar .container .top-links a {
+.top-bar .container .top-links .item {
+  position: relative;
   display: block;
-  height: 69px;
-  line-height: 69px;
   padding: 0 19px;
   font-size: 14px;
   color: #ccc;
 }
-.top-bar .container .top-links a:hover {
+.top-bar .container .top-links .item:hover {
   background-color: #000;
   color: #fff;
+}
+.top-bar .container .top-links .active {
+  background-color: #000;
+  color: #fff;
+}
+.top-bar .container .top-links .active::after {
+  position: absolute;
+  content: '';
+  width: 12px;
+  height: 7px;
+  background: url("../assets/topbar.png") -226px 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
 }
 .top-bar .container .top-bar-nav {
   display: flex;
