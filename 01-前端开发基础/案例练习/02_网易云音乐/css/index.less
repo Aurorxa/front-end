@@ -47,6 +47,7 @@
         }
       }
 
+
       .active {
         background-color: #000;
         color: #fff;
@@ -64,6 +65,17 @@
         }
       }
 
+      .hot {
+        &::after {
+          position: absolute;
+          content: '';
+          width: 26px;
+          height: 13px;
+          background: url("../assets/topbar.png") -192px 0;
+          top: 16px;
+          right: -10px;
+        }
+      }
     }
 
     .top-bar-nav {

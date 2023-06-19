@@ -56,6 +56,15 @@
   bottom: -1px;
   margin: 0 auto;
 }
+.top-bar .container .top-links .hot::after {
+  position: absolute;
+  content: '';
+  width: 26px;
+  height: 13px;
+  background: url("../assets/topbar.png") -192px 0;
+  top: 16px;
+  right: -10px;
+}
 .top-bar .container .top-bar-nav {
   display: flex;
   justify-content: space-between;
