@@ -55,19 +55,19 @@ html body .content .nav li .item {
   width: 100%;
   height: 100%;
 }
-html body .content .nav .item1 {
+html body .content .nav li .item1 {
   background-color: #595CA8;
 }
-html body .content .nav .item2 {
+html body .content .nav li .item2 {
   background-color: #FF9D2E;
 }
-html body .content .nav .item3 {
+html body .content .nav li .item3 {
   background-color: #01A6DE;
 }
-html body .content .nav .item4 {
+html body .content .nav li .item4 {
   background-color: #015E91;
 }
-html body .content .nav .item5 {
+html body .content .nav li .item5 {
   background-color: #1DC128;
 }
 /*# sourceMappingURL=index.css.map */
