@@ -72,6 +72,7 @@
 .top-bar .container .top-bar-nav .login-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .top-bar .container .top-bar-nav .login-nav a {
   color: #ccc;
