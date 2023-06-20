@@ -117,19 +117,19 @@
   border: 1px solid #fff;
   margin: 0 10px;
 }
-.nav {
+.top-nav {
   height: 35px;
   background-color: #C20C0C;
   border-bottom: 1px solid #a40011;
 }
-.nav .container ul {
+.top-nav .container ul {
   display: flex;
   line-height: 35px;
 }
-.nav .container ul li:first-child {
+.top-nav .container ul li:first-child {
   margin-left: 202px;
 }
-.nav .container ul li .item {
+.top-nav .container ul li .item {
   display: block;
   height: 20px;
   line-height: 20px;
@@ -139,10 +139,10 @@
   border-radius: 20px;
   color: #fff;
 }
-.nav .container ul li .item:hover {
+.top-nav .container ul li .item:hover {
   background-color: #9b0909;
 }
-.nav .container ul li .active {
+.top-nav .container ul li .active {
   background-color: #9b0909;
 }
 /*# sourceMappingURL=index.css.map */
