@@ -177,7 +177,7 @@
 
 .banner {
   height: 285px;
-  background: skyblue;
+  background-image: linear-gradient(#192535, #2444a9);
 
   .sub-container {
     position: relative;
@@ -263,7 +263,11 @@
       width: 37px;
       height: 63px;
       margin: auto 0;
-      background: url("../assets/arrow.png") no-repeat gray;
+      background: url("../assets/arrow.png") no-repeat;
+
+      &:hover {
+        background-color: #cccccc;
+      }
     }
 
     .arrow-left {
