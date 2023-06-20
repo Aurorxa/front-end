@@ -322,4 +322,23 @@
   border: 1px solid #d3d3d3;
   border-left: 0;
 }
+.floor .sub-container .floor-right .user-login {
+  width: 250px;
+  height: 126px;
+  background-image: linear-gradient(#fdfdfd, #e2e2e2);
+}
+.floor .sub-container .floor-right .user-login p {
+  margin: 15px;
+}
+.floor .sub-container .floor-right .user-login .login-btn {
+  display: block;
+  width: 100px;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  color: #fff;
+  background-color: #c20c0c;
+  margin: 30px auto 0;
+  border-radius: 5px;
+}
 /*# sourceMappingURL=index.css.map */
