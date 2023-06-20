@@ -147,17 +147,22 @@
   height: 285px;
   background-color: pink;
 }
-.banner .sub-container .left {
-  position: relative;
+.banner .sub-container {
   display: flex;
+}
+.banner .sub-container .banner-img {
+  position: relative;
   width: 730px;
   overflow: hidden;
 }
-.banner .sub-container .left img {
+.banner .sub-container .banner-img ul {
+  display: flex;
+}
+.banner .sub-container .banner-img ul img {
   display: block;
   width: 730px;
 }
-.banner .sub-container .left .dotted {
+.banner .sub-container .banner-img .dotted {
   position: absolute;
   left: 0;
   right: 0;
@@ -169,17 +174,21 @@
   justify-content: space-between;
   align-items: center;
 }
-.banner .sub-container .left .dotted .item {
+.banner .sub-container .banner-img .dotted .item {
   display: block;
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background-color: #fff;
 }
-.banner .sub-container .left .dotted .item:hover {
+.banner .sub-container .banner-img .dotted .item:hover {
   background-color: #cb0c0c;
 }
-.banner .sub-container .left .dotted .active {
+.banner .sub-container .banner-img .dotted .active {
   background-color: #cb0c0c;
+}
+.banner .sub-container .banner-nav {
+  width: 254px;
+  background-color: red;
 }
 /*# sourceMappingURL=index.css.map */

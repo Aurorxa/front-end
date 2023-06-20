@@ -180,15 +180,20 @@
   background-color: pink;
 
   .sub-container {
-    .left {
+    display: flex;
+
+    .banner-img {
       position: relative;
-      display: flex;
       width: 730px;
       overflow: hidden;
 
-      img {
-        display: block;
-        width: 730px;
+      ul {
+        display: flex;
+
+        img {
+          display: block;
+          width: 730px;
+        }
       }
 
       .dotted {
@@ -220,6 +225,13 @@
           background-color: #cb0c0c;
         }
       }
+    }
+
+    .banner-nav {
+      width: 254px;
+      background-color: red;
+
+
     }
   }
 }
