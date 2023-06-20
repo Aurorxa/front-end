@@ -174,3 +174,53 @@
     }
   }
 }
+
+.banner {
+  height: 285px;
+  background-color: pink;
+
+  .sub-container {
+    .left {
+      position: relative;
+      display: flex;
+      width: 730px;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 730px;
+      }
+
+      .dotted {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 210px;
+        height: 20px;
+
+
+        .item {
+          display: block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #fff;
+
+          &:hover {
+            background-color: #cb0c0c;
+          }
+        }
+
+        .active {
+          background-color: #cb0c0c;
+        }
+      }
+    }
+  }
+}
