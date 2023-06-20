@@ -155,10 +155,10 @@
   width: 730px;
   overflow: hidden;
 }
-.banner .sub-container .banner-img ul {
+.banner .sub-container .banner-img .banner-img-list {
   display: flex;
 }
-.banner .sub-container .banner-img ul img {
+.banner .sub-container .banner-img .banner-img-list img {
   display: block;
   width: 730px;
 }
