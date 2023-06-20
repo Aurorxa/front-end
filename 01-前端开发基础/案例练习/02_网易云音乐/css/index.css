@@ -119,15 +119,13 @@
 }
 .top-nav {
   height: 35px;
+  line-height: 35px;
   background-color: #C20C0C;
   border-bottom: 1px solid #a40011;
 }
 .top-nav .container ul {
   display: flex;
-  line-height: 35px;
-}
-.top-nav .container ul li:first-child {
-  margin-left: 202px;
+  padding-left: 202px;
 }
 .top-nav .container ul li .item {
   display: block;
