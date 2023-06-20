@@ -4,7 +4,7 @@
 }
 
 .sub-container {
-  width: 982px;
+  width: 984px;
   margin: 0 auto;
 }
 
@@ -101,7 +101,7 @@
 
         input {
           position: absolute;
-          top: 0;
+          top: 2px;
           left: 0;
           color: #333;
           height: 32px;
@@ -177,7 +177,7 @@
 
 .banner {
   height: 285px;
-  background-color: pink;
+  background: #f5f5f5;
 
   .sub-container {
     display: flex;
@@ -232,9 +232,26 @@
     }
 
     .banner-nav {
+      text-align: center;
       width: 254px;
-      background-color: red;
+      background: url("../assets/download.png") no-repeat;
 
+      .download {
+        display: block;
+        width: 215px;
+        height: 56px;
+        margin: 185px 0 0 19px;
+        text-indent: -9999px;
+
+        &:hover {
+          background: url("../assets/download.png") no-repeat 0 -289px;
+        }
+      }
+
+      .desc {
+        margin: 10px auto;
+        color: #8d8d8d;
+      }
 
     }
   }

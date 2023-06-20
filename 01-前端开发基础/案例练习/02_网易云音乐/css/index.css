@@ -3,7 +3,7 @@
   margin: 0 auto;
 }
 .sub-container {
-  width: 982px;
+  width: 984px;
   margin: 0 auto;
 }
 .top-bar {
@@ -88,7 +88,7 @@
 }
 .top-bar .container .top-bar-nav .search input {
   position: absolute;
-  top: 0;
+  top: 2px;
   left: 0;
   color: #333;
   height: 32px;
@@ -145,7 +145,7 @@
 }
 .banner {
   height: 285px;
-  background-color: pink;
+  background: #f5f5f5;
 }
 .banner .sub-container {
   display: flex;
@@ -191,7 +191,22 @@
   background-color: #cb0c0c;
 }
 .banner .sub-container .banner-nav {
+  text-align: center;
   width: 254px;
-  background-color: red;
+  background: url("../assets/download.png") no-repeat;
+}
+.banner .sub-container .banner-nav .download {
+  display: block;
+  width: 215px;
+  height: 56px;
+  margin: 185px 0 0 19px;
+  text-indent: -9999px;
+}
+.banner .sub-container .banner-nav .download:hover {
+  background: url("../assets/download.png") no-repeat 0 -289px;
+}
+.banner .sub-container .banner-nav .desc {
+  margin: 10px auto;
+  color: #8d8d8d;
 }
 /*# sourceMappingURL=index.css.map */
