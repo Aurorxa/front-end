@@ -207,6 +207,17 @@
   color: #f3c258;
   border-bottom: 3px solid #f3c258;
 }
+.main .container .news .notice {
+  width: 230px;
+  height: 36px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.main .container .news .notice a {
+  font-size: 18px;
+  color: #f3c258;
+}
 .main .container .other {
   width: 236px;
   background-color: skyblue;
