@@ -190,6 +190,9 @@
   line-height: 42px;
   border-bottom: 3px solid #000;
 }
+.main .container .news .news-classify .active a {
+  border-bottom: 3px solid #f3c258;
+}
 .main .container .news .news-classify a {
   display: block;
   color: #fff;
