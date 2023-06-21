@@ -27,12 +27,13 @@
 .top-bar .top-bar-container .right {
   display: flex;
 }
-.top-bar .top-bar-container .right a {
-  display: block;
+.top-bar .top-bar-container .right .grow,
+.top-bar .top-bar-container .right .ranking {
   font-size: 14px;
   color: #464646;
 }
-.top-bar .top-bar-container .right a:hover {
+.top-bar .top-bar-container .right .grow:hover,
+.top-bar .top-bar-container .right .ranking:hover {
   color: #DD302D;
 }
 .top-bar .top-bar-container .right .grow {
