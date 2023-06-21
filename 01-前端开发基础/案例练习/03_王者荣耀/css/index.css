@@ -27,38 +27,45 @@
 .top-bar .top-bar-container .right {
   display: flex;
 }
-.top-bar .top-bar-container .right .item:first-child {
+.top-bar .top-bar-container .right a {
+  display: block;
+  font-size: 14px;
+  color: #464646;
+}
+.top-bar .top-bar-container .right a:hover {
+  color: #DD302D;
+}
+.top-bar .top-bar-container .right .grow {
   position: relative;
   padding-left: 30px;
   margin-right: 20px;
 }
-.top-bar .top-bar-container .right .item:first-child::before {
+.top-bar .top-bar-container .right .grow::before {
   position: absolute;
-  top: 5px;
   left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   content: '';
   width: 30px;
   height: 30px;
   background: url('../assets/top_bar_sprite.png') -30px 0;
 }
-.top-bar .top-bar-container .right .item:last-child {
+.top-bar .top-bar-container .right .ranking {
   position: relative;
   padding-right: 30px;
 }
-.top-bar .top-bar-container .right .item:last-child::after {
+.top-bar .top-bar-container .right .ranking::after {
   position: absolute;
-  top: 5px;
   right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   content: '';
   width: 30px;
   height: 30px;
   background: url('../assets/top_bar_sprite.png') 0 0;
   opacity: 0.1;
   transform: rotate(90deg);
-}
-.top-bar .top-bar-container .right .item a {
-  display: block;
-  font-size: 14px;
-  color: #464646;
 }
 /*# sourceMappingURL=index.css.map */
