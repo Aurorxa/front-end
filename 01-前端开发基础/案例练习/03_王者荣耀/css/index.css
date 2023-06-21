@@ -179,6 +179,8 @@
 }
 .main .container .news {
   flex: 1;
+  /* 单行文本溢出处理 */
+  overflow: hidden;
   padding: 0 17px;
   background-color: #282a2c;
   color: #fff;
@@ -208,15 +210,20 @@
   border-bottom: 3px solid #f3c258;
 }
 .main .container .news .notice {
-  width: 230px;
   height: 36px;
+  line-height: 36px;
+  padding: 0 15px;
+  margin: 18px 0;
+  background-color: #414046;
+}
+.main .container .news .notice a {
+  display: block;
+  font-size: 18px;
+  color: #f3c258;
+  /* 单行文本溢出处理 */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-.main .container .news .notice a {
-  font-size: 18px;
-  color: #f3c258;
 }
 .main .container .other {
   width: 236px;
