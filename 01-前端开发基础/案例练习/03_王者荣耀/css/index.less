@@ -93,7 +93,7 @@
 
 .top-nav {
   background-color: rgba(0, 0, 0, .8);
-  
+
   .top-nav-container {
     display: flex;
     justify-content: space-between;
@@ -182,4 +182,59 @@
 
   }
 
+}
+
+.container {
+  width: 1200px;
+  background-color: pink;
+  margin: 0 auto;
+}
+
+.main {
+  .container {
+    display: flex;
+    height: 342px;
+
+
+    .banner {
+      width: 605px;
+      background-color: red;
+    }
+
+    .news {
+      flex: 1;
+    }
+
+    .other {
+      width: 236px;
+      background-color: skyblue;
+
+      a {
+        display: block;
+        text-indent: -9999px;
+        overflow: hidden;
+        background: url("../assets/main_news_sprite.png") no-repeat;
+      }
+
+      .download_btn {
+        width: 236px;
+        height: 128px;
+        background-position: 0 -219px
+      }
+
+      .env_btn {
+        width: 236px;
+        height: 106px;
+        background-position: 0 -350px
+      }
+
+      .experience_btn {
+        width: 236px;
+        height: 108px;
+        background-position: 0 -461px;
+      }
+
+    }
+
+  }
 }

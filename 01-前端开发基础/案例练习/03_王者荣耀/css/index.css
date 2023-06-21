@@ -143,4 +143,45 @@
   font-size: 14px;
   color: #858792;
 }
+.container {
+  width: 1200px;
+  background-color: pink;
+  margin: 0 auto;
+}
+.main .container {
+  display: flex;
+  height: 342px;
+}
+.main .container .banner {
+  width: 605px;
+  background-color: red;
+}
+.main .container .news {
+  flex: 1;
+}
+.main .container .other {
+  width: 236px;
+  background-color: skyblue;
+}
+.main .container .other a {
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url("../assets/main_news_sprite.png") no-repeat;
+}
+.main .container .other .download_btn {
+  width: 236px;
+  height: 128px;
+  background-position: 0 -219px;
+}
+.main .container .other .env_btn {
+  width: 236px;
+  height: 106px;
+  background-position: 0 -350px;
+}
+.main .container .other .experience_btn {
+  width: 236px;
+  height: 108px;
+  background-position: 0 -461px;
+}
 /*# sourceMappingURL=index.css.map */
