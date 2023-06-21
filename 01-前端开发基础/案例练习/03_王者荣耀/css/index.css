@@ -164,12 +164,14 @@
   line-height: 44px;
   justify-content: space-evenly;
 }
+.main .container .banner .dotted .item {
+  flex: 1;
+}
 .main .container .banner .dotted .item a {
   color: #b1b2be;
   display: block;
   text-align: center;
   background-color: #000;
-  width: 121px;
 }
 .main .container .banner .dotted .item a:hover {
   color: #f3c258;
@@ -179,6 +181,26 @@
   flex: 1;
   padding: 0 17px;
   background-color: #282a2c;
+  color: #fff;
+}
+.main .container .news .news-classify {
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  line-height: 42px;
+  border-bottom: 3px solid #000;
+}
+.main .container .news .news-classify a {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 10px;
+}
+.main .container .news .news-classify a:hover {
+  color: #f3c258;
+  border-bottom: 3px solid #f3c258;
 }
 .main .container .other {
   width: 236px;
