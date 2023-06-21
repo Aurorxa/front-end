@@ -245,18 +245,26 @@
           }
         }
 
-        a {
-          display: block;
-          color: #fff;
-          font-size: 14px;
-          height: 45px;
-          line-height: 45px;
-          padding: 0 10px;
-
-          &:hover {
-            color: #f3c258;
-            border-bottom: 3px solid #f3c258;
+        .item {
+          a {
+            color: #fff;
           }
+
+          &:not(.more) {
+            a {
+              display: block;
+              font-size: 14px;
+              height: 45px;
+              line-height: 45px;
+              padding: 0 10px;
+
+              &:hover {
+                color: #f3c258;
+                border-bottom: 3px solid #f3c258;
+              }
+            }
+          }
+
 
         }
       }

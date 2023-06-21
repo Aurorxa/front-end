@@ -193,15 +193,17 @@
 .main .container .news .news-classify .active a {
   border-bottom: 3px solid #f3c258;
 }
-.main .container .news .news-classify a {
-  display: block;
+.main .container .news .news-classify .item a {
   color: #fff;
+}
+.main .container .news .news-classify .item:not(.more) a {
+  display: block;
   font-size: 14px;
   height: 45px;
   line-height: 45px;
   padding: 0 10px;
 }
-.main .container .news .news-classify a:hover {
+.main .container .news .news-classify .item:not(.more) a:hover {
   color: #f3c258;
   border-bottom: 3px solid #f3c258;
 }
