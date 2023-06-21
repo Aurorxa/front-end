@@ -145,7 +145,6 @@
 }
 .container {
   width: 1200px;
-  background-color: pink;
   margin: 0 auto;
 }
 .main .container {
@@ -154,10 +153,32 @@
 }
 .main .container .banner {
   width: 605px;
-  background-color: red;
+}
+.main .container .banner .banner-img-list {
+  display: flex;
+  height: 298px;
+  overflow: hidden;
+}
+.main .container .banner .dotted {
+  display: flex;
+  line-height: 44px;
+  justify-content: space-evenly;
+}
+.main .container .banner .dotted .item a {
+  color: #b1b2be;
+  display: block;
+  text-align: center;
+  background-color: #000;
+  width: 121px;
+}
+.main .container .banner .dotted .item a:hover {
+  color: #f3c258;
+  background-color: #262626;
 }
 .main .container .news {
   flex: 1;
+  padding: 0 17px;
+  background-color: #282a2c;
 }
 .main .container .other {
   width: 236px;
