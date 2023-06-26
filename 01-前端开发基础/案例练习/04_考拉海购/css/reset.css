@@ -16,3 +16,11 @@ img {
 ul, li {
     list-style: none;
 }
+
+input, a {
+    outline: none;
+}
+
+input {
+    border: 0;
+}
