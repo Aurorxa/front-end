@@ -4,7 +4,7 @@
 }
 .box {
   width: 2.667rem /* 100/37.5 */;
-  height: 2.667rem;
+  height: 26.67vw /* 100/3.75 */;
   background-color: orange;
 }
 /*# sourceMappingURL=01.css.map */
