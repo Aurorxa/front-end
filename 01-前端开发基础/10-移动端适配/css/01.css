@@ -3,7 +3,7 @@
   padding: 0;
 }
 .box {
-  width: 26.67vw;
+  width: 2.667rem /* 100/37.5 */;
   height: 2.667rem;
   background-color: orange;
 }
