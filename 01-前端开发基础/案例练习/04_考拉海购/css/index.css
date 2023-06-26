@@ -126,4 +126,25 @@
   color: #e31436;
   font-size: 2.67vw /* 10/3.75 */;
 }
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw /* 375/3.75 */;
+  height: 47.47vw /* 178/3.75 */;
+  background-color: #f3f3f3;
+}
+.banner .item {
+  /* 隐藏其他的元素 */
+}
+.banner .item:not(.item:first-child) {
+  display: none;
+}
+.banner .item a {
+  display: block;
+}
+.banner .item a img {
+  width: 93.6vw /* 351/3.75 */;
+  height: 47.2vw /* 177/3.75 */;
+}
 /*# sourceMappingURL=index.css.map */

@@ -146,3 +146,31 @@
   }
 }
 
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw /* 375/3.75 */;
+  height: 47.47vw /* 178/3.75 */;
+  background-color: #f3f3f3;
+
+  .item {
+
+    /* 隐藏其他的元素 */
+
+    &:not(.item:first-child) {
+      display: none;
+    }
+
+    a {
+      display: block;
+
+      img {
+        width: 93.6vw /* 351/3.75 */;
+        height: 47.2vw /* 177/3.75 */;
+      }
+    }
+  }
+
+}
+
