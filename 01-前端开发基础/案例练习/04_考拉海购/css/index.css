@@ -62,9 +62,9 @@
   text-overflow: ellipsis;
 }
 .download .right {
-  width: 25.2vw /* 60/7.5 */;
+  width: 25.2vw /* 60/3.75 */;
   text-align: center;
-  line-height: 16vw /* 60/7.5 */;
+  line-height: 16vw /* 60/3.75 */;
   background-image: linear-gradient(to right, #f81c16, #fe496d);
 }
 .download .right a {
