@@ -1,3 +1,8 @@
+.text-overflow-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .tab-bar {
   position: fixed;
   left: 0;
@@ -20,10 +25,40 @@
 .download {
   display: flex;
   height: 16vw /* 60/3.75 */;
-  background-color: pink;
 }
 .download .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   flex: 1;
+}
+.download .left .logo {
+  width: 10.67vw /* 40/3.75 */;
+  height: 10.67vw /* 40/3.75 */;
+}
+.download .left .logo img {
+  margin-left: 2.13vw /* 8/3.75 */;
+  width: 10.67vw /* 40/3.75 */;
+}
+.download .left .info {
+  flex: 1;
+  overflow: hidden;
+  margin-left: 2.67vw /* 10/3.75 */;
+}
+.download .left .info .title {
+  font-size: 3.73vw /* 14/3.75 */;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.download .left .info .desc {
+  margin-top: 0.53vw /* 2/3.75 */;
+  font-size: 3.2vw /* 12/3.75 */;
+  color: #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .download .right {
   width: 25.2vw /* 60/7.5 */;
@@ -34,5 +69,6 @@
 .download .right a {
   display: block;
   color: #fff;
+  font-size: 4.27vw /* 16/3.75 */;
 }
 /*# sourceMappingURL=index.css.map */
