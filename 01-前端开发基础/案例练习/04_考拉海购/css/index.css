@@ -17,4 +17,22 @@
 .tab-bar .item a img {
   width: 48px;
 }
+.download {
+  display: flex;
+  height: 16vw /* 120/7.5 */;
+  background-color: pink;
+}
+.download .left {
+  flex: 1;
+}
+.download .right {
+  width: 25.2vw /* 189/7.5 */;
+  text-align: center;
+  line-height: 16vw /* 120/7.5 */;
+  background-image: linear-gradient(to right, #f81c16, #fe496d);
+}
+.download .right a {
+  display: block;
+  color: #fff;
+}
 /*# sourceMappingURL=index.css.map */
