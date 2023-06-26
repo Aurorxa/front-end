@@ -1,0 +1,20 @@
+.tab-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  height: 50px;
+  border-top: 1px solid #ddd;
+}
+.tab-bar .item {
+  flex: 1;
+  text-align: center;
+}
+.tab-bar .item a {
+  display: block;
+}
+.tab-bar .item a img {
+  width: 48px;
+}
+/*# sourceMappingURL=index.css.map */
