@@ -255,6 +255,8 @@
   font-weight: bold;
 }
 .subsidy .container .subsidy-content .item a .price .original-price {
+  color: #ccc;
+  text-decoration: line-through;
   font-size: 3.2vw /* 12/3.75 */;
 }
 /*# sourceMappingURL=index.css.map */
