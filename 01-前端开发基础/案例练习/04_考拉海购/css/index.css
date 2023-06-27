@@ -163,7 +163,7 @@
   height: 20.8vw /* 78/3.75 */;
 }
 .subsidy {
-  padding: 0 3.2vw /* 12/3.75 */;
+  padding: 3.2vw 3.2vw /* 12/3.75 */;
   background-color: #f3f3f3;
 }
 .subsidy .container {
