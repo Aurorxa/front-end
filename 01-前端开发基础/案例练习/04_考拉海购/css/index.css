@@ -255,7 +255,7 @@
   font-size: 3.73vw /* 14/3.75 */;
   font-weight: bold;
 }
-.subsidy .container .subsidy-content .item a .price .original-price {
+.subsidy .container .subsidy-content .item a .price .old-price {
   color: #ccc;
   text-decoration: line-through;
   font-size: 3.2vw /* 12/3.75 */;
