@@ -147,30 +147,58 @@
 }
 
 .banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw /* 375/3.75 */;
-  height: 47.47vw /* 178/3.75 */;
-  background-color: #f3f3f3;
+  .container {
+    background-color: #f3f3f3;
 
-  .item {
+    .banner-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw /* 375/3.75 */;
+      height: 47.47vw /* 178/3.75 */;
 
-    /* 隐藏其他的元素 */
 
-    &:not(.item:first-child) {
-      display: none;
-    }
+      .item {
 
-    a {
-      display: block;
+        /* 隐藏其他的元素 */
 
-      img {
-        width: 93.6vw /* 351/3.75 */;
-        height: 47.2vw /* 177/3.75 */;
+        &:not(.item:first-child) {
+          display: none;
+        }
+
+        a {
+          display: block;
+
+          img {
+            width: 93.6vw /* 351/3.75 */;
+            height: 47.2vw /* 177/3.75 */;
+          }
+        }
       }
     }
   }
+}
 
+
+.nav {
+  .container {
+    background-color: #f3f3f3;
+
+    .nav-list {
+      display: flex;
+
+      .item {
+        a {
+          display: block;
+
+          img {
+            width: 20vw /* 75/3.75 */;
+            height: 20.8vw /* 78/3.75 */;
+          }
+        }
+      }
+    }
+
+  }
 }
 
