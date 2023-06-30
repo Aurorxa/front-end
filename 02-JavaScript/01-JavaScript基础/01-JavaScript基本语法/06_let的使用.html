@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <button class="btn">按钮1</button>
+  <button class="btn">按钮2</button>
+  <button class="btn">按钮3</button>
+  <button class="btn">按钮4</button>
+
+  <script>
+    let btns = document.querySelectorAll('.btn')
+
+    for (let i = 0; i < btns.length; i++) {
+      let btn = btns[i]
+      btn.onclick = function () {
+        console.log(`按钮${i}+1发生了点击`)
+      }
+    }
+    
+  </script>
+</body>
+</html>
