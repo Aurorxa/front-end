@@ -154,37 +154,37 @@
   width: 1200px;
   margin: 0 auto;
 }
-.main .container {
+.main .main-news .container {
   display: flex;
   height: 342px;
 }
-.main .container .banner {
+.main .main-news .container .banner {
   width: 605px;
 }
-.main .container .banner .banner-img-list {
+.main .main-news .container .banner .banner-img-list {
   display: flex;
   height: 298px;
   overflow: hidden;
 }
-.main .container .banner .dotted {
+.main .main-news .container .banner .dotted {
   display: flex;
   line-height: 44px;
   justify-content: space-evenly;
 }
-.main .container .banner .dotted .item {
+.main .main-news .container .banner .dotted .item {
   flex: 1;
 }
-.main .container .banner .dotted .item a {
+.main .main-news .container .banner .dotted .item a {
   color: #b1b2be;
   display: block;
   text-align: center;
   background-color: #000;
 }
-.main .container .banner .dotted .item a:hover {
+.main .main-news .container .banner .dotted .item a:hover {
   color: #f3c258;
   background-color: #262626;
 }
-.main .container .news {
+.main .main-news .container .news {
   flex: 1;
   /* 单行文本溢出处理 */
   overflow: hidden;
@@ -192,38 +192,38 @@
   background-color: #282a2c;
   color: #fff;
 }
-.main .container .news .news-classify {
+.main .main-news .container .news .news-classify {
   display: flex;
   justify-content: space-between;
   height: 45px;
   line-height: 42px;
   border-bottom: 3px solid #000;
 }
-.main .container .news .news-classify .active a {
+.main .main-news .container .news .news-classify .active a {
   border-bottom: 3px solid #f3c258;
 }
-.main .container .news .news-classify .item a {
+.main .main-news .container .news .news-classify .item a {
   color: #fff;
 }
-.main .container .news .news-classify .item:not(.more) a {
+.main .main-news .container .news .news-classify .item:not(.more) a {
   display: block;
   font-size: 14px;
   height: 45px;
   line-height: 45px;
   padding: 0 10px;
 }
-.main .container .news .news-classify .item:not(.more) a:hover {
+.main .main-news .container .news .news-classify .item:not(.more) a:hover {
   color: #f3c258;
   border-bottom: 3px solid #f3c258;
 }
-.main .container .news .notice {
+.main .main-news .container .news .notice {
   height: 36px;
   line-height: 36px;
   padding: 0 15px;
   margin: 18px 0;
   background-color: #414046;
 }
-.main .container .news .notice a {
+.main .main-news .container .news .notice a {
   display: block;
   font-size: 18px;
   color: #f3c258;
@@ -232,16 +232,16 @@
   white-space: nowrap;
   overflow: hidden;
 }
-.main .container .news .content {
+.main .main-news .container .news .content {
   font-size: 12px;
 }
-.main .container .news .content .item {
+.main .main-news .container .news .content .item {
   display: flex;
   align-items: center;
   margin-bottom: 13px;
   overflow: hidden;
 }
-.main .container .news .content .item a {
+.main .main-news .container .news .content .item a {
   display: block;
   color: #b8b9c5;
   font-size: 13px;
@@ -250,41 +250,59 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.main .container .news .content .item a .news-type {
+.main .main-news .container .news .content .item a .news-type {
   text-align: center;
   color: #e31436;
   border: 1px solid #e31436;
   border-radius: 2px;
   padding: 0 2px;
 }
-.main .container .news .content .item .date {
+.main .main-news .container .news .content .item .date {
   padding: 0 8px;
   color: #999;
   font-size: 12px;
 }
-.main .container .other {
+.main .main-news .container .other {
   width: 236px;
   background-color: skyblue;
 }
-.main .container .other a {
+.main .main-news .container .other a {
   display: block;
   text-indent: -9999px;
   overflow: hidden;
   background: url("../assets/main_news_sprite.png") no-repeat;
 }
-.main .container .other .download_btn {
+.main .main-news .container .other .download_btn {
   width: 236px;
   height: 128px;
   background-position: 0 -219px;
 }
-.main .container .other .env_btn {
+.main .main-news .container .other .env_btn {
   width: 236px;
   height: 106px;
   background-position: 0 -350px;
 }
-.main .container .other .experience_btn {
+.main .main-news .container .other .experience_btn {
   width: 236px;
   height: 108px;
   background-position: 0 -461px;
+}
+.main .quick-entry {
+  margin: 28px auto 34px;
+}
+.main .quick-entry .container .quick-entry-list {
+  display: flex;
+  justify-content: space-between;
+}
+.main .quick-entry .container .quick-entry-list .item a {
+  display: block;
+  overflow: hidden;
+}
+.main .quick-entry .container .quick-entry-list .item a img {
+  transition: all 0.5s ease;
+  width: 291px;
+}
+.main .quick-entry .container .quick-entry-list .item a:hover img {
+  transform: scale(1.1);
 }
 /*# sourceMappingURL=index.css.map */
