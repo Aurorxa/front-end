@@ -27,19 +27,20 @@ URL 的标准格式：
 
 基本数据类型（Primitive types）：
 
-数字（Number）：整数和浮点数。
-字符串（String）：由字符组成的文本。
-布尔值（Boolean）：true 或 false。
-空值（null）：表示一个空值或不存在的值。
-未定义（undefined）：表示一个未定义的值。
+    数字（Number）：整数和浮点数。
+    字符串（String）：由字符组成的文本。
+    布尔值（Boolean）：true 或 false。
+    空值（null）：表示一个空值或不存在的值。
+    未定义（undefined）：表示一个未定义的值。
+
 引用数据类型（Reference types）：
 
-对象（Object）：一组键值对的集合。
-数组（Array）：一组按顺序排列的值的集合。
-函数（Function）：可执行的代码块。
-日期（Date）：表示日期和时间的对象。
-正则表达式（RegExp）：用于匹配字符串的模式。
-除了以上类型，JavaScript还有一些特殊的类型：
+    对象（Object）：一组键值对的集合。
+    数组（Array）：一组按顺序排列的值的集合。
+    函数（Function）：可执行的代码块。
+    日期（Date）：表示日期和时间的对象。
+    正则表达式（RegExp）：用于匹配字符串的模式。
+    除了以上类型，JavaScript还有一些特殊的类型：
 
 NaN：表示一个非数字值。
 Infinity 和 -Infinity：表示正无穷大和负无穷大。
