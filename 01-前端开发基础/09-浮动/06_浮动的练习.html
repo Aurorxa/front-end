@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Title</title>
+  <title>Document</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     .outer {
       width: 500px;
       background-color: gray;
@@ -19,15 +14,19 @@
     }
 
     .box {
-      width: 200px;
-      height: 200px;
+      /* 会产生高度塌陷问题 */
+      float: left;
+
+      width: 100px;
+      height: 100px;
       background-color: skyblue;
       border: 1px solid black;
       margin: 10px;
-      float: left;
     }
+
   </style>
 </head>
+
 <body>
   <div class="outer">
     <div class="box box1">1</div>
@@ -35,4 +34,5 @@
     <div class="box box3">3</div>
   </div>
 </body>
+
 </html>
