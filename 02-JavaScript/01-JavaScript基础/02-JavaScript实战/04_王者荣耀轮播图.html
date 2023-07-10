@@ -2,11 +2,11 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>王者荣耀-main-news</title>
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/common.css">
+  <link href="./css/reset.css" rel="stylesheet">
+  <link href="./css/common.css" rel="stylesheet">
   <style>
     .main {
       height: 100px;
@@ -57,10 +57,11 @@
       font-size: 14px;
       color: #b1b2be;
     }
+
     .news-section .banner .title-list .item.active a,
     .news-section .banner .title-list .item a:hover {
       color: #f3c258;
-      background-color: rgba(255,255,255,.15);
+      background-color: rgba(255, 255, 255, .15);
     }
 
     .news-section .news {
@@ -95,34 +96,34 @@
   </style>
 </head>
 <body>
-  
+
   <div class="main main_wrapper">
     <div class="news-section">
       <div class="banner">
         <ul class="image-list">
           <li class="item">
             <a href="">
-              <img src="./img/banner_01.jpeg" alt="">
+              <img alt="" src="./img/banner_01.jpeg">
             </a>
           </li>
           <li class="item">
             <a href="">
-              <img src="./img/banner_01.jpeg" alt="">
+              <img alt="" src="./img/banner_02.jpeg">
             </a>
           </li>
           <li class="item">
             <a href="">
-              <img src="./img/banner_01.jpeg" alt="">
+              <img alt="" src="./img/banner_03.jpeg">
             </a>
           </li>
           <li class="item">
             <a href="">
-              <img src="./img/banner_01.jpeg" alt="">
+              <img alt="" src="./img/banner_04.jpeg">
             </a>
           </li>
           <li class="item">
             <a href="">
-              <img src="./img/banner_01.jpeg" alt="">
+              <img alt="" src="./img/banner_05.jpeg">
             </a>
           </li>
         </ul>
@@ -145,7 +146,7 @@
         </ul>
       </div>
       <div class="news">
-        
+
       </div>
       <div class="download">
         <a class="download-btn" href="#"></a>
@@ -165,7 +166,7 @@
 
     var currentIndex = 0
     var timer = null
-    titleListEl.addEventListener("mouseover", function(event) {
+    titleListEl.addEventListener("mouseover", function (event) {
       if (timer) clearInterval(timer)
       var targetLiEl = event.target.parentElement
       var liIndex = Array.from(titleLiEls).findIndex(item => {
@@ -175,14 +176,15 @@
       moveBannerWithIndex(liIndex)
       currentIndex = liIndex
     })
-    titleListEl.addEventListener("mouseout", function() {
+    titleListEl.addEventListener("mouseout", function () {
       console.log("离开")
       startTimer()
     })
 
     startTimer()
+
     function startTimer() {
-      timer = setInterval(function() {
+      timer = setInterval(function () {
         currentIndex++
         if (currentIndex === imageListEl.children.length) {
           currentIndex = 0
@@ -192,7 +194,7 @@
     }
 
     function moveBannerWithIndex(index) {
-      imageListEl.style.transform = `translateX(-${604*index}px)`
+      imageListEl.style.transform = `translateX(-${604 * index}px)`
       imageListEl.style.transition = `all 300ms ease`
 
       var targetLiEl = titleLiEls[index]
