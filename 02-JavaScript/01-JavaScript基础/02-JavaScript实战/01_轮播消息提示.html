@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Document</title>
   <style>
     .tip-bar {
@@ -11,15 +11,17 @@
       flex-direction: row;
       align-items: center;
       height: 30px;
-      background-color: rgba(0,0,0,.4);
+      background-color: rgba(0, 0, 0, .4);
       border-radius: 16px;
     }
+
     img {
       width: 30px;
       height: 30px;
       border-radius: 50%;
       margin-right: 5px;
     }
+
     span {
       font-size: 13px;
       color: white;
@@ -29,7 +31,7 @@
 </head>
 <body>
   <div class="tip-bar">
-    <img src="https://bfs.biyao.com/group1/M01/A2/67/rBACVGA_iOuAYaTxAAAPbted3yE165.png" alt="">
+    <img alt="" src="https://bfs.biyao.com/group1/M01/A2/67/rBACVGA_iOuAYaTxAAAPbted3yE165.png">
     <span>183***138对这件商品感兴趣</span>
   </div>
 
@@ -50,20 +52,22 @@
     ]
 
     // 1.获取元素
-    var tipBarEl = document.querySelector(".tip-bar")
-    var imgEl = tipBarEl.querySelector("img")
-    var spanEl = tipBarEl.querySelector("span")
+    const tipBarEl = document.querySelector(".tip-bar");
+    const imgEl = tipBarEl.querySelector("img");
+    const spanEl = tipBarEl.querySelector("span");
 
     // 2.定时替换
-    var index = 0
-    setInterval(function() {
-      var tipInfo = tipList[index]
+    let index = 0;
+    setInterval(function () {
+      const tipInfo = tipList[index];
       imgEl.src = tipInfo.icon
       spanEl.textContent = tipInfo.title
       index++
-      if (index >= tipList.length) index = 0
+      if (index >= tipList.length) {
+        index = 0
+      }
     }, 2000);
-    
+
   </script>
 </body>
 </html>
