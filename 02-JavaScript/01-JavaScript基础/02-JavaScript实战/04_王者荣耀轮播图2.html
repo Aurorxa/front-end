@@ -169,20 +169,20 @@
 
   <script>
 
-    var titleListEl = document.querySelector(".title-list")
-    var titleLiEls = titleListEl.querySelectorAll(".item")
-    var currentActiveLi = titleListEl.querySelector(".active")
-    var imageListEl = document.querySelector(".image-list")
+    let titleListEl = document.querySelector(".title-list");
+    let titleLiEls = titleListEl.querySelectorAll(".item");
+    let currentActiveLi = titleListEl.querySelector(".active");
+    let imageListEl = document.querySelector(".image-list");
 
-    var currentIndex = 0
+    let currentIndex = 0;
 
-    var timer = null
+    let timer = null;
     titleListEl.addEventListener("mouseover", function(event) {
       if (timer) clearInterval(timer)
-      var targetLiEl = event.target.parentElement
-      var liIndex = Array.from(titleLiEls).findIndex(item => {
+      let targetLiEl = event.target.parentElement;
+      let liIndex = Array.from(titleLiEls).findIndex(item => {
         return item === targetLiEl
-      })
+      });
 
       moveBannerWithIndex(liIndex, currentIndex)
       currentIndex = liIndex
@@ -195,7 +195,7 @@
 
     function startTimer() {
       timer = setInterval(function() {
-        var preValue = currentIndex
+        let preValue = currentIndex;
         currentIndex++
         if (currentIndex === imageListEl.children.length) {
           currentIndex = 0
@@ -207,8 +207,8 @@
     function moveBannerWithIndex(index, preValue) {
       // imageListEl.style.transform = `translateX(-${604*index}px)`
       // imageListEl.style.transition = `all 300ms ease`
-      for (var i = 0; i < imageListEl.children.length; i++) {
-        var imageLiEl = imageListEl.children[i]
+      for (let i = 0; i < imageListEl.children.length; i++) {
+        let imageLiEl = imageListEl.children[i];
         if (i < index) {
           if (i !== preValue) imageLiEl.style.transition = `none`
           imageLiEl.style.left = "-100%"
@@ -221,7 +221,7 @@
         }
       }
 
-      var targetLiEl = titleLiEls[index]
+      let targetLiEl = titleLiEls[index];
       targetLiEl.classList.add("active")
       currentActiveLi.classList.remove("active")
       currentActiveLi = targetLiEl
