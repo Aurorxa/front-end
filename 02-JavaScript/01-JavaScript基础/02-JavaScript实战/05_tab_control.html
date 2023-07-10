@@ -2,11 +2,11 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>王者荣耀-main-news</title>
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/common.css">
+  <link href="./css/reset.css" rel="stylesheet">
+  <link href="./css/common.css" rel="stylesheet">
   <style>
     .main .section-content {
       display: flex;
@@ -17,6 +17,7 @@
       width: 872px;
       height: 1000px;
     }
+
     .main .section-content .right-content {
       width: 295px;
       height: 500px;
@@ -24,7 +25,7 @@
   </style>
 </head>
 <body>
-  
+
   <div class="main main_wrapper">
     <div class="section-content">
       <div class="left-content">
@@ -46,6 +47,7 @@
           </div>
           <div class="video-list">精品栏目</div>
         </div>
+      </div>
     </div>
   </div>
 
@@ -53,7 +55,7 @@
     var tabControlEl = document.querySelector(".tab_control")
     var videoListEl = document.querySelector(".video-list")
     var currentActiveItemEl = tabControlEl.querySelector(".active")
-    tabControlEl.onmouseover = function(event) {
+    tabControlEl.onmouseover = function (event) {
       // 1.切换tab
       var itemEl = event.target
       if (!itemEl.classList.contains("item")) return
