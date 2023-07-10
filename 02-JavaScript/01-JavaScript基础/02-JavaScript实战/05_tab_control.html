@@ -52,20 +52,24 @@
   </div>
 
   <script>
-    var tabControlEl = document.querySelector(".tab_control")
-    var videoListEl = document.querySelector(".video-list")
-    var currentActiveItemEl = tabControlEl.querySelector(".active")
-    tabControlEl.onmouseover = function (event) {
-      // 1.切换tab
-      var itemEl = event.target
-      if (!itemEl.classList.contains("item")) return
-      itemEl.classList.add("active")
-      currentActiveItemEl.classList.remove("active")
-      currentActiveItemEl = itemEl
+    let tabControl = document.querySelector('.tab_control')
 
-      // 2.设置内容
-      videoListEl.textContent = itemEl.textContent
-    }
+
+    // 监听鼠标进入
+    tabControl.addEventListener('mouseover', function (event) {
+      // 获取目标对象
+      let target = event.target
+      // 如果不是 .item 选项
+      if (target.classList.contains("line")) {
+        return
+      }
+      // 其他的 item 去除 active
+      let activeTab = document.querySelector('.active')
+      activeTab.classList.remove('active')
+      // 当前的 item 变为 active
+      target.classList.add('active')
+    })
+
   </script>
 </body>
 </html>
