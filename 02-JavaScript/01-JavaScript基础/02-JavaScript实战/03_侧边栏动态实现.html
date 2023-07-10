@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Document</title>
   <style>
     .tool-bar {
@@ -23,7 +23,7 @@
       width: 35px;
       height: 35px;
       margin-bottom: 1px;
-      
+
       background-color: #7a6e6e;
       border-radius: 3px 0 0 3px;
     }
@@ -41,7 +41,7 @@
       z-index: -1;
       right: 35px;
       top: 0;
-      
+
       width: 0;
       height: 35px;
       line-height: 35px;
@@ -91,16 +91,16 @@
     // 2.动态设置
     for (var i = 0; i < iconEls.length; i++) {
       var iconEl = iconEls[i]
-      iconEl.style.backgroundPosition = `-48px -${i*50}px`
+      iconEl.style.backgroundPosition = `-48px -${i * 50}px`
     }
 
     // 3.监听鼠标事件
-    toolBarEl.onmouseover = function(event) {
+    toolBarEl.onmouseover = function (event) {
       var iconEl = event.target
       var nameEl = iconEl.nextElementSibling
       nameEl.style.width = "62px"
     }
-    toolBarEl.onmouseout = function(event) {
+    toolBarEl.onmouseout = function (event) {
       var iconEl = event.target
       var nameEl = iconEl.nextElementSibling
       nameEl.style.width = "0"
