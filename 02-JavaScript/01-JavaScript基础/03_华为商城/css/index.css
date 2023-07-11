@@ -84,7 +84,7 @@
 .product .product-list .item a .tags .tag {
   border: 1px solid red;
   border-radius: 3px;
-  padding: 2px 3px;
+  padding: 0 3px;
   margin: 0 3px;
 }
 .product .product-list .item a .appraise {
