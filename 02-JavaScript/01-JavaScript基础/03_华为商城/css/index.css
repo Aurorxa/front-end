@@ -35,4 +35,7 @@
   color: #666;
   cursor: auto;
 }
+.product .filter-condition .row .active {
+  color: #f00;
+}
 /*# sourceMappingURL=index.css.map */
