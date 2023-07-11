@@ -89,9 +89,11 @@
 }
 .product .product-list .item a .comment {
   display: flex;
+  justify-content: space-between;
   font-size: 12px;
+  color: #666;
 }
 .product .product-list .item a .comment .count {
-  margin: 0 5px;
+  margin-right: 5px;
 }
 /*# sourceMappingURL=index.css.map */
