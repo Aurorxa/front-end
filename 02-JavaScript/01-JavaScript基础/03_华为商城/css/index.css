@@ -1,0 +1,38 @@
+/* 商品 */
+.product {
+  /* 面包屑 */
+  /* 过滤条件 */
+}
+.product .crumbs {
+  display: flex;
+  height: 63px;
+  line-height: 63px;
+  font-size: 12px;
+}
+.product .crumbs .item {
+  cursor: pointer;
+}
+.product .crumbs .item:last-child {
+  color: #000;
+  font-weight: bold;
+}
+.product .filter-condition {
+  font-size: 12px;
+  padding-left: 24px;
+  background-color: #fff;
+}
+.product .filter-condition .row {
+  display: flex;
+}
+.product .filter-condition .row .item {
+  width: 104px;
+  height: 48px;
+  line-height: 48px;
+  color: #000;
+  cursor: pointer;
+}
+.product .filter-condition .row .item:first-child {
+  color: #666;
+  cursor: auto;
+}
+/*# sourceMappingURL=index.css.map */
