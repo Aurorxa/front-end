@@ -59,7 +59,7 @@
 .product .product-list .item a .album {
   width: 180px;
   height: 180px;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 .product .product-list .item a .title {
   font-weight: bold;
@@ -68,7 +68,7 @@
 .product .product-list .item a .sub-title {
   color: #999;
   margin-top: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 .product .product-list .item a .price {
   font-weight: bold;
@@ -87,11 +87,11 @@
   padding: 0 3px;
   margin: 0 3px;
 }
-.product .product-list .item a .appraise {
+.product .product-list .item a .comment {
   display: flex;
   font-size: 12px;
 }
-.product .product-list .item a .appraise .count {
+.product .product-list .item a .comment .count {
   margin: 0 5px;
 }
 /*# sourceMappingURL=index.css.map */
