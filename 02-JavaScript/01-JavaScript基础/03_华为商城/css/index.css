@@ -103,4 +103,34 @@
 .product .product-list .empty {
   height: 0;
 }
+.banner {
+  position: relative;
+  width: 1920px;
+  height: 550px;
+  overflow: hidden;
+}
+.banner .banner-img-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.banner .banner-img-list img {
+  width: 100%;
+}
+.banner .banner-dotted {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 158px;
+  height: 30px;
+}
+.banner .banner-dotted .item {
+  width: 8px;
+  height: 8px;
+  background-color: pink;
+  border-radius: 50%;
+}
 /*# sourceMappingURL=index.css.map */
