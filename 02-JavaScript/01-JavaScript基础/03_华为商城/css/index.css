@@ -130,7 +130,11 @@
 .banner .banner-dotted .item {
   width: 8px;
   height: 8px;
-  background-color: pink;
+  background-color: #ccc;
   border-radius: 50%;
+  cursor: pointer;
+}
+.banner .banner-dotted .item:hover {
+  background-color: #fff;
 }
 /*# sourceMappingURL=index.css.map */
