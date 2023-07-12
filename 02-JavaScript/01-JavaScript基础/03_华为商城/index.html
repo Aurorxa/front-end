@@ -169,6 +169,13 @@
         // 将 item 添加到页面上
         productEl.append(itemEl)
       }
+
+      for (let i = 0; i < 3; i++) {
+        let itemEl = document.createElement("li")
+        itemEl.classList.add("item")
+        itemEl.classList.add("empty")
+        productEl.append(itemEl)
+      }
     }
 
     render(resultList)
