@@ -104,16 +104,19 @@
   height: 0;
 }
 .banner {
-  position: relative;
   height: 550px;
+  position: relative;
 }
 .banner .banner-img-list {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  position: relative;
 }
 .banner .banner-img-list .item {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
+  overflow: hidden;
+  opacity: 0;
 }
 .banner .banner-img-list .item img {
   position: relative;
@@ -121,6 +124,9 @@
   transform: translate(-50%);
   width: 1920px;
   height: 550px;
+}
+.banner .banner-img-list .active {
+  opacity: 1;
 }
 .banner .banner-control {
   position: absolute;
