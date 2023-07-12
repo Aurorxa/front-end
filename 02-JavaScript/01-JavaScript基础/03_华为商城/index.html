@@ -31,7 +31,7 @@
       <!-- 服务优惠 -->
       <ul class="row discount">
         <li class="item">服务优惠：</li>
-        <li class="item active">仅看有货</li>
+        <li class="item">仅看有货</li>
         <li class="item">分期免息</li>
         <li class="item">优惠商品</li>
       </ul>
@@ -76,6 +76,29 @@
   <script>
     // ① 动态展示商品列表数据
     let productEl = document.querySelector(".product-list")
+    // ② 搜索条件
+    let queryConditionList = document.querySelectorAll(".discount .item:not(.discount .item:first-child)");
+    let queryFilterList = []
+    queryConditionList.forEach(item => {
+      item.onclick = function () {
+        // 设置状态
+        this.classList.toggle("active")
+        // 保存查询条件的关键字
+        if (this.classList.contains("active")) {
+          queryFilterList.push(this.textContent.trim())
+        } else {
+          let index = queryFilterList.findIndex(item => this.textContent.trim() === item);
+          queryFilterList.splice(index, 1)
+        }
+        // 对 resultList 进行过滤
+        let filterResultList = resultList.filter(item => {
+          const {services} = item;
+          return queryFilterList.every(keyword => services.includes(keyword))
+        })
+        console.log('@@@', filterResultList)
+      }
+    })
+
     for (let item of resultList) {
       // 获取页面所需要的数据
       const {shopH5Url, photoPath, briefName, promotionInfo, price, goodRate, promoLabels, rateCount} = item
