@@ -105,7 +105,6 @@
 }
 .banner {
   position: relative;
-  width: 1920px;
   height: 550px;
   overflow: hidden;
 }
@@ -113,8 +112,26 @@
   display: flex;
   flex-wrap: wrap;
 }
-.banner .banner-img-list img {
+.banner .banner-img-list .item {
   width: 100%;
+}
+.banner .banner-img-list .item img {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 1920px;
+  height: 550px;
+}
+.banner .banner-control {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .banner .banner-dotted {
   display: flex;

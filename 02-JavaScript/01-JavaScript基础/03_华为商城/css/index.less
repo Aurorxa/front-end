@@ -131,19 +131,39 @@
 
 .banner {
   position: relative;
-  width: 1920px;
   height: 550px;
   overflow: hidden;
-
 
   .banner-img-list {
     display: flex;
     flex-wrap: wrap;
 
-
-    img {
+    .item {
       width: 100%;
+
+      img {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+
+        width: 1920px;
+        height: 550px;
+      }
     }
+  }
+
+  .banner-control {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
   }
 
   .banner-dotted {
@@ -164,7 +184,7 @@
       border-radius: 50%;
       cursor: pointer;
 
-      &:hover{
+      &:hover {
         background-color: #fff;
       }
 
