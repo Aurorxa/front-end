@@ -170,6 +170,7 @@
         productEl.append(itemEl)
       }
 
+      // 处理最后一样元素的样式，如果不足 4 个，让其左对齐
       for (let i = 0; i < 3; i++) {
         let itemEl = document.createElement("li")
         itemEl.classList.add("item")
