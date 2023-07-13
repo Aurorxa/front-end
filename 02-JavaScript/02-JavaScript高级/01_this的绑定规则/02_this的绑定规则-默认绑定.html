@@ -32,7 +32,14 @@
 
     baz() // this --> window
 
-    // ③ 严格模式下，独立调用的函数中的 this 指向的是 undefined
+    // ③ 高阶函数
+    function test(fn) {
+      fn()
+    }
+
+    test(obj.bar) // this --> window
+
+    // ④ 严格模式下，独立调用的函数中的 this 指向的是 undefined
 
   </script>
 </body>
