@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 不要使用 name 作为变量名来测试，因为 window 对象中就有一个属性是 name
+
+    var abc
+    console.log(typeof abc) // undefined
+
+    var flag = true
+    console.log(typeof flag) // boolean
+
+    var str = "abc"
+    console.log(typeof str) // string
+
+    var num = 123
+    console.log(typeof num) // number
+
+    var obj = null
+    console.log(typeof obj) // object
+
+    var obj2 = {}
+    console.log(typeof obj2) // object
+
+    function fn() {
+
+    }
+
+    console.log(typeof fn) // function
+
+
+  </script>
+</body>
+</html>
