@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <script>
+    let numObj = new Number(42);
+
+    // 在需要基本数据类型值的地方，会自动进行拆箱（将包装对象转换为对应的基本数据类型）
+    let numValue = numObj + 10; // 相当于 numObj.valueOf() + 10
+
+    console.log(typeof numObj); // "object"
+    console.log(typeof numValue); // "number"
+  </script>
+
+</body>
+</html>
