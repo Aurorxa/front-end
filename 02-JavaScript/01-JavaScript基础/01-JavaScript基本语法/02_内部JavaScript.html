@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <a href="#">百度一下</a>
+
+  <!--
+    将 JavaScript 写在 script 元素中。
+    因为 HTML 是逐行解析的，建议将 script 放到</body> 的上面，防止浏览器先解析 JavaScript ，而不继续渲染 HTML 元素，这是浏览器的原理导致的！
+  -->
+  <script>
+    const aEl = document.querySelector("a")
+    aEl.onclick = function () {
+      alert("点击百度一下")
+    }
+  </script>
+</body>
+</html>
