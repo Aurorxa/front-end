@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 调用对象的方法 */
+    var obj = {
+      name: '张三',
+      age: 18,
+      // friend: {
+      //   name: '李四',
+      //   age: 18,
+      //   eating: function () {
+      //     console.log(`${this.name}正在吃饭...`)
+      //   }
+      // }
+    };
+
+    // 调用函数，下面的代码可能没有 friend 属性，那么程序就会报错，容错性就比较差
+    // obj.friend.eating()
+
+    // 下面的代码，容错性好，即使没有 friend 属性，程序也不会报错
+    obj && obj.friend && obj.friend.eating()
+
+    // 但是，ECMAScript 2020 已经引入了 ?. 就是可选操作符，用来简化访问可能为 null 或 undefined 的属性或方法的过程，以避免出现 TypeError 错误。
+    obj?.friend?.eating()
+
+  </script>
+</body>
+</html>

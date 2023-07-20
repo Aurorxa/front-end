@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var chinese = 88
+    var math = 99
+
+    /*
+       逻辑与: &&, 并且
+       条件1 && 条件2 && 条件3.....
+       所有的条件都为true的时候, 最终结果才为true
+    */
+    // 如果语文 90 分以上，并且数学 90 分以上，就可以去游乐场
+    if (chinese >= 90 && math >= 90) {
+      console.log('可以去游乐场')
+    } else {
+      console.log('不能去游乐场')
+    }
+    /*
+      2.逻辑或: ||, 或者
+      条件1 || 条件2 || 条件3....
+      只要有一个条件为true, 最终结果就为true
+    */
+    // 如果语文或数学有一门成绩 90 分以上，就可以打 1 小时游戏
+    if (chinese >= 90 || math >= 90) {
+      console.log('可以打 1 小时游戏')
+    } else {
+      console.log('不能打 1 小时游戏')
+    }
+
+    // 3.逻辑非: !, 取反
+    var isLogin = false
+    if (!isLogin) {
+      console.log('跳转到登录页面')
+      console.log('进行登录操作')
+    }
+    console.log("正常的访问页面")
+  </script>
+</body>
+</html>
