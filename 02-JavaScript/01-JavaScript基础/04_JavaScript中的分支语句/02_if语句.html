@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 5元/斤的苹果，如果超过 5 斤，那么减少 8 元。 */
+    var num = Number(prompt("请输入购买的重量（斤）："))
+    var price = 5
+    var total = price * num
+    if (num >= 5) {
+      total -= 8
+    }
+    console.log(`总价格是：${total}`)
+  </script>
+</body>
+</html>
