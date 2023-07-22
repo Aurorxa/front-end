@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 计算调用的次数
+    var count = 0
+
+    function foo() {
+      // 终止条件（结束条件）
+      if (count++ == 2) {
+        return
+      }
+      console.log("foo 函数")
+      // 在函数中调用函数
+      foo()
+    }
+
+    // 调用
+    foo()
+  </script>
+</body>
+</html>
