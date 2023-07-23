@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /**
+     * Ajax 请求库
+     * @param type 请求类型：GET 或 POST 等
+     * @param url 请求 URL 地址
+     * @param data 请求的数据，以 JSON 格式
+     * @param callback 回调
+     */
+    function ajax(type, url, data, callback) {
+      // ① 判断 type 的类型，是 GET 或 POST 等
+      console.log(`判断请求 ${type} 的类型`)
+      // ② 根据 url 和 data 发送请求，可能会很长
+      console.log(`根据 url 和 data 发送请求，使用 setTimeout 模拟延迟`)
+      // 模拟延迟
+      setTimeout(function () {
+        // 从服务器获取的数据
+        var result = ["Java", "JavaScript", "C"]
+        // ③ 调用回调函数，并将数据通过回调函数传递
+        callback(result)
+      }, 3000)
+    }
+
+    // 调用 Ajax 请求
+    ajax("GET", "https://www.baidu.com", null, function (result) {
+      console.log(result)
+    })
+  </script>
+</body>
+</html>
