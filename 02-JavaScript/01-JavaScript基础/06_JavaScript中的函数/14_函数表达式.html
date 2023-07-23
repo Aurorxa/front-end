@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    foo() // 可以执行函数；其实，就是 JavaScript 引擎做了特殊处理，将函数进行提升
+
+    function foo() {
+      console.log('我是foo函数')
+    }
+
+    bar() // 报错，Uncaught TypeError: bar is not a function
+    var bar = function () {
+      console.log('我是bar函数')
+    }
+
+
+  </script>
+</body>
+</html>
