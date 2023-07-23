@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function bar() {
+      console.log("bar 函数")
+      var nickname = "许大仙"
+
+      function foo() {
+        console.log("hi 函数")
+        // 可以访问到 nickname
+        console.log(nickname)
+      }
+
+      foo()
+    }
+
+    bar()
+
+  </script>
+</body>
+</html>
