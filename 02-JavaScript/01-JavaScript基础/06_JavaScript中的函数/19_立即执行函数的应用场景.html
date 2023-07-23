@@ -14,13 +14,11 @@
   <button>3</button>
 
   <script>
-    var btns = document.querySelectorAll('button');
-    for (var i = 0; i < btns.length; i++) {
-      ;(function (m) {
-        btns[m].addEventListener('click', function () {
-          console.log(`第${m}个按钮被点击了`);
-        })
-      })(i)
+    let btns = document.querySelectorAll('button');
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function () {
+        console.log(`第${i}个按钮被点击了`);
+      })
     }
   </script>
 </body>
