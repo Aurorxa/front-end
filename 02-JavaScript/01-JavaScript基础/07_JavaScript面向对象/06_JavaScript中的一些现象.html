@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var num1 = 123
+    var num2 = 123
+
+    console.log(num1 === num2) // true
+
+    var obj1 = {}
+    var obj2 = {}
+
+    console.log(obj1 === obj2) // false
+
+    var info = {
+      name: '张三',
+      age: 18,
+      friend: {
+        name: '李四',
+        age: 19
+      }
+    }
+
+    var friend = info.friend
+    friend.name = '王五'
+
+    console.log(info.friend.name) // 王五
+  </script>
+</body>
+</html>
