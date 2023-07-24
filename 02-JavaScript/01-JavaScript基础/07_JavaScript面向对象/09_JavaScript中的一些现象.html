@@ -8,12 +8,24 @@
 </head>
 <body>
   <script>
-    // 现象一
-    var num1 = 123
-    var num2 = 123
+    // 现象四
+    function foo(a) {
+      a = {
+        name: 'obj'
+      }
+    }
 
-    console.log(num1 === num2) // true
+    var info = {
+      name: '张三',
+      age: 18,
+      friend: {
+        name: '李四',
+        age: 19
+      }
+    }
 
+    foo(info)
+    console.log(info.name) // 张三
   </script>
 </body>
 </html>

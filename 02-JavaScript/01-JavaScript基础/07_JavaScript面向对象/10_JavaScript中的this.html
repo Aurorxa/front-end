@@ -8,12 +8,11 @@
 </head>
 <body>
   <script>
-    // 现象一
-    var num1 = 123
-    var num2 = 123
+    function foo() {
+      console.log(this) // window
+    }
 
-    console.log(num1 === num2) // true
-
+    foo()
   </script>
 </body>
 </html>

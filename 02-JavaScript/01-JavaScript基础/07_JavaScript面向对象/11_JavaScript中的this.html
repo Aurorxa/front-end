@@ -8,12 +8,14 @@
 </head>
 <body>
   <script>
-    // 现象一
-    var num1 = 123
-    var num2 = 123
+    var obj = {
+      name: "张三",
+      bar: function () {
+        console.log(this) //obj
+      }
+    }
 
-    console.log(num1 === num2) // true
-
+    obj.bar()
   </script>
 </body>
 </html>
