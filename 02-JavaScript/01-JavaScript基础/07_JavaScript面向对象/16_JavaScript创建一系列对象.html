@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    /** 通过工厂函数来创建对象
+     * @param {string} name 姓名
+     * @param {number} age 年龄
+     */
+    function createStudent(name, age) {
+      var stu = {}
+      stu.name = name
+      stu.age = age
+      stu.eating = function () {
+        console.log(this.name + "正在吃饭...")
+      }
+      return stu
+    }
+
+    var stu1 = createStudent("张三", 23)
+    console.log(stu1)
+    var stu2 = createStudent("李四", 20)
+    console.log(stu2)
+    var stu3 = createStudent("王五", 19)
+    console.log(stu3)
+  </script>
+</body>
+</html>
