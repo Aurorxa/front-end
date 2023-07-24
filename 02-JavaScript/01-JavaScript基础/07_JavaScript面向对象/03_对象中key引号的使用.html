@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+    无论是使用引号("")还是方括号([])定义 key，都可以通过点号(.)或方括号([])来访问对象的属性
+    */
+    var message = "Hello World"
+    var obj = {
+      name: "许大仙",
+      "age": 18,
+      "good friend": "白素贞",
+      [message]: "你好，世界"
+    }
+
+    console.log(obj.name)
+    console.log(obj["age"])
+    console.log(obj.age)
+    console.log(obj["good friend"])
+    console.log(obj[message])
+  </script>
+</body>
+</html>
