@@ -18,12 +18,17 @@
     }
     // 普通 for 循环遍历对象的属性和方法
     var keysArr = Object.keys(obj)
-    for (let i = 0; i < keysArr.length; i++) {
+    /*for (let i = 0; i < keysArr.length; i++) {
       var key = keysArr[i]
       var value = obj[key]
       console.log(`key：${key} ，${value}`)
-    }
+    }*/
 
+    for (const element of keysArr) {
+      var key = element
+      var value = obj[key]
+      console.log(`key：${key} ，${value}`)
+    }
   </script>
 </body>
 </html>
