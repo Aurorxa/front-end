@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 通过字面量的形式创建对象
+    var person = {
+      name: "许大仙",
+      age: 18
+    }
+    // 访问对象的属性
+    console.log(`name: ${person.name}`) // name: 许大仙
+    console.log(`age: ${person.age}`) // age: 18
+    // 修改对象的属性
+    person.name = "许仙"
+    person.age = 20
+    console.log(`name: ${person.name}`) // name: 许仙
+    console.log(`age: ${person.age}`) // age: 20
+    // 添加对象的属性
+    person.sex = "男"
+    person.address = "杭州"
+    console.log(`name: ${person.name}`) // name: 许仙
+    console.log(`age: ${person.age}`) // age: 20
+    console.log(`sex ${person.sex}`) // sex 男
+    console.log(`address: ${person.address}`) // address: 杭州
+    // 删除对象的属性
+    delete person.address
+    console.log(`name: ${person.name}`) // name: 许仙
+    console.log(`age: ${person.age}`) // age: 20
+    console.log(`sex ${person.sex}`) // sex 男
+    console.log(`address: ${person.address}`) // address: undefined
+  </script>
+</body>
+</html>
