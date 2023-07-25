@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 将一些浏览器全局提供给我们的变量、函数、对象等放到 window 身上
+
+    // 下面两种写法是等价的
+    console.log("abc")
+    window.console.log("abc")
+
+    // 下面两种写法是等价的
+    alert("abc")
+    window.alert("abc")
+
+
+    console.log(Object === window.Object) // true
+
+  </script>
+</body>
+</html>
