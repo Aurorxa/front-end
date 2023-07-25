@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function Student(name, age) {
+      this.name = name
+      this.age = age
+      this.eating = function () {
+        console.log(`${this.name}正在吃饭~`)
+      }
+    }
+
+    // 函数是对象，也是可以添加属性和方法；并且，在面向对象编程中，通过函数名添加的属性和方法，称之为静态属性和静态方法
+    Student.country = "中国"
+    Student.study = function () {
+      console.log("学生学习")
+    }
+
+    // 调用静态属性和静态方法
+    console.log(Student.country)
+    Student.study()
+
+    var stu = new Student("许大仙", 18)
+    console.log(stu.name)
+    console.log(stu.age)
+    stu.eating()
+
+  </script>
+</body>
+</html>
