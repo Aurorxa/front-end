@@ -15,6 +15,12 @@
     // 修改数组中的元素
     arr[0] = "田七"
     console.log(arr[0]) // 田七
+    // 新增数组中的元素（了解）
+    arr[arr.length] = "呵呵哒"
+    console.log(arr) // ['田七', '李四', '王五', '赵六', '呵呵哒']
+    // 删除数组中的元素 （了解）
+    delete arr[0]
+    console.log(arr) // [empty, '李四', '王五', '赵六', '呵呵哒']
   </script>
 </body>
 </html>
