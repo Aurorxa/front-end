@@ -17,11 +17,11 @@
     ]
 
     // 过滤出 keyword 含有 [aa,dd] 的数据
-    let keyword = ["cc", "dd"]
+    let filterKeywords = ["cc", "dd"]
 
     var filterArr = arr.filter(function (item) {
       const {keywords} = item
-      return keyword.every(value => keywords.includes(value))
+      return filterKeywords.every(value => keywords.includes(value))
     })
 
     console.log(filterArr)
