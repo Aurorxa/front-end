@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var arr = [2, 6, 1, 7, 4]
+    // 假设最大值和最小值刚开始都是数组中的第一个元素
+    var max = arr[0]
+    var min = arr[0]
+    // 循环遍历数组中的元素，和 max 和 min 逐一比较
+    for (var item of arr) {
+      if (item >= max) {
+        max = item
+      }
+      if (item <= min) {
+        min = item
+      }
+    }
+    console.log(`数组中元素的最大值是：${max}`) // 数组中元素的最大值是：7
+    console.log(`数组中元素的最小值是：${min}`) // 数组中元素的最小值是：1
+  </script>
+</body>
+</html>
