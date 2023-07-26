@@ -19,6 +19,7 @@
     // 过滤出 arr 中 keywords 含有 [aa,dd] 的数据
     let filterKeywords = ["cc", "dd"]
 
+    // 过滤 arr 中的元素，判断每个元素的 keywords 中是否包含 filterKeywords 中的每个元素
     var filterArr = arr.filter(function (item) {
       const {keywords} = item
       return filterKeywords.every(value => keywords.includes(value))
