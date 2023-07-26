@@ -10,6 +10,8 @@
   <script>
     var arr = ["张三", "李四", "王五"]
 
+    // 版本③ ：通过在 Array.prototype 中添加 XForEach 函数，并在 XForEach 中通过 this 关键字
+
     Array.prototype.XForEach = function (fn) {
       for (let i = 0; i < this.length; i++) {
         fn(this[i], i, this)
