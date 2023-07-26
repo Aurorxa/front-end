@@ -10,8 +10,14 @@
   <script>
     /* indexOf 只能针对数组中的元素是基本类型数据，有局限~ */
     var arr = [1, 2, 3, 4, 5]
-    console.log(arr.indexOf(2)) // 1
-    console.log(arr.indexOf(-1)) // -1
+    console.log(arr.includes(2)) // true
+    console.log(arr.includes(-1)) // false
+
+    arr = [
+      {name: 'Alice'}, {name: 'Bob'}, {name: 'Charlie'}
+    ]
+
+    console.log(arr.includes({name: 'Bob'})) // false
   </script>
 </body>
 </html>

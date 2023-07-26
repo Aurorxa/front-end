@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var arr = [
+      {id: 100, name: "张三", age: 18},
+      {id: 200, name: "李四", age: 19},
+      {id: 300, name: "王五", age: 20},
+      {id: 400, name: "赵六", age: 21},
+      {id: 500, name: "田七", age: 22},
+    ]
+
+    var result = arr.find(function (item, index, arr) {
+      return item.id === 100
+    })
+
+    console.log(result) // {id: 100, name: '张三', age: 18}
+
+    result = arr.find(function (item, index, arr) {
+      return item.id === 600
+    })
+
+    console.log(result) // undefined
+
+  </script>
+</body>
+</html>
