@@ -14,21 +14,19 @@
 <body>
 
   <div class="box">
-    <h1>我是h1元素</h1>
-    <p>我是p元素</p>
+    <button class="active">1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
   </div>
 
-  <ul class="ul-list">
-    <li class="active">1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-  </ul>
-
   <script>
-    let ulEl = document.querySelector(".ul-list")
-    ulEl.addEventListener('click', function (e) {
+    let box = document.querySelector(".box")
+    box.addEventListener('click', function (e) {
+      if (e.target.nodeName !== 'BUTTON') {
+        return
+      }
       let active = document.querySelector(".active")
       active.classList.remove("active")
       e.target.classList.add("active")
