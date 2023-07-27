@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 使用 ES6 来定义一个类
+    class Person {
+      // 构造函数
+      constructor(name, age) {
+        this.name = name
+        this.age = age
+      }
+
+      // 方法
+      eating() {
+        console.log(`${this.name}正在吃饭....`)
+      }
+
+      // 方法
+      sleep() {
+        console.log(`${this.name}正在睡觉....`)
+      }
+    }
+
+    // 定义一个学生类
+    class Student extends Person {
+      constructor(name, age) {
+        super(name, age)
+      }
+
+      // 学习
+      study() {
+        console.log(`${this.name}正在学习....`)
+      }
+    }
+
+    // 定义一个老师类
+    class Teacher extends Person {
+      constructor(name, age) {
+        super(name, age)
+      }
+
+      // 学习
+      teach() {
+        console.log(`${this.name}正在教学....`)
+      }
+    }
+
+    const stu = new Student("张三", 18)
+    stu.eating()
+    stu.sleep()
+    stu.study()
+
+    const tea = new Teacher("李四", 20)
+    tea.eating()
+    tea.sleep()
+    tea.teach()
+
+  </script>
+</body>
+</html>
