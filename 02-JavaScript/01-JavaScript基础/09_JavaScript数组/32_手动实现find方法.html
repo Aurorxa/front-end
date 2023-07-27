@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var arr = ["张三", "李四", "王五"]
+
+    // 通过在 Array.prototype 中添加 XFind 函数，并在 XForEach 中通过 this 关键字
+    Array.prototype.XFind = function (fn) {
+      for (let i = 0; i < this.length; i++) {
+        let flag = fn(this[i], i, this)
+        if (flag) {
+          return this[i]
+        }
+      }
+    }
+
+    let result = arr.XFind((item) => {
+      return item === "张三"
+    })
+    console.log(result)
+
+    result = arr.XFind((item) => {
+      return item === "赵六"
+    })
+    console.log(result)
+
+  </script>
+</body>
+</html>
