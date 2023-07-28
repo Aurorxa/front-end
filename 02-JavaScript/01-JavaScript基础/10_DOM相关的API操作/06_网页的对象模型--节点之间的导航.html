@@ -7,10 +7,40 @@
   <title>Title</title>
 </head>
 <body>
-
+  <div class="box">
+    <!-- 我是注释 -->
+    <h1 class="title">我是h1元素</h1>
+    <div>我是div元素</div>
+    <div class="desc">我是一个描述文字</div>
+    我是文本
+  </div>
 
   <script>
-
+    /* 太麻烦了~ */
+    // 获取 body 节点
+    var bodyEl = document.body
+    console.log(`body`, bodyEl)
+    // 获取换行
+    var emptyNode = bodyEl.childNodes[0]
+    console.log(`emptyNode`, emptyNode)
+    // 获取 box 元素
+    var boxEl = bodyEl.childNodes[1]
+    console.log(`boxEl`, boxEl)
+    // 获取注释
+    var commentEl = boxEl.childNodes[2]
+    console.log(`commentEl`, commentEl)
+    // 获取 h1 元素
+    var h1l = boxEl.childNodes[3]
+    console.log(`h1l`, h1l)
+    // 获取 div 元素
+    var divEl = boxEl.childNodes[5]
+    console.log(`divEl`, divEl)
+    // 获取 div 元素
+    var divDescEl = boxEl.childNodes[7]
+    console.log(`divDescEl`, divDescEl)
+    // 获取文本
+    var textEl = boxEl.childNodes[8]
+    console.log(`textEl`, textEl)
   </script>
 
 </body>
