@@ -12,6 +12,13 @@
       background-color: orange;
       transition: all 0.5s;
     }
+
+    .active {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -24,10 +31,14 @@
     var box = document.querySelector(".box")
 
     btn.onclick = function () {
-      box.style.color = 'white'
-      box.style.backgroundColor = 'pink'
-      box.style.width = '200px'
-      box.style.height = '200px'
+      // ① 直接修改 style
+      // box.style.color = 'white'
+      // box.style.backgroundColor = 'pink'
+      // box.style.width = '200px'
+      // box.style.height = '200px'
+
+      // ② 动态添加 class
+      box.classList.add("active")
     }
   </script>
 
