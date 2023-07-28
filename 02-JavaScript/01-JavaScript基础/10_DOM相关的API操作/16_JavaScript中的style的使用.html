@@ -6,11 +6,14 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Title</title>
   <style>
+    div {
+      transition: all 0.5s;
+    }
+
     .box {
       width: 100px;
       height: 100px;
       background-color: orange;
-      transition: all 0.5s;
     }
 
     .active {
@@ -38,7 +41,7 @@
       // box.style.height = '200px'
 
       // ② 动态添加 class
-      box.classList.add("active")
+      box.className = 'active'
     }
   </script>
 
