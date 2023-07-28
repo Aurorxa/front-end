@@ -10,11 +10,17 @@
       transition: all 0.5s;
     }
 
+    .box {
+      display: none;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
   </style>
 </head>
 <body>
 
-  <div class="box" style="display: none;width: 200px;height: 200px;background-color:pink;">我是div元素</div>
+  <div class="box">我是div元素</div>
   <button class="btn">按钮</button>
 
   <script>
@@ -23,8 +29,7 @@
 
     btn.onclick = function () {
       // 如果我们通过 style 将某个 CSS 的属性值设置为 "" ，那么就会使用 CSS 的默认值；对于 div 来说，不就是 block 吗？
-      box.style.display = ""
-      console.log(box.style.display)
+      console.log(getComputedStyle(box).display);
     }
   </script>
 
