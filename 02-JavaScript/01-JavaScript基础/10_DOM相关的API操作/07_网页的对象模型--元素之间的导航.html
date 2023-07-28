@@ -7,7 +7,26 @@
   <title>Title</title>
 </head>
 <body>
+  <div class="box">
+    <!-- 我是注释 -->
+    <h1 class="title">我是h1元素</h1>
+    <div>我是div元素</div>
+    <div class="desc">我是一个描述文字</div>
+    我是文本
+  </div>
 
-  <script></script>
+  <script>
+    /* 太麻烦了~ */
+    var bodyEl = document.body
+    console.log('body', bodyEl) // body 元素
+    var boxEl = bodyEl.firstElementChild
+    console.log('boxEl', boxEl) // box 元素
+    var h1El = boxEl.firstElementChild
+    console.log('h1El', h1El) // h1 元素
+    var divEl = boxEl.children[1]
+    console.log('divEl', divEl) // div 元素
+    var divDescEl = boxEl.lastElementChild
+    console.log('divDescEl', divDescEl) // div.desc 元素
+  </script>
 </body>
 </html>
