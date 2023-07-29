@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+
+    .box p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p>我是p元素</p>
+  </div>
+  <button class="btn">按钮</button>
+
+  <script>
+    // 获取元素
+    var bodyEl = document.body
+    var btnEl = document.querySelector(".btn")
+    var boxEl = document.querySelector(".box")
+
+    // 复制元素
+    btnEl.onclick = function () {
+      // 复制一个元素，如果传入的参数是 true ，就表示深度复制
+      var clone = boxEl.cloneNode()
+      bodyEl.append(clone)
+    }
+
+  </script>
+
+</body>
+</html>
