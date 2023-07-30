@@ -28,6 +28,17 @@
     <div class="inner"></div>
   </div>
 
-  
+  <script>
+    // 获取元素
+    var boxEl = document.querySelector(".box")
+    var innerEl = document.querySelector(".inner")
+    // 添加事件
+    boxEl.addEventListener("click", function () {
+      console.log("boxEl被点击了")
+    })
+    innerEl.addEventListener("click", function () {
+      console.log("innerEl被点击了")
+    })
+  </script>
 </body>
 </html>
