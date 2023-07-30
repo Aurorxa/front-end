@@ -39,7 +39,7 @@
     // 需求：点击某个 li，其它的 li 移除 active
     boxEl.addEventListener('click', function (event) {
       // 查询含有 active 类的 li
-      var activeEl = document.querySelector(".active")
+      var activeEl = boxEl.querySelector(".active")
       // 如果存在这种类型的 li 就移除 active
       if (activeEl) {
         activeEl.classList.remove("active")
