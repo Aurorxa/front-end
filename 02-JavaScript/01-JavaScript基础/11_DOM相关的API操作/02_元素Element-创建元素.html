@@ -27,12 +27,12 @@
     /* 推荐使用 DOM 操作的 API 来插入元素 */
     var boxEl = document.querySelector(".box")
 
-    // 创建一个 DOM 元素
+    // 创建一个 DOM 元素，在内存中
     var h2El = document.createElement("h2")
     h2El.classList.add("title", "active")
     h2El.textContent = "我是h2元素"
 
-    // 将元素插入到 boxEl 中的最后一个位置
+    // 将内存中的元素插入到 boxEl 中的最后一个位置
     boxEl.append(h2El)
 
   </script>
