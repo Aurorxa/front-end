@@ -33,16 +33,26 @@
     var boxEl = document.querySelector(".box")
     var innerEl = document.querySelector(".inner")
     var bodyEl = document.body
-    // 添加事件
+    // // 添加事件，默认情况下是事件冒泡
+    // boxEl.addEventListener("click", function () {
+    //   console.log("box被点击了")
+    // })
+    // innerEl.addEventListener("click", function () {
+    //   console.log("inner被点击了")
+    // })
+    // bodyEl.addEventListener("click", function () {
+    //   console.log("body被点击了")
+    // })
+    // 添加事件，可以设置为事件捕获
     boxEl.addEventListener("click", function () {
       console.log("box被点击了")
-    })
+    }, true)
     innerEl.addEventListener("click", function () {
       console.log("inner被点击了")
-    })
+    }, true)
     bodyEl.addEventListener("click", function () {
       console.log("body被点击了")
-    })
+    }, true)
   </script>
 </body>
 </html>
