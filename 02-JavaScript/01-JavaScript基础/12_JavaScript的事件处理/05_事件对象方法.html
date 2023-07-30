@@ -22,8 +22,12 @@
   <script>
     // 获取元素
     var boxEl = document.querySelector(".box")
+    var btnEl = document.querySelector(".btn")
     var bodyEl = document.body
     // 添加事件
+    btnEl.addEventListener("click", function () {
+      console.log("btn发生了点击")
+    })
     boxEl.addEventListener("click", function (event) {
       // 阻止事件的进一步传递（传播）
       event.stopPropagation()
