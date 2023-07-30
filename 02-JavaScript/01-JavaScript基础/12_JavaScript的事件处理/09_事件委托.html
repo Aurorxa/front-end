@@ -35,14 +35,11 @@
   </ul>
 
   <script>
-    var liEls = document.querySelectorAll("li")
+    var boxEl = document.querySelector(".box")
 
-    // 每个 li 都监听自己的点击，并且都有自己的处理函数
-    for (var liEl of liEls) {
-      liEl.addEventListener('click', function () {
-        this.classList.add("active")
-      })
-    }
+    boxEl.addEventListener('click', function (event) {
+      event.target.classList.toggle("active")
+    })
 
   </script>
 
