@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+
+    .active {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <p>我是p元素</p>
+  </div>
+
+  <script>
+    /* 推荐使用原生 DOM API 来插入元素 */
+    var boxEl = document.querySelector(".box")
+
+    // 创建一个 DOM 元素，在内存中
+    var h2El = document.createElement("h2")
+    h2El.classList.add("title", "active")
+    h2El.textContent = "我是h2元素"
+
+    // 将内存中的元素插入到 boxEl 中的最前面一个位置
+    boxEl.prepend(h2El)
+
+  </script>
+
+</body>
+</html>
