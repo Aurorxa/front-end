@@ -36,8 +36,15 @@
 
   <script>
     var boxEl = document.querySelector(".box")
-    // 使用事件委托来优化代码
+    // 需求：点击某个 li，其它的 li 移除 active
     boxEl.addEventListener('click', function (event) {
+      // 查询含有 active 类的 li
+      var activeEl = document.querySelector(".active")
+      // 移除 active
+      if (activeEl) {
+        activeEl.classList.remove("active")
+      }
+      // 在目标 li 上添加 active
       event.target.classList.add("active")
     })
 
