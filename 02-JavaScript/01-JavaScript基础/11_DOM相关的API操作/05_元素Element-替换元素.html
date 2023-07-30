@@ -12,26 +12,28 @@
       background-color: orange;
     }
 
-    .box p {
-      color: red;
+    .active {
+      background-color: pink;
     }
   </style>
 </head>
 <body>
+
   <div class="box">
     <p>我是p元素</p>
   </div>
-  <button class="btn">移除box元素的按钮</button>
 
   <script>
-    // 获取元素
-    var btnEl = document.querySelector(".btn")
+    /* 推荐使用原生 DOM API 来插入元素 */
     var boxEl = document.querySelector(".box")
 
-    // 移除元素
-    btnEl.onclick = function () {
-      boxEl.remove()
-    }
+    // 创建一个 DOM 元素，在内存中
+    var h2El = document.createElement("h2")
+    h2El.classList.add("title", "active")
+    h2El.textContent = "我是h2元素"
+
+    // 替换元素
+    boxEl.replaceWith(h2El)
 
   </script>
 
