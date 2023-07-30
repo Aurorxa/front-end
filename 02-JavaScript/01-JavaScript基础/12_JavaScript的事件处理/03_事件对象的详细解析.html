@@ -24,8 +24,8 @@
     var boxEl = document.querySelector(".box")
     var btnEl = document.querySelector(".btn")
     // 添加事件
-    boxEl.addEventListener("click", function () {
-      console.log("box发生了点击~~~")
+    boxEl.addEventListener("click", function (event) {
+      console.log("box发生了点击~~~", event)
     })
     btnEl.addEventListener("click", function () {
       console.log("按钮发生了点击---")
