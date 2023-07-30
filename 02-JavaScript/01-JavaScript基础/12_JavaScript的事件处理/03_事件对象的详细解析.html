@@ -26,6 +26,8 @@
     // 添加事件
     boxEl.addEventListener("click", function (event) {
       console.log("box发生了点击~~~", event)
+      console.log('target：', event.target)
+      console.log('currentTarget：', event.currentTarget)
     })
     btnEl.addEventListener("click", function () {
       console.log("按钮发生了点击---")
