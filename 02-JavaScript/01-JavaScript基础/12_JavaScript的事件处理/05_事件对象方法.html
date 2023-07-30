@@ -25,7 +25,7 @@
     var bodyEl = document.body
     // 添加事件
     boxEl.addEventListener("click", function (event) {
-      // 阻止事件的进一步传递
+      // 阻止事件的进一步传递（传播）
       event.stopPropagation()
     })
     bodyEl.addEventListener("click", function () {
