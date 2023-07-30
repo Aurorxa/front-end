@@ -40,7 +40,7 @@
     boxEl.addEventListener('click', function (event) {
       // 查询含有 active 类的 li
       var activeEl = document.querySelector(".active")
-      // 移除 active
+      // 如果存在这种类型的 li 就移除 active
       if (activeEl) {
         activeEl.classList.remove("active")
       }
