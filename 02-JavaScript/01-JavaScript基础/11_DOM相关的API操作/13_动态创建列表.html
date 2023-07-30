@@ -14,7 +14,7 @@
     var boxEl = document.querySelector(".box")
     while (true) {
       var inputValue = prompt("请输入数据（N或n，退出）：")
-      if (inputValue === 'N'.toLowerCase()) {
+      if (inputValue.toLowerCase() === 'n') {
         break
       }
       var liEl = document.createElement("li")
