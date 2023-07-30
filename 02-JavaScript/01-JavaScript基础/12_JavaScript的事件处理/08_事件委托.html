@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      width: 50px;
+      margin: 50px auto;
+    }
+
+    .active {
+      color: red;
+      font-size: 20px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="box">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <script>
+    var liEls = document.querySelectorAll("li")
+
+    for (var liEl of liEls) {
+      liEl.addEventListener('click', function () {
+        this.classList.add("active")
+      })
+    }
+
+
+  </script>
+
+</body>
+</html>
