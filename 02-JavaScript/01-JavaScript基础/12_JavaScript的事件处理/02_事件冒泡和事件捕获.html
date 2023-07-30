@@ -32,12 +32,16 @@
     // 获取元素
     var boxEl = document.querySelector(".box")
     var innerEl = document.querySelector(".inner")
+    var bodyEl = document.body
     // 添加事件
     boxEl.addEventListener("click", function () {
-      console.log("boxEl被点击了")
+      console.log("box被点击了")
     })
     innerEl.addEventListener("click", function () {
-      console.log("innerEl被点击了")
+      console.log("inner被点击了")
+    })
+    bodyEl.addEventListener("click", function () {
+      console.log("body被点击了")
     })
   </script>
 </body>
