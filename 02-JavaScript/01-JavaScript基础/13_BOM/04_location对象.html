@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <button class="baidu">跳转到百度</button>
+  <button class="bing">跳转到必应</button>
+  <button class="reload">重新加载页面</button>
+
+  <script>
+    // 获取元素
+    var baiduBtn = document.querySelector(".baidu")
+    var bingBtn = document.querySelector(".bing")
+    var reloadBtn = document.querySelector(".reload")
+    // 添加事件监听
+    baiduBtn.addEventListener('click', function () {
+      // 赋值一个新的URL，并且跳转到该URL中
+      location.assign("https://www.baidu.com")
+    })
+    bingBtn.addEventListener('click', function () {
+      // 打开一个新的URL，并且跳转到该URL中（不同的是不会在浏览记录中留下之前的记录）；
+      location.replace("https://cn.bing.com/")
+    })
+    reloadBtn.addEventListener('click', function () {
+      // 重新加载页面，可以传入一个 Boolean 类型；相当于按了 F5 快捷键
+      location.reload()
+    })
+  </script>
+</body>
+</html>

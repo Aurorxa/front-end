@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 将指定格式的字符串转换为 URLSearchParams 对象
+    var urlSearchParams = new URLSearchParams("?name=许大仙&age=18")
+    console.log(typeof urlSearchParams) // object
+
+    // 将 URLSearchParams 对象转换为字符串
+    // 中文会使用 encodeURIComponent 和 decodeURIComponent 进行编码和解码
+    console.log(urlSearchParams.toString()) // name=%E8%AE%B8%E5%A4%A7%E4%BB%99&age=18
+  </script>
+</body>
+</html>
