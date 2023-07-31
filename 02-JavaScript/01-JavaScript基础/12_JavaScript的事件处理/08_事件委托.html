@@ -37,7 +37,7 @@
   <script>
     var liEls = document.querySelectorAll("li")
 
-    // 每个 li 都监听自己的点击，并且都有自己的处理函数
+    // 每个 li 都监听自己的点击，并且都有自己的处理函数，性能不是很好
     for (var liEl of liEls) {
       liEl.addEventListener('click', function () {
         this.classList.add("active")
