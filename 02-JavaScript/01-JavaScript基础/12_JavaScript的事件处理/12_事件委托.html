@@ -26,10 +26,10 @@
   </div>
 
   <script>
-    var boxEl = document.querySelector(".box")
+    let boxEl = document.querySelector(".box")
 
     boxEl.addEventListener('click', function (event) {
-      var {dataset: {action}, textContent} = event.target
+      const {dataset: {action}, textContent} = event.target
       switch (action) {
         case "new":
           console.log(textContent)
