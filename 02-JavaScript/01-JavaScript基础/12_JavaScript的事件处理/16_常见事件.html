@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .box .inner {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="inner"></div>
+  </div>
+
+  <script>
+    // 获取元素
+    var boxEl = document.querySelector(".box")
+    var innerEl = document.querySelector(".inner")
+    // 注册事件监听
+    boxEl.addEventListener("mouseover", function () {
+      console.log("box被鼠标滑过了")
+    })
+    innerEl.addEventListener("mouseover", function () {
+      console.log("inner被鼠标滑过了")
+    })
+  </script>
+
+</body>
+
+</html>;
