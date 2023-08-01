@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function foo() {
+      console.log('foo', this) // String{'abc'}
+    }
+
+    var obj = {
+      name: '张三',
+      foo: foo
+    }
+
+    obj.foo.apply("abc")
+  </script>
+</body>
+</html>
