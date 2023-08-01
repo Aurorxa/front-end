@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function foo(name, age) {
+      console.log('foo', this, name, age)
+    }
+
+    // 原始调用
+    foo("张三", 30)
+
+    // call 调用
+    foo.call("abc", "李四", 10)
+
+    // apply
+    foo.apply("abc", ["王五", 50])
+  </script>
+</body>
+</html>
