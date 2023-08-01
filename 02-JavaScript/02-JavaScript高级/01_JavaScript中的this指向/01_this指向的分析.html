@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 定义函数
+    function foo() {
+      console.log('foo', this);
+    }
+
+    // ① 默认调用
+    foo() // window
+
+    // ② 通过对象调用，即将 foo 放入到对象中，然后通过对象进行调用
+    var obj = {
+      name: "张三",
+      age: 30,
+      foo: foo
+    }
+
+    obj.foo() // obj 对象
+
+    // ③ 通过 call 或 apply 带哦用
+    foo.call("abc") // String{'abc'}
+
+  </script>
+</body>
+</html>
