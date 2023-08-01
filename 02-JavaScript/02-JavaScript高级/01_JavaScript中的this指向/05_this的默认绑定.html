@@ -8,12 +8,18 @@
 </head>
 <body>
   <script>
-    // 普通的函数被独立调用
-    function foo() {
-      console.log('foo', this) // window
+    // 函数定义在对象中，但是独立调用的
+    var obj = {
+      name: "张三",
+      age: 18,
+      bar: function () {
+        console.log('bar', this); // window
+      }
     }
 
-    foo()
+    var baz = obj.bar
+    baz()
+    
   </script>
 </body>
 </html>
