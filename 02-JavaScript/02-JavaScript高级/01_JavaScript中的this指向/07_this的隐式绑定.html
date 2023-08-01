@@ -12,15 +12,22 @@
       隐式绑定：当`函数`作为`对象`的`方法`调用时，this 指向调用该方法的对象。换言之，它的调用位置是通过某个对象发起的函数调用。
     */
     function foo() {
-      console.log('foo', this) // obj
+      console.log('foo', this) // obj1
     }
 
-    var obj = {
+
+    var obj1 = {
       name: '张三',
       foo: foo
     }
 
-    obj.foo()
+    var obj2 = {
+      name: '李四',
+      obj1: obj1
+    }
+
+
+    obj2.obj1.foo()
 
   </script>
 </body>
