@@ -8,12 +8,16 @@
 </head>
 <body>
   <script>
+    // 箭头函数中没有 this , 默认是按照变量的查找规则进行查找
     var bar = () => {
       console.log(this);
       console.log('bar', this);
     }
 
     bar()
+
+    bar.apply("abc")
+
   </script>
 </body>
 </html>
