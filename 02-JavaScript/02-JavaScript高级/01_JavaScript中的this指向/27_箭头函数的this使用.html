@@ -17,6 +17,20 @@
 
     bar.apply("abc") // window
 
+
+    // this 的查找规则
+    var obj = {
+      name: "张三",
+      foo: function () {
+        console.log(this);
+      }
+    }
+
+    obj.foo() // obj
+
+    var baz = obj.foo
+    baz() // window
+
   </script>
 </body>
 </html>
