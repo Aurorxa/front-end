@@ -32,7 +32,7 @@
     // 箭头函数中没有 this 绑定，并且无论在哪里调用箭头函数，它的 this 值都不会改变
     var obj2 = {
       name: '李四',
-      foo: () => {
+      foo: () => { // 箭头函数
         console.log('foo', this)
       }
     }
