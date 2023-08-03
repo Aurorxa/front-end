@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 避免 this 绑定问题 */
+    class Counter {
+      constructor() {
+        this.count = 0
+      }
+
+      increment() {
+        setInterval(() => {
+          this.count++ // 这里的 this 是 Counter 的实例对象，因为 setInterval 如果使用普通函数，默认就是 window
+          console.log(this.count)
+        }, 1000)
+      }
+
+    }
+
+    const counter = new Counter()
+    counter.increment()
+    console.log(counter.count)
+
+  </script>
+</body>
+</html>
