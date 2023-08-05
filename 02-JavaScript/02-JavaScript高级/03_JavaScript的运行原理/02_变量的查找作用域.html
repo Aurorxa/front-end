@@ -8,14 +8,18 @@
 </head>
 <body>
   <script>
+    /*
+    `作用域链`是指`在嵌套函数中访问变量时的一种机制`。
+    当在内部函数中访问变量时，JavaScript 会先在当前函数的作用域中查找；
+    如果找不到，则继续在外部函数的作用域中查找，直到找到该变量或者到达全局作用域。
+    */
     var message = "Global Message"
 
     function foo() {
       var message = "foo message"
 
       function bar() {
-        var message = "bar message"
-        console.log(message)
+        console.log(message)  // foo message
       }
 
       return bar
