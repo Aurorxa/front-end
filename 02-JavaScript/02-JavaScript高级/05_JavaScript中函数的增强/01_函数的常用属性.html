@@ -18,14 +18,14 @@
       return a + b + c
     }
 
-    console.log('函数的参数个数：' + bar.length) // 函数的参数个数：3
+    console.log('函数中形参的个数：' + bar.length) // 函数的参数个数：3
 
     function baz(a, b, ...rest) {
 
       return a + b + Array.from(rest).reduce((c, d) => c + d)
     }
 
-    console.log('函数的参数个数：' + baz.length) // 函数的参数个数：2
+    console.log('函数中形参的个数：' + baz.length) // 函数的参数个数：2
 
   </script>
 </body>
