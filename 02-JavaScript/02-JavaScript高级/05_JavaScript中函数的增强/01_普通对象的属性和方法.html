@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 定义普通对象
+    var obj = {
+      name: "张三",
+      eating: function () {
+        console.log(`${this.name}正在吃饭...`)
+      }
+    }
+
+    // 普通对象调用属性
+    console.log(obj.name)
+    // 普通对象调用方法
+    obj.eating()
+
+    // 普通对象增加属性和方法
+    obj.age = 20
+    obj.study = function () {
+      console.log(`${this.name}正在学习...`)
+    }
+
+    // 普通对象调用属性和方法
+    console.log(obj.age)
+    obj.study()
+
+  </script>
+</body>
+</html>

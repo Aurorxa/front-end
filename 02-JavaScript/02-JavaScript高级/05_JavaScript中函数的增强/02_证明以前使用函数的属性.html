@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 定义普通函数
+    function add(a, b) {
+      return a + b
+    }
+
+    // 函数的普通调用
+    var result = add(1, 2)
+    console.log(result) // 3
+
+    // 通过 call、apply 或 bind 调用
+    result = add.call(window, 1, 2)
+    console.log(result) // 3
+  </script>
+</body>
+</html>

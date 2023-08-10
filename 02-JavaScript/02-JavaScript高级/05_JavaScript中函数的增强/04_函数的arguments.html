@@ -8,14 +8,11 @@
 </head>
 <body>
   <script>
-    var foo = function () {
-      Array.from(arguments).forEach((e) => {
-            console.log(e);
-          }
-      )
+    function foo(a, b, c) {
+      console.log(Array.isArray(arguments)) // false
     }
 
-    foo(1, 2, 3)
+    foo()
   </script>
 </body>
 </html>
