@@ -33,6 +33,7 @@
     }
 
     Student.prototype = new Person()
+    Student.prototype.constructor = Student
 
     Student.prototype.studying = function () {
       console.log(`${this.name}正在学习...，考了 ${this.score} 分`)
