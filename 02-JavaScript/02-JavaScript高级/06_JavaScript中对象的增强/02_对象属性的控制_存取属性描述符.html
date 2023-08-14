@@ -26,6 +26,7 @@
         _name = value
         console.log(`set方法被调用了，设置的值是：${value}`)
       },
+      // 获取属性时会执行的函数
       get: function () {
         console.log(`get方法被调用了`)
         return _name
