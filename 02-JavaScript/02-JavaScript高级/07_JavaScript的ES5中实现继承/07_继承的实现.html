@@ -28,6 +28,7 @@
 
 
     function Student(name, age, gender, score) {
+      Person.call(this, name, age, gender)
       this.score = score
     }
 
