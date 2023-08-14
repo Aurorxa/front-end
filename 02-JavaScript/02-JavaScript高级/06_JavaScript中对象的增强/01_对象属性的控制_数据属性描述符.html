@@ -8,11 +8,14 @@
 </head>
 <body>
   <script>
-    "use strict"
+    /* 数据属性描述符 */
     var obj = {
       name: "许大仙",
       age: 18
     }
+
+    var nameOwnPropertyDescriptor = Object.getOwnPropertyDescriptor(obj, "name");
+    console.log(`查看 name 属性对象的数据属性描述符：${nameOwnPropertyDescriptor}`)
 
     // 对对象中属性进行精准的限制
     Object.defineProperty(obj, "name", {
