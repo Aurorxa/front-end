@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 参数复用
+    // 需求：定义一个计算税后价格的函数
+
+    // 普通函数实现
+    function calculateTax(price, taxRate) {
+      return price * (1 + taxRate);
+    }
+
+    console.log("普通函数实现：" + calculateTax(100, 0.08));
+
+    // 柯里化函数实现
+    function curryCalculateTax(taxRate) {
+      return function (price) {
+        return price * (1 + taxRate)
+      }
+    }
+
+    var curryCalculate = curryCalculateTax(0.08)
+    console.log("柯里化函数实现：" + curryCalculate(100));
+  </script>
+</body>
+</html>

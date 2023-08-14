@@ -8,21 +8,14 @@
 </head>
 <body>
   <script>
-    "use strict"
-    var obj = {
-      name: "许大仙",
-      age: 18
+    "use strict";
+
+    function exampleFunction() {
+      x = 10; // 在严格模式下，这会导致错误，因为 x 未声明
+      return x;
     }
 
-    Object.defineProperty(obj, "name", {
-      // obj.name 属性不可以被删除
-      configurable: false,
-
-    })
-
-    delete obj.name
-
-    console.log(obj.name)
+    console.log(exampleFunction());
   </script>
 </body>
 </html>

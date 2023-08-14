@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 部分应用
+    // 需求：一个用于创建 HTML 元素的函数
+
+    // 普通函数实现
+    function createElement(tag, className, text) {
+      const element = document.createElement(tag);
+      element.className = className;
+      element.textContent = text;
+      return element;
+    }
+
+    console.log("普通函数实现：" + createElement('div', 'box', "呵呵哒"));
+
+    // 柯里化函数实现
+    function curryCreateElement(tag, className) {
+      return function (text) {
+        const element = document.createElement(tag);
+        element.className = className;
+        element.textContent = text;
+        return element;
+      }
+    }
+
+    var createDivWithClass = curryCreateElement('div', 'box')
+    console.log("柯里化函数实现：" + createDivWithClass('呵呵哒'));
+  </script>
+</body>
+</html>
