@@ -9,29 +9,30 @@
 <body>
   <script>
 
-    function Person() {
-
+    function Person(name, age) {
+      this.name = name
+      this.age = age
     }
 
-    // 重写原型对象
-    Person.prototype = {
-      name: "许大仙",
-      age: 18,
-      sex: "男",
-      eating: function () {
-        console.log("吃饭")
-      },
-      sleeping: function () {
-        console.log("睡觉")
-      }
+    Person.prototype.running = function () {
+      console.log(this.name + " is running")
     }
 
-    Object.defineProperty(Person.prototype, "constructor", {
-      enumerable: false,
-      value: Person
-    })
+    function Student(name, age, score) {
+      Person.call(this, name, age)
+      this.score = score
+    }
 
-    console.dir(Person)
+    function F() {
+      
+    }
+
+    F.prototype = Person.prototype
+    Student.prototype = new F()
+
+    var s = new Student("小明", 18, 90)
+    s.running()
+
 
   </script>
 </body>
