@@ -11,26 +11,25 @@
     function Student(name, age) {
       this.name = name
       this.age = age
-
-      this.running = function () {
-        console.log(`${this.name}正在跑 ....`)
-      }
     }
 
-    Student.prototype.eating = function () {
-      console.log(`${this.name}正在吃饭 ....`)
+    Student.prototype.running = function () {
+      console.log(`${this.name}正在跑 ....`)
     }
+
+    Student.prototype.address = "中国"
 
     var stu1 = new Student("张三", 20)
+    stu1.address = "北京"
+    console.log(stu1.address)
     stu1.running()
-    stu1.eating()
 
     var stu2 = new Student("李四", 30)
+    console.log(stu2.address)
     stu2.running()
-    stu2.eating()
 
-    console.log(stu1.running === stu2.running) // false
-    console.log(stu1.eating === stu2.eating) // true
+    console.dir(stu1)
+    console.dir(stu2)
 
   </script>
 </body>
