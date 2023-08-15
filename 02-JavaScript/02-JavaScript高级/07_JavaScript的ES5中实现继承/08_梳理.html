@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+
+      this.running = function () {
+        console.log(this.name + " is running")
+      }
+    }
+
+    Person.prototype.sleeping = function () {
+      console.log(this.name + " is sleeping")
+    }
+
+    var p1 = new Person("John", 30)
+    p1.running()
+    p1.sleeping()
+
+
+    var p2 = new Person("Jane", 20)
+    p2.running()
+    p2.sleeping()
+
+  </script>
+</body>
+</html>
