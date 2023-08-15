@@ -11,6 +11,10 @@
     // 方案④
     function inherit(SubType, SuperType) {
       SubType.prototype = Object.create(SuperType.prototype)
+      Object.defineProperty(SubType, "constructor", {
+        enumerable: false,
+        value: SubType
+      })
     }
   </script>
   <script>
