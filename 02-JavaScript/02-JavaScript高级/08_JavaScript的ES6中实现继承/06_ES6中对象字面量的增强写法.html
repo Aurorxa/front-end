@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    // 属性的增强
+    var name = "张三"
+
+    var obj = {
+      name,
+      age: 18
+    }
+
+    console.log(obj.name)
+
+    // 方法的增强
+    obj = {
+      saying: function () {
+        console.log(this.name + "正在唱歌....")
+      },
+      flying() {
+        console.log(this.name + "正在飞行....")
+      }
+    }
+
+    // 计算属性的简写
+    obj = {
+      _name: "",
+      set name(value) {
+        this._name = value
+      },
+      get name() {
+        return this._name
+      }
+    }
+
+    obj.name = "嘻嘻"
+    console.log(obj.name)
+
+
+  </script>
+</body>
+</html>
