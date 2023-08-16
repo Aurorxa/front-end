@@ -21,6 +21,7 @@
 
     // 方法的增强
     obj = {
+      name: "张三",
       saying: function () {
         console.log(this.name + "正在唱歌....")
       },
@@ -29,21 +30,16 @@
       }
     }
 
+    obj.saying()
+    obj.flying()
+
     // 计算属性的简写
+    var key = "address"
     obj = {
-      _name: "",
-      set name(value) {
-        this._name = value
-      },
-      get name() {
-        return this._name
-      }
+      [key]: "上海"
     }
 
-    obj.name = "嘻嘻"
-    console.log(obj.name)
-
-
+    console.log(obj[key])
   </script>
 </body>
 </html>
