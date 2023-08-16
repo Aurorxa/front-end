@@ -19,20 +19,23 @@
     }
 
     function Student(name, age, score) {
+      // 借用构造函数继承
       Person.call(this, name, age)
       this.score = score
     }
 
-    function F() {
+    // 原型链实现继承
+    // ① 创建一个父类的实例对象
+    // ② 将这个实例对象赋值该子类的 prototype 属性所指向的原型对象
+    Student.prototype = new Person()
 
-    }
+    var stu = new Student("张三", 18, 50)
+    console.log(stu)
+    stu.running()
 
-    F.prototype = Person.prototype
-    Student.prototype = new F()
-
-    var s = new Student("小明", 18, 90)
-    s.running()
-
+    var stu2 = new Student("李四", 18, 50)
+    console.log(stu2)
+    stu2.running()
 
   </script>
 </body>
