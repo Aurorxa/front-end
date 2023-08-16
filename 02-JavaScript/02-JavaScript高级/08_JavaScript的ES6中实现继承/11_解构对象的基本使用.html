@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 顺序问题：对象的解构是没有顺序的，根据 key 来解构的
+    var {age, name} = {name: "张三", age: 18, gender: "男"}
+    console.log(age, name)
+  </script>
+</body>
+</html>
