@@ -9,10 +9,18 @@
 <body>
   <script>
     class Person {
+      // 静态属性
+      static country = "中国"
+
       // 类中的构造函数
       constructor(name, age) {
         this.name = name;
         this.age = age;
+      }
+
+      // 静态方法（类方法）
+      static say() {
+        console.log("人说话")
       }
 
       // 实例方法
@@ -23,6 +31,9 @@
 
     var p1 = new Person("张三", 18)
     p1.running()
+
+    Person.say()
+    console.log(Person.country)
 
   </script>
 </body>
