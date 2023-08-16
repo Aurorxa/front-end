@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 默认值
+    var {
+      age,
+      name,
+      gender: X,
+      address = "北京"
+    } = {
+      name: "张三",
+      age: 18,
+      gender: "男"
+    }
+    console.log(age, name, X, address)
+  </script>
+</body>
+</html>
