@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    class Person {
+      // 类中的构造函数
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // 实例方法
+      running() {
+        console.log(this.name + " is running");
+      }
+    }
+
+    var p1 = new Person("张三", 18)
+    p1.running()
+
+  </script>
+</body>
+</html>
