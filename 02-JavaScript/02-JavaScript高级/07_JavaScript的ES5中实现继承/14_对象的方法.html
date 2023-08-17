@@ -8,7 +8,23 @@
 </head>
 <body>
   <script>
+    var obj = {
+      name: "许大仙",
+      age: 18
+    }
 
+    Object.setPrototypeOf(obj,
+        {
+          gender: "男",
+          address: "北京"
+        }
+    )
+
+    /* 判断某个属性是否属于对象本身（不是在原型上的属性） */
+    console.log(obj.hasOwnProperty("name")) // true
+    console.log(obj.hasOwnProperty("age")) // true
+    console.log(obj.hasOwnProperty("gender")) // true
+    console.log(obj.hasOwnProperty("address")) // true
   </script>
 </body>
 </html>
