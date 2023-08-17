@@ -8,35 +8,7 @@
 </head>
 <body>
   <script>
-
-    function Person(name, age) {
-      this.name = name
-      this.age = age
-    }
-
-    Person.prototype.running = function () {
-      console.log(this.name + " is running")
-    }
-
-    function Student(name, age, score) {
-      // 借用构造函数继承
-      Person.call(this, name, age)
-      this.score = score
-    }
-
-    // 原型链实现继承
-    // ① 创建一个父类的实例对象
-    // ② 将这个实例对象赋值该子类的 prototype 属性所指向的原型对象
-    Student.prototype = new Person()
-
-    var stu = new Student("张三", 18, 50)
-    console.log(stu)
-    stu.running()
-
-    var stu2 = new Student("李四", 18, 50)
-    console.log(stu2)
-    stu2.running()
-
+    console.log(Object.prototype.__proto__ === null) // true
   </script>
 </body>
 </html>
