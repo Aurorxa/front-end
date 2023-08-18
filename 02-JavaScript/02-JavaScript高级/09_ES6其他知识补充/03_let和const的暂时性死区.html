@@ -16,6 +16,15 @@
     let message = "Hello World"
     foo()
 
+    /* 暂时性死区形成之后，在该区域内的这个标识符不能被访问。 */
+    function bar() {
+      console.log(message) // Uncaught ReferenceError: Cannot access 'message' before initialization
+
+      let message = "baz"
+    }
+
+    bar()
+
   </script>
 </body>
 </html>
