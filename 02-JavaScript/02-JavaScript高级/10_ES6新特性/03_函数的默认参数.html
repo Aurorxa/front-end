@@ -14,7 +14,7 @@
       console.log(a, b)
     }
 
-    bar(1) // 1 '我是默认值'
+    bar(1, false) // 1 '我是默认值'
     bar(1, 2) // 1 2
 
     function baz(a, b) {
@@ -22,7 +22,7 @@
       console.log(a, b)
     }
 
-    baz(1) // 1 '我是默认值'
+    baz(1, 0) // 1 '我是默认值'
     baz(1, 2) // 1 2
 
     // ES6 函数的默认值
