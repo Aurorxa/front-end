@@ -8,12 +8,12 @@
 </head>
 <body>
   <script>
-    var gender = "男"
-    let age = 10
-    console.log(gender) // 男
-    console.log(window.age) // 男
-    console.log(age) // 10
-    console.log(window.age) // undefined
+    {
+      // var 定义的变量不会产生块级作用域
+      var num = 10
+      console.log(num) // 10
+    }
+    console.log(num) // 10
   </script>
 </body>
 </html>
