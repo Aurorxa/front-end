@@ -13,14 +13,21 @@
       console.log(obj.name, obj.age)
     }
 
-    foo({name: "张三", age: 16})
+    foo()
 
     /* 默认参数的解构写法二 */
-    function bar({name = "许大仙", age = 18} = {}) {
+    function bar({name, age} = {name: "许大仙", age: 18}) {
       console.log(name, age)
     }
 
-    bar({name: "张三", age: 16})
+    bar()
+
+    /* 默认参数的解构写法三 */
+    function baz({name = "许大仙", age = 18} = {}) {
+      console.log(name, age)
+    }
+
+    baz()
   </script>
 </body>
 </html>
