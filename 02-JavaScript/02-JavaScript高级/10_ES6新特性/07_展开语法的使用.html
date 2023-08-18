@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 基本使用 */
+    let arr = [1, 2, 3, 4, 5]
+
+    function foo(a, b, ...args) {
+      console.log(a, b, args);
+    }
+
+    foo(...arr) // 1 2 [3, 4, 5]
+  </script>
+</body>
+</html>
