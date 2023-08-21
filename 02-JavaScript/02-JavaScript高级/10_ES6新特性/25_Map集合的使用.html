@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 创建一个 Map 集合
+    const map = new Map()
+    // 向 Map 集合中添加数据
+    map.set('name', '张三')
+    map.set('age', 18)
+    map.set('sex', '男')
+    map.set('city', '北京')
+    // 根据指定的 key 获取 value
+    console.log(map.get('name')) // 张三
+    // 判断集合中是否包含指定的 key
+    console.log(map.has('name')) // true
+    // 根据指定的 key 从集合中删除元素
+    map.delete('name')
+    console.log(map.has('name')) // false
+    // 遍历 map 集合
+    map.forEach((key, value) => {
+      console.log(key, value)
+    })
+    // 清空 map 集合
+    map.clear()
+    // 打印 map 集合
+    console.log(map)
+  </script>
+</body>
+</html>

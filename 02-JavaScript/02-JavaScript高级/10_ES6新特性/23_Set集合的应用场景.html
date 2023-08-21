@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 数组元素去重 */
+    const arr = [1, 2, 3, 4, 5, 4, 3, 2, 12, 123]
+    const newArr = [...new Set(arr)]
+    console.log(newArr) // [1, 2, 3, 4, 5, 12, 123]
+  </script>
+</body>
+</html>
