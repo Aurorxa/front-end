@@ -8,30 +8,16 @@
 </head>
 <body>
   <script>
-    // ES5 之前的写法
-    function bar(a, b) {
-      b = b ? b : "我是默认值"
-      console.log(a, b)
-    }
-
-    bar(1, false) // 1 '我是默认值'
-    bar(1, 2) // 1 2
-
-    function baz(a, b) {
-      b = b || "我是默认值"
-      console.log(a, b)
-    }
-
-    baz(1, 0) // 1 '我是默认值'
-    baz(1, 2) // 1 2
-
-    // 上面的写法不严谨
     function foo(a, b) {
       b = (b === undefined || b === null) ? "我是默认值" : b
       console.log(a, b)
     }
 
     foo(1, false) // 1 false
+    foo(1, '') // 1 ''
+    foo(1, undefined) // 1 '我是默认值'
+    foo(1, null) // 1 '我是默认值'
+    foo(1, 0) // 1 0
     foo(1, 2) // 1 2
 
 
@@ -42,8 +28,10 @@
     }
 
     foo2(1, false) // 1 false
+    foo2(1, '') // 1 ''
     foo2(1, undefined) // 1 '我是默认值'
     foo2(1, null) // 1 '我是默认值'
+    foo2(1, 0) // 1 0
     foo2(1, 2) // 1 2
 
   </script>
