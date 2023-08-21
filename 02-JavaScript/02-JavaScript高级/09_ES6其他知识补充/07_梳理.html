@@ -8,12 +8,19 @@
 </head>
 <body>
   <script>
-    {
-      // var 定义的变量不会产生块级作用域
-      var num = 10
-      console.log(num) // 10
+    function formatCurrency(strings, ...values) {
+      const formattedValues = values.map(value => `$${value.toFixed(2)}`);
+      return strings.reduce((prev, next, index) => {
+        return prev + next + (formattedValues[index] || '');
+      }, '');
     }
-    console.log(num) // 10
+
+    const price = 19.99;
+    const quantity = 3;
+    const total = formatCurrency`Total: ${price * quantity}`;
+
+    console.log(total); // 输出：Total: $59.97
+
   </script>
 </body>
 </html>
