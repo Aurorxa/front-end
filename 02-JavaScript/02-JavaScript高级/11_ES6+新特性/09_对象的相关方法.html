@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 将一个 URLSearchParams 对象转换为 Object 对象 */
+    const searchString = "?name=x&age=18&height=1.8"
+    const urlSearchParams = new URLSearchParams(searchString)
+    const SearchObj = Object.fromEntries(urlSearchParams)
+    console.log(SearchObj) // {name: 'x', age: '18', height: '1.8'}
+  </script>
+</body>
+</html>
