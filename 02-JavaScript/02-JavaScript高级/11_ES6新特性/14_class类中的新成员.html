@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    class Person {
+      #name
+      #age
+
+      constructor(name, age) {
+        this.name = name
+        this.age = age
+      }
+
+      getName() {
+        return this.name
+      }
+
+      setName(name) {
+        this.name = name
+      }
+
+      setAge(age) {
+        this.age = age
+      }
+
+      getAge() {
+        return this.age
+      }
+    }
+
+    const p = new Person("许大仙", 18)
+    console.log(p.getName())
+    console.log(p.getAge())
+
+  </script>
+</body>
+</html>
