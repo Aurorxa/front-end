@@ -9,16 +9,18 @@
 <body>
   <script>
     const promise = new Promise((resolve, reject) => {
-      // resolve(1)
-      // resolve("1")
-      // resolve({name: "张三"})
-      resolve([1, 2, 3])
+      resolve({
+        name: "张三",
+        then(resolve, reject) {
+          reject(1)
+        }
+      })
     })
 
     promise.then(res => {
-      console.log(typeof res) // [1, 2, 3]
+      console.log('then', res)
     }).catch(err => {
-      console.log(err)
+      console.log('catch', err) // catch 1
     })
 
   </script>
