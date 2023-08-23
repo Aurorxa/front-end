@@ -13,13 +13,14 @@
         // 异步任务
         setTimeout(() => {
           if (counter < 0) {
+            // 失败的回调
             reject(`${counter} 不合法`)
           } else {
             let total = 0
             for (let i = 0; i <= counter; i++) {
               total += i
             }
-            // 在某个时刻只需要回调传入的函数
+            // 成功的回调
             resolve(total)
           }
         }, 3000)
