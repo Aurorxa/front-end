@@ -15,7 +15,13 @@
     promise.then(res => {
       console.log('then成功的回调', res)
     }, err => {
-      console.log('then失败的回调', err)
+      console.log('then失败的回调', err) // then失败的回调 1
+    })
+
+    promise.then(res => {
+      console.log('then成功的回调', res)
+    }, err => {
+      console.log('then失败的回调', err) // then失败的回调 1
     })
   </script>
 </body>
