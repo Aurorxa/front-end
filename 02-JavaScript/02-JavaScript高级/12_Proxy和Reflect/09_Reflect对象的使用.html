@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 判断属性是否存在 */
+    const obj = {
+      name: "张三",
+      age: 18,
+      sex: "男"
+    }
+
+    // 使用 Reflect 对象判断属性是否存在
+    const hasAge = Reflect.has(obj, 'age')
+    console.log(hasAge) // true
+    const hasAddress = Reflect.has(obj, 'address')
+    console.log(hasAddress) // false
+  </script>
+</body>
+</html>
