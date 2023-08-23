@@ -10,6 +10,11 @@
   <script>
     // 创建 Promise 对象
     const promise = new Promise((resolve, reject) => {
+      // Promise 的状态一旦被确定下来，就不会再被更改，也不能再执行某一个回调函数来再次改变状态。
+      console.log("1111")
+      console.log("2222")
+      console.log("3333")
+
       setTimeout(() => {
         resolve(1);
       }, 1000);
