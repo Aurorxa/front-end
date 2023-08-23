@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 创建 Promise 对象
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1);
+      }, 1000);
+    })
+
+    promise.then(res => { // then 方法用来处理成功的回调
+      console.log(res);
+    }).catch(err => { // catch 方法用来处理失败的回调
+      console.log(err)
+    })
+
+  </script>
+</body>
+</html>
