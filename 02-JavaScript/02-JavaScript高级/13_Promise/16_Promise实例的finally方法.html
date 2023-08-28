@@ -10,22 +10,16 @@
   <script>
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        reject('success');
+        resolve('success');
       }, 1000);
     })
 
-    promise.catch(err => {
-      console.log('第一个then方法', err) // 第一个then方法 success
-    }).then(res => {
-      console.log('第二个then方法', res) // 第二个then方法 undefined
-    }).then(res => {
-      console.log('第三个then方法', res) // 第三个then方法 undefined
-    }).then(res => {
-      console.log('第四个then方法', res) // 第四个then方法 undefined
+    promise.then(res => {
+      console.log(res)
     }).catch(err => {
-      console.log("catch", err)
+      console.log(err)
     }).finally(() => {
-      console.log('finally') // finally
+      console.log('finally')
     })
 
   </script>
