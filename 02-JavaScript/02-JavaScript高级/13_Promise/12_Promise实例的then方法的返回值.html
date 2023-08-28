@@ -16,8 +16,9 @@
 
     promise.then(res => {
       console.log('第一个then方法', res) // 第一个then方法 success
+      return 1
     }).then(res => {
-      console.log('第二个then方法', res) // 第二个then方法 undefined
+      console.log('第二个then方法', res) // 第二个then方法 1
     }).then(res => {
       console.log('第三个then方法', res) // 第三个then方法 undefined
     }).then(res => {
@@ -25,6 +26,7 @@
     }).catch(err => {
       console.log("catch", err)
     })
+
 
   </script>
 </body>
