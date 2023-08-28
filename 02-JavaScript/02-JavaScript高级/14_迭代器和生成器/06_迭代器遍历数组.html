@@ -11,7 +11,7 @@
     const arr = [1, 2, 3]
     const names = ["张三", "李四", "王五", "赵六"]
 
-    // 将迭代器对象放到 Array 的显示原型对象上
+    // 将生成迭代器对象的函数放到 Array 的显示原型对象上
     Array.prototype.customIterator = function () {
       let index = 0;
       return {

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 可迭代对象 */
+    const infos = {
+      friends: ["张三", "李四", "王五"]
+    }
+
+    // 给 infos 创建一个迭代器，迭代 infos 中的 friends
+    let index = 0
+    const arrIterator = {
+      next: function () {
+        if (index < infos.friends.length) {
+          return {
+            done: false,
+            value: infos.friends[index++]
+          }
+        } else {
+          return {
+            done: true
+          }
+        }
+      }
+    }
+
+    // 通过迭代器迭代 infos 中的 friends
+    for (let next = arrIterator.next(); !next.done; next = arrIterator.next()) {
+      console.log(next.value)
+    }
+
+  </script>
+</body>
+</html>

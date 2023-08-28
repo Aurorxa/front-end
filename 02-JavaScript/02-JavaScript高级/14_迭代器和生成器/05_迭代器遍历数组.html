@@ -30,7 +30,7 @@
       }
     }
 
-    // 将迭代器对象放到 Array 的显示原型对象上
+    // 将生成迭代器对象的函数放到 Array 的显示原型对象上
     Array.prototype.customIterator = function () {
       return createIterator(this)
     }
