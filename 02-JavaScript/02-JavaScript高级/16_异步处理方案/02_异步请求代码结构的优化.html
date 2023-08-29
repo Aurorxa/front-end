@@ -21,16 +21,16 @@
       try {
         const res1 = yield requestDate(url)
         console.log(`getData第一次请求的结果：${res1}`)
-        const res2 = yield requestDate(`${res1}+1`)
+        const res2 = yield requestDate(`${res1}` + "b")
         console.log(`getData第二次请求的结果：${res2}`)
-        const res3 = yield requestDate(`${res2}+2`)
+        const res3 = yield requestDate(`${res2}` + "c")
         console.log(`getData第三次请求的结果：${res3}`)
       } catch (e) {
         console.log(`请求中出现的错误信息：${e}`)
       }
     }
 
-    const generator = getData("https://www.a.com")
+    const generator = getData("a")
     generator.next().value.then(res1 => {
       generator.next(res1).value.then(res2 => {
         generator.next(res2).value.then(res3 => {
