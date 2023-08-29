@@ -32,7 +32,7 @@
       [Symbol.iterator]() {
         const entries = Object.entries(this)
         let index = 0
-        const iterator = {
+        return {
           next: function () {
             if (index < entries.length) {
               return {
@@ -46,7 +46,6 @@
             }
           }
         }
-        return iterator
       }
     }
 
