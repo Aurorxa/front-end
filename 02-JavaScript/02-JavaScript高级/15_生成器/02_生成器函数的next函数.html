@@ -28,10 +28,9 @@
 
     // 调用生成器函数，返回一个生成器对象
     const generator = foo()
-    generator.next()
-    generator.next()
-    generator.next()
-    generator.next()
+    console.log(generator.next()) // {value: undefined, done: false}
+    console.log(generator.next()) // {value: undefined, done: false}
+    console.log(generator.next()) // {value: undefined, done: true}
   </script>
 </body>
 </html>

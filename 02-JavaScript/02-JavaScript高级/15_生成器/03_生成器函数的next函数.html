@@ -18,20 +18,19 @@
     function* foo() {
       console.log("内部代码：1111111")
       console.log("内部代码：2222222")
-      yield
+      yield "aaa"
       console.log("内部代码：3333333")
       console.log("内部代码：4444444")
-      yield
+      yield "bbb"
       console.log("内部代码：5555555")
       console.log("内部代码：6666666")
     }
 
     // 调用生成器函数，返回一个生成器对象
     const generator = foo()
-    generator.next()
-    generator.next()
-    generator.next()
-    generator.next()
+    console.log(generator.next()) // {value: 'aaa', done: false}
+    console.log(generator.next()) // {value: 'bbb', done: false}
+    console.log(generator.next()) // {value: undefined, done: true}
   </script>
 </body>
 </html>
