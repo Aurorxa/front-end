@@ -8,7 +8,47 @@
 </head>
 <body>
   <script>
-    
+    class Person {
+      constructor(name, age, height, friends) {
+        this.name = name
+        this.age = age
+        this.height = height
+        this.friends = friends
+      }
+
+      [Symbol.iterator]() {
+        let index = 0
+        return {
+          next: () => {
+            if (index < this.friends.length) {
+              return {
+                done: false,
+                value: this.friends[index++]
+              }
+            } else {
+              return {
+                done: true
+              }
+            }
+          },
+          return: () => {
+            console.log("迭代器提前终止了")
+            return {
+              done: true
+            }
+          }
+        }
+      }
+    }
+
+    const person = new Person("张三", 18, 1.8, [{name: "张三"}, {name: "李四"}])
+    for (let item of person) {
+      let {name} = item
+      if (name === "李四") {
+        break
+      }
+      console.log(item)
+    }
   </script>
 </body>
 </html>
