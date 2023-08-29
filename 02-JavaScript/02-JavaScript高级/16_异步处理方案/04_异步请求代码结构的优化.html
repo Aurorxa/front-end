@@ -30,14 +30,20 @@
       }
     }
 
-    const generator = getData()
-    generator.next().value.then(res1 => {
-      generator.next(res1).value.then(res2 => {
-        generator.next(res2).value.then(res3 => {
-          generator.next(res3)
-        })
-      })
-    })
+    /*    const generator = getData()
+        generator.next().value.then(res1 => {
+          generator.next(res1).value.then(res2 => {
+            generator.next(res2).value.then(res3 => {
+              generator.next(res3)
+            })
+          })
+        })*/
+    // 自动化执行生成器函数
+    function execGenFn(genFn) {
+
+    }
+
+    execGenFn(getData)
 
   </script>
 </body>
