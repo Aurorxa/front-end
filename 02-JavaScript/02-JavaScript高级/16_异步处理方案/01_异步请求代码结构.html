@@ -17,19 +17,23 @@
     }
 
     /* 需求：依次发送多次请求 */
-    requestDate("https://www.a.com").then(res => {
-      console.log(`第一次请求的结果：${res}`)
+    function getData() {
+      requestDate("https://www.a.com").then(res => {
+        console.log(`第一次请求的结果：${res}`)
 
-      return requestDate(`https://www.b.com?name=${res}`)
-    }).then(res => {
-      console.log(`第二次请求的结果：${res}`)
+        return requestDate(`https://www.b.com?name=${res}`)
+      }).then(res => {
+        console.log(`第二次请求的结果：${res}`)
 
-      return requestDate(`https://www.c.com?name=${res}`)
-    }).then(res => {
-      console.log(`第三次请求的结果：${res}`)
-    }).catch(err => {
-      console.log(`请求中出现的错误信息：${err}`)
-    })
+        return requestDate(`https://www.c.com?name=${res}`)
+      }).then(res => {
+        console.log(`第三次请求的结果：${res}`)
+      }).catch(err => {
+        console.log(`请求中出现的错误信息：${err}`)
+      })
+    }
+
+    getData()
 
   </script>
 </body>
