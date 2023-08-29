@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 可迭代对象 */
+    /*
+    * 必须实现特定的函数： [Symbol.iterator]
+    * 函数需要返回一个迭代器
+    */
+    const infos = {
+      friends: ["张三", "李四", "王五"],
+      [Symbol.iterator]: function () {
+        let index = 0
+        const iterator = {
+          next: () => {
+            if (index < this.friends.length) {
+              return {
+                done: false,
+                value: this.friends[index++]
+              }
+            } else {
+              return {
+                done: true
+              }
+            }
+          }
+        }
+        return iterator
+      },
+    }
+
+    // 使用迭代器对象遍历
+    const iterator = infos[Symbol.iterator]()
+    for (let next = iterator.next(); !next.done; next = iterator.next()) {
+      console.log(next.value)
+    }
+
+    console.log('---------------------')
+
+    // 可迭代对象可以使用 for...of 操作
+    for (const friend of infos.friends) {
+      console.log(friend)
+    }
+
+  </script>
+</body>
+</html>

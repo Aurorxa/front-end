@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const arr = [1, 23, 34, 4, 5, 6, 7, 10]
+
+    // 数组之所以能够使用 for...of 语法，就是因为其是一个可迭代对象
+    for (let element of arr) {
+      console.log(element)
+    }
+
+    console.log('---------------------')
+
+    // 通过迭代器来遍历数组中的元素
+    const iterator = arr[Symbol.iterator]()
+    for (let next = iterator.next(); !next.done; next = iterator.next()) {
+      console.log(next.value)
+    }
+  </script>
+</body>
+</html>
