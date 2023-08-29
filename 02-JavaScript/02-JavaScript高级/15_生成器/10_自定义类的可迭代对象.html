@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /**
+     * 判断一个对象是否是可迭代对象
+     * @param {Person} obj
+     */
+    function isIterable(obj) {
+      // 检查 null 和 undefined
+      if (obj == null) {
+        return false;
+      }
+      // 检查 Symbol.iterator 属性是否是一个函数
+      return typeof obj[Symbol.iterator] === 'function';
+    }
+  </script>
+  <script>
+    class Person {
+      constructor(name, age, height, friends) {
+        this.name = name
+        this.age = age
+        this.height = height
+        this.friends = friends
+      }
+
+      // 使用 yield* 来简化
+      * [Symbol.iterator]() {
+        yield* this.friends
+      }
+    }
+
+    console.log(isIterable(new Person("张三", 18, 1.8, [{name: "张三"}, {name: "李四"}])))
+
+    const person = new Person("张三", 18, 1.8, [{name: "张三"}, {name: "李四"}])
+    for (let p of person) {
+      console.log(p)
+    }
+  </script>
+</body>
+</html>
