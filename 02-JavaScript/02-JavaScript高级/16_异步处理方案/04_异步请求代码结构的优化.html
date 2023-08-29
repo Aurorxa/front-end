@@ -30,7 +30,7 @@
       }
     }
 
-    const generator = getData("a")
+    const generator = getData()
     generator.next().value.then(res1 => {
       generator.next(res1).value.then(res2 => {
         generator.next(res2).value.then(res3 => {
