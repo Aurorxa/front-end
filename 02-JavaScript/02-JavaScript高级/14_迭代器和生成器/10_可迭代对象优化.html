@@ -14,15 +14,18 @@
     * 函数需要返回一个迭代器
     */
     const infos = {
-      friends: ["张三", "李四", "王五"],
+      name: '许大仙',
+      age: 18,
+      height: 1.8,
       [Symbol.iterator]: function () {
+        const entries = Object.entries(this)
         let index = 0
         const iterator = {
-          next: () => {
-            if (index < this.friends.length) {
+          next: function () {
+            if (index < entries.length) {
               return {
                 done: false,
-                value: this.friends[index++]
+                value: entries[index++]
               }
             } else {
               return {
@@ -44,8 +47,8 @@
     console.log('---------------------')
 
     // 可迭代对象可以使用 for...of 操作
-    for (const friend of infos) {
-      console.log(friend)
+    for (const [key, value] of infos) {
+      console.log(key, value)
     }
 
   </script>
