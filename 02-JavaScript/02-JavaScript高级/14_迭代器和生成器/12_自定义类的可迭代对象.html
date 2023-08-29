@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function isIterable(obj) {
+      // 检查 null 和 undefined
+      if (obj == null) {
+        return false;
+      }
+      // 检查 Symbol.iterator 属性是否是一个函数
+      return typeof obj[Symbol.iterator] === 'function';
+    }
+  </script>
+  <script>
+    class Person {
+      constructor(name, age, height) {
+        this.name = name
+        this.age = age
+        this.height = height
+      }
+
+      [Symbol.iterator]() {
+        const entries = Object.entries(this)
+        let index = 0
+        const iterator = {
+          next: function () {
+            if (index < entries.length) {
+              return {
+                done: false,
+                value: entries[index++]
+              }
+            } else {
+              return {
+                done: true
+              }
+            }
+          }
+        }
+        return iterator
+      }
+    }
+
+    console.log(isIterable(new Person("张三", 18, 1.8)))
+
+    const person = new Person("张三", 18, 1.8)
+    for (let p of person) {
+      console.log(p)
+    }
+  </script>
+</body>
+</html>
