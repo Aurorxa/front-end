@@ -9,9 +9,22 @@
 <body>
   <script>
     // await 必须在异步函数中使用
+
+    function bar() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve('bar')
+        }, 2000)
+      })
+    }
+
     async function foo() {
+      console.log("-------------------")
       const result = await 123
       console.log(result)
+      console.log("###################")
+      const res = await bar()
+      console.log(res)
       return "aaa"
     }
 
