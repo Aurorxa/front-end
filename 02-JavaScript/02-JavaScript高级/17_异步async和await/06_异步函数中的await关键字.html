@@ -23,6 +23,7 @@
       const result = await 123
       console.log(result)
       console.log("###################")
+      // await 后面如果是 Promise 对象，那么会等待 Promise 对象的状态变为 fulfilled 之后，才会继续执行
       const res = await bar()
       console.log(res)
       return "aaa"
