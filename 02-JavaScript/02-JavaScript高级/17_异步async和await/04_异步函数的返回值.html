@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    async function foo() {
+      // 返回 thenable 对象
+      return {
+        then(resolve, reject) {
+          setTimeout(() => {
+            resolve(1)
+          }, 2000)
+        }
+      }
+    }
+
+    console.log(foo()) // Promise 的实例对象
+
+    foo().then(res => {
+      console.log(res)
+    })
+  </script>
+</body>
+</html>
