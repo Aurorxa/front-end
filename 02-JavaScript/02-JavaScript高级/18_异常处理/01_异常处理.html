@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 自定义异常
+    class BizException extends Error {
+
+    }
+
+    function foo(num1) {
+      if (num1 > 10) {
+        throw new BizException('num1 is too big');
+      }
+    }
+
+    try {
+      foo(11);
+    } catch (e) {
+      console.log(e.message);
+    }
+
+  </script>
+</body>
+</html>
