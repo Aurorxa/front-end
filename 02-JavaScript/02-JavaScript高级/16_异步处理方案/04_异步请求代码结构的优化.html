@@ -30,17 +30,32 @@
       }
     }
 
-    /*    const generator = getData()
+    /*
+        const generator = getData()
         generator.next().value.then(res1 => {
           generator.next(res1).value.then(res2 => {
             generator.next(res2).value.then(res3 => {
               generator.next(res3)
             })
           })
-        })*/
-    // 自动化执行生成器函数
+        })
+    */
+    // 自动化执行生成器函数（了解）
     function execGenFn(genFn) {
+      const generator = genFn()
 
+      function exec(res) {
+        // result -> { value: xxx,done: true }
+        const result = generator.next(res)
+        if (result.done) {
+          return
+        }
+        result.value.then(res => {
+          exec(res)
+        })
+      }
+
+      exec()
     }
 
     execGenFn(getData)
