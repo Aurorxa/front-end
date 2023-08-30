@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // await 必须在异步函数中使用
+    async function foo() {
+      const result = await 123
+      console.log(result)
+      return "aaa"
+    }
+
+    foo().then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log("捕获到的异常信息：" + err)
+    })
+
+  </script>
+</body>
+</html>
