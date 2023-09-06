@@ -1,18 +1,28 @@
 class Cache {
+    constructor(isLocal = true) {
+        this.storage = isLocal ? localStorage : sessionStorage
+    }
+    
     setCache(key, value) {
-        localStorage.setItem(key, value)
+        if (!value) {
+            throw new Error('value cannot be empty~')
+        }
+        this.storage.setItem(key, value)
     }
     
     getCache(key) {
-        return localStorage.getItem(key)
+        const result = this.storage.getItem(key)
+        if (result) {
+            return JSON.parse(result)
+        }
     }
     
     removeCache(key) {
-        localStorage.removeItem(key)
+        this.storage.removeItem(key)
     }
     
     clearCache() {
-        localStorage.clear()
+        this.storage.clear()
     }
     
 }
