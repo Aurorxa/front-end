@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const reg = /\d+/ig
+    const message = "abcdfgeqreqwd abc4dfghijklmnopqr stuvABCwxy343 stuvABCwxy"
+
+    // 使用字符串的方法
+    // 需求：将字符串中的所有数字删除
+    let newMessage = message.replaceAll(reg, "")
+    console.log(newMessage)
+  </script>
+</body>
+</html>
