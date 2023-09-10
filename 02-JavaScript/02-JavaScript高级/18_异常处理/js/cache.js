@@ -7,7 +7,7 @@ class Cache {
         if (!value) {
             throw new Error('value cannot be empty~')
         }
-        this.storage.setItem(key, value)
+        this.storage.setItem(key, JSON.stringify(value))
     }
     
     getCache(key) {
