@@ -12,7 +12,7 @@
     const xhr = new XMLHttpRequest()
     // ② 监听 XMLHttpRequest 对象状态的变化
     xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         console.log(xhr.responseText)
 
         const json = JSON.parse(xhr.responseText)
