@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <input type="text">
+
+  <script>
+    /**
+     * 节流函数
+     * @param {*} fn
+     * @param {number} interval
+     */
+    function throttle(fn, interval) {
+      // 开始时间
+      let startTime = 0
+      const _throttle = function () {
+        // 当前时间
+        let nowTime = new Date().getTime()
+        // 等待时间
+        let waitTime = interval - (nowTime - startTime)
+        if (waitTime <= 0) {
+          // 执行函数
+          fn()
+          // 重置当前时间
+          startTime = nowTime
+        }
+      }
+      return _throttle
+    }
+  </script>
+
+  <script>
+    const inputEl = document.querySelector("input")
+
+    let counter = 1
+    inputEl.addEventListener("input", throttle(function () {
+      console.log(`发送网络请求${counter++}`, this.value)
+    }, 1000))
+  </script>
+</body>
+</html>
