@@ -21,6 +21,7 @@
     // ④ 配置网络请求 post -> x-www-form-urlencoded
     xhr.open('POST', 'http://123.207.32.32:1888/02_param/posturl')
     // ⑤ 发送网络请求
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
     xhr.send("name=John&age=25")
   </script>
 </body>
