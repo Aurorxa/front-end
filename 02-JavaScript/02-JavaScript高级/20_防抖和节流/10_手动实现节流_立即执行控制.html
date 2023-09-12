@@ -15,16 +15,16 @@
      * 节流函数
      * @param {*} fn
      * @param {number} interval
-     * @param immediate
+     * @param leading
      */
-    function throttle(fn, interval, immediate = true) {
+    function throttle(fn, interval, leading = true) {
       // 开始时间
       let startTime = 0
       const _throttle = function (...args) {
         // 当前时间
         let nowTime = new Date().getTime()
         // 对立即执行进行控制
-        if (!immediate && startTime === 0) {
+        if (!leading && startTime === 0) {
           startTime = nowTime
         }
         // 等待时间
