@@ -8,22 +8,31 @@
 </head>
 <body>
 
-  <script>
-    async function getData() {
-      const response = await fetch('http://123.207.32.32:1888/02_param/postjson', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: 'abc'
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      const data = await response.json()
-      console.log(data)
-    }
+  <button class="send">发送请求</button>
+  <button class="abort">取消请求</button>
 
-    getData()
+  <script>
+    const controller = new AbortController()
+    const signal = controller.signal;
+
+    const sendBtn = document.querySelector(".send")
+    const abortBtn = document.querySelector(".abort")
+
+    sendBtn.addEventListener('click', () => {
+      fetch("http://123.207.32.32:1888/01_basic/timeout", {
+        signal
+      }).then((res) => {
+        return res.json()
+      }).then((res) => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
+    })
+
+    abortBtn.addEventListener("click", () => {
+      controller.abort()
+    })
 
   </script>
 </body>
