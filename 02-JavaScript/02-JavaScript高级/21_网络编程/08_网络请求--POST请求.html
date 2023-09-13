@@ -7,7 +7,6 @@
   <title>Title</title>
 </head>
 <body>
-  <input name="file" type="file">
   <script>
     // ① 创建 XMLHttpRequest 对象
     const xhr = new XMLHttpRequest()
@@ -21,13 +20,10 @@
     // ③ 告知 xhr 获取数据的类型
     xhr.responseType = 'json'
     // ④ 配置网络请求 post -> multipart/form-data
-    xhr.open('POST', 'http://123.207.32.32:1888/02_param/postform')
+    xhr.open('POST', 'http://123.207.32.32:1888/02_param/postjson')
     // ⑤ 发送网络请求
-    xhr.setRequestHeader('Content-Type', 'multipart/form-data');
-    const formData = new FormData()
-    const file = document.querySelector('input[type="file"]').files[0];
-    formData.append("file", file)
-    xhr.send(formData)
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send(JSON.stringify({name: "张三", age: 18}))
   </script>
 </body>
 </html>
