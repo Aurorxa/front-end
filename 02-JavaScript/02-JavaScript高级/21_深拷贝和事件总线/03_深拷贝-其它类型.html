@@ -23,7 +23,8 @@
       set: new Set(["abc", "cba", "mba"]),
       running: function () {
         console.log(this.name + '正在跑~')
-      }
+      },
+      symbolKey: Symbol()
     }
 
     /**
@@ -37,6 +38,10 @@
     }
 
     function deepCopy(origin) {
+      // 如果是 symbol 类型，创建一个新的 symbol
+      if (typeof origin === 'symbol') {
+        return Symbol()
+      }
       // 如果是基本数据类型，直接返回
       if (!isObject(origin)) {
         return origin
@@ -61,6 +66,7 @@
       if (typeof origin === 'function') {
         return origin
       }
+
       // 如果是引用数据类型
       const newObj = Array.isArray(origin) ? [] : {}
       Object.keys(origin).forEach(key => {
@@ -75,6 +81,7 @@
     newObj.friends.address = "上海"
     console.log('newObj', newObj)
     console.log('obj', obj)
+    console.log(obj.symbolKey === newObj.symbolKey)
 
   </script>
 
