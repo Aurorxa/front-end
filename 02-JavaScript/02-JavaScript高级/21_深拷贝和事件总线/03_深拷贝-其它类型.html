@@ -24,7 +24,9 @@
       running: function () {
         console.log(this.name + '正在跑~')
       },
-      symbolKey: Symbol()
+      symbolKey: Symbol(),
+      [Symbol("aaa")]: "aaa",
+      [Symbol("bbb")]: "bbb"
     }
 
     /**
@@ -72,8 +74,12 @@
       Object.keys(origin).forEach(key => {
         newObj[key] = deepCopy(origin[key])
       })
+      // 单独遍历 symbol
+      const symbolKeys = Object.getOwnPropertySymbols(origin)
+      for (let symbolKey of symbolKeys) {
+        newObj[Symbol(symbolKey.description)] = deepCopy(origin[symbolKey])
+      }
       return newObj
-
     }
 
     const newObj = deepCopy(obj)
