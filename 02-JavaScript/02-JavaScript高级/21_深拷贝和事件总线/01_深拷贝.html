@@ -29,8 +29,7 @@
      */
     function isObject(value) {
       return value !== null
-          && typeof value === 'object'
-          && !Array.isArray(value)
+          && (typeof value === 'object' || typeof value === 'function')
     }
 
     function deepCopy(origin) {
@@ -41,16 +40,15 @@
       // 如果是引用数据类型
       const newObj = {}
       Object.keys(origin).forEach(key => {
-        newObj[key] = typeof origin[key] === 'object' ? deepCopy(origin[key]) : origin[key]
+        newObj[key] = deepCopy(origin[key])
       })
       return newObj
     }
 
     const newObj = deepCopy(obj)
     newObj.name = "许大仙"
-    console.log(obj.name)
     newObj.friends.address = "上海"
-    console.log(obj.friends.address)
+    console.log(obj)
 
   </script>
 
