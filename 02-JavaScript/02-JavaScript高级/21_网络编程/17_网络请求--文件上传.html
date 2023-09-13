@@ -8,26 +8,26 @@
 </head>
 <body>
 
-  <button class="send">发送请求</button>
-  <button class="abort">取消请求</button>
+  <input class="file" type="file">
+  <button class="upload">上传文件</button>
 
   <script>
-    const controller = new AbortController()
-    const signal = controller.signal;
-
-    const sendBtn = document.querySelector(".send")
-    const abortBtn = document.querySelector(".abort")
-
-    sendBtn.addEventListener('click', () => {
-      fetch("http://123.207.32.32:1888/01_basic/timeout", {
-        signal
-      }).then((res) => {
+    const uploadBtn = document.querySelector(".upload")
+    uploadBtn.addEventListener("click", () => {
+      const formData = new FormData()
+      const fileEl = document.querySelector(".file")
+      console.dir(fileEl.files)
+      formData.append('avatar', fileEl.files[0])
+      fetch("http://123.207.32.32:1888/02_param/upload", {
+        method: 'POST',
+        body: formData
+      }).then(res => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
         }
         return res.json()
-      }).then((res) => {
-        console.log(res)
+      }).then(res => {
+        console.log("上传成功", res)
       }).catch(err => {
         if (err.name === 'AbortError') {
           console.log("请求已被取消")
@@ -35,10 +35,6 @@
           console.log("其他网络请求错误")
         }
       })
-    })
-
-    abortBtn.addEventListener("click", () => {
-      controller.abort()
     })
 
   </script>
