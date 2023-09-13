@@ -22,6 +22,15 @@
           console.log(xhr.response)
         }
       }
+      // 监听上传进度
+      xhr.upload.onprogress = function (event) {
+        if (event.lengthComputable) {
+          // 计算出上传进度。
+          let progress = ((event.loaded / event.total) * 100).toFixed(2) + "%";
+          // 更新进度条。
+          console.log('上传进度', progress)
+        }
+      }
       // 告知 xhr 获取数据的类型
       xhr.responseType = 'json'
       // 配置网络请求
