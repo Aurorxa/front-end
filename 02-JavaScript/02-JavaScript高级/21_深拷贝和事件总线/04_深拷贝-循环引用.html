@@ -20,14 +20,9 @@
           detail: '朝阳区'
         }
       },
-      set: new Set(["abc", "cba", "mba"]),
-      running: function () {
-        console.log(this.name + '正在跑~')
-      },
-      symbolKey: Symbol(),
-      [Symbol("aaa")]: "aaa",
-      [Symbol("bbb")]: "bbb"
     }
+
+    obj.self = obj
 
     /**
      * 判断一个标识符是否是一个对象
@@ -38,6 +33,8 @@
       return value !== null
           && (typeof value === 'object' || typeof value === 'function')
     }
+
+    const map = new Map()
 
     function deepCopy(origin) {
       // 如果是 symbol 类型，创建一个新的 symbol
@@ -70,7 +67,11 @@
       }
 
       // 如果是引用数据类型
+      if (map.get(origin)) {
+        return map.get(origin)
+      }
       const newObj = Array.isArray(origin) ? [] : {}
+      map.set(origin, newObj)
       Object.keys(origin).forEach(key => {
         newObj[key] = deepCopy(origin[key])
       })
