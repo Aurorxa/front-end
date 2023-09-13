@@ -20,7 +20,10 @@
           detail: '朝阳区'
         }
       },
-      set: new Set(["abc", "cba", "mba"])
+      set: new Set(["abc", "cba", "mba"]),
+      running: function () {
+        console.log(this.name + '正在跑~')
+      }
     }
 
     /**
@@ -45,6 +48,18 @@
           newSet.add(deepCopy(item))
         })
         return newSet
+      }
+      // 如果是 Map 类型
+      if (origin instanceof Map) {
+        const newMap = new Map()
+        origin.forEach((value, key) => {
+          newMap.set(key, deepCopy(value))
+        })
+        return newMap
+      }
+      // 如果是函数类型，不需要进行深拷贝，直接返回即可
+      if (typeof origin === 'function') {
+        return origin
       }
       // 如果是引用数据类型
       const newObj = Array.isArray(origin) ? [] : {}
