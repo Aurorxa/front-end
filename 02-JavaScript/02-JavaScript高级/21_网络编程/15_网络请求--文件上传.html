@@ -29,7 +29,7 @@
       const formData = new FormData()
       const fileEl = document.querySelector(".file")
       console.dir(fileEl.files)
-      formData.append('file', fileEl.files[0])
+      formData.append('avatar', fileEl.files[0])
       // 发送网络请求
       xhr.send(formData)
     })
