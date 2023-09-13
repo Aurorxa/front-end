@@ -50,7 +50,7 @@
           timer = setTimeout(() => {
             fn.apply(this, args)
             // 重置当前时间
-            startTime = nowTime
+            startTime = new Date().getTime()
             // 重置
             timer = null
           }, waitTime)
@@ -67,7 +67,7 @@
     let counter = 1
     inputEl.addEventListener("input", throttle(function () {
       console.log(`发送网络请求${counter++}`, this.value)
-    }, 1000, false))
+    }, 1000, false, true))
   </script>
 </body>
 </html>
