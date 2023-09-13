@@ -34,9 +34,7 @@
           && (typeof value === 'object' || typeof value === 'function')
     }
 
-    const map = new Map()
-
-    function deepCopy(origin) {
+    function deepCopy(origin, map = new WeakMap) {
       // 如果是 symbol 类型，创建一个新的 symbol
       if (typeof origin === 'symbol') {
         return Symbol()
@@ -73,7 +71,7 @@
       const newObj = Array.isArray(origin) ? [] : {}
       map.set(origin, newObj)
       Object.keys(origin).forEach(key => {
-        newObj[key] = deepCopy(origin[key])
+        newObj[key] = deepCopy(origin[key], map)
       })
       // 单独遍历 symbol
       const symbolKeys = Object.getOwnPropertySymbols(origin)
