@@ -20,11 +20,10 @@
       const $subBtn = $(".sub")
       const $counter = $(".counter")
 
-      $addBtn.click(function () {
+      $addBtn.on('click', function () {
         $counter.text(parseInt($counter.text()) + 1)
       })
-
-      $subBtn.click(function () {
+      $subBtn.on('click', function () {
         $counter.text(parseInt($counter.text()) - 1)
       })
     })
