@@ -15,18 +15,19 @@
   <script src="./js/jquery-3.7.1.js"></script>
 
   <script>
-    const $addBtn = $(".add")
-    const $subBtn = $(".sub")
-    const $counter = $(".counter")
+    $(function () {
+      const $addBtn = $(".add")
+      const $subBtn = $(".sub")
+      const $counter = $(".counter")
 
-    $addBtn.click(function () {
-      $counter.text(parseInt($counter.text()) + 1)
+      $addBtn.click(function () {
+        $counter.text(parseInt($counter.text()) + 1)
+      })
+
+      $subBtn.click(function () {
+        $counter.text(parseInt($counter.text()) - 1)
+      })
     })
-
-    $subBtn.click(function () {
-      $counter.text(parseInt($counter.text()) - 1)
-    })
-
   </script>
 
 </body>
