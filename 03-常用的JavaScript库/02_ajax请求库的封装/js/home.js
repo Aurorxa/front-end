@@ -1,5 +1,8 @@
 $(function () {
-    
+    /**
+     * 渲染头部地址
+     * @param res
+     */
     function renderHeaderAddress(res) {
         const {curLocation: {city}} = res
         $(".top-bar .address").text(city)
