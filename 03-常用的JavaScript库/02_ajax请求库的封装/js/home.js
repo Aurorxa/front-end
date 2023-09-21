@@ -10,7 +10,7 @@ $(function () {
     
     function init() {
         ARequest
-            .get('http://123.207.32.32:9060/beike/api/homePageInfo')
+            .get(API.HOME_PAGE_INFO)
             .then(res => {
                 console.log('res', res)
                 renderHeaderAddress(res)
