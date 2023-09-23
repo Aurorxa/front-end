@@ -8,6 +8,9 @@ $(function () {
         $(".top-bar .address").text(city)
     }
     
+    /**
+     * 初始化页面
+     */
     function init() {
         ARequest
             .get(API.HOME_PAGE_INFO)
@@ -20,5 +23,13 @@ $(function () {
     }
     
     init()
+    
+    const $houseSearchInput = $('.search-bar .house-search')
+    
+    
+    $houseSearchInput.on('focus', function () {
+        console.log(this)
+        $(this).css('display', 'block')
+    })
     
 })
