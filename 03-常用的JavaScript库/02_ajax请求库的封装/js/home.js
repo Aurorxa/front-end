@@ -28,13 +28,19 @@ $(function () {
      * 渲染搜索结果
      * @param res
      */
-    function renderSearchList(res) {
+    function renderSearchList(res = []) {
         const $searchList = $('.search-tips .search-list')
         $searchList.empty()
         $searchList.append(`<li><span>热门搜索</span></li>`)
+        res = res.map((item) => {
+            const {app_house_title} = item;
+            return {
+                title: app_house_title
+            }
+        })
         res.forEach(item => {
-            const {app_house_title} = item
-            $searchList.append(`<li>${app_house_title}</li>`)
+            const {title} = item
+            $searchList.append(`<li>${title}</li>`)
         })
     }
     
