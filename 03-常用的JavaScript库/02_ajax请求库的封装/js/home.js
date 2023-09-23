@@ -16,7 +16,6 @@ $(function () {
         ARequest
             .get(API.HOME_PAGE_INFO)
             .then(res => {
-                console.log('init --> res', res)
                 renderHeaderAddress(res)
             })
             .catch(err => {
@@ -45,6 +44,14 @@ $(function () {
     }
     
     /**
+     * 清空搜索结果
+     */
+    function clearSearchList() {
+        const $searchList = $('.search-tips .search-list')
+        $searchList.empty()
+    }
+    
+    /**
      * 站内搜索
      */
     function siteSearch() {
@@ -59,6 +66,13 @@ $(function () {
                 .catch(err => {
                     console.log('siteSearch --> err', err)
                 })
+        })
+        $houseSearchInput.on('blur', function () {
+            clearSearchList()
+        })
+        const $body = $(document.body)
+        $body.on('click', function () {
+            clearSearchList()
         })
     }
     
