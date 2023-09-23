@@ -33,7 +33,7 @@ $(function () {
         $searchList.empty()
         $searchList.append(`<li><span>热门搜索</span></li>`)
         res = res.map((item) => {
-            const {app_house_title} = item;
+            const {app_house_title} = item
             return {
                 title: app_house_title
             }
