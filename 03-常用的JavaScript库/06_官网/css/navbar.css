@@ -8,19 +8,22 @@
   height: 26px;
   padding-right: 25px;
 }
-.navbar .container-fluid #navbarNav {
-  justify-content: space-between;
+.navbar .container-fluid .navbar-nav {
+  margin-right: auto;
 }
-.navbar .container-fluid #navbarNav .link-text {
+.navbar .container-fluid .navbar-nav .link-text {
   padding: 8px 25px;
   font-size: var(--font-size);
 }
-.navbar .container-fluid #navbarNav .link-text a {
+.navbar .container-fluid .navbar-nav .link-text a {
   color: var(--text-color);
 }
-.navbar .container-fluid #navbarNav .link-text a:hover {
+.navbar .container-fluid .navbar-nav .link-text a:hover {
   text-decoration: none;
   border-bottom: 2px solid var(--theme-color);
   color: var(--theme-color);
+}
+.navbar .container-fluid .hot-line {
+  font-size: var(--font-size);
 }
 /*# sourceMappingURL=navbar.css.map */
