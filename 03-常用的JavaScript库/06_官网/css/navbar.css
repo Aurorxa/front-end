@@ -8,6 +8,13 @@
   height: 26px;
   padding-right: 25px;
 }
+.navbar .container-fluid .navbar-toggler {
+  border: 0;
+  padding: 0;
+}
+.navbar .container-fluid .navbar-toggler .expand-icon {
+  height: 20px;
+}
 .navbar .container-fluid .navbar-nav {
   margin-right: auto;
 }
@@ -24,6 +31,7 @@
   color: var(--theme-color);
 }
 .navbar .container-fluid .hot-line {
+  padding: 8px 25px;
   font-size: var(--font-size);
 }
 /*# sourceMappingURL=navbar.css.map */
