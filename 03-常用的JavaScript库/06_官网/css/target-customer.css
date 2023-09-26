@@ -23,10 +23,6 @@ body {
   cursor: pointer;
   overflow: hidden;
 }
-.target-customer .container-fluid .row .item img {
-  width: 68px;
-  height: 53px;
-}
 .target-customer .container-fluid .row .item .sub-title {
   position: absolute;
   top: 50%;
