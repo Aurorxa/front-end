@@ -2,6 +2,7 @@
   .navbar-collapse {
     color: var(--bg-color);
     background-color: var(--bg-nav-color);
+    opacity: 0.9;
   }
   .navbar-collapse .link-text a {
     color: var(--bg-color) !important;
