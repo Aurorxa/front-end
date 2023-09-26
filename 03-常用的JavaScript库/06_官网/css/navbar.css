@@ -1,0 +1,26 @@
+.navbar {
+  margin: 16px 0;
+}
+.navbar .container-fluid {
+  max-width: var(--content-width);
+}
+.navbar .container-fluid .navbar-brand .logo {
+  height: 26px;
+  padding-right: 25px;
+}
+.navbar .container-fluid #navbarNav {
+  justify-content: space-between;
+}
+.navbar .container-fluid #navbarNav .link-text {
+  padding: 8px 25px;
+  font-size: var(--font-size);
+}
+.navbar .container-fluid #navbarNav .link-text a {
+  color: var(--text-color);
+}
+.navbar .container-fluid #navbarNav .link-text a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid var(--theme-color);
+  color: var(--theme-color);
+}
+/*# sourceMappingURL=navbar.css.map */
