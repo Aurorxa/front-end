@@ -3,15 +3,29 @@
     color: var(--bg-color);
     background-color: var(--bg-nav-color);
 
-    a {
-      color: var(--bg-color) !important;
+    .link-text {
+      a {
+        color: var(--bg-color) !important;
 
-      &:hover {
-        text-decoration: none;
-        border-bottom: 2px solid var(--theme-color);
-        color: var(--theme-color);
+        &:hover {
+          text-decoration: none;
+          border-bottom: 2px solid var(--theme-color);
+          color: var(--theme-color);
+        }
       }
     }
+
+    .active {
+      a {
+        color: var(--theme-color) !important;
+        border-bottom: 2px solid var(--theme-color);
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
   }
 }
 
