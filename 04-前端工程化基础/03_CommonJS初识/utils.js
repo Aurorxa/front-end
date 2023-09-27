@@ -11,3 +11,4 @@ function formatDate() {
 
 exports.UTIL_NAME = UTIL_NAME
 exports.formatCount = formatCount
+exports.formatDate = formatDate
