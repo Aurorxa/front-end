@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
@@ -9,9 +10,36 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
+    /*
+        webpack 只能理解 JavaScript 和 JSON 文件，这是 webpack 开箱可用的自带能力。
+        loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效模块，以供应用程序使用，以及被添加到依赖图中。
+    */
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ],
+            },
+            {
+                test: /\.ts$/,
+                use: 'ts-loader'
+            },
+        ],
+    },
+    // 插件
     plugins: [
         // 清理插件
         new CleanWebpackPlugin(),
         // 其它插件...
+        new HtmlWebpackPlugin({
+            template: './index.html'
+        }),
     ],
 };

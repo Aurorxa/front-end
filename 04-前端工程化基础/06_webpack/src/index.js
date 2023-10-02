@@ -1,5 +1,6 @@
-const axios = require('axios');
+const axios = require('axios')
 import {sum} from './utils/math'
+import './components/div_cpn'
 
 console.log(axios)
 
