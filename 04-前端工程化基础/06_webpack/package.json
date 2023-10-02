@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "main": "./src/index.js",
   "license": "MIT",
+  "installConfig": {
+    "pnp": true
+  },
   "dependencies": {
     "axios": "^1.5.1"
   },
-  "installConfig": {
-    "pnp": true
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
