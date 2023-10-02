@@ -6,10 +6,15 @@
   "installConfig": {
     "pnp": true
   },
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "build": "webpack --config webpack.config.js"
+  },
   "dependencies": {
     "axios": "^1.5.1"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }
