@@ -31,6 +31,14 @@ module.exports = {
                 test: /\.ts$/,
                 use: 'ts-loader'
             },
+            {
+                test: /\.less$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader',
+                ],
+            },
         ],
     },
     // 插件
