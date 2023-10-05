@@ -53,7 +53,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         // 其它插件...
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './public/index.html'
         }),
     ],
 };
