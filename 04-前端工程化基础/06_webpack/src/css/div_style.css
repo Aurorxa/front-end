@@ -2,4 +2,6 @@
     font-size: 20px;
     background-color: pink;
     color: red;
+
+    user-select: none;
 }
