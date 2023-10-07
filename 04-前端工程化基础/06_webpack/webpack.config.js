@@ -110,7 +110,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         // 其它插件...
         new HtmlWebpackPlugin({
-            template: './public/index.html'
+            title: "京东商城",
+            template: './public/index.html',
         }),
     ],
     // 解析
