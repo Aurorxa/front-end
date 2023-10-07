@@ -73,6 +73,8 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)/,
                 type: 'asset',
                 generator: {
+                    // 占位符 [name] 指向原来的图片名称
+                    // 占位符 [ext] 扩展名
                     filename: 'static/[hash][ext][query]'
                 },
                 parser: {
