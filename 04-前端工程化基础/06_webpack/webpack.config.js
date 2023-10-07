@@ -116,6 +116,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "京东商城",
             template: './public/index.html',
+            favicon: path.resolve(__dirname, './public/favicon.ico'),
         }),
     ],
     // 解析
