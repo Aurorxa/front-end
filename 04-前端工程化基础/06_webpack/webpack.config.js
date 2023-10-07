@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const {DefinePlugin} = require('webpack');
 
 module.exports = {
     // 入口
@@ -109,6 +110,9 @@ module.exports = {
         // 清理插件
         new CleanWebpackPlugin(),
         // 其它插件...
+        new DefinePlugin({
+            BASE_URL: '"./"',
+        }),
         new HtmlWebpackPlugin({
             title: "京东商城",
             template: './public/index.html',
