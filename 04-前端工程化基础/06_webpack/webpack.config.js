@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const {DefinePlugin} = require('webpack');
 
 module.exports = {
@@ -10,6 +9,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
+        clean: true
     },
     /*
         webpack 只能理解 JavaScript 和 JSON 文件，这是 webpack 开箱可用的自带能力。
@@ -108,7 +108,7 @@ module.exports = {
     // 插件
     plugins: [
         // 清理插件
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         // 其它插件...
         new DefinePlugin({
             BASE_URL: '"./"',
