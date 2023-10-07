@@ -44,7 +44,7 @@ module.exports = {
                 use: 'ts-loader'
             },
             {
-                test: /\.less$/i,
+                test: /\.less$/,
                 use: [
                     {
                         loader: 'style-loader'
