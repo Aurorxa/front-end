@@ -117,7 +117,15 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.wasm', ".vue", ".jsx", ".ts", ".tsx"],
         alias: {
-            '@': path.resolve(__dirname, 'src')
+            '@': path.resolve(__dirname, 'src'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@views': path.resolve(__dirname, 'src/views'),
+            '@router': path.resolve(__dirname, 'src/router'),
+            '@store': path.resolve(__dirname, 'src/store'),
+            '@utils': path.resolve(__dirname, 'src/utils'),
+            '@api': path.resolve(__dirname, 'src/api'),
+            '@config': path.resolve(__dirname, 'src/config'),
         },
         mainFiles: ['index']
     },
