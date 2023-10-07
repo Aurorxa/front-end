@@ -74,6 +74,11 @@ module.exports = {
                 type: 'asset',
                 generator: {
                     filename: 'static/[hash][ext][query]'
+                },
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 4 * 1024 // 4kb
+                    }
                 }
             },
         ],
