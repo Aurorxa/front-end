@@ -113,4 +113,12 @@ module.exports = {
             template: './public/index.html'
         }),
     ],
+    // 解析
+    resolve: {
+        extensions: ['.js', '.json', '.wasm', ".vue", ".jsx", ".ts", ".tsx"],
+        alias: {
+            '@': path.resolve(__dirname, 'src')
+        },
+        mainFiles: ['index']
+    },
 };
