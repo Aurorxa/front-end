@@ -7,7 +7,7 @@
     "pnp": true
   },
   "scripts": {
-    "dev": "webpack-dev-server --open",
+    "dev": "webpack serve --config config/webpack-dev.config.js",
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
     "style-loader": "^3.3.3",
     "ts-loader": "^9.4.4",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

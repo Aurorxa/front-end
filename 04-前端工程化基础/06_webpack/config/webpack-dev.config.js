@@ -5,7 +5,7 @@ const {DefinePlugin} = require('webpack');
 module.exports = {
     mode: 'development',
     // 入口
-    entry: './src/index.js',
+    entry: path.resolve(__dirname, '../src/index.js'),
     // 输出
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -116,31 +116,27 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: "京东商城",
-            template: './public/index.html',
-            favicon: path.resolve(__dirname, './public/favicon.ico'),
+            template: path.resolve(__dirname, '../public/index.html'),
+            favicon: path.resolve(__dirname, '../public/favicon.ico'),
         }),
     ],
     // 解析
     resolve: {
-        extensions: ['.js', '.json', '.wasm', ".vue", ".jsx", ".ts", ".tsx"],
+        extensions: ['.js', '.json', '.wasm'],
         alias: {
-            '@': path.resolve(__dirname, './src'),
-            '@assets': path.resolve(__dirname, './src/assets'),
-            '@components': path.resolve(__dirname, './src/components'),
-            '@views': path.resolve(__dirname, './src/views'),
-            '@router': path.resolve(__dirname, './src/router'),
-            '@store': path.resolve(__dirname, './src/store'),
-            '@utils': path.resolve(__dirname, './src/utils'),
-            '@api': path.resolve(__dirname, './src/api'),
-            '@config': path.resolve(__dirname, './src/config'),
+            '@': path.resolve(__dirname, '../src'),
+            '@assets': path.resolve(__dirname, '../src/assets'),
+            '@components': path.resolve(__dirname, '../src/components'),
+            '@views': path.resolve(__dirname, '../src/views'),
+            '@router': path.resolve(__dirname, '../src/router'),
+            '@store': path.resolve(__dirname, '../src/store'),
+            '@utils': path.resolve(__dirname, '../src/utils'),
+            '@api': path.resolve(__dirname, '../src/api'),
+            '@config': path.resolve(__dirname, '../src/config'),
         },
         mainFiles: ['index']
     },
     devServer: {
-        static: {
-            directory: path.join(__dirname, 'public'),
-        },
-        compress: true,
-        port: 9000,
+        hot: true
     },
 };
