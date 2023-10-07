@@ -69,6 +69,13 @@ module.exports = {
                     }
                 ],
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)/,
+                type: 'asset',
+                generator: {
+                    filename: 'static/[hash][ext][query]'
+                }
+            },
         ],
     },
     // 插件
