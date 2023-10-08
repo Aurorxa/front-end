@@ -18,6 +18,8 @@
     <h2>展示的信息：{{info.split(' ')}}</h2>
     <!-- ③ 三元运算符 -->
     <h2>天气很{{hot?'热':'冷'}}</h2>
+    <!-- ④ 调用 methods 中的函数 -->
+    <h2>{{add1(2)}}</h2>
   </div>
 
   <script>
@@ -32,6 +34,11 @@
           hot: true
         }
       },
+      methods: {
+        add1(num1) {
+          return num1 + 1
+        }
+      }
     })
 
     app.mount('#app')
