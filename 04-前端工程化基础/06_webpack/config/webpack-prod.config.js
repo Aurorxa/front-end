@@ -3,15 +3,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {DefinePlugin} = require('webpack');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     // 入口
     entry: './src/index.js',
     // 输出
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: 'bundle.js',
         clean: true
     },
+    /*
+        webpack 只能理解 JavaScript 和 JSON 文件，这是 webpack 开箱可用的自带能力。
+        loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效模块，以供应用程序使用，以及被添加到依赖图中。
+    */
     module: {
         rules: [
             {
@@ -88,7 +92,7 @@ module.exports = {
     ],
     // 解析
     resolve: {
-        extensions: ['.js', '.json', '.wasm', ".vue", ".jsx", ".ts", ".tsx"],
+        extensions: ['.js', '.json', '.wasm'],
         alias: {
             '@': path.resolve(__dirname, '../src'),
             '@assets': path.resolve(__dirname, '../src/assets'),
@@ -103,10 +107,6 @@ module.exports = {
         mainFiles: ['index']
     },
     devServer: {
-        hot: true,
-        host: "0.0.0.0",
-        // port: 8899,
-        open: true,
-        compress: true,
-    }
+        hot: true
+    },
 };
