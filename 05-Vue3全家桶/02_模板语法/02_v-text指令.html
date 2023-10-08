@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <!-- v-text 更新元素的文本内容。[了解] -->
+    <h2 v-text="message">{{message}}</h2>
+    <button @click="changeMessage">改变message</button>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          message: 'Hello World',
+        }
+      },
+      methods: {
+        changeMessage() {
+          this.message = 'Hello Vue'
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
