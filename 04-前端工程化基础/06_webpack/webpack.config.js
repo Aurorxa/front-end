@@ -135,5 +135,12 @@ module.exports = {
             '@config': path.resolve(__dirname, './src/config'),
         },
         mainFiles: ['index']
+    },
+    devServer: {
+        hot: true,
+        host: "0.0.0.0",
+        port: 8899,
+        open: true,
+        compress: true,
     }
 };
