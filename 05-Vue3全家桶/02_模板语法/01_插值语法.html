@@ -10,12 +10,14 @@
 <body>
 
   <div id="app">
-    <!-- 基本使用 -->
+    <!-- ① 基本使用 -->
     <h2>{{message}}</h2>
     <h2>当前计数：{{count}}</h2>
-    <!-- 表达式 -->
+    <!-- ② 表达式 -->
     <h2>计数双倍：{{count*2}}</h2>
     <h2>展示的信息：{{info.split(' ')}}</h2>
+    <!-- ③ 三元运算符 -->
+    <h2>天气很{{hot?'热':'冷'}}</h2>
   </div>
 
   <script>
@@ -26,7 +28,8 @@
         return {
           message: 'Hello World',
           count: 1,
-          info: 'my name is god'
+          info: 'my name is god',
+          hot: true
         }
       },
     })
