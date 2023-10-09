@@ -23,6 +23,10 @@
     .box3 {
       background-color: skyblue;
     }
+
+    .box4 {
+      background-color: #1DC128;
+    }
   </style>
 </head>
 <body>
@@ -37,6 +41,8 @@
     <button @click="count++">点我+1</button>
     <!-- 绑定其他事件 -->
     <div @mousemove="divMousemove" class="box box3"></div>
+    <!-- 绑定多个事件 -->
+    <div @click="divClick" @mousemove="divMousemove" class="box box4"></div>
   </div>
 
   <script>
