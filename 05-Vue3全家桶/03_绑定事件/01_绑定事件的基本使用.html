@@ -23,12 +23,13 @@
 <body>
 
   <div id="app">
-    <!--
-      v-on 用于绑定事件
-    -->
+    <!-- v-on 用于绑定事件 -->
     <div class="box1" v-on:click="divClick"></div>
     <!-- 语法糖 -->
     <div @click="divClick" class="box2"></div>
+    <!-- 绑定方法的位置也可以写成表达式 -->
+    <h2>{{count}}</h2>
+    <button @click="this.count++">点我+1</button>
   </div>
 
   <script>
@@ -36,7 +37,9 @@
 
     const app = createApp({
       data() {
-        return {}
+        return {
+          count: 0
+        }
       },
       methods: {
         divClick() {
