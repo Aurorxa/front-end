@@ -34,7 +34,7 @@
     <!-- 动态绑定 class 和普通的 class 是可以共存 -->
     <button :class="{active: isActive , pink: true}" @click="btnClick" class="abc cba nba">我是按钮</button>
 
-    <!-- 动态绑定 class 使用函数 -->
+    <!-- 动态绑定 class 从 methods 中获取 -->
     <button :class="getDynamicClasses()" @click="btnClick" class="abc cba nba">我是按钮</button>
   </div>
 
