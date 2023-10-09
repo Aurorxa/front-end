@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+  <style>
+    .active {
+      color: red;
+    }
+
+    .pink {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <!-- 基本绑定 -->
+    <h2 :class="classes">{{message}}</h2>
+
+    <!-- 动态绑定 classes 数组写法 -->
+    <h2 :class="['active','pink']">呵呵哒</h2>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          message: 'Hello World',
+          classes: "abc cba nba",
+          isActive: false
+        }
+      },
+      methods: {
+        btnClick() {
+          this.isActive = !this.isActive
+        },
+        getDynamicClasses() {
+          return {
+            active: this.isActive,
+            pink: true
+          }
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
