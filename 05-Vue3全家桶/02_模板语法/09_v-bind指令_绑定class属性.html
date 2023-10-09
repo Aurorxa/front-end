@@ -28,8 +28,13 @@
     <!-- 对象写法 -->
     <button :class="{active: isActive}" @click="btnClick">我是按钮</button>
 
-    <!-- 对象写法多个键值对 -->
+    <!-- 对象写法的多个键值对 -->
     <button :class="{active: isActive , pink: true}" @click="btnClick">我是按钮</button>
+
+    <!-- 动态绑定 class 和普通的 class 是可以共存 -->
+    <button :class="{active: isActive , pink: true}" @click="btnClick" class="abc cba nba">我是按钮</button>
+
+    <button :class="getDynamicClasses()" @click="btnClick" class="abc cba nba">我是按钮</button>
   </div>
 
   <script>
@@ -46,6 +51,12 @@
       methods: {
         btnClick() {
           this.isActive = !this.isActive
+        },
+        getDynamicClasses() {
+          return {
+            active: this.isActive,
+            pink: true
+          }
         }
       }
     })
