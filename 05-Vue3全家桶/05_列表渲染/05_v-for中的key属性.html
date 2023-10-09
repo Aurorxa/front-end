@@ -10,6 +10,7 @@
 <body>
 
   <div id="app">
+    <button @click="insertF">插入F</button>
     <ul>
       <li :key="index" v-for="(item,index) in letters">
         {{item}}
@@ -26,7 +27,16 @@
           letters: ['a', 'b', 'c', 'd', 'e']
         }
       },
-      methods: {}
+      methods: {
+        insertF() {
+          this.letters.splice(this.getRandomInt(0, this.letters.length), 0, 'F')
+        },
+        getRandomInt(min, max) {
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+        }
+      }
     })
 
     app.mount('#app')
