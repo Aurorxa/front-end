@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <div @click="divClick" class="box">
+      <!-- 阻止事件冒泡 -->
+      <button @click.stop="btnClick">点我</button>
+    </div>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          count: 0,
+          age: 18
+        }
+      },
+      methods: {
+        divClick() {
+          console.log('div被点击了~')
+        },
+        btnClick() {
+          console.log('按钮被点击了~')
+        },
+
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
