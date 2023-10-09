@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <ul>
+      <li v-for="item in names">{{item}}</li>
+    </ul>
+    <button @click="changeArray">修改数组</button>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          names: ['abc', 'cba', 'nba']
+        }
+      },
+      methods: {
+        changeArray() {
+          // ① 直接将数组修改为一个新的数组
+          this.names = ['xyz', ...this.names]
+          // ② 通过一些数组的方法，修改数组中的元素
+          this.names.push('呵呵哒')
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
