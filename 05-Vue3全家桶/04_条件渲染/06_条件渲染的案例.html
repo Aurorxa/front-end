@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+  <style>
+    img {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <div>
+      <button @click="toggle">切换</button>
+    </div>
+    <template v-if="isActive">
+      <img :src="imgUrl" alt="">
+    </template>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          imgUrl: './assets/wzry_qrcode.webp',
+          isActive: true
+        }
+      },
+      methods: {
+        toggle() {
+          this.isActive = !this.isActive
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
