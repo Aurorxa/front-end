@@ -29,12 +29,7 @@
       },
       methods: {
         insertF() {
-          this.letters.splice(this.getRandomInt(0, this.letters.length), 0, 'F')
-        },
-        getRandomInt(min, max) {
-          min = Math.ceil(min);
-          max = Math.floor(max);
-          return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+          this.letters.splice(2, 0, 'F')
         }
       }
     })
