@@ -7,16 +7,21 @@
   <title>Title</title>
   <script src="./js/vue@3.3.4.js"></script>
   <style>
-    .box1 {
+    .box {
       width: 100px;
       height: 100px;
+    }
+
+    .box1 {
       background-color: pink;
     }
 
     .box2 {
-      width: 100px;
-      height: 100px;
       background-color: red;
+    }
+
+    .box3 {
+      background-color: skyblue;
     }
   </style>
 </head>
@@ -24,12 +29,14 @@
 
   <div id="app">
     <!-- v-on 用于绑定事件 -->
-    <div class="box1" v-on:click="divClick"></div>
+    <div class="box box1" v-on:click="divClick"></div>
     <!-- 语法糖 -->
-    <div @click="divClick" class="box2"></div>
+    <div @click="divClick" class="box box2"></div>
     <!-- 绑定方法的位置也可以写成表达式【了解】 -->
     <h2>{{count}}</h2>
     <button @click="count++">点我+1</button>
+    <!-- 绑定其他事件 -->
+    <div @mousemove="divMousemove" class="box box3"></div>
   </div>
 
   <script>
@@ -44,6 +51,9 @@
       methods: {
         divClick() {
           console.log('click')
+        },
+        divMousemove() {
+          console.log('move')
         }
       }
     })
