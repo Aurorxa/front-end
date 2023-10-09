@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+  <style>
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <!--
+      v-on 用于绑定事件
+    -->
+    <div class="box1" v-on:click="divClick"></div>
+    <!-- 语法糖 -->
+    <div @click="divClick" class="box2"></div>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {}
+      },
+      methods: {
+        divClick() {
+          console.log('click')
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
