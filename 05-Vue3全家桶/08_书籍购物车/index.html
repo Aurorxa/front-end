@@ -76,10 +76,10 @@
           return '¥' + price;
         },
         decrement(book) {
-          this.books.splice(this.books.findIndex(item => item.id === book.id), 1, {...book, count: --book.count})
+          book.count--
         },
         increment(book) {
-          this.books.splice(this.books.findIndex(item => item.id === book.id), 1, {...book, count: ++book.count})
+          book.count++
         },
         remove(book) {
           this.books.splice(this.books.findIndex(item => item.id === book.id), 1)
