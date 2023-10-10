@@ -13,7 +13,7 @@
     <!-- 拼接名字 -->
     <h2>姓名：{{getFullName()}}</h2>
     <!-- 显示分数等级 -->
-    <h2>{{getGrade()}}</h2>
+    <h2>{{getScoreLevel()}}</h2>
     <!-- 对文本中的单词进行反转显示 -->
     <h2>{{reverseMsg()}}</h2>
   </div>
@@ -37,7 +37,7 @@
         getFullName() {
           return this.firstName + " - " + this.lastName
         },
-        getGrade() {
+        getScoreLevel() {
           return this.score >= 60 ? '及格' : '差'
         },
         reverseMsg() {
