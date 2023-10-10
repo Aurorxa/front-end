@@ -50,7 +50,9 @@
           handler(newValue, oldValue) {
             console.log('info发生了变化', newValue, oldValue)
           },
-          deep: true
+          deep: true,
+          // 第一次渲染的时候直接执行一次监听器
+          immediate: true
         }
       }
     })
