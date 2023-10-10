@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <div>
+      <h2>姓名：{{fullName}}</h2>
+    </div>
+    <button @click="setFullName">修改姓名</button>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          // 姓名
+          firstName: '张',
+          lastName: '三',
+        }
+      },
+      computed: {
+        fullName: {
+          set(newName) {
+            this.firstName = newName.split(' ')[0]
+            this.lastName = newName.split(' ')[1]
+          },
+          get() {
+            return this.firstName + ' ' + this.lastName
+          }
+        }
+      },
+      methods: {
+        setFullName() {
+          this.fullName = "李 四"
+        }
+      }
+
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
