@@ -42,19 +42,19 @@
           <td>{{index+1}}</td>
           <td>{{book.name}}</td>
           <td>{{book.date}}</td>
-          <td>{{'¥'+ book.price}}</td>
+          <td>{{formatPrice(book.price)}}</td>
           <td>
-            <button @click="subCount(book.id)">-</button>
+            <button :disabled="book.count <=1" @click="decrement(book)">-</button>
             {{book.count}}
-            <button @click="addCount(book.id)">+</button>
+            <button @click="increment(book)">+</button>
           </td>
           <td>
-            <button @click="remove(book.id)">移除</button>
+            <button @click="remove(book)">移除</button>
           </td>
         </tr>
       </tbody>
     </table>
-    <h2>总价：{{totalPrice}}</h2>
+    <h2>总价：{{formatPrice(totalPrice)}}</h2>
   </div>
 
   <script>
@@ -68,31 +68,21 @@
       },
       computed: {
         totalPrice() {
-          return '¥' + this.books.reduce((prev, cur) => prev + (cur.price * cur.count), 0)
+          return this.books.reduce((prev, cur) => prev + (cur.price * cur.count), 0)
         }
       },
       methods: {
-        subCount(id) {
-          this.books = this.books.map(item => {
-            if (item.count === 1) {
-              return item
-            }
-            if (item.id === id) {
-              item.count--
-            }
-            return item
-          })
+        formatPrice(price) {
+          return '¥' + price;
         },
-        addCount(id) {
-          this.books = this.books.map(item => {
-            if (item.id === id) {
-              item.count++
-            }
-            return item
-          })
+        decrement(book) {
+          this.books.splice(this.books.findIndex(item => item.id === book.id), 1, {...book, count: --book.count})
         },
-        remove(id) {
-          this.books.splice(this.books.findIndex(item => item.id === id), 1)
+        increment(book) {
+          this.books.splice(this.books.findIndex(item => item.id === book.id), 1, {...book, count: ++book.count})
+        },
+        remove(book) {
+          this.books.splice(this.books.findIndex(item => item.id === book.id), 1)
         }
       }
     })
