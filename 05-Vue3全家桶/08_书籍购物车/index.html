@@ -43,7 +43,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr :key="book.id" v-for="(book,index) in books">
+          <tr :key="book.id" @mouseenter="mouseenter()" @mouseleave="mouseleave()"
+              v-for="(book,index) in books">
             <td>{{index+1}}</td>
             <td>{{book.name}}</td>
             <td>{{book.date}}</td>
@@ -92,6 +93,12 @@
         },
         removeBook(book) {
           this.books.splice(this.books.findIndex(item => item.id === book.id), 1)
+        },
+        mouseenter() {
+          console.log('mouseenter')
+        },
+        mouseleave() {
+          console.log('mouseleave')
         }
       }
     })
