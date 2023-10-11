@@ -21,6 +21,10 @@
     table thead {
       background-color: #f5f5f5;
     }
+
+    .active {
+      background-color: pink;
+    }
   </style>
 </head>
 <body>
@@ -44,7 +48,7 @@
           <td>{{book.date}}</td>
           <td>{{formatPrice(book.price)}}</td>
           <td>
-            <button :disabled="book.count <=1" @click="decrement(book)">-</button>
+            <button :disabled="book.count <= 1" @click="decrement(book)">-</button>
             {{book.count}}
             <button @click="increment(book)">+</button>
           </td>
