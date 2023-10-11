@@ -54,7 +54,7 @@
               <button @click="increment(book)">+</button>
             </td>
             <td>
-              <button @click="removeItem(book)">移除</button>
+              <button @click="removeBook(book)">移除</button>
             </td>
           </tr>
         </tbody>
@@ -90,7 +90,7 @@
         increment(book) {
           book.count++
         },
-        removeItem(book) {
+        removeBook(book) {
           this.books.splice(this.books.findIndex(item => item.id === book.id), 1)
         }
       }
