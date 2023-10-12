@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="js/vue@3.3.4.js"></script>
+  <script src="js/data.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    table th, td {
+      border: 1px solid black;
+      padding: 8px 16px;
+    }
+
+    table thead {
+      background-color: #f5f5f5;
+    }
+
+    .active {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <template v-if="books.length">
+      <table>
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>书籍名称</th>
+            <th>出版日期</th>
+            <th>价格</th>
+            <th>购买数量</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr :class="{active: book.id === currentId}"
+              :key="book.id"
+              @click="rowClick(book.id)"
+              v-for="(book,index) in books">
+            <td>{{index+1}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.date}}</td>
+            <td>{{formatPrice(book.price)}}</td>
+            <td>
+              <button :disabled="book.count <= 1" @click="decrement(book)">-</button>
+              {{book.count}}
+              <button @click="increment(book)">+</button>
+            </td>
+            <td>
+              <button @click="removeBook(book)">移除</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>总价：{{formatPrice(totalPrice)}}</h2>
+    </template>
+    <template v-else>
+      <h1>购物车为空，请添加喜欢的书籍~</h1>
+    </template>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          books: books,
+          currentId: -1
+        }
+      },
+      computed: {
+        totalPrice() {
+          return this.books.reduce((prev, cur) => prev + (cur.price * cur.count), 0)
+        }
+      },
+      methods: {
+        rowClick(id) {
+          this.currentId = id
+        },
+        formatPrice(price) {
+          return '¥' + price;
+        },
+        decrement(book) {
+          book.count--
+        },
+        increment(book) {
+          book.count++
+        },
+        removeBook(book) {
+          this.books.splice(this.books.findIndex(item => item.id === book.id), 1)
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>

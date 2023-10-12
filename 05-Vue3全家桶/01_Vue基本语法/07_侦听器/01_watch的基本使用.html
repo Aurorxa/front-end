@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h2>{{message}}</h2>
+    <div>
+      <h2>个人信息</h2>
+      <p>姓名：{{info.name}}</p>
+      <p>年龄：{{info.age}}</p>
+    </div>
+    <button @click="changeMessage">点我</button>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          message: 'Hello World',
+          info: {
+            name: '张三',
+            age: 18
+          }
+        }
+      },
+      methods: {
+        changeMessage() {
+          this.message = '你好，李焕英~'
+          this.info = {
+            name: '李焕英',
+            age: 50
+          }
+        }
+      },
+      watch: {
+        message(newValue, oldValue) {
+          console.log('message发生了变化', newValue, oldValue)
+        },
+        info(newValue, oldValue) {
+          console.log('info发生了变化', newValue, oldValue)
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
