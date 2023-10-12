@@ -10,7 +10,9 @@
 <body>
 
   <div id="app">
-    <input :value="message" type="text">
+    <input :value="message" @input="inputChange" type="text">
+
+    <h2>{{message}}</h2>
   </div>
 
   <script>
@@ -21,6 +23,11 @@
       data() {
         return {
           message: 'Hello Vue'
+        }
+      },
+      methods: {
+        inputChange(e) {
+          this.message = e.target.value
         }
       }
     })
