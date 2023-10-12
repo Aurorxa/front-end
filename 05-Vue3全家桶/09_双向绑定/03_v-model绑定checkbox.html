@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <!-- checkbox 单选框：绑定到属性的是一个 Boolean -->
+    <label for="agree">
+      <input id="agree" type="checkbox" v-model="agree"> 同意协议
+    </label>
+    <h2>checkbox 单选框：{{agree}}</h2>
+    <!-- checkbox 多选框：绑定到属性的是一个 Array -->
+    <!-- 多选框的时候，需要明确的绑定一个 value 值 -->
+    <div class="hobbies">
+      <label for="eat">
+        <input id="eat" type="checkbox" v-model="hobbies" value="吃饭"> 吃饭
+      </label>
+      <label for="sleep">
+        <input id="sleep" type="checkbox" v-model="hobbies" value="睡觉"> 睡觉
+      </label>
+      <label for="play">
+        <input id="play" type="checkbox" v-model="hobbies" value="打豆豆"> 打豆豆
+      </label>
+    </div>
+    <h2>checkbox 多选框：{{hobbies}}</h2>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    // 创建 app
+    const app = createApp({
+      data() {
+        return {
+          agree: false,
+          hobbies: []
+        }
+      },
+      methods: {}
+    })
+
+    // 挂载 app
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
