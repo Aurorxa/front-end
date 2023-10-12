@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="./js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <!-- 手动实现了双向绑定 -->
+    <input :value="message" @input="inputChange" type="text">
+    <!-- v-model实现双向绑定 -->
+    <input type="text" v-model="vMessage">
+
+    <h2>{{message}}</h2>
+    <h2>{{vMessage}}</h2>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    // 创建 app
+    const app = createApp({
+      data() {
+        return {
+          message: 'Hello Vue',
+          "vMessage": "Hello Vue"
+        }
+      },
+      methods: {
+        inputChange(e) {
+          this.message = e.target.value
+        }
+      }
+    })
+
+    // 挂载 app
+    app.mount('#app')
+  </script>
+
+</body>
+</html>
