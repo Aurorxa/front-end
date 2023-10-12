@@ -21,6 +21,18 @@
       </label>
     </div>
     <h2>所属地区：{{address}}</h2>
+
+    <div class="fruit">
+      <label for="fruit">
+        <select id="fruit" multiple name="" v-model="fruit">
+          <option value="">请选择</option>
+          <option value="苹果">苹果</option>
+          <option value="香蕉">香蕉</option>
+          <option value="草莓">草莓</option>
+        </select>
+      </label>
+    </div>
+    <h2>喜欢的水果：{{fruit}}</h2>
   </div>
 
   <script>
@@ -30,7 +42,8 @@
     const app = createApp({
       data() {
         return {
-          address: ''
+          address: '',
+          fruit: []
         }
       },
       methods: {}
