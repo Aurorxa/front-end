@@ -10,13 +10,14 @@
 <body>
 
   <div id="app">
-    <!-- 手动实现了双向绑定 -->
-    <input :value="message" @input="inputChange" type="text">
-    <!-- v-model实现双向绑定 -->
-    <input type="text" v-model="vMessage">
-
-    <h2>{{message}}</h2>
-    <h2>{{vMessage}}</h2>
+    <div class="fruit">
+      <label for="fruit">
+        <select id="fruit" multiple name="" v-model="fruit">
+          <option :key="index" :value="fruit.value" v-for="(fruit,index) in allFruits">{{fruit.text}}</option>
+        </select>
+      </label>
+    </div>
+    <h2>喜欢的水果：{{fruit}}</h2>
   </div>
 
   <script>
@@ -26,15 +27,16 @@
     const app = createApp({
       data() {
         return {
-          message: 'Hello Vue',
-          "vMessage": "Hello Vue"
+          allFruits: [
+            {value: '', text: '请选择'},
+            {value: '苹果', text: '苹果'},
+            {value: '香蕉', text: '香蕉'},
+            {value: '草莓', text: '草莓'},
+          ],
+          fruit: []
         }
       },
-      methods: {
-        inputChange(e) {
-          this.message = e.target.value
-        }
-      }
+      methods: {}
     })
 
     // 挂载 app
