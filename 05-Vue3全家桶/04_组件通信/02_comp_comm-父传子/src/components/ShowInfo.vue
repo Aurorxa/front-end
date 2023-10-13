@@ -25,7 +25,11 @@ export default {
       type: Number,
       default: 18
     },
-    height: Number
+    height: Number,
+    friends: {
+      type: Object,
+      default: () => ({name: '王二', age: '18', height: 1.2})
+    }
   },
   created() {
     console.log(this.name, this.age, this.height);
