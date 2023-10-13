@@ -3,6 +3,7 @@
   <hr>
   <ShowInfo :age="3" :height="1.68" name="张三"/>
   <hr>
+  <!-- 展示默认的个人信息 -->
   <ShowInfo :height="1.68" name="李四"/>
 </template>
 
