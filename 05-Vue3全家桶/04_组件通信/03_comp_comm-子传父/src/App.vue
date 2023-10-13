@@ -1,27 +1,35 @@
 <template>
-  <ShowInfo :age="18" :height="1.88" name="许大仙"/>
-  <hr>
-  <ShowInfo :age="3" :height="1.68" name="张三"/>
-  <hr>
-  <!-- 展示默认的个人信息 -->
-  <ShowInfo :height="1.68" name="李四"/>
+  <div class="app">
+    <h2>当前计数：{{ count }}</h2>
+  </div>
+  <AddCounter v-on:addEvent="addCount"/>
+  <SubCounter @subEvent="subCount"/>
 </template>
 
 <script>
-
-import ShowInfo from "@/components/ShowInfo.vue";
+import AddCounter from "@/components/AddCounter.vue";
+import SubCounter from "@/components/SubCounter.vue";
 
 export default {
   name: 'App',
   components: {
-    ShowInfo
+    AddCounter,
+    SubCounter
   },
   data() {
     return {
       count: 0
     }
   },
-  methods: {}
+  methods: {
+    addCount(num) {
+      this.count += num
+    },
+    subCount(num) {
+      this.count -= num
+    }
+  },
+
 }
 </script>
 
