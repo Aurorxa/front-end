@@ -29,6 +29,11 @@ export default {
   height: 40px;
   line-height: 40px;
   background-color: skyblue;
+  text-align: center;
+
+  .tab-bar-item {
+    flex: 1;
+  }
 
   a {
     text-decoration: none;
