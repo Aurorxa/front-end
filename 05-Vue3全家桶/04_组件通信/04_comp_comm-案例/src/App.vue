@@ -1,17 +1,19 @@
 <template>
   <div class="app">
-    <TabBar :products="products" @togglePage="currentData"/>
+    <!-- ① TopBar  -->
+    <TopBar :products="products" @togglePage="currentData"/>
+    <!-- ② 展示结果   -->
     <h2 v-if="current">当前页面是：{{ current }}页面</h2>
   </div>
 </template>
 
 <script>
-import TabBar from "@/components/TabBar.vue";
+import TopBar from "@/components/TopBar.vue";
 
 export default {
   name: 'App',
   components: {
-    TabBar
+    TopBar
   },
   data() {
     return {
@@ -30,6 +32,5 @@ export default {
 
 <style lang="less">
 .app {
-  background-color: pink;
 }
 </style>
