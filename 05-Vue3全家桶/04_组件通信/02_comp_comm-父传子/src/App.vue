@@ -1,7 +1,7 @@
 <template>
-  <ShowInfo age="18" height="1.88" name="许大仙"/>
+  <ShowInfo :age="18" :height="1.88" name="许大仙"/>
   <hr>
-  <ShowInfo age="3" height="1.68" name="张三"/>
+  <ShowInfo :age="3" :height="1.68" name="张三"/>
 </template>
 
 <script>
