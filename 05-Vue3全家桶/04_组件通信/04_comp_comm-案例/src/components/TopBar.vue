@@ -16,13 +16,12 @@ export default {
   },
   data() {
     return {
-      currentIndex: -1
+      currentIndex: 0
     }
   },
   emits: ["toggle-page"],
   methods: {
     handleClick(item, index) {
-      console.log('@', index)
       this.currentIndex = index
       this.$emit('toggle-page', item)
     }
