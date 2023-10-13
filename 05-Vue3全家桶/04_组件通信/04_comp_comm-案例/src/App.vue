@@ -32,5 +32,6 @@ export default {
 
 <style lang="less">
 .app {
+  background-color: #f5f5f5;
 }
 </style>
