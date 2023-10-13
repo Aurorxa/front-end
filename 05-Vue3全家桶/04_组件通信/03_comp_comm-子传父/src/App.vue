@@ -2,7 +2,7 @@
   <div class="app">
     <h2>当前计数：{{ count }}</h2>
   </div>
-  <AddCounter v-on:addEvent="addCount"/>
+  <AddCounter @add-event="addCount"/>
   <SubCounter @subEvent="subCount"/>
 </template>
 

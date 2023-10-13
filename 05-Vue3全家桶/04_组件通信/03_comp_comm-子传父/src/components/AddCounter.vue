@@ -12,10 +12,10 @@ export default {
   methods: {
     add(num) {
       // 让子组件发出自定义事件
-      this.$emit('addEvent', num)
+      this.$emit('add-event', num)
     }
   },
-  emits: ['addEvent']
+  emits: ['add-event']
 
 }
 </script>

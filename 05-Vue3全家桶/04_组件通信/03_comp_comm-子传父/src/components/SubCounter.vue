@@ -11,10 +11,10 @@ export default {
   name: "SubCounter",
   methods: {
     sub(num) {
-      this.$emit("subEvent", num);
+      this.$emit("sub-event", num);
     }
   },
-  emits: ['subEvent']
+  emits: ['sub-event']
 }
 </script>
 
