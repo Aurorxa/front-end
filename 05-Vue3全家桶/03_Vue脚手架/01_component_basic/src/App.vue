@@ -1,22 +1,22 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
   <h2>当前计数：{{ count }}</h2>
   <button @click="increment">+1</button>
   <button @click="decrement">-1</button>
+  <hr>
+  <HelloWorld/>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    HelloWorld
   },
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
       count: 0
     }
   },
