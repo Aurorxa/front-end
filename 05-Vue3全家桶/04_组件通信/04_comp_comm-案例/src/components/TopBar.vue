@@ -1,8 +1,10 @@
 <template>
   <div class="tab-bar">
-    <div v-for="(item,index) in products" :key="index" class="tab-bar-item">
-      <a class="item" href="#" @click="handleClick(item)">{{ item }}</a>
-    </div>
+    <template v-for="(item,index) in products" :key="index">
+      <div :class="{active : currentIndex === index}" class="tab-bar-item" href="#" @click="handleClick(item,index)">
+        {{ item }}
+      </div>
+    </template>
   </div>
 </template>
 
@@ -12,10 +14,17 @@ export default {
   props: ['products'],
   created() {
   },
-  emits: ["togglePage"],
+  data() {
+    return {
+      currentIndex: -1
+    }
+  },
+  emits: ["toggle-page"],
   methods: {
-    handleClick(item) {
-      this.$emit('togglePage', item)
+    handleClick(item, index) {
+      console.log('@', index)
+      this.currentIndex = index
+      this.$emit('toggle-page', item)
     }
   }
 }
@@ -28,22 +37,17 @@ export default {
   justify-content: space-around;
   height: 40px;
   line-height: 40px;
-  background-color: skyblue;
   text-align: center;
 
   .tab-bar-item {
     flex: 1;
-
-    a {
-      text-decoration: none;
-      display: block;
-      color: red;
-
-      &:hover {
-        border-bottom: 2px solid red;
-      }
-    }
+    cursor: pointer;
   }
+}
+
+.active {
+  color: #000;
+  background-color: red;
 }
 
 </style>

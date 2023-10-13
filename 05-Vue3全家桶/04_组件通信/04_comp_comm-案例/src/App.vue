@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <!-- ① TopBar  -->
-    <TopBar :products="products" @togglePage="currentData"/>
+    <TopBar :products="products" @toggle-page="currentData"/>
     <!-- ② 展示结果   -->
     <h2 v-if="current">当前页面是：{{ current }}页面</h2>
   </div>
