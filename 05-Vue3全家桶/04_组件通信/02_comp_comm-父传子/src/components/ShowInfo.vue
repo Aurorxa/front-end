@@ -15,8 +15,16 @@ export default {
   // props: ["name", "age", "height"],
   // 对象语法
   props: {
-    name: String,
-    age: Number,
+    name: {
+      // 类型
+      type: String,
+      // 必须
+      required: true
+    },
+    age: {
+      type: Number,
+      default: 18
+    },
     height: Number
   },
   created() {
