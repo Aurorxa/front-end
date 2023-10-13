@@ -33,18 +33,17 @@ export default {
 
   .tab-bar-item {
     flex: 1;
-  }
 
-  a {
-    text-decoration: none;
-    display: block;
-    color: red;
+    a {
+      text-decoration: none;
+      display: block;
+      color: red;
 
-    &:hover {
-      border-bottom: 2px solid red;
+      &:hover {
+        border-bottom: 2px solid red;
+      }
     }
   }
 }
-
 
 </style>
