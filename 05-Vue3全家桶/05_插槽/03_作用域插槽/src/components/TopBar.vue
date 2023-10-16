@@ -2,7 +2,9 @@
   <div class="top-bar">
     <template v-for="(item,index) in products" :key="index">
       <div :class="{active : currentIndex === index}" class="tab-bar-item" @click="handleClick(item,index)">
-        {{ item }}
+        <slot :item="item">
+          <span>{{ item }}</span>
+        </slot>
       </div>
     </template>
   </div>

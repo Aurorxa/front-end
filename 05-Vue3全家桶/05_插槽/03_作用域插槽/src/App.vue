@@ -2,6 +2,16 @@
   <div class="app">
     <!-- ① TopBar  -->
     <TopBar :products="products" @toggle-page="currentData"/>
+    <TopBar :products="products" @toggle-page="currentData">
+      <template v-slot:default="props">
+        <button>{{ props.item }}</button>
+      </template>
+    </TopBar>
+    <TopBar :products="products" @toggle-page="currentData">
+      <template v-slot:default="props">
+        <a href="#">{{ props.item }}</a>
+      </template>
+    </TopBar>
     <!-- ② 展示结果   -->
     <h2 v-if="current">当前页面是：{{ current }}页面</h2>
   </div>
