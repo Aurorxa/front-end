@@ -11,6 +11,9 @@ export default {
     return {
       count: 0
     }
+  },
+  unmounted() {
+    console.log("Home ... unmounted")
   }
 }
 </script>
