@@ -26,6 +26,7 @@ export default {
       console.log('@', this.$refs.title)
       // 获取 Banner 组件实例
       console.log('@', this.$refs.banner)
+      // 在父组件中可以调用子组件实例上的方法
       this.$refs.banner.bannerClick()
     }
   }
