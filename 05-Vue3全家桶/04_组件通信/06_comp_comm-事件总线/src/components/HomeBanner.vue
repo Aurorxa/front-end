@@ -16,16 +16,18 @@ export default {
       count: 0
     };
   },
-  methods: {},
-  created() {
-    emitter.on('INCREMENT', (e) => {
+  methods: {
+    handleIncrementEvent(e) {
       const {count} = e
       this.count = count
-    })
+    }
   },
-  beforeUnmount() {
-    console.log('beforeUnmount')
-    emitter.off('INCREMENT')
+  created() {
+    emitter.on('INCREMENT', this.handleIncrementEvent)
+  },
+  unmounted() {
+    console.log('unmounted')
+    emitter.off('INCREMENT', this.handleIncrementEvent)
   }
 }
 </script>
