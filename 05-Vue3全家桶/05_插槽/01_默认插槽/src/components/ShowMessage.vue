@@ -1,7 +1,7 @@
 <template>
   <h2>{{ title }}</h2>
   <div class="content">
-    <slot></slot>
+    <slot>插槽的默认内容</slot>
   </div>
 </template>
 
