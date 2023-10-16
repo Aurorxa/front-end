@@ -12,8 +12,18 @@ export default {
       count: 0
     }
   },
+  created() {
+    console.log("Home ... created")
+  },
   unmounted() {
     console.log("Home ... unmounted")
+  },
+  /* 对于保持 keep-alive 组件的切换进行监听 */
+  activated() {
+    console.log("Home... activated")
+  },
+  deactivated() {
+    console.log("Home... deactivated")
   }
 }
 </script>
