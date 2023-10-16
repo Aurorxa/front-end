@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-    <button @click="currentTab = 'Home'">Home</button>
-    <button @click="currentTab = 'About'">About</button>
-    <button @click="currentTab = 'Category'">Category</button>
+    <template v-for="(item,index) in tabs" :key="index">
+      <button @click="changeTab(item)">{{ item }}</button>
+    </template>
     <!-- 通过 Vue 的 <component> 元素和特殊的 is attribute 实现的   -->
     <!--
       :is 的值可以是：
@@ -27,10 +27,15 @@ export default {
   },
   data() {
     return {
+      tabs: ["Home", "About", "Category"],
       currentTab: 'Home'
     }
   },
-  methods: {}
+  methods: {
+    changeTab(item) {
+      this.currentTab = item
+    }
+  }
 }
 </script>
 
