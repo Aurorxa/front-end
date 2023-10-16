@@ -1,7 +1,7 @@
 <template>
   <div class="tab-bar">
     <template v-for="(item,index) in products" :key="index">
-      <div :class="{active : currentIndex === index}" class="tab-bar-item" href="#" @click="handleClick(item,index)">
+      <div :class="{active : currentIndex === index}" class="tab-bar-item" @click="handleClick(item,index)">
         {{ item }}
       </div>
     </template>
