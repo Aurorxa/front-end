@@ -15,10 +15,15 @@ export default {
   },
   data() {
     return {
-      count: 0
+      count: 10
     }
   },
-  methods: {}
+  methods: {},
+  provide() {
+    return {
+      count: this.count
+    }
+  }
 }
 </script>
 

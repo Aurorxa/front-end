@@ -1,12 +1,20 @@
 <template>
   <div class="home-banner">
     HomeBanner
+    {{ appCount }}
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeBanner"
+  name: "HomeBanner",
+  data() {
+    return {
+      appCount: this.count
+    };
+  },
+  methods: {},
+  inject: ['count']
 }
 </script>
 
