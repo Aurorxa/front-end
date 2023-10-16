@@ -22,6 +22,10 @@ export default {
       const {count} = e
       this.count = count
     })
+  },
+  beforeUnmount() {
+    console.log('beforeUnmount')
+    emitter.off('INCREMENT')
   }
 }
 </script>

@@ -1,8 +1,9 @@
 <template>
   <div class="app">
     <h2>当前计数：{{ count }}</h2>
-    <Home/>
+    <Home v-if="isShow"/>
     <button @click="handleClick">点我+1</button>
+    <button @click="handleShow">是否显示</button>
   </div>
 </template>
 
@@ -17,13 +18,17 @@ export default {
   },
   data() {
     return {
-      count: 10
+      count: 10,
+      isShow: true
     }
   },
   methods: {
     handleClick() {
       this.count++;
       emitter.emit('INCREMENT', {count: this.count})
+    },
+    handleShow() {
+      this.isShow = !this.isShow
     }
   }
 }
