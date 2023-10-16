@@ -1,6 +1,8 @@
 <template>
   <h2>{{ title }}</h2>
-  <p>{{ content }}</p>
+  <div class="content">
+    <slot></slot>
+  </div>
 </template>
 
 <script>

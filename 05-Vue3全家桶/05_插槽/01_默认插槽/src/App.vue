@@ -1,8 +1,17 @@
 <template>
   <div class="app">
-    <ShowMessage content="我是内容" title="我是标题"></ShowMessage>
-    <ShowMessage content="我是内容" title="我是标题"></ShowMessage>
-    <ShowMessage content="我是内容" title="我是标题"></ShowMessage>
+    <!--  内容是按钮  -->
+    <ShowMessage title="哈哈哈">
+      <button>我是按钮</button>
+    </ShowMessage>
+    <!-- 内容是超链接   -->
+    <ShowMessage title="呵呵呵">
+      <a href="#">百度一下，你就知道</a>
+    </ShowMessage>
+    <!-- 内容是图片   -->
+    <ShowMessage title="嘻嘻嘻">
+      <img alt="" src="@/assets/logo.png">
+    </ShowMessage>
   </div>
 </template>
 
