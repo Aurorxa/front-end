@@ -1,12 +1,14 @@
 <template>
   <div class="app">
+    <h2>当前计数：{{ count }}</h2>
     <Home/>
+    <button @click="count++">点我+1</button>
   </div>
 </template>
 
 <script>
-
 import Home from "@/components/Home.vue";
+import {computed} from "vue";
 
 export default {
   name: 'App',
@@ -21,7 +23,8 @@ export default {
   methods: {},
   provide() {
     return {
-      count: this.count
+      /* 和响应式数据配合使用 */
+      count: computed(() => this.count)
     }
   }
 }

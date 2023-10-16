@@ -1,7 +1,7 @@
 <template>
   <div class="home-banner">
     HomeBanner
-    {{ appCount }}
+    {{ count }}
   </div>
 </template>
 
