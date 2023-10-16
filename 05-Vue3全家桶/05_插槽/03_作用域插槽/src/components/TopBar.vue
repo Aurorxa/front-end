@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar">
+  <div class="top-bar">
     <template v-for="(item,index) in products" :key="index">
       <div :class="{active : currentIndex === index}" class="tab-bar-item" @click="handleClick(item,index)">
         {{ item }}
@@ -31,7 +31,7 @@ export default {
 
 
 <style lang="less" scoped>
-.tab-bar {
+.top-bar {
   display: flex;
   justify-content: space-around;
   height: 40px;
