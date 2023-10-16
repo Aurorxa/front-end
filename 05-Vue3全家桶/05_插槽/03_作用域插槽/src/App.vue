@@ -1,27 +1,32 @@
 <template>
   <div class="app">
-    <Navbar>
-      <template v-slot:left>左侧导航</template>
-      <template v-slot:center>中间导航</template>
-      <template v-slot:right>右侧导航</template>
-    </Navbar>
+    <!-- ① TopBar  -->
+    <TopBar :products="products" @toggle-page="currentData"/>
+    <!-- ② 展示结果   -->
+    <h2 v-if="current">当前页面是：{{ current }}页面</h2>
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
+import TopBar from "@/components/TopBar.vue";
 
 export default {
   name: 'App',
   components: {
-    Navbar
+    TopBar
   },
   data() {
     return {
-      count: 0
+      products: ["衣服", "鞋子", "裤子"],
+      current: ''
     }
   },
-  methods: {}
+  methods: {
+    currentData(item) {
+      this.current = item;
+    }
+  },
+
 }
 </script>
 
