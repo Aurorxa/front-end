@@ -20,11 +20,11 @@ export default {
     const fullName = computed(() => names.firstName + names.lastName)
 
     const fullName2 = computed({
-      set(val) {
+      set: (val) => {
         names.firstName = val.split(' ')[0]
         names.lastName = val.split(' ')[1]
       },
-      get() {
+      get: () => {
         return names.firstName + names.lastName
       }
     })
