@@ -9,5 +9,9 @@ export default function useCount() {
     const decrement = () => {
         count.value--
     }
-    return {count, increment, decrement}
+    return {
+        count,
+        increment,
+        decrement
+    }
 }
