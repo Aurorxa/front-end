@@ -14,7 +14,7 @@ export default {
 
     const btn = ref()
     const getElement = () => {
-      console.log('@', title.value)
+      console.log('@', title.value.textContent)
     }
 
     onMounted(() => {
