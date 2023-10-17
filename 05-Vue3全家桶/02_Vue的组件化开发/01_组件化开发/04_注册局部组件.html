@@ -5,7 +5,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Title</title>
-  <script src="./js/vue@3.3.4.js"></script>
+  <script src="jsue@3.3.4.js"></script>
   <style>
     .product {
       background-color: pink;
@@ -39,19 +39,21 @@
     */
     const {createApp} = Vue
 
-    // 根组件
-    const App = {}
-
     // 商品组件
     const ProductItem = {
       template: '#product-item'
     }
 
+    // 根组件
+    const App = {
+      // 注册局部组件
+      components: {
+        ProductItem
+      }
+    }
+
     // 创建 app
     const app = createApp(App)
-
-    // 注册全局组件
-    app.component('product-item', ProductItem)
 
     // 挂载 app
     app.mount('#app')
