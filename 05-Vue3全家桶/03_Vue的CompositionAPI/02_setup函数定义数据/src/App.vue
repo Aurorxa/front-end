@@ -11,6 +11,7 @@
 
 <script>
 import {reactive, ref} from "vue";
+import logger from "@/logger";
 
 export default {
   setup() {
@@ -30,14 +31,13 @@ export default {
 
     const changeMessage = () => {
       message = "Hello Vue~"
-      console.log('changeMessage', message)
+      logger.info('changeMessage {}', message)
     }
 
     const increment = () => {
       state.count++
       count.value++
-      console.log('increment', state.count)
-      console.log('increment', count.value)
+      logger.info('increment {}', state.count)
     }
 
     return {

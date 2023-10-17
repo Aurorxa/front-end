@@ -7,9 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@voerkalogger/core": "^1.1.7",
     "core-js": "^3.8.3",
-    "pino": "^8.16.0",
-    "pino-pretty": "^10.2.3",
+    "loglevel": "^1.8.1",
     "vue": "^3.2.13"
   },
   "devDependencies": {
