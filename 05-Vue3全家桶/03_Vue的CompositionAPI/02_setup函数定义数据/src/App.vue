@@ -18,10 +18,13 @@ export default {
     let message = "Hello World"
 
     // 定义响应式的数据
-    // reactive 用于定义复杂的数据
+    // reactive 用于定义复杂类型的数据
     let state = reactive({
       count: 0
     })
+
+    // 定义响应式数据
+    // ref
 
     const changeMessage = () => {
       message = "Hello Vue~"
