@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "pino": "^8.16.0",
+    "pino-pretty": "^10.2.3",
     "vue": "^3.2.13"
   },
   "devDependencies": {
