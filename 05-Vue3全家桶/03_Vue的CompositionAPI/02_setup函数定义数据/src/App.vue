@@ -4,12 +4,14 @@
     <button @click="changeMessage">修改 message</button>
     <h2>当前计数为：{{ state.count }}</h2>
     <button @click="increment">点我+1</button>
+    <h2>当前计数为：{{ count }}</h2>
+    <button @click="increment">点我+1</button>
   </div>
 </template>
 
 <script>
 
-import {reactive} from "vue";
+import {reactive, ref} from "vue";
 
 export default {
   setup() {
@@ -25,6 +27,7 @@ export default {
 
     // 定义响应式数据
     // ref
+    let count = ref(0)
 
     const changeMessage = () => {
       message = "Hello Vue~"
@@ -33,12 +36,15 @@ export default {
 
     const increment = () => {
       state.count++
+      count.value++
       console.log('increment', state.count)
+      console.log('increment', count.value)
     }
 
     return {
       message,
       state,
+      count,
       changeMessage,
       increment
     }
