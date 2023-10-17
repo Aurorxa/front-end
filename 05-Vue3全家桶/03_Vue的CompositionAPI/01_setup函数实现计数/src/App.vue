@@ -7,18 +7,11 @@
 </template>
 
 <script>
-import {ref} from 'vue'
+import useCount from '@/hooks/useCount'
 
 export default {
   setup() {
-    let count = ref(100)
-    const increment = () => {
-      count.value++
-    }
-
-    const decrement = () => {
-      count.value--
-    }
+    const {count, increment, decrement} = useCount()
     return {
       count,
       increment,
