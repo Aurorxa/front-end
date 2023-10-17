@@ -26,7 +26,7 @@ export default {
     })
 
     // 定义响应式数据
-    // ref
+    // ref 用于定义简单类型的数据，也可以用于定义复杂类型的数据
     let count = ref(0)
 
     const changeMessage = () => {
