@@ -11,11 +11,8 @@ import useCount from '@/hooks/useCount'
 
 export default {
   setup() {
-    const {count, increment, decrement} = useCount()
     return {
-      count,
-      increment,
-      decrement
+      ...useCount()
     }
   }
 }
