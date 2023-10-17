@@ -1,8 +1,9 @@
 <template>
   <div class="app">
-    <h2>全名：{{ firstName }} {{ lastName }}</h2>
+    <h2>全名：{{ firstName }}{{ lastName }}</h2>
     <h2>全名：{{ fullName }}</h2>
     <h2>全名：{{ fullName2 }}</h2>
+    <button @click="changeName">修改名称</button>
   </div>
 </template>
 
@@ -29,10 +30,15 @@ export default {
       }
     })
 
+    const changeName = () => {
+      fullName2.value = "李 四"
+    }
+
     return {
       ...toRefs(names),
       fullName,
-      fullName2
+      fullName2,
+      changeName
     }
   }
 }
