@@ -18,6 +18,7 @@ console.log('数据', areaData)
 <style lang="less" scoped>
 .app {
   width: 1032px;
+  padding: 40px;
   margin: 0 auto;
   background-color: #f5f5f5;
 }
