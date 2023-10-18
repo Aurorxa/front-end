@@ -1,17 +1,16 @@
 <template>
   <div class="app">
-    <Home></Home>
+    <component :is="currentComponent"></component>
     <hr>
-    <About></About>
-    <hr>
-    <button @click="changeTitle">修改标题</button>
+    <button @click="currentComponent = 'Home'">切换Home组件</button>
+    <button @click="currentComponent = 'About'">切换About组件</button>
   </div>
 </template>
 
 <script>
 import Home from '@/components/Home.vue'
 import About from "@/components/About.vue";
-import useTitle from "@/hooks/useTitle";
+import {ref} from "vue";
 
 export default {
   components: {
@@ -19,11 +18,12 @@ export default {
     About
   },
   setup() {
-    const changeTitle = () => {
-      useTitle("哈哈哈！")
-    }
+
+    const currentComponent = ref("Home");
+
+
     return {
-      changeTitle
+      currentComponent
     }
   }
 }

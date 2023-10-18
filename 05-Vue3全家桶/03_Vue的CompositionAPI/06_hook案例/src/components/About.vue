@@ -7,9 +7,11 @@
 
 <script>
 import useCount from '@/hooks/useCount'
+import useTitle from "@/hooks/useTitle";
 
 export default {
   setup() {
+    useTitle("关于")
     return {
       ...useCount()
     }
