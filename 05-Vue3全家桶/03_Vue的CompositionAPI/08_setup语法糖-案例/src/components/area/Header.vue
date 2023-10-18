@@ -1,14 +1,26 @@
 <template>
   <!-- 区域 header   -->
   <div class="area-header">
-    <h3 class="title">{{ areaData.title }}</h3>
-    <div class="subtitle">{{ areaData.subtitle }}</div>
+    <h3 class="title">{{ title }}</h3>
+    <div class="subtitle">{{ subtitle }}</div>
   </div>
 </template>
 
 <script setup>
 
-import areaData from "@/data/index.json";
+defineProps({
+  title: {
+    type: String,
+    required: true,
+    default: ""
+  },
+  subtitle: {
+    type: String,
+    required: true,
+    default: ""
+  }
+})
+
 </script>
 
 <style lang="less" scoped>

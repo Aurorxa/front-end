@@ -1,18 +1,15 @@
 <template>
   <div class="app">
     <!-- 区域 header   -->
-    <div class="area-header">
-      <h3 class="title">{{ areaData.title }}</h3>
-      <div class="subtitle">{{ areaData.subtitle }}</div>
-    </div>
+    <AreaHeader :subtitle="areaData.subtitle" :title="areaData.title"></AreaHeader>
   </div>
 </template>
 
 <script setup>
 import areaData from '@/data'
+import AreaHeader from '@/components/area/Header.vue'
 
 console.log('数据', areaData)
-
 </script>
 
 <style lang="less" scoped>
