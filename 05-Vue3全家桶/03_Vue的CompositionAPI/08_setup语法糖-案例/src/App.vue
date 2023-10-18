@@ -23,14 +23,15 @@ console.log('数据', areaData)
 }
 
 .area-header {
+  height: 84px;
+
   .title {
     font-size: 22px;
-    color: #000;
   }
 
   .subtitle {
-    font-size: 14px;
-    color: #333;
+    margin-top: 12px;
+    font-size: 16px;
   }
 }
 </style>
