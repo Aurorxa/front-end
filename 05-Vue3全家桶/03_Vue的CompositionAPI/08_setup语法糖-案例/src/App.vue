@@ -16,5 +16,9 @@ console.log('数据', areaData)
 </script>
 
 <style lang="less" scoped>
-
+.app {
+  width: 1032px;
+  margin: 0 auto;
+  background-color: pink;
+}
 </style>
