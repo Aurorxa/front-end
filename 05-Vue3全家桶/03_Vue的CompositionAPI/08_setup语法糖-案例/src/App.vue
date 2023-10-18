@@ -2,16 +2,16 @@
   <div class="app">
     <!-- 区域 header   -->
     <div class="area-header">
-      <div class="title">{{ data.title }}</div>
-      <div class="subtitle">{{ data.subtitle }}</div>
+      <div class="title">{{ areaData.title }}</div>
+      <div class="subtitle">{{ areaData.subtitle }}</div>
     </div>
   </div>
 </template>
 
 <script setup>
-import data from '@/data'
+import areaData from '@/data'
 
-console.log('数据', data)
+console.log('数据', areaData)
 
 </script>
 
