@@ -22,8 +22,7 @@ export default {
   setup() {
 
     const currentComponent = ref("Home");
-
-
+    
     return {
       currentComponent
     }
