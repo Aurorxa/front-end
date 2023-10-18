@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-// ① 所有编写在顶层中的代码，不会默认暴露给 template 模板
+// ① 所有编写在顶层中的代码，都会默认暴露给 template 模板
 import {ref} from "vue";
 
 const message = "Hello World"
