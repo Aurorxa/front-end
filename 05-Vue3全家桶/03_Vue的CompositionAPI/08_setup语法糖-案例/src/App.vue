@@ -23,16 +23,5 @@ console.log('数据', areaData)
   background-color: #f5f5f5;
 }
 
-.area-header {
-  height: 84px;
 
-  .title {
-    font-size: 22px;
-  }
-
-  .subtitle {
-    margin-top: 12px;
-    font-size: 16px;
-  }
-}
 </style>
