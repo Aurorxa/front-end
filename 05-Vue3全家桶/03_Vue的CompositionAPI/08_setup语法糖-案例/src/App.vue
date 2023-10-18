@@ -2,7 +2,7 @@
   <div class="app">
     <!-- 区域 header   -->
     <div class="area-header">
-      <div class="title">{{ areaData.title }}</div>
+      <h3 class="title">{{ areaData.title }}</h3>
       <div class="subtitle">{{ areaData.subtitle }}</div>
     </div>
   </div>
@@ -19,6 +19,18 @@ console.log('数据', areaData)
 .app {
   width: 1032px;
   margin: 0 auto;
-  background-color: pink;
+  background-color: #f5f5f5;
+}
+
+.area-header {
+  .title {
+    font-size: 22px;
+    color: #000;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #333;
+  }
 }
 </style>
