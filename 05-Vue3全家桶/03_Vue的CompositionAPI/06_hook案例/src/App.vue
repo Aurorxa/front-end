@@ -1,6 +1,8 @@
 <template>
   <div class="app">
-    <component :is="currentComponent"></component>
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
     <hr>
     <button @click="currentComponent = 'Home'">切换Home组件</button>
     <button @click="currentComponent = 'About'">切换About组件</button>

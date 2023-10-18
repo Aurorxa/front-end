@@ -8,10 +8,13 @@
 <script>
 import useCount from '@/hooks/useCount'
 import useTitle from "@/hooks/useTitle";
+import {onActivated} from "vue";
 
 export default {
   setup() {
-    useTitle("首页")
+    onActivated(() => {
+      useTitle("首页")
+    })
     return {
       ...useCount()
     }
