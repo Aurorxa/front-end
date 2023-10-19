@@ -10,7 +10,12 @@
       <router-link to="/home">Home组件</router-link>
       <br>
       <router-link to="/about">About组件</router-link>
+      <br>
+      <router-link to="/user/1">User组件-1用户</router-link>
+      <br>
+      <router-link to="/user/2">User组件-2用户</router-link>
     </div>
+    <br>
     <!-- 路由出口：路由匹配到的组件将渲染在这里 -->
     <router-view></router-view>
   </div>

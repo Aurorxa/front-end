@@ -25,6 +25,11 @@ const router = createRouter({
             meta: { // 自定义属性
             
             }
+        },
+        {
+            path: '/user/:id',
+            name: 'User',
+            component: () => import(/* webpackChunkName: 'User.vue'*/'@/components/User.vue'),
         }
     ]
 })
