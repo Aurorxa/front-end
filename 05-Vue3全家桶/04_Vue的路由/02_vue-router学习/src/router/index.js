@@ -17,6 +17,11 @@ const router = createRouter({
             meta: { /*自定义属性*/},
             children: [
                 {
+                    path: '',
+                    name: 'HomeDefault',
+                    redirect: '/home/recommend'
+                },
+                {
                     path: 'recommend',
                     name: 'Recommend',
                     component: () => import(/* webpackChunkName: 'Recommend.vue'*/'@/components/Recommend.vue'),

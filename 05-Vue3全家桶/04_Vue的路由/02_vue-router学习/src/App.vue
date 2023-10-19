@@ -9,6 +9,10 @@
       <router-link to="/user/1">1用户</router-link>
       <br>
       <router-link to="/user/2">2用户</router-link>
+      <br>
+      <!--  其它元素跳转    -->
+      <button @click="homeClick">首页</button>
+      <button @click="aboutClick">关于</button>
     </div>
     <br>
     <router-view></router-view>
@@ -16,6 +20,21 @@
 </template>
 
 <script setup>
+
+import {useRouter} from "vue-router";
+
+const router = useRouter()
+const homeClick = () => {
+  router.push(
+      {
+        path: '/home'
+      }
+  )
+}
+
+const aboutClick = () => {
+  router.push("/about")
+}
 
 </script>
 
