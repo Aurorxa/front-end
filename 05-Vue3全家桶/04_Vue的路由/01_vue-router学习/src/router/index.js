@@ -13,12 +13,18 @@ const router = createRouter({
         {
             path: '/home',
             name: 'Home',
-            component: () => import(/* webpackChunkName: 'Home.vue'*/'@/components/Home.vue')
+            component: () => import(/* webpackChunkName: 'Home.vue'*/'@/components/Home.vue'),
+            meta: { // 自定义属性
+            
+            }
         },
         {
             path: '/about',
             name: 'About',
-            component: () => import(/* webpackChunkName: 'About.vue'*/'@/components/About.vue')
+            component: () => import(/* webpackChunkName: 'About.vue'*/'@/components/About.vue'),
+            meta: { // 自定义属性
+            
+            }
         }
     ]
 })
