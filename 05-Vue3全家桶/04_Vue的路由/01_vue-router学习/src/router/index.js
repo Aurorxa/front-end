@@ -7,6 +7,10 @@ const router = createRouter({
     // 路由表
     routes: [
         {
+            path: '/',
+            redirect: '/home'
+        },
+        {
             path: '/home',
             name: 'Home',
             component: () => import('@/components/Home.vue')
