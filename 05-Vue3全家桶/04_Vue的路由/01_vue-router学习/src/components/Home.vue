@@ -9,5 +9,7 @@
 </script>
 
 <style lang="less" scoped>
-
+.home {
+  background-color: skyblue;
+}
 </style>

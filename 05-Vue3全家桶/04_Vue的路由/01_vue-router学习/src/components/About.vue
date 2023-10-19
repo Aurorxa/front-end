@@ -9,5 +9,7 @@
 </script>
 
 <style lang="less" scoped>
-
+.about {
+  background-color: pink;
+}
 </style>
