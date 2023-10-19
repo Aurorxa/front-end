@@ -30,6 +30,9 @@ const router = createRouter({
             path: '/user/:id', // 动态路由：以冒号开始
             name: 'User',
             component: () => import(/* webpackChunkName: 'User.vue'*/'@/components/User.vue'),
+            meta: { // 自定义属性
+            
+            }
         },
         {
             path: '/:pathMatch(.*)*',
