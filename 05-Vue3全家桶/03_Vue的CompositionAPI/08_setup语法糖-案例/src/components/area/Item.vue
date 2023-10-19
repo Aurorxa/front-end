@@ -4,7 +4,7 @@
       <img :src="info.pictureUrl" alt="">
     </div>
     <div class="title">
-      TODO
+      {{ info.verifyInfo.messages.join('') }}
     </div>
     <div class="name">
       {{ info.name }}
