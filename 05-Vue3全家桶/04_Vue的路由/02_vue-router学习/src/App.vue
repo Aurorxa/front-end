@@ -25,11 +25,7 @@ import {useRouter} from "vue-router";
 
 const router = useRouter()
 const homeClick = () => {
-  router.push(
-      {
-        path: '/'
-      }
-  )
+  router.push("/home")
 }
 
 const aboutClick = () => {
