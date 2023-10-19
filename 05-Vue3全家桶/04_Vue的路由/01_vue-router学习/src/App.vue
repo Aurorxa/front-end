@@ -21,5 +21,7 @@
 </script>
 
 <style lang="less" scoped>
-
+.router-link-active {
+  color: red;
+}
 </style>
