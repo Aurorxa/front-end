@@ -1,5 +1,4 @@
 <template>
-  <!-- 区域 header   -->
   <div class="area-header">
     <h3 class="title">{{ title }}</h3>
     <div class="subTitle">{{ subTitle }}</div>
