@@ -25,6 +25,7 @@ defineProps({
 
 <style lang="less" scoped>
 .area-header {
+
   height: 84px;
 
   .title {

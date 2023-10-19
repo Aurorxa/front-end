@@ -1,0 +1,1 @@
+export const AREA_DATA = "area_data"
