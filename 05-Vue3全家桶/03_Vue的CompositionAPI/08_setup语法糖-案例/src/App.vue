@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <!-- 区域 header   -->
-    <AreaHeader :subtitle="areaData.subtitle" :title="areaData.title"></AreaHeader>
+    <AreaHeader :subTitle="areaData.subTitle" :title="areaData.title"></AreaHeader>
   </div>
 </template>
 

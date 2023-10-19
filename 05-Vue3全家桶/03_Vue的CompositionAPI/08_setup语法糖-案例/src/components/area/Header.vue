@@ -2,7 +2,7 @@
   <!-- 区域 header   -->
   <div class="area-header">
     <h3 class="title">{{ title }}</h3>
-    <div class="subtitle">{{ subtitle }}</div>
+    <div class="subTitle">{{ subTitle }}</div>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ defineProps({
     required: true,
     default: ""
   },
-  subtitle: {
+  subTitle: {
     type: String,
     required: true,
     default: ""
@@ -31,7 +31,7 @@ defineProps({
     font-size: 22px;
   }
 
-  .subtitle {
+  .subTitle {
     margin-top: 12px;
     font-size: 16px;
   }
