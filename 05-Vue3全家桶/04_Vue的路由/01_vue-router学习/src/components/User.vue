@@ -18,11 +18,11 @@ watch(() => route.params, (params) => {
 })
 
 watchEffect(() => {
-  console.log('watchEffect #', route.params)
+  console.log('watchEffect @', route.params)
 })
 
 onBeforeRouteUpdate((to, from) => {
-  console.log('onBeforeRouteUpdate #', to, from)
+  console.log('onBeforeRouteUpdate @', to, from)
 })
 
 </script>
