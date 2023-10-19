@@ -17,7 +17,7 @@ const areaDataList = inject(AREA_DATA, "[]")
 <style lang="less" scoped>
 .area-list {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 </style>
