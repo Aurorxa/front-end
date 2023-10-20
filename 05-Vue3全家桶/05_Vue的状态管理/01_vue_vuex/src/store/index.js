@@ -1,4 +1,4 @@
-import {createStore} from 'vuex'
+import {createLogger, createStore} from 'vuex'
 
 export default createStore({
     state() {
@@ -13,5 +13,6 @@ export default createStore({
         }
     },
     actions: {},
-    modules: {}
+    modules: {},
+    plugins: [createLogger()]
 })
