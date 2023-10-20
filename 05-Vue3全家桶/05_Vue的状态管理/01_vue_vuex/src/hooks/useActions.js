@@ -6,6 +6,7 @@ export default function useActions(mapper) {
     const newMapMutationsFnsObj = {}
     Object.keys(mapMutationsFnsObj).forEach(key => {
         newMapMutationsFnsObj[key] = mapMutationsFnsObj[key].bind({$store: store})
+        // newMapMutationsFnsObj[key] = Object.getOwnPropertyDescriptor(mapMutationsFnsObj, key).value.bind({$store: store})
     })
     
     return newMapMutationsFnsObj
