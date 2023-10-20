@@ -9,14 +9,8 @@ export default createStore({
         }
     },
     getters: {
-        getCount(state) {
-            return state.count
-        },
-        getName(state) {
-            return state.name
-        },
-        getAge(state) {
-            return state.age
+        doubleCount(state) {
+            return state.count * 2
         }
     },
     mutations: {
