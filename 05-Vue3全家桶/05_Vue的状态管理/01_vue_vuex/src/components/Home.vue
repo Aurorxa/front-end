@@ -5,7 +5,7 @@
     <button @click="increment">点我+1</button>
     <button @click="incrementPayload(10)">点我10</button>
     <button @click="incrementPayload20">点我20</button>
-    <button @click="asyncIncrement(5000)">点我异步增加</button>
+    <button @click="incrementAction(5000)">点我异步增加</button>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ const {increment, incrementPayload} = useMutations(["increment", "incrementPaylo
 const store = useStore()
 
 const {doubleCount} = useGetters(["doubleCount"])
-const {asyncIncrement} = useActions(["asyncIncrement"])
+const {incrementAction} = useActions(["incrementAction"])
 const incrementPayload20 = () => {
   incrementPayload(20)
 }

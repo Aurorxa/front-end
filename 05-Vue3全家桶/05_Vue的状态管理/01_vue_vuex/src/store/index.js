@@ -22,7 +22,7 @@ export default createStore({
         }
     },
     actions: {
-        asyncIncrement(context, payload) {
+        incrementAction(context, payload) {
             setTimeout(() => {
                 context.commit('incrementPayload', payload)
             }, 1000)
