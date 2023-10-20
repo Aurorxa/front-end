@@ -1,12 +1,12 @@
-import {mapMutations, useStore} from "vuex";
+import {mapActions, useStore} from "vuex";
 
 export default function useMutations(mapper) {
     const store = useStore()
-    const mapMutationsFnsObj = mapMutations(mapper)
-    const newMapMutationsFnsObj = {}
-    Object.keys(mapMutationsFnsObj).forEach(key => {
-        newMapMutationsFnsObj[key] = mapMutationsFnsObj[key].bind({$store: store})
+    const mapActionsFnsObj = mapActions(mapper)
+    const newMapActionsFnsObjFnsObj = {}
+    Object.keys(mapActionsFnsObj).forEach(key => {
+        newMapActionsFnsObjFnsObj[key] = mapActionsFnsObj[key].bind({$store: store})
     })
     
-    return newMapMutationsFnsObj
+    return newMapActionsFnsObjFnsObj
 }

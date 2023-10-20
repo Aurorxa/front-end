@@ -5,7 +5,7 @@
     <button @click="increment">点我+1</button>
     <button @click="incrementPayload(10)">点我10</button>
     <button @click="incrementPayload20">点我20</button>
-    <button @click="asyncIncrement">点我异步增加</button>
+    <button @click="asyncIncrement(5000)">点我异步增加</button>
   </div>
 </template>
 
@@ -14,19 +14,20 @@
 import {useStore} from "vuex";
 import useGetters from "@/hooks/useGetters";
 import useMutations from "@/hooks/useMutations";
+import useActions from "@/hooks/useActions";
 
 const {increment, incrementPayload} = useMutations(["increment", "incrementPayload"])
 const store = useStore()
 
 const {doubleCount} = useGetters(["doubleCount"])
-
+const {asyncIncrement} = useActions(["asyncIncrement"])
 const incrementPayload20 = () => {
   incrementPayload(20)
 }
 
-const asyncIncrement = () => {
-  store.dispatch("asyncIncrement", 500)
-}
+// const asyncIncrement = () => {
+//   store.dispatch("asyncIncrement", 500)
+// }
 
 </script>
 
