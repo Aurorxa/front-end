@@ -16,6 +16,9 @@ export default createStore({
     mutations: {
         increment(state) {
             state.count++
+        },
+        incrementPayload(state, payload) {
+            state.count += payload
         }
     },
     actions: {},
