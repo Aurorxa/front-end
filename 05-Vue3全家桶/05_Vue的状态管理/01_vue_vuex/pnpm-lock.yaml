@@ -6,37 +6,37 @@ settings:
 
 dependencies:
   core-js:
-    specifier: ^3.8.3
+    specifier: ^3.33.0
     version: 3.33.0
   vue:
-    specifier: ^3.2.13
+    specifier: ^3.3.4
     version: 3.3.4
   vue-router:
-    specifier: ^4.0.3
+    specifier: ^4.2.5
     version: 4.2.5(vue@3.3.4)
   vuex:
-    specifier: ^4.0.0
+    specifier: ^4.1.0
     version: 4.1.0(vue@3.3.4)
 
 devDependencies:
   '@vue/cli-plugin-babel':
-    specifier: ~5.0.0
+    specifier: ~5.0.8
     version: 5.0.8(@vue/cli-service@5.0.8)(core-js@3.33.0)(vue@3.3.4)
   '@vue/cli-plugin-router':
-    specifier: ~5.0.0
+    specifier: ~5.0.8
     version: 5.0.8(@vue/cli-service@5.0.8)
   '@vue/cli-plugin-vuex':
-    specifier: ~5.0.0
+    specifier: ~5.0.8
     version: 5.0.8(@vue/cli-service@5.0.8)
   '@vue/cli-service':
-    specifier: ~5.0.0
-    version: 5.0.8(less-loader@8.1.1)(vue@3.3.4)
+    specifier: ~5.0.8
+    version: 5.0.8(less-loader@11.1.3)(vue@3.3.4)
   less:
-    specifier: ^4.0.0
+    specifier: ^4.2.0
     version: 4.2.0
   less-loader:
-    specifier: ^8.0.0
-    version: 8.1.1(less@4.2.0)(webpack@5.89.0)
+    specifier: ^11.1.3
+    version: 11.1.3(less@4.2.0)(webpack@5.89.0)
 
 packages:
 
@@ -1711,7 +1711,7 @@ packages:
     dependencies:
       '@babel/core': 7.23.2
       '@vue/babel-preset-app': 5.0.8(@babel/core@7.23.2)(core-js@3.33.0)(vue@3.3.4)
-      '@vue/cli-service': 5.0.8(less-loader@8.1.1)(vue@3.3.4)
+      '@vue/cli-service': 5.0.8(less-loader@11.1.3)(vue@3.3.4)
       '@vue/cli-shared-utils': 5.0.8
       babel-loader: 8.3.0(@babel/core@7.23.2)(webpack@5.89.0)
       thread-loader: 3.0.4(webpack@5.89.0)
@@ -1732,7 +1732,7 @@ packages:
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0 || ^5.0.0-0
     dependencies:
-      '@vue/cli-service': 5.0.8(less-loader@8.1.1)(vue@3.3.4)
+      '@vue/cli-service': 5.0.8(less-loader@11.1.3)(vue@3.3.4)
       '@vue/cli-shared-utils': 5.0.8
     transitivePeerDependencies:
       - encoding
@@ -1743,10 +1743,10 @@ packages:
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0 || ^5.0.0-0
     dependencies:
-      '@vue/cli-service': 5.0.8(less-loader@8.1.1)(vue@3.3.4)
+      '@vue/cli-service': 5.0.8(less-loader@11.1.3)(vue@3.3.4)
     dev: true
 
-  /@vue/cli-service@5.0.8(less-loader@8.1.1)(vue@3.3.4):
+  /@vue/cli-service@5.0.8(less-loader@11.1.3)(vue@3.3.4):
     resolution: {integrity: sha512-nV7tYQLe7YsTtzFrfOMIHc5N2hp5lHG2rpYr0aNja9rNljdgcPZLyQRb2YRivTHqTv7lI962UXFURcpStHgyFw==}
     engines: {node: ^12.0.0 || >= 14.0.0}
     hasBin: true
@@ -1811,7 +1811,7 @@ packages:
       html-webpack-plugin: 5.5.3(webpack@5.89.0)
       is-file-esm: 1.0.0
       launch-editor-middleware: 2.6.1
-      less-loader: 8.1.1(less@4.2.0)(webpack@5.89.0)
+      less-loader: 11.1.3(less@4.2.0)(webpack@5.89.0)
       lodash.defaultsdeep: 4.6.1
       lodash.mapvalues: 4.6.0
       mini-css-extract-plugin: 2.7.6(webpack@5.89.0)
@@ -4258,14 +4258,13 @@ packages:
       shell-quote: 1.8.1
     dev: true
 
-  /less-loader@8.1.1(less@4.2.0)(webpack@5.89.0):
-    resolution: {integrity: sha512-K93jJU7fi3n6rxVvzp8Cb88Uy9tcQKfHlkoezHwKILXhlNYiRQl4yowLIkQqmBXOH/5I8yoKiYeIf781HGkW9g==}
-    engines: {node: '>= 10.13.0'}
+  /less-loader@11.1.3(less@4.2.0)(webpack@5.89.0):
+    resolution: {integrity: sha512-A5b7O8dH9xpxvkosNrP0dFp2i/dISOJa9WwGF3WJflfqIERE2ybxh1BFDj5CovC2+jCE4M354mk90hN6ziXlVw==}
+    engines: {node: '>= 14.15.0'}
     peerDependencies:
       less: ^3.5.0 || ^4.0.0
       webpack: ^5.0.0
     dependencies:
-      klona: 2.0.6
       less: 4.2.0
       webpack: 5.89.0
     dev: true
