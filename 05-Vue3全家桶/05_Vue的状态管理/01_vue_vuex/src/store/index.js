@@ -21,7 +21,13 @@ export default createStore({
             state.count += payload
         }
     },
-    actions: {},
+    actions: {
+        asyncIncrement(context, payload) {
+            setTimeout(() => {
+                context.commit('incrementPayload', payload)
+            }, 3000)
+        }
+    },
     modules: {},
     plugins: [createLogger()]
 })

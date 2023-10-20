@@ -5,6 +5,7 @@
     <button @click="increment">点我+1</button>
     <button @click="incrementPayload(10)">点我10</button>
     <button @click="incrementPayload20">点我20</button>
+    <button @click="asyncIncrement">点我异步增加</button>
   </div>
 </template>
 
@@ -21,6 +22,10 @@ const {doubleCount} = useGetters(["doubleCount"])
 
 const incrementPayload20 = () => {
   incrementPayload(20)
+}
+
+const asyncIncrement = () => {
+  store.dispatch("asyncIncrement", 500)
 }
 
 </script>
