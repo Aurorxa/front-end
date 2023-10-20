@@ -9,7 +9,7 @@
 
 <script setup>
 import {computed} from "vue";
-import {mapState, useStore} from "vuex";
+import {useStore} from "vuex";
 import Home from "@/components/Home.vue";
 import useState from "@/hooks/useState";
 
@@ -19,7 +19,7 @@ const count = computed(() => {
   return store.state.count
 })
 
-const {name, age} = useState(mapState(["name", "age"]));
+const {name, age} = useState(["name", "age"]);
 </script>
 
 <style lang="less">

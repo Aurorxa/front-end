@@ -8,15 +8,15 @@
 
 <script setup>
 
-import {mapGetters, useStore} from "vuex";
-import {computed} from "vue";
+import {useStore} from "vuex";
+import useGetters from "@/hooks/useGetters";
 
 const store = useStore()
 const handleClick = () => {
   store.commit("increment")
 }
+const {doubleCount} = useGetters(["doubleCount"])
 
-const doubleCount = computed(mapGetters(["doubleCount"]).doubleCount.bind({$store: store}))
 </script>
 
 <style lang="less" scoped>
