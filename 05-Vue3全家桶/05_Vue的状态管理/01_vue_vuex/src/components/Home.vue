@@ -16,11 +16,11 @@ import useGetters from "@/hooks/useGetters";
 import useMutations from "@/hooks/useMutations";
 import useActions from "@/hooks/useActions";
 
-const {increment, incrementPayload} = useMutations(["increment", "incrementPayload"])
+const {increment, incrementPayload} = useMutations('home', ["increment", "incrementPayload"])
 const store = useStore()
 
-const {doubleCount} = useGetters(["doubleCount"])
-const {incrementAction} = useActions(["incrementAction"])
+const {doubleCount} = useGetters('home', ["doubleCount"])
+const {incrementAction} = useActions('home', ["incrementAction"])
 const incrementPayload20 = () => {
   incrementPayload(20)
 }

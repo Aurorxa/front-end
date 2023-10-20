@@ -16,10 +16,10 @@ import useState from "@/hooks/useState";
 const store = useStore()
 
 const count = computed(() => {
-  return store.state.count
+  return store.state.home.count
 })
 
-const {name, age} = useState(["name", "age"]);
+const {name, age} = useState('home', ["name", "age"]);
 </script>
 
 <style lang="less">
