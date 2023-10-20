@@ -10,13 +10,11 @@
 
 import {mapGetters, useStore} from "vuex";
 import {computed} from "vue";
-import useGetters from "@/hooks/useGetters";
 
 const store = useStore()
 const handleClick = () => {
   store.commit("increment")
 }
-useGetters(mapGetters(["doubleCount"]));
 
 const doubleCount = computed(mapGetters(["doubleCount"]).doubleCount.bind({$store: store}))
 </script>
