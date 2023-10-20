@@ -25,10 +25,6 @@ const incrementPayload20 = () => {
   incrementPayload(20)
 }
 
-// const asyncIncrement = () => {
-//   store.dispatch("asyncIncrement", 500)
-// }
-
 </script>
 
 <style lang="less" scoped>
