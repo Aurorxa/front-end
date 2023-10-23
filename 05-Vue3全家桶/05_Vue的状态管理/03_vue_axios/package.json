@@ -1,0 +1,21 @@
+{
+  "name": "03_vue_axios",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@tanstack/vue-query": "^5.0.5",
+    "axios": "^1.5.1",
+    "core-js": "^3.33.1",
+    "vue": "^3.3.6"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3"
+  }
+}
