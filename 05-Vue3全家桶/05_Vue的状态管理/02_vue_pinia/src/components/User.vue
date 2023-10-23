@@ -8,6 +8,7 @@
     <button @click="changeName">修改姓名</button>
     <button @click="changeAge">修改年龄</button>
     <button @click="resetState">重置状态</button>
+    <button @click="replaceState">替换状态</button>
   </div>
 </template>
 
@@ -28,6 +29,10 @@ const changeAge = () => {
     state.age++
     state.hasChanged = true
   })
+}
+
+const replaceState = () => {
+  useStore.$state = {age: 40}
 }
 
 console.log('@@@', useStore)
