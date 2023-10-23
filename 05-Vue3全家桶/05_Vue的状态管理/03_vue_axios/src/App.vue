@@ -16,13 +16,14 @@
 <script setup>
 import axios from "axios";
 
+axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
+axios.defaults.timeout = 3000
+axios.defaults.headers.get['Content-Type'] = "application/json"
+
 const axiosRequest = () => {
   axios.request({
     method: "GET",
-    url: "https://jsonplaceholder.typicode.com/todos/1",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    url: "/todos/1"
   }).then((res) => {
     console.log(res)
     console.log('data', res.data)
@@ -30,7 +31,7 @@ const axiosRequest = () => {
 }
 
 const axiosGET = () => {
-  axios.get("https://jsonplaceholder.typicode.com/comments", {
+  axios.get("/comments", {
     headers: {
       "Content-Type": "application/json",
     },
@@ -44,7 +45,7 @@ const axiosGET = () => {
 }
 
 const axiosPOST1 = () => {
-  axios.post("https://jsonplaceholder.typicode.com/comments", {
+  axios.post("/comments", {
     body: "This is a comment",
     postId: 1,
   }, {
@@ -58,7 +59,7 @@ const axiosPOST1 = () => {
 }
 
 const axiosPOST2 = () => {
-  axios.post("https://jsonplaceholder.typicode.com/comments", {
+  axios.post("/comments", {
     headers: {
       "Content-Type": "application/json",
     },
