@@ -1,9 +1,17 @@
 import axios from 'axios'
 
 class AxiosRequest {
+    
+    constructor(baseURL = "", timeout = 3000) {
+        this.instance = axios.create({
+            baseURL,
+            timeout
+        })
+    }
+    
     request(config) {
         return new Promise((resolve, reject) => {
-            axios.request(config).then(res => {
+            this.instance.request(config).then(res => {
                 resolve(res.data)
             }).catch(err => {
                 reject(err)
