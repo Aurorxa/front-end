@@ -9,6 +9,10 @@
     <button @click="changeAge">修改年龄</button>
     <button @click="resetState">重置状态</button>
     <button @click="replaceState">替换状态</button>
+    <div>
+      <h2>111朋友的的信息：</h2>
+      <div>{{ getFriendsById(111) }}</div>
+    </div>
   </div>
 </template>
 
@@ -18,7 +22,7 @@ import {toRefs} from "vue";
 
 const useStore = useUserStore()
 
-const {name, age, height} = toRefs(useStore)
+const {name, age, height, getFriendsById} = toRefs(useStore)
 
 const changeName = () => {
   useStore.name = "李四"
