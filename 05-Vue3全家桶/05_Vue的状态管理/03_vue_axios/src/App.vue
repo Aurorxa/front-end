@@ -6,6 +6,9 @@
     <div>
       <button @click="axiosGET">Axios GET</button>
     </div>
+    <div>
+      <button @click="axiosPOST">Axios POST</button>
+    </div>
   </div>
 </template>
 
@@ -33,6 +36,16 @@ const axiosGET = () => {
     params: {
       postId: 1,
     },
+  }).then((res) => {
+    console.log(res)
+    console.log('data', res.data)
+  });
+}
+
+const axiosPOST = () => {
+  axios.post("https://jsonplaceholder.typicode.com/comments", {
+    body: "This is a comment",
+    postId: 1,
   }).then((res) => {
     console.log(res)
     console.log('data', res.data)
