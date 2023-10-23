@@ -1,5 +1,5 @@
-import useCounterStore from '@/store/counter'
+import useCounter from '@/store/counter'
 
 export {
-    useCounterStore
+    useCounter
 }

@@ -1,13 +1,13 @@
 <template>
-  <h2>当前计数为：{{ useCounter.count }}</h2>
-  <h2>2倍计数为：{{ useCounter.double }}</h2>
-  <button @click="useCounter.increment()">点我+1</button>
+  <h2>当前计数为：{{ useCounterStore.count }}</h2>
+  <h2>2倍计数为：{{ useCounterStore.doubleCount }}</h2>
+  <button @click="useCounterStore.increment()">点我+1</button>
 </template>
 
 <script setup>
-import {useCounterStore} from "@/store";
+import {useCounter} from "@/store";
 
-const useCounter = useCounterStore();
+const useCounterStore = useCounter();
 
 </script>
 
