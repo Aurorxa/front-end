@@ -1,5 +1,8 @@
 <template>
-  <div class="app"></div>
+  <div class="app">
+    <router-link to="/">Go to Home</router-link>
+  </div>
+  <router-view></router-view>
 </template>
 
 <script setup>
