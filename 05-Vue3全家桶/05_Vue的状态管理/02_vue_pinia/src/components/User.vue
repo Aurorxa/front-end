@@ -27,7 +27,6 @@ const changeName = () => {
 const changeAge = () => {
   useStore.$patch((state) => {
     state.age++
-    state.hasChanged = true
   })
 }
 
