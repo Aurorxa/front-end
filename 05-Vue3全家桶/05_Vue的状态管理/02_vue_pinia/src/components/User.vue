@@ -32,7 +32,9 @@ const changeAge = () => {
 }
 
 const replaceState = () => {
-  useStore.$state = {age: 40}
+  useStore.$state = {
+    age: 40
+  }
 }
 
 console.log('@@@', useStore)
