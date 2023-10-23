@@ -12,6 +12,8 @@
     <div>
       <h2>111朋友的的信息：</h2>
       <div>{{ getFriendsById(111) }}</div>
+      <h2>112朋友的的信息：</h2>
+      <div>{{ getFriendsById(112) }}</div>
     </div>
   </div>
 </template>
