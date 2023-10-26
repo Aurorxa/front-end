@@ -1,8 +1,11 @@
 <template>
   <div class="tab-bar">
     <template v-for="(item,index) in tabBarData" :key="item.path">
-      <div :class="{'active': currentIndex === index}" class="tab-bar-item"
-           @click="handleClickTab(item.path,index)">
+      <div
+          :class="{'active': currentIndex === index}"
+          class="tab-bar-item"
+          @click="handleClickTab(item.path,index)"
+      >
         <img v-if="index !== currentIndex" :alt="item.text" :src="getAssetsUrl(item.image)" class="pic">
         <img v-else :alt="item.text" :src="getAssetsUrl(item.activeImage)" class="pic">
         <span class="text">{{ item.text }}</span>
