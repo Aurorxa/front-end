@@ -41,7 +41,9 @@ const router = createRouter({
             path: '/city',
             name: 'City',
             component: () => import('@/views/City/index.vue'),
-            meta: { /*自定义属性*/},
+            meta: { /*自定义属性*/
+                hideTabBar: true // 隐藏 TabBar
+            },
             children: []
         },
         {
