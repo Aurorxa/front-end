@@ -1,12 +1,21 @@
 <template>
   <div class="tab-bar">
     <div class="tab-bar-item" @click="$router.push('/home')">
-      <img alt="首页" src="@/assets/tab-bar/tab_home.png">
-      首页
+      <img alt="首页" class="pic" src="@/assets/images/tab-bar/tab_home.png">
+      <span class="text">首页</span>
     </div>
-    <div class="tab-bar-item" @click="$router.push('/favor')">收藏</div>
-    <div class="tab-bar-item" @click="$router.push('/order')">订单</div>
-    <div class="tab-bar-item" @click="$router.push('/message')">消息</div>
+    <div class="tab-bar-item" @click="$router.push('/favor')">
+      <img alt="首页" class="pic" src="@/assets/images/tab-bar/tab_favor.png">
+      <span class="text">收藏</span>
+    </div>
+    <div class="tab-bar-item" @click="$router.push('/order')">
+      <img alt="首页" class="pic" src="@/assets/images/tab-bar/tab_order.png">
+      <span class="text">订单</span>
+    </div>
+    <div class="tab-bar-item" @click="$router.push('/message')">
+      <img alt="首页" class="pic" src="@/assets/images/tab-bar/tab_message.png">
+      <span class="text">消息</span>
+    </div>
   </div>
 </template>
 
@@ -22,16 +31,22 @@
   right: 0;
   height: 44px;
   display: flex;
-  background-color: pink;
+  border-top: 1px solid #f3f3f3;
 
   .tab-bar-item {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    img {
+    .pic {
       width: 22px;
+    }
+
+    .text {
+      font-size: 12px;
+      margin-top: 2px;
     }
   }
 }
