@@ -13,7 +13,7 @@
     </van-swipe>
     <!-- 定位  -->
     <van-row class="location" justify="space-around">
-      <van-col class="item city" span="8">广州</van-col>
+      <van-col class="item city" span="10">广州</van-col>
       <van-col class="item position" span="8">
         <span class="text">我的位置</span>
         <van-icon class="icon" name="location" size="18"/>
