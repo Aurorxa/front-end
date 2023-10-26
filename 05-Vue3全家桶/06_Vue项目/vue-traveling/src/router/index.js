@@ -40,7 +40,7 @@ const router = createRouter({
         {
             path: '/:pathMatch(.*)*',
             name: 'NotFound',
-            component: () => import('@/components/NotFound.vue'),
+            component: () => import('@/components/NotFound/index.vue'),
             meta: { /*自定义属性*/},
             children: []
         }
