@@ -12,8 +12,8 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {showNotify} from "vant";
+import {ref} from "vue"
+import {showNotify} from "vant"
 import 'vant/es/notify/style'
 
 const currentCity = ref('北京市')
