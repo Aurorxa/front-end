@@ -50,7 +50,7 @@ const positionClick = async () => {
         {
           type: 'danger', message: `获取位置失败`
         });
-    console.log("获取位置失败", e)
+    console.error("获取位置失败", e)
   }
 
 }
