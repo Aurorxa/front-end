@@ -1,5 +1,7 @@
 <template>
-  我是 Home 组件
+  <div class="app">
+    Favor组件
+  </div>
 </template>
 
 <script setup>

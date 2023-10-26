@@ -1,8 +1,17 @@
 <template>
   <div class="app">
-    <router-link to="/">Go to Home</router-link>
+    <!--    -->
+    <router-view></router-view>
+    <router-link to="/">首页</router-link>
+    <br>
+    <router-link to="/favor">收藏</router-link>
+    <br>
+    <router-link to="/order">订单</router-link>
+    <br>
+
+    <router-link to="/message">消息</router-link>
+    <br>
   </div>
-  <router-view></router-view>
 </template>
 
 <script setup>
@@ -10,8 +19,6 @@
 
 <style scoped>
 .app {
-  width: 200px;
-  height: 200px;
-  background-color: pink;
+
 }
 </style>
