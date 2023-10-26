@@ -16,7 +16,7 @@ import {ref} from "vue";
 import {showNotify} from "vant";
 import 'vant/es/notify/style'
 
-const currentCity = ref('北京')
+const currentCity = ref('北京市')
 // 获取位置、城市
 const positionClick = async () => {
   const getLocation = () => {
