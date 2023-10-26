@@ -38,6 +38,13 @@ const router = createRouter({
             children: []
         },
         {
+            path: '/city',
+            name: 'City',
+            component: () => import('@/views/City/index.vue'),
+            meta: { /*自定义属性*/},
+            children: []
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'NotFound',
             component: () => import('@/components/NotFound/index.vue'),
