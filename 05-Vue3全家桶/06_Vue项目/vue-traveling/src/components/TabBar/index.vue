@@ -1,26 +1,18 @@
 <template>
   <div class="tab-bar">
-    <div class="tab-bar-item" @click="$router.push('/home')">
-      <img alt="首页" class="pic" src="@/assets/images/tab-bar/tab_home.png">
-      <span class="text">首页</span>
-    </div>
-    <div class="tab-bar-item" @click="$router.push('/favor')">
-      <img alt="首页" class="pic" src="@/assets/images/tab-bar/tab_favor.png">
-      <span class="text">收藏</span>
-    </div>
-    <div class="tab-bar-item" @click="$router.push('/order')">
-      <img alt="首页" class="pic" src="@/assets/images/tab-bar/tab_order.png">
-      <span class="text">订单</span>
-    </div>
-    <div class="tab-bar-item" @click="$router.push('/message')">
-      <img alt="首页" class="pic" src="@/assets/images/tab-bar/tab_message.png">
-      <span class="text">消息</span>
-    </div>
+    <template v-for="item in tabBarData" :key="item.path">
+      <div class="tab-bar-item" @click="$router.push(item.path)">
+        <img :alt="item.text" :src="getAssetsUrl(item.image)" class="pic">
+        <span class="text">{{ item.text }}</span>
+      </div>
+    </template>
   </div>
 </template>
 
 <script setup>
 
+import tabBarData from '@/assets/data/tabBar'
+import {getAssetsUrl} from "@/utils/loadAssets.js";
 </script>
 
 <style lang="less" scoped>
