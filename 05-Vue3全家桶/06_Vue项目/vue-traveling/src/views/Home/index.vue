@@ -11,19 +11,14 @@
       <van-swipe-item>3</van-swipe-item>
       <van-swipe-item>4</van-swipe-item>
     </van-swipe>
-    <!-- 定位  -->
-    <van-row class="location" justify="space-around">
-      <van-col class="item city" span="10">广州</van-col>
-      <van-col class="item position" span="8">
-        <span class="text">我的位置</span>
-        <van-icon class="icon" name="location" size="18"/>
-      </van-col>
-    </van-row>
+    <!-- 搜索  -->
+    <SearchBox></SearchBox>
+    <div>其他</div>
   </div>
 </template>
 
 <script setup>
-
+import SearchBox from '@/views/Home/components/SearchBox/index.vue'
 </script>
 
 <style lang="less" scoped>
@@ -55,22 +50,5 @@
     }
   }
 
-  .location {
-    .item {
-      width: 74px;
-      line-height: 30px;
-      background-color: pink;
-    }
-
-    .position {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-
-      .icon {
-        color: var(--primary-color) !important;
-      }
-    }
-  }
 }
 </style>
