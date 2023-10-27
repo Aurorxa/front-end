@@ -23,7 +23,7 @@
 import {ref} from "vue"
 import {showNotify} from "vant"
 import {useRouter} from "vue-router"
-
+import {getCityAll} from "@/services/index.js";
 
 const searchValue = ref('')
 const activeTab = ref(0);
@@ -41,6 +41,11 @@ const onCancel = () => {
     }
   })
 }
+
+
+getCityAll().then(res => {
+  console.log(res)
+})
 </script>
 
 <style lang="less" scoped>
