@@ -23,15 +23,7 @@
     </div>
     <!--  列表数据  -->
     <div class="content">
-      <!--  城市分组    -->
-      <van-index-bar highlight-color="#ff9854">
-        <template v-for="(city) in currentActiveTab?.cities">
-          <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
-          <template v-for="item in city?.cities">
-            <van-cell :title="item?.cityName"/>
-          </template>
-        </template>
-      </van-index-bar>
+      <CityGroup :cities="currentActiveTab?.cities"></CityGroup>
     </div>
   </div>
 </template>
@@ -42,6 +34,7 @@ import {showNotify} from "vant"
 import {useRouter} from "vue-router"
 import {useCityStore} from "@/stores";
 import {storeToRefs} from "pinia";
+import CityGroup from '@/views/city/components/city-group/index.vue'
 
 const searchValue = ref('')
 const activeTab = ref('');
