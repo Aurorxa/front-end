@@ -44,8 +44,5 @@ const onCancel = () => {
 </script>
 
 <style lang="less" scoped>
-:root:root {
-  --van-search-label-color: #ff9854;
-  --van-search-left-icon-color: #ff9854;
-}
+
 </style>
