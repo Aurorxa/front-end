@@ -61,19 +61,21 @@ const {allCities} = storeToRefs(cityStore)
 // 获取当前选择的标签
 const currentActiveTab = computed(() => allCities.value[activeTab.value])
 console.log('currentActiveTab', currentActiveTab)
+
 </script>
 
 <style lang="less" scoped>
 .city {
 
   .header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    position: relative;
+    z-index: 9;
   }
 
+  // 布局滚动
   .content {
-    background-color: #fff;
+    height: calc(100vh - 98px);
+    overflow-y: auto;
   }
 }
 </style>
