@@ -14,7 +14,7 @@
 <script setup>
 import {ref} from "vue"
 import {showNotify} from "vant"
-import 'vant/es/notify/style'
+
 import {useRouter} from "vue-router"
 
 const router = useRouter()
