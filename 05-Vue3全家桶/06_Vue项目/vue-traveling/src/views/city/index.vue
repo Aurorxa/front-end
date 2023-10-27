@@ -5,6 +5,7 @@
       <van-search
           v-model="searchValue"
           placeholder="城市/区域/位置"
+          shape="round"
           show-action
           @cancel="onCancel"
           @search="onSearch"
@@ -36,8 +37,8 @@ const onCancel = () => {
 </script>
 
 <style lang="less" scoped>
-.city {
-  width: 100%;
-  height: 100%;
+:root:root {
+  --van-search-label-color: #ff9854;
+  --van-search-left-icon-color: #ff9854;
 }
 </style>
