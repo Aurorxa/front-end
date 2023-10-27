@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-import TabBar from "@/components/tab-bar/index.vue";
-import {useRoute} from "vue-router";
-import {ref, watch} from "vue";
+import TabBar from "@/components/tab-bar/index.vue"
+import {useRoute} from "vue-router"
+import {ref, watch} from "vue"
 
 const route = useRoute()
 
