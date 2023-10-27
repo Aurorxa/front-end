@@ -23,10 +23,14 @@
     </van-sticky>
     <!--  列表数据  -->
     <div class="content">
-      <!--  索引栏    -->
+      <!-- 热门城市  -->
       <van-cell-group>
-        <van-cell title="城市"/>
-        <van-index-bar>
+        <van-cell title="热门城市" title-style="color: #ff9854"/>
+      </van-cell-group>
+      <!--  城市分组    -->
+      <van-cell-group>
+        <van-cell title="城市分组" title-style="color: #ff9854"/>
+        <van-index-bar highlight-color="#ff9854">
           <template v-for="(city) in currentActiveTab?.cities">
             <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
             <template v-for="item in city?.cities">
