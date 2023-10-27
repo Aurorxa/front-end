@@ -12,8 +12,10 @@
           @search="onSearch"
       />
       <!-- 标签页 -->
-      <van-tabs v-model:active="activeTab" ellipsis rendered="renderedTab" @change="changeTab"
-                @click-tab="clickTab">
+      <van-tabs
+          v-model:active="activeTab"
+          ellipsis
+      >
         <template v-for="(value, key) in allCities" :key="key">
           <van-tab :name="key" :title="value.title">{{ value.title }}</van-tab>
         </template>
@@ -29,8 +31,8 @@
 </template>
 
 <script setup>
-import {ref, watchEffect} from "vue"
-import {showNotify, showToast} from "vant"
+import {computed, ref} from "vue"
+import {showNotify} from "vant"
 import {useRouter} from "vue-router"
 import {useCityStore} from "@/stores";
 import {storeToRefs} from "pinia";
@@ -57,19 +59,9 @@ cityStore.fetchAllCity()
 
 const {allCities} = storeToRefs(cityStore)
 
-watchEffect(() => {
-  activeTab.value = Object.keys(allCities.value).shift()
-})
-
-const changeTab = ({title, name}) => {
-  console.log('@@@@', 'changeTab')
-  showToast('@@@  changeTab' + title + name)
-}
-const clickTab = ({title, name}) => {
-  console.log('@@@@', 'clickTab')
-  showToast('@@@  clickTab' + title + name)
-}
-
+// 获取当前选择的标签
+const currentActiveTab = computed(() => allCities.value[activeTab.value])
+console.log('currentActiveTab', currentActiveTab)
 </script>
 
 <style lang="less" scoped>
