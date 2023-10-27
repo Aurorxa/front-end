@@ -18,7 +18,7 @@
 import tabBarData from '@/assets/data/tabBar'
 
 import {ref} from "vue"
-import {getAssetsUrl} from "@/utils/loadAssets.js";
+import {getAssetsUrl} from "@/utils/loadAssets.js"
 
 const currentIndex = ref(0)
 

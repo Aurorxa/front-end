@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import TabBar from "@/components/TabBar/index.vue";
+import TabBar from "@/components/tab-bar/index.vue";
 import {useRoute} from "vue-router";
 import {ref, watch} from "vue";
 

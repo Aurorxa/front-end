@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import SearchBox from '@/views/Home/components/SearchBox/index.vue'
+import SearchBox from '@/views/Home/components/search-box/index.vue'
 </script>
 
 <style lang="less" scoped>

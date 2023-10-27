@@ -13,17 +13,17 @@ export default {
     }
   },
   created() {
-    console.log("Home ... created")
+    console.log("home ... created")
   },
   unmounted() {
-    console.log("Home ... unmounted")
+    console.log("home ... unmounted")
   },
   /* 对于保持 keep-alive 组件的切换进行监听 */
   activated() {
-    console.log("Home... activated")
+    console.log("home... activated")
   },
   deactivated() {
-    console.log("Home... deactivated")
+    console.log("home... deactivated")
   }
 }
 </script>

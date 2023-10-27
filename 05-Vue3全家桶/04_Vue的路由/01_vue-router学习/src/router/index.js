@@ -13,7 +13,7 @@ const router = createRouter({
         {
             path: '/home',
             name: 'Home',
-            component: () => import(/* webpackChunkName: 'Home.vue'*/'@/components/Home.vue'),
+            component: () => import(/* webpackChunkName: 'home.vue'*/'@/components/Home.vue'),
             meta: { // 自定义属性
             
             }
@@ -36,8 +36,8 @@ const router = createRouter({
         },
         {
             path: '/:pathMatch(.*)*',
-            name: 'NotFound',
-            component: () => import(/* webpackChunkName: 'NotFound.vue'*/'@/components/NotFound.vue')
+            name: 'not-found',
+            component: () => import(/* webpackChunkName: 'not-found.vue'*/'@/components/NotFound.vue')
         }
     ]
 })
