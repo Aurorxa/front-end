@@ -25,16 +25,16 @@
     <div class="content">
       <!--  索引栏    -->
       <van-cell-group>
-        <van-cell title="[城市]"/>
-      </van-cell-group>
-      <van-index-bar>
-        <template v-for="(city) in currentActiveTab?.cities">
-          <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
-          <template v-for="item in city?.cities">
-            <van-cell :title="item?.cityName"/>
+        <van-cell title="城市"/>
+        <van-index-bar>
+          <template v-for="(city) in currentActiveTab?.cities">
+            <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
+            <template v-for="item in city?.cities">
+              <van-cell :title="item?.cityName"/>
+            </template>
           </template>
-        </template>
-      </van-index-bar>
+        </van-index-bar>
+      </van-cell-group>
     </div>
   </div>
 </template>

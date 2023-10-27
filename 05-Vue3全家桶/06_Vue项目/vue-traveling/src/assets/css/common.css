@@ -8,6 +8,7 @@
     --van-search-left-icon-color: var(--primary-color);
     --van-tabbar-item-active-color: var(--primary-color);
     --van-tabs-bottom-bar-color: var(--primary-color);
+    --van-cell-group-title-color: var(--primary-color);
 }
 
 body {
