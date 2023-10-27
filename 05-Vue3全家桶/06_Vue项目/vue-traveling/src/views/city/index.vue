@@ -1,7 +1,7 @@
 <template>
   <div class="city">
     <!-- 头部 -->
-    <van-sticky :offset-top="0" class="header">
+    <div class="header">
       <!--  搜索  -->
       <van-search
           v-model="searchValue"
@@ -20,25 +20,18 @@
           <van-tab :name="key" :title="value.title"></van-tab>
         </template>
       </van-tabs>
-    </van-sticky>
+    </div>
     <!--  列表数据  -->
     <div class="content">
-      <!-- 热门城市  -->
-      <van-cell-group>
-        <van-cell title="热门城市" title-style="color: #ff9854"/>
-      </van-cell-group>
       <!--  城市分组    -->
-      <van-cell-group>
-        <van-cell title="城市分组" title-style="color: #ff9854"/>
-        <van-index-bar highlight-color="#ff9854">
-          <template v-for="(city) in currentActiveTab?.cities">
-            <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
-            <template v-for="item in city?.cities">
-              <van-cell :title="item?.cityName"/>
-            </template>
+      <van-index-bar highlight-color="#ff9854">
+        <template v-for="(city) in currentActiveTab?.cities">
+          <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
+          <template v-for="item in city?.cities">
+            <van-cell :title="item?.cityName"/>
           </template>
-        </van-index-bar>
-      </van-cell-group>
+        </template>
+      </van-index-bar>
     </div>
   </div>
 </template>
@@ -79,6 +72,12 @@ console.log('currentActiveTab', currentActiveTab)
 
 <style lang="less" scoped>
 .city {
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
 
   .content {
     background-color: #fff;
