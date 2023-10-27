@@ -3,9 +3,11 @@
 }
 
 :root:root {
-    --van-search-label-color: #ff9854;
-    --van-search-left-icon-color: #ff9854;
-    --van-tabbar-item-active-color: #ff9854;
+    --primary-color: #ff9854;
+    --van-search-label-color: var(--primary-color);
+    --van-search-left-icon-color: var(--primary-color);
+    --van-tabbar-item-active-color: var(--primary-color);
+    --van-tabs-bottom-bar-color: var(--primary-color);
 }
 
 body {

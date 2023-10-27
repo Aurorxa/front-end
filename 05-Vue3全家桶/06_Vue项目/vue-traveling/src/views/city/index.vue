@@ -10,6 +10,11 @@
           @cancel="onCancel"
           @search="onSearch"
       />
+      <!-- 标签页 -->
+      <van-tabs v-model:active="activeTab" animated swipeable>
+        <van-tab title="国内·港澳台">内容 1</van-tab>
+        <van-tab title="海外">内容 2</van-tab>
+      </van-tabs>
     </form>
   </div>
 </template>
@@ -21,7 +26,9 @@ import {useRouter} from "vue-router"
 
 
 const searchValue = ref('')
+const activeTab = ref(0);
 const router = useRouter()
+
 const onSearch = (val) => {
   showNotify(val)
 }
