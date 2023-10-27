@@ -23,7 +23,7 @@
     </div>
     <!--  列表数据  -->
     <div class="content">
-      <template v-for="item in 1000">
+      <template v-for="item in currentActiveTab?.cities">
         <div> {{ item }}</div>
       </template>
     </div>
