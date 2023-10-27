@@ -1,7 +1,7 @@
 <template>
   <div class="city">
     <!-- 头部 -->
-    <div class="header">
+    <van-sticky :offset-top="0" class="header">
       <!--  搜索  -->
       <van-search
           v-model="searchValue"
@@ -17,15 +17,20 @@
           ellipsis
       >
         <template v-for="(value, key) in allCities" :key="key">
-          <van-tab :name="key" :title="value.title">{{ value.title }}</van-tab>
+          <van-tab :name="key" :title="value.title"></van-tab>
         </template>
       </van-tabs>
-    </div>
+    </van-sticky>
     <!--  列表数据  -->
     <div class="content">
-      <template v-for="item in currentActiveTab?.cities">
-        <div> {{ item }}</div>
-      </template>
+      <van-index-bar>
+        <template v-for="(city) in currentActiveTab?.cities">
+          <van-index-anchor :index="city.group"/>
+          <template v-for="item in city?.cities">
+            <van-cell :title="item.cityName"/>
+          </template>
+        </template>
+      </van-index-bar>
     </div>
   </div>
 </template>
@@ -66,10 +71,9 @@ console.log('currentActiveTab', currentActiveTab)
 
 <style lang="less" scoped>
 .city {
-  .header {
-    position: sticky;
-    top: 0;
-  }
 
+  .content {
+
+  }
 }
 </style>
