@@ -27,7 +27,7 @@
         <template v-for="(city) in currentActiveTab?.cities">
           <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
           <template v-for="item in city?.cities">
-            <van-cell :title="item.cityName"/>
+            <van-cell :title="item?.cityName"/>
           </template>
         </template>
       </van-index-bar>
