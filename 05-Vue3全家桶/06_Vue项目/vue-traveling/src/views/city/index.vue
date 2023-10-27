@@ -23,6 +23,10 @@
     </van-sticky>
     <!--  列表数据  -->
     <div class="content">
+      <!--  索引栏    -->
+      <van-cell-group>
+        <van-cell title="[城市]"/>
+      </van-cell-group>
       <van-index-bar>
         <template v-for="(city) in currentActiveTab?.cities">
           <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
@@ -73,7 +77,7 @@ console.log('currentActiveTab', currentActiveTab)
 .city {
 
   .content {
-
+    background-color: #fff;
   }
 }
 </style>
