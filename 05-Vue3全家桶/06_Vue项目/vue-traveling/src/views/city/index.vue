@@ -1,13 +1,18 @@
 <template>
   <div class="city">
-    <!--  搜索  -->
-    <van-search
-        v-model="value"
-        placeholder="请输入搜索关键词"
-        show-action
-        @cancel="onCancel"
-        @search="onSearch"
-    />
+    <van-row>
+      <van-col span="24">
+        <!--  搜索  -->
+        <van-search
+            v-model="value"
+            placeholder="城市/区域/位置"
+            show-action
+            @cancel="onCancel"
+            @search="onSearch"
+        />
+      </van-col>
+    </van-row>
+
   </div>
 </template>
 
