@@ -2,7 +2,7 @@
   <div class="search-box">
     <!-- 定位   -->
     <van-row class="location" justify="space-around">
-      <van-col class="item city" span="10" @click="changeCityClick">{{ currentCity }}</van-col>
+      <van-col class="item city" span="10" @click="chooseCityClick">{{ currentCity }}</van-col>
       <van-col class="item position" span="8" @click="positionClick">
         <span class="text">我的位置</span>
         <van-icon class="icon" name="location" size="18"/>
@@ -15,10 +15,16 @@
 import {ref} from "vue"
 import {showNotify} from "vant"
 import 'vant/es/notify/style'
-import {useRouter} from "vue-router";
+import {useRouter} from "vue-router"
 
 const router = useRouter()
 const currentCity = ref('北京市')
+
+// 选择城市
+const chooseCityClick = () => {
+  router.push('/city')
+}
+
 // 获取位置、城市
 const positionClick = async () => {
   const getLocation = () => {
@@ -57,10 +63,7 @@ const positionClick = async () => {
 
 }
 
-// 切换城市
-const changeCityClick = () => {
-  router.push('/city')
-}
+
 </script>
 
 <style lang="less" scoped>
