@@ -1,5 +1,5 @@
 import axiosRequest from "@/services/request"
 
-export const getCityAll = () => {
+export const getAllCity = () => {
     return axiosRequest.get('/city/all')
 }

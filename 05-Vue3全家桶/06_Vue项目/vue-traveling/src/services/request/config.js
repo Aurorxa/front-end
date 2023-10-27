@@ -1,5 +1,5 @@
 const BASE_URL = 'http://www.codercba.com:1888/api'
-const TIMEOUT = 3000
+const TIMEOUT = 30000
 
 export {
     BASE_URL,

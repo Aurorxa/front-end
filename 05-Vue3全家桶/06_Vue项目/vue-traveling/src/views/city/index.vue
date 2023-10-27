@@ -1,21 +1,20 @@
 <template>
   <div class="city">
-    <form action="/">
-      <!--  搜索  -->
-      <van-search
-          v-model="searchValue"
-          placeholder="城市/区域/位置"
-          shape="round"
-          show-action
-          @cancel="onCancel"
-          @search="onSearch"
-      />
-      <!-- 标签页 -->
-      <van-tabs v-model:active="activeTab" animated swipeable>
-        <van-tab title="国内·港澳台">内容 1</van-tab>
-        <van-tab title="海外">内容 2</van-tab>
-      </van-tabs>
-    </form>
+    <!--  搜索  -->
+    <van-search
+        v-model="searchValue"
+        placeholder="城市/区域/位置"
+        shape="round"
+        show-action
+        @cancel="onCancel"
+        @search="onSearch"
+    />
+    <!-- 标签页 -->
+    <van-tabs v-model:active="activeTab" animated swipeable>
+      <template v-for="(value, key) in allCities" :key="key">
+        <van-tab :title="value.title">{{ value.title }}</van-tab>
+      </template>
+    </van-tabs>
   </div>
 </template>
 
@@ -23,7 +22,8 @@
 import {ref} from "vue"
 import {showNotify} from "vant"
 import {useRouter} from "vue-router"
-import {getCityAll} from "@/services/index.js";
+import {useCityStore} from "@/stores";
+import {storeToRefs} from "pinia";
 
 const searchValue = ref('')
 const activeTab = ref(0);
@@ -41,11 +41,11 @@ const onCancel = () => {
     }
   })
 }
+// 从 store 中获取数据
+const cityStore = useCityStore()
+cityStore.fetchAllCity()
 
-
-getCityAll().then(res => {
-  console.log(res)
-})
+const {allCities} = storeToRefs(cityStore)
 </script>
 
 <style lang="less" scoped>
