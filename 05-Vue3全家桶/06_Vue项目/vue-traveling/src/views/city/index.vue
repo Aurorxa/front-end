@@ -32,8 +32,8 @@
 import {computed, ref} from "vue"
 import {showNotify} from "vant"
 import {useRouter} from "vue-router"
-import {useCityStore} from "@/stores";
-import {storeToRefs} from "pinia";
+import {useCityStore} from "@/stores"
+import {storeToRefs} from "pinia"
 import CityGroup from '@/views/city/components/city-group/index.vue'
 
 const searchValue = ref('')
