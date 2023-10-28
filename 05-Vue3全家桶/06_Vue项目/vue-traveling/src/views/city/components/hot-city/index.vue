@@ -4,7 +4,7 @@
     <van-grid :border="false" :column-num="4">
       <template v-for="(item,index) in hotCities" :key="index">
         <van-grid-item>
-          <van-tag color="#fff5ec" text-color="#000">{{ item.cityName }}</van-tag>
+          <van-tag color="#fff4ec" text-color="#000">{{ item.cityName }}</van-tag>
         </van-grid-item>
       </template>
     </van-grid>
