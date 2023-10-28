@@ -37,7 +37,7 @@ import {storeToRefs} from "pinia"
 import CityGroup from '@/views/city/components/city-group/index.vue'
 
 const searchValue = ref('')
-const activeTab = ref('');
+const activeTab = ref('')
 const router = useRouter()
 
 const onSearch = (val) => {
