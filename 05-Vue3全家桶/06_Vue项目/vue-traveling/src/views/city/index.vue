@@ -24,14 +24,14 @@
     <!--  列表数据  -->
     <div class="content">
       <template v-for="(value,key) in allCities" :key="key">
-        <CityGroup v-show="value?.title===currentActiveTab?.title" :cities="value?.cities"></CityGroup>
+        <CityGroup v-show="activeTab === key" :cities="value?.cities"></CityGroup>
       </template>
     </div>
   </div>
 </template>
 
 <script setup>
-import {computed, ref} from "vue"
+import {ref} from "vue"
 import {showNotify} from "vant"
 import {useRouter} from "vue-router"
 import {useCityStore} from "@/stores"
@@ -61,8 +61,8 @@ cityStore.fetchAllCity()
 const {allCities} = storeToRefs(cityStore)
 
 // 获取当前选择的标签
-const currentActiveTab = computed(() => allCities.value[activeTab.value])
-console.log('currentActiveTab', currentActiveTab)
+// const currentActiveTab = computed(() => allCities.value[activeTab.value])
+// console.log('currentActiveTab', currentActiveTab)
 
 </script>
 
