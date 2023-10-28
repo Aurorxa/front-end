@@ -23,7 +23,9 @@
     </div>
     <!--  列表数据  -->
     <div class="content">
-      <CityGroup :cities="currentActiveTab?.cities"></CityGroup>
+      <template v-for="(value,key) in allCities" :key="key">
+        <CityGroup v-show="value?.title===currentActiveTab?.title" :cities="value?.cities"></CityGroup>
+      </template>
     </div>
   </div>
 </template>
