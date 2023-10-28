@@ -13,9 +13,9 @@
 <script setup>
 defineProps({
   cities: {
-    type: Object,
+    type: Array,
     required: true,
-    default: () => ({})
+    default: []
   }
 })
 </script>

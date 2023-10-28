@@ -23,6 +23,11 @@
     </div>
     <!--  列表数据  -->
     <div class="content">
+      <!--  热门数据    -->
+      <template v-for="(value,key) in allCities" :key="key">
+        <HotCity v-show="activeTab === key" :hotCities="value?.hotCities"></HotCity>
+      </template>
+      <!--  城市数据    -->
       <template v-for="(value,key) in allCities" :key="key">
         <CityGroup v-show="activeTab === key" :cities="value?.cities"></CityGroup>
       </template>
@@ -37,6 +42,7 @@ import {useRouter} from "vue-router"
 import {useCityStore} from "@/stores"
 import {storeToRefs} from "pinia"
 import CityGroup from '@/views/city/components/city-group/index.vue'
+import HotCity from '@/views/city/components/hot-city/index.vue'
 
 const searchValue = ref('')
 const activeTab = ref('')
@@ -59,6 +65,8 @@ const cityStore = useCityStore()
 cityStore.fetchAllCity()
 
 const {allCities} = storeToRefs(cityStore)
+
+console.log('@', allCities)
 
 // 获取当前选择的标签
 // const currentActiveTab = computed(() => allCities.value[activeTab.value])
