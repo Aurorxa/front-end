@@ -10,7 +10,7 @@ const router = createRouter({
             redirect: '/home'
         },
         {
-            path: '/home',
+            path: '/home/',
             name: 'Home',
             component: () => import('@/views/home/index.vue'),
             meta: { /*自定义属性*/},

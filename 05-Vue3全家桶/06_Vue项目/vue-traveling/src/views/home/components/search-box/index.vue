@@ -2,7 +2,7 @@
   <div class="search-box">
     <!-- 定位   -->
     <van-row class="location" justify="space-around">
-      <van-col class="item city" span="10" @click="chooseCityClick">{{ currentCity }}</van-col>
+      <van-col class="item city" span="10" @click="chooseCityClick">{{ currentCityName }}</van-col>
       <van-col class="item position" span="8" @click="positionClick">
         <span class="text">我的位置</span>
         <van-icon class="icon" name="location" size="18"/>
@@ -12,13 +12,30 @@
 </template>
 
 <script setup>
-import {ref} from "vue"
+import {ref, watch} from "vue"
 import {showNotify} from "vant"
 
 import {useRouter} from "vue-router"
 
+import {useCityStore} from "@/stores/index.js"
+import {storeToRefs} from "pinia";
+
+const cityStore = useCityStore()
+
+const {currentCity} = storeToRefs(cityStore)
+
 const router = useRouter()
-const currentCity = ref('北京市')
+const currentCityName = ref('北京市')
+
+
+watch(() => currentCity.value, ({cityName}) => {
+  if (cityName) {
+    currentCityName.value = cityName
+  }
+}, {
+  immediate: true,
+  deep: true
+})
 
 // 选择城市
 const chooseCityClick = () => {
