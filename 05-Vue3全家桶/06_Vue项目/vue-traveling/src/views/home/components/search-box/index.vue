@@ -35,7 +35,7 @@ import {useRouter} from "vue-router"
 
 import {useCityStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia";
-import {currentMonthDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js";
+import {currentMonthDay, formatDiffDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js";
 
 const cityStore = useCityStore()
 
@@ -107,9 +107,10 @@ const showCalendar = ref(false)
 const handleConfirmCalendar = (values) => {
   const [start, end] = values
   showCalendar.value = false
-
   startDate.value = formatMonthDay(start)
   endDate.value = formatMonthDay(end)
+  // TODO 停留时间有点问题~
+  stay.value = formatDiffDay(start, end)
 }
 
 </script>
