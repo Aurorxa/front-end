@@ -12,14 +12,14 @@
     <van-row class="date-range" justify="space-around">
       <van-col class="item start" span="5">
         <span class="tip">入住</span>
-        <span class="date">8月25日</span>
+        <span class="date">{{ startDate }}</span>
       </van-col>
       <van-col class="item stay" span="5">
         <span>共一晚</span>
       </van-col>
       <van-col class="item end" span="5">
         <span class="tip">离店</span>
-        <span class="date">8月26日</span>
+        <span class="date">{{ endDate }}</span>
       </van-col>
     </van-row>
   </div>
@@ -33,6 +33,7 @@ import {useRouter} from "vue-router"
 
 import {useCityStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia";
+import {currentMonthDay, nextMonthDay} from "@/utils/formatDate.js";
 
 const cityStore = useCityStore()
 
@@ -94,6 +95,9 @@ const positionClick = async () => {
 
 }
 
+// 时间范围
+const startDate = ref(currentMonthDay())
+const endDate = ref(nextMonthDay())
 
 </script>
 
