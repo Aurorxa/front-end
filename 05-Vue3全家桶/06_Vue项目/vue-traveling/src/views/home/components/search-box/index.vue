@@ -105,10 +105,12 @@ const stay = ref('共一晚')
 const showCalendar = ref(false)
 
 const handleConfirmCalendar = (values) => {
+  // 设置日期
   const [start, end] = values
-  showCalendar.value = false
   startDate.value = formatMonthDay(start)
   endDate.value = formatMonthDay(end)
+  // 隐藏日历
+  showCalendar.value = false
   // TODO 停留时间有点问题~
   stay.value = formatDiffDay(start, end)
 }
