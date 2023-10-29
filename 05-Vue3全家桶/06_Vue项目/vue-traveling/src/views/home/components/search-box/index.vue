@@ -9,19 +9,21 @@
       </van-col>
     </van-row>
     <!-- 日期范围 -->
-    <van-row class="date-range" justify="space-around">
+    <van-row class="date-range" justify="space-around" @click="showCalendar = true">
       <van-col class="item start" span="5">
         <span class="tip">入住</span>
         <span class="date">{{ startDate }}</span>
       </van-col>
       <van-col class="item stay" span="5">
-        <span>共一晚</span>
+        <span>{{ stay }}</span>
       </van-col>
       <van-col class="item end" span="5">
         <span class="tip">离店</span>
         <span class="date">{{ endDate }}</span>
       </van-col>
     </van-row>
+    <!-- 日历组件   -->
+    <van-calendar v-model:show="showCalendar" :show-confirm="false" type="range" @confirm="handleConfirmCalendar"/>
   </div>
 </template>
 
@@ -33,7 +35,7 @@ import {useRouter} from "vue-router"
 
 import {useCityStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia";
-import {currentMonthDay, nextMonthDay} from "@/utils/formatDate.js";
+import {currentMonthDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js";
 
 const cityStore = useCityStore()
 
@@ -98,6 +100,17 @@ const positionClick = async () => {
 // 时间范围
 const startDate = ref(currentMonthDay())
 const endDate = ref(nextMonthDay())
+const stay = ref('共一晚')
+
+const showCalendar = ref(false)
+
+const handleConfirmCalendar = (values) => {
+  const [start, end] = values
+  showCalendar.value = false
+
+  startDate.value = formatMonthDay(start)
+  endDate.value = formatMonthDay(end)
+}
 
 </script>
 
