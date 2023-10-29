@@ -4,7 +4,7 @@
     <template v-for="(city) in cities">
       <van-index-anchor :index="city.group">{{ city.group }}</van-index-anchor>
       <template v-for="item in city?.cities">
-        <van-cell :title="item?.cityName" @click="handleCellClick(item)"/>
+        <van-cell :title="item?.cityName" @click="handleCityClick(item)"/>
       </template>
     </template>
   </van-index-bar>
@@ -30,7 +30,7 @@ const indexList = computed(() => {
   return props.cities.map((city) => city.group)
 })
 
-const handleCellClick = (city) => {
+const handleCityClick = (city) => {
   // 将当前的城市保存到 store 中
   cityStore.currentCity = city
   // 返回上一级

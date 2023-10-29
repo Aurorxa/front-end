@@ -90,7 +90,6 @@ const positionClick = async () => {
     .item {
       width: 74px;
       line-height: 40px;
-      background-color: pink;
     }
 
     .position {
