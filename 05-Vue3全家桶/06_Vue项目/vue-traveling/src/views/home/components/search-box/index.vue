@@ -2,10 +2,22 @@
   <div class="search-box">
     <!-- 定位   -->
     <van-row class="location" justify="space-around">
-      <van-col class="item city" span="10" @click="chooseCityClick">{{ currentCityName }}</van-col>
+      <van-col class="item city" span="8" @click="chooseCityClick">{{ currentCityName }}</van-col>
       <van-col class="item position" span="8" @click="positionClick">
         <span class="text">我的位置</span>
         <van-icon class="icon" name="location" size="18"/>
+      </van-col>
+    </van-row>
+    <!--  入住  -->
+    <van-row class="date-range" justify="space-around">
+      <van-col class="item start" span="4">
+        入住
+      </van-col>
+      <van-col class="item stay" span="3">
+        <span>共一晚</span>
+      </van-col>
+      <van-col class="item end" span="6">
+        <span>离店</span>
       </van-col>
     </van-row>
   </div>
@@ -87,9 +99,11 @@ const positionClick = async () => {
 .search-box {
 
   .location {
+
     .item {
       width: 74px;
       line-height: 40px;
+      background: pink;
     }
 
     .position {
@@ -105,6 +119,14 @@ const positionClick = async () => {
         font-size: 12px;
         color: var(--primary-color) !important;
       }
+    }
+  }
+
+  .date-range {
+    .item {
+      background: pink;
+      width: 74px;
+      line-height: 40px;
     }
   }
 }
