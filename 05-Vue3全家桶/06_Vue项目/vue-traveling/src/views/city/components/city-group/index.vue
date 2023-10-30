@@ -34,7 +34,7 @@ const handleCityClick = (city) => {
   // 将当前的城市保存到 store 中
   cityStore.currentCity = city
   // 返回上一级
-  router.push("/")
+  router.back()
 }
 
 </script>
