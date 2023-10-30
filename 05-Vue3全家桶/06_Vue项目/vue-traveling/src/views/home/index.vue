@@ -23,6 +23,7 @@ import {useHomeStore} from "@/stores/index.js"
 // 从 store 中获取数据
 const homeStore = useHomeStore()
 homeStore.fetchHotSuggests()
+homeStore.fetchCategories()
 </script>
 
 <style lang="less" scoped>
