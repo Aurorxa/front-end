@@ -39,7 +39,7 @@
         <span class="tip">关键字/位置/民宿名</span>
       </van-col>
     </van-row>
-    <!-- 强烈建议   -->
+    <!-- 热门建议   -->
     <van-row class="hot-suggest" justify="space-between">
       <van-grid :border="false" :column-num="5">
         <template v-for="(item,index) in hotSuggests" :key="index">
