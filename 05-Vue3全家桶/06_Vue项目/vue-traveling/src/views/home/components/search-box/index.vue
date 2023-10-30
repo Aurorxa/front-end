@@ -1,23 +1,23 @@
 <template>
   <div class="search-box">
     <!-- 定位 -->
-    <van-row class="location" justify="space-around">
-      <van-col class="item city" span="10" @click="chooseCityClick">{{ currentCityName }}</van-col>
-      <van-col class="item position" span="8" @click="positionClick">
+    <van-row class="location" justify="space-between">
+      <van-col class="item city" @click="chooseCityClick">{{ currentCityName }}</van-col>
+      <van-col class="item position" @click="positionClick">
         <span class="text">我的位置</span>
         <van-icon class="icon" name="location" size="18"/>
       </van-col>
     </van-row>
     <!-- 日期范围 -->
-    <van-row class="date-range" justify="space-around" @click="showCalendar = true">
-      <van-col class="item start" span="5">
+    <van-row class="date-range" justify="space-between" @click="showCalendar = true">
+      <van-col class="item start">
         <span class="tip">入住</span>
         <span class="date">{{ startDate }}</span>
       </van-col>
-      <van-col class="item stay" span="5">
+      <van-col class="item stay">
         <span>共{{ stay }}晚</span>
       </van-col>
-      <van-col class="item end" span="5">
+      <van-col class="item end">
         <span class="tip">离店</span>
         <span class="date">{{ endDate }}</span>
       </van-col>
@@ -25,13 +25,29 @@
     <!-- 日历组件   -->
     <van-calendar v-model:show="showCalendar" :show-confirm="false" type="range" @confirm="handleConfirmCalendar"/>
     <!-- 价格计算   -->
-    <van-row class="price-counter" justify="space-around">
-      <van-col class="item " span="10">
+    <van-row class="price-counter" justify="space-between">
+      <van-col class="item">
         <span class="tip">价格不限</span>
       </van-col>
-      <van-col class="item " span="8">
-        <span class="date">人数不限</span>
+      <van-col class="item">
+        <span class="tip">人数不限</span>
       </van-col>
+    </van-row>
+    <!-- 关键字   -->
+    <van-row class="keyword" justify="space-between">
+      <van-col class="item">
+        <span class="tip">关键字/位置/民宿名</span>
+      </van-col>
+    </van-row>
+    <!-- 强烈建议   -->
+    <van-row class="hot-suggest" justify="space-between">
+      <van-grid :border="false" :column-num="5">
+        <template v-for="(item,index) in hotSuggests" :key="index">
+          <van-grid-item>
+            <van-tag color="#fff4ec" text-color="#000">{{ item.tagText.text }}</van-tag>
+          </van-grid-item>
+        </template>
+      </van-grid>
     </van-row>
 
   </div>
@@ -43,11 +59,16 @@ import {showNotify} from "vant"
 
 import {useRouter} from "vue-router"
 
-import {useCityStore} from "@/stores/index.js"
+import {useCityStore, useHomeStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia";
 import {currentMonthDay, formatDiffDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js";
 
 const cityStore = useCityStore()
+// 从 store 中获取数据
+const homeStore = useHomeStore()
+homeStore.fetchHotSuggests();
+
+const {hotSuggests} = storeToRefs(homeStore)
 
 const {currentCity} = storeToRefs(cityStore)
 
@@ -129,6 +150,7 @@ const handleConfirmCalendar = (values) => {
 
 <style lang="less" scoped>
 .search-box {
+  padding: 0 40px;
 
   .location {
 
@@ -172,10 +194,20 @@ const handleConfirmCalendar = (values) => {
   }
 
   .price-counter {
-    margin-top: 5px;
+
+    .item {
+      height: 40px;
+      line-height: 40px;
+      color: gray;
+    }
+  }
+
+  .keyword {
 
     .item {
       line-height: 40px;
+      height: 40px;
+      color: gray;
     }
   }
 }
