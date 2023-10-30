@@ -121,7 +121,8 @@ const positionClick = async () => {
       showNotify(
           {
             type: 'primary', message: `${city}`
-          });
+          }
+      )
       currentCityName.value = `${city}`
     }
   } catch (e) {
