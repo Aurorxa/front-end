@@ -116,13 +116,13 @@ const positionClick = async () => {
     const location = await getLocation()
     const {coords: {latitude, longitude}} = location
     const fetchResult = await fetch(`https://api.oioweb.cn/api/ip/geocoder?lng=${longitude}&lat=${latitude}`)
-    const {code, result: {address_component: {province, city}}} = await fetchResult.json()
+    const {code, result: {address_component: {city}}} = await fetchResult.json()
     if (code === 200) {
       showNotify(
           {
-            type: 'primary', message: `${province} ${city}`
+            type: 'primary', message: `${city}`
           });
-      currentCity.value = `${province} ${city}`
+      currentCityName.value = `${city}`
     }
   } catch (e) {
     showNotify(
