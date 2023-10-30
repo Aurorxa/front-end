@@ -24,6 +24,16 @@
     </van-row>
     <!-- 日历组件   -->
     <van-calendar v-model:show="showCalendar" :show-confirm="false" type="range" @confirm="handleConfirmCalendar"/>
+    <!-- 价格计算   -->
+    <van-row class="price-counter" justify="space-around">
+      <van-col class="item " span="10">
+        <span class="tip">价格不限</span>
+      </van-col>
+      <van-col class="item " span="8">
+        <span class="date">人数不限</span>
+      </van-col>
+    </van-row>
+
   </div>
 </template>
 
@@ -127,9 +137,6 @@ const handleConfirmCalendar = (values) => {
     }
 
     .position {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
 
       .text {
         font-size: 12px;
@@ -161,6 +168,14 @@ const handleConfirmCalendar = (values) => {
         font-size: 14px;
         font-weight: bold;
       }
+    }
+  }
+
+  .price-counter {
+    margin-top: 5px;
+
+    .item {
+      line-height: 40px;
     }
   }
 }
