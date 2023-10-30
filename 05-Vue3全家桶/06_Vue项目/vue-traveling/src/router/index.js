@@ -18,7 +18,7 @@ const router = createRouter({
         },
         {
             path: '/favor',
-            name: 'favor',
+            name: 'Favor',
             component: () => import('@/views/favor/index.vue'),
             meta: { /*自定义属性*/},
             children: []
@@ -39,7 +39,7 @@ const router = createRouter({
         },
         {
             path: '/city',
-            name: 'city',
+            name: 'City',
             component: () => import('@/views/city/index.vue'),
             meta: { /*自定义属性*/
                 hideTabBar: true // 隐藏 tab-bar

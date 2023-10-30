@@ -1,6 +1,6 @@
 <template>
   <div class="tab-bar">
-    <van-tabbar v-model="currentIndex" route>
+    <van-tabbar v-model="active" routes>
       <template v-for="(item,index) in tabBarData" :key="index">
         <van-tabbar-item :to="item.path">
           <span>{{ item.text }}</span>
@@ -20,7 +20,8 @@ import tabBarData from '@/assets/data/tabBar'
 import {ref} from "vue"
 import {getAssetsUrl} from "@/utils/loadAssets.js"
 
-const currentIndex = ref(0)
+const active = ref(0)
+
 
 </script>
 
