@@ -142,7 +142,7 @@ const handleConfirmCalendar = (values) => {
   endDate.value = formatMonthDay(end)
   // 隐藏日历
   showCalendar.value = false
-  // TODO 停留时间有点问题~
+  // 设置对应的天数
   stay.value = formatDiffDay(start, end)
 }
 
