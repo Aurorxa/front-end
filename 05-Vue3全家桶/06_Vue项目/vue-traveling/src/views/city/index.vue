@@ -68,9 +68,6 @@ const {allCities} = storeToRefs(cityStore)
 
 console.log('@', allCities)
 
-// 获取当前选择的标签
-// const currentActiveTab = computed(() => allCities.value[activeTab.value])
-// console.log('currentActiveTab', currentActiveTab)
 </script>
 
 <style lang="less" scoped>
