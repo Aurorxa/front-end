@@ -17,7 +17,6 @@ const route = useRoute()
 const hideTabBarRef = ref(false)
 
 watch(() => route.meta, (meta) => {
-  console.log('App.vue --> meta', meta)
   const {hideTabBar} = meta
   if (hideTabBar) {
     hideTabBarRef.value = hideTabBar

@@ -21,7 +21,7 @@ const cityStore = useCityStore()
 defineProps({
   hotCities: {
     type: Array,
-    required: true,
+    required: false,
     default: []
   }
 })

@@ -21,7 +21,7 @@ const cityStore = useCityStore()
 const props = defineProps({
   cities: {
     type: Array,
-    required: true,
+    required: false,
     default: []
   }
 })
