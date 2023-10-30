@@ -68,8 +68,8 @@ import {showNotify} from "vant"
 import {useRouter} from "vue-router"
 
 import {useCityStore, useHomeStore} from "@/stores/index.js"
-import {storeToRefs} from "pinia";
-import {currentMonthDay, formatDiffDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js";
+import {storeToRefs} from "pinia"
+import {currentMonthDay, formatDiffDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js"
 
 const cityStore = useCityStore()
 // 从 store 中获取数据
