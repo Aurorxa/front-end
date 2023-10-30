@@ -19,6 +19,10 @@
 
 <script setup>
 import SearchBox from '@/views/Home/components/search-box/index.vue'
+import {useHomeStore} from "@/stores/index.js"
+// 从 store 中获取数据
+const homeStore = useHomeStore()
+homeStore.fetchHotSuggests()
 </script>
 
 <style lang="less" scoped>

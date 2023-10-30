@@ -72,9 +72,7 @@ import {storeToRefs} from "pinia"
 import {currentMonthDay, formatDiffDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js"
 
 const cityStore = useCityStore()
-// 从 store 中获取数据
 const homeStore = useHomeStore()
-homeStore.fetchHotSuggests();
 
 const {hotSuggests} = storeToRefs(homeStore)
 
