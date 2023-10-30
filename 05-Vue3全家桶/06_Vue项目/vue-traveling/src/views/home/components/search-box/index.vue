@@ -45,6 +45,10 @@
         <van-tag color="#fff4ec" style="margin:5px 5px 5px 0" text-color="#000">{{ item.tagText.text }}</van-tag>
       </template>
     </van-row>
+    <!-- 搜索按钮   -->
+    <van-row class="search-btn" justify="space-evenly">
+      <van-button block color="#ff9854" round>搜索</van-button>
+    </van-row>
 
   </div>
 </template>
@@ -205,6 +209,10 @@ const handleConfirmCalendar = (values) => {
       height: 40px;
       color: gray;
     }
+  }
+
+  .search-btn {
+    margin-top: 10px;
   }
 }
 </style>
