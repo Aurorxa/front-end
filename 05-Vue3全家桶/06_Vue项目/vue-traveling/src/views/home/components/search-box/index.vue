@@ -9,7 +9,10 @@
       </van-col>
     </van-row>
     <!-- 日期范围 -->
-    <van-row class="date-range" justify="space-between" @click="showCalendar = true">
+    <van-row class="date-range"
+             justify="space-between"
+             @click="showCalendar = true"
+    >
       <van-col class="item start">
         <span class="tip">入住</span>
         <span class="date">{{ startDate }}</span>
@@ -23,8 +26,12 @@
       </van-col>
     </van-row>
     <!-- 日历组件   -->
-    <van-calendar v-model:show="showCalendar" :show-confirm="false" color="#ff9854" type="range"
-                  @confirm="handleConfirmCalendar"/>
+    <van-calendar v-model:show="showCalendar"
+                  :show-confirm="false"
+                  color="#ff9854"
+                  type="range"
+                  @confirm="handleConfirmCalendar"
+    />
     <!-- 价格计算   -->
     <van-row class="price-counter" justify="space-between">
       <van-col class="item">
