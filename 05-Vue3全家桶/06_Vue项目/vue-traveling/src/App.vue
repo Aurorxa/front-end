@@ -20,6 +20,8 @@ watch(() => route.meta, (meta) => {
   const {hideTabBar} = meta
   if (hideTabBar) {
     hideTabBarRef.value = hideTabBar
+  } else {
+    hideTabBarRef.value = false
   }
 }, {
   immediate: true
