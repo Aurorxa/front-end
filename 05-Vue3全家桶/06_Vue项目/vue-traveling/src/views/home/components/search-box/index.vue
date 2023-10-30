@@ -23,7 +23,8 @@
       </van-col>
     </van-row>
     <!-- 日历组件   -->
-    <van-calendar v-model:show="showCalendar" :show-confirm="false" type="range" @confirm="handleConfirmCalendar"/>
+    <van-calendar v-model:show="showCalendar" :show-confirm="false" color="#ff9854" type="range"
+                  @confirm="handleConfirmCalendar"/>
     <!-- 价格计算   -->
     <van-row class="price-counter" justify="space-between">
       <van-col class="item">
