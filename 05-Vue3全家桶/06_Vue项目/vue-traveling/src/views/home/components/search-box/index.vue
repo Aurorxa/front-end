@@ -40,14 +40,10 @@
       </van-col>
     </van-row>
     <!-- 热门建议   -->
-    <van-row class="hot-suggest" justify="space-between">
-      <van-grid :border="false" :column-num="5">
-        <template v-for="(item,index) in hotSuggests" :key="index">
-          <van-grid-item>
-            <van-tag color="#fff4ec" text-color="#000">{{ item.tagText.text }}</van-tag>
-          </van-grid-item>
-        </template>
-      </van-grid>
+    <van-row class="hot-suggest" justify="space-evenly">
+      <template v-for="(item,index) in hotSuggests" :key="index">
+        <van-tag color="#fff4ec" style="margin:5px 5px 5px 0" text-color="#000">{{ item.tagText.text }}</van-tag>
+      </template>
     </van-row>
 
   </div>
