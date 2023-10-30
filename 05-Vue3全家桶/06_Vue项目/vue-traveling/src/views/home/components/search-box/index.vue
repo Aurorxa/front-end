@@ -55,7 +55,15 @@
     </van-row>
     <!-- 搜索按钮   -->
     <van-row class="search-btn">
-      <van-button :to="{path: '/search'}" block color="#ff9854" round>开始搜索</van-button>
+      <van-button :to="{
+        path: '/search',
+        query: {
+          city: currentCityName,
+          startDate: startDate,
+          endDate: endDate,
+        }
+      }" block color="#ff9854" round>开始搜索
+      </van-button>
     </van-row>
 
   </div>
