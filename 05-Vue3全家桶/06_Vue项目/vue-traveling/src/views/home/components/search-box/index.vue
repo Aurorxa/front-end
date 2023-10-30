@@ -55,7 +55,7 @@
     </van-row>
     <!-- 搜索按钮   -->
     <van-row class="search-btn">
-      <van-button block color="#ff9854" round>开始搜索</van-button>
+      <van-button block color="#ff9854" round to="/search">开始搜索</van-button>
     </van-row>
 
   </div>

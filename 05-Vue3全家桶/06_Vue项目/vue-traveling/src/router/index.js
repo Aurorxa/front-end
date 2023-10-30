@@ -47,6 +47,15 @@ const router = createRouter({
             children: []
         },
         {
+            path: '/search',
+            name: 'Search',
+            component: () => import('@/views/search/index.vue'),
+            meta: { /*自定义属性*/
+                hideTabBar: true // 隐藏 tab-bar
+            },
+            children: []
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'NotFound',
             component: () => import('@/components/not-found/index.vue'),
