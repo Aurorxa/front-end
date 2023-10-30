@@ -63,13 +63,13 @@
 
 <script setup>
 import {ref, watch} from "vue"
-import {showNotify} from "vant"
 
 import {useRouter} from "vue-router"
 
 import {useCityStore, useHomeStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia"
 import {currentMonthDay, formatDiffDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js"
+import {useLocation} from "@/hooks/useLocation.js";
 
 const cityStore = useCityStore()
 const homeStore = useHomeStore()
@@ -98,41 +98,10 @@ const chooseCityClick = () => {
 
 // 获取位置、城市
 const positionClick = async () => {
-  const getLocation = () => {
-    return new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition((position) => {
-        resolve(position);
-      }, error => {
-        reject(error);
-      }, {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0,
-      });
-    })
-  }
 
-  try {
-    const location = await getLocation()
-    const {coords: {latitude, longitude}} = location
-    const fetchResult = await fetch(`https://api.oioweb.cn/api/ip/geocoder?lng=${longitude}&lat=${latitude}`)
-    const {code, result: {address_component: {city}}} = await fetchResult.json()
-    if (code === 200) {
-      showNotify(
-          {
-            type: 'primary', message: `${city}`
-          }
-      )
-      currentCityName.value = `${city}`
-    }
-  } catch (e) {
-    showNotify(
-        {
-          type: 'danger', message: `获取位置失败`
-        });
-    console.error("获取位置失败", e)
-  }
+  const {city} = await useLocation()
 
+  currentCityName.value = `${city}`
 }
 
 // 时间范围
