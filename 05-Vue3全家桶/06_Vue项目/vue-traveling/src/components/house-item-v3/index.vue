@@ -54,7 +54,7 @@ const remark = computed(() => {
 <style lang="less" scoped>
 .house-item-v3 {
   .infos {
-    padding: 3px 0;
+    padding: 10px 0;
 
     .name {
       overflow: hidden;
@@ -63,19 +63,18 @@ const remark = computed(() => {
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       font-size: 12px;
-      margin-top: 3px;
+      margin: 5px 0;
     }
 
     .summary {
       font-size: 10px;
-      margin-top: 3px;
+      margin: 5px 0;
     }
 
     .other {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 3px;
 
       .price {
         font-size: 14px;
