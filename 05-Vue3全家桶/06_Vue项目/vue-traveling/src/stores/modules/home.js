@@ -5,7 +5,8 @@ import {getCategories, getHotSuggests} from "@/services/index.js";
 export const useHomeStore = defineStore('home', {
     state: () => ({
         hotSuggests: [],
-        categories: []
+        categories: [],
+        houseList: []
     }),
     actions: {
         async fetchHotSuggests() {

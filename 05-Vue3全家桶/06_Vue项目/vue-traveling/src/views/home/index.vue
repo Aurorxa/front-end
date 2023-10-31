@@ -11,17 +11,21 @@
       <van-swipe-item>3</van-swipe-item>
       <van-swipe-item>4</van-swipe-item>
     </van-swipe>
-    <!-- 搜索  -->
+    <!-- 搜索 -->
     <SearchBox></SearchBox>
-    <!-- 分类   -->
+    <!-- 分类 -->
     <Category></Category>
+    <!-- 热门精选 -->
+    <Content></Content>
   </div>
+
 </template>
 
 <script setup>
 import SearchBox from '@/views/Home/components/search-box/index.vue'
 import Category from '@/views/Home/components/category/index.vue'
 import {useHomeStore} from "@/stores/index.js"
+import Content from "@/views/home/components/content/index.vue"
 // 从 store 中获取数据
 const homeStore = useHomeStore()
 homeStore.fetchHotSuggests()

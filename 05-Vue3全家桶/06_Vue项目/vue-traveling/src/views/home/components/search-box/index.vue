@@ -116,7 +116,7 @@ const positionClick = async () => {
 // 时间范围
 const startDate = ref(currentMonthDay())
 const endDate = ref(nextMonthDay())
-const stay = ref('1')
+const stay = ref(1)
 
 const showCalendar = ref(false)
 
