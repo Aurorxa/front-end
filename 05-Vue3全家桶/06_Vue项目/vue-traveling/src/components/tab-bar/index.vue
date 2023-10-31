@@ -5,7 +5,6 @@
         <van-tabbar-item :to="item.path">
           <span>{{ item.text }}</span>
           <template #icon="props">
-            {{ props.active }}
             <img :alt="item.text" :src="props.active ? getAssetsUrl(item.activeImage) : getAssetsUrl(item.image)"/>
           </template>
         </van-tabbar-item>
@@ -20,8 +19,8 @@ import tabBarData from '@/assets/data/tabBar'
 
 import {ref, watch} from "vue"
 import {getAssetsUrl} from "@/utils/loadAssets.js"
-import {useRoute} from "vue-router";
-import {showToast} from "vant";
+import {useRoute} from "vue-router"
+import {showToast} from "vant"
 
 const route = useRoute()
 
@@ -29,15 +28,15 @@ const active = ref(0)
 
 watch(route, (newRoute) => {
   const index = tabBarData.findIndex(item => item.path === newRoute.path)
-  console.log('tab-bar', index)
   if (index <= 0) {
     active.value = 0
   }
   active.value = index
 })
 
-const onChange = (index) => showToast(`标签 ${index}`);
-
+const onChange = (index) => {
+  showToast(`标签 ${index}`)
+}
 
 </script>
 
