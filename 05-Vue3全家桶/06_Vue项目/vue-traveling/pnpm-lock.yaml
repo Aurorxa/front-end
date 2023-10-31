@@ -20,6 +20,9 @@ dependencies:
   simplebar-vue:
     specifier: ^2.3.3
     version: 2.3.3(vue@3.3.7)
+  underscore:
+    specifier: ^1.13.6
+    version: 1.13.6
   vant:
     specifier: ^4.7.2
     version: 4.7.2(vue@3.3.7)
@@ -1012,6 +1015,10 @@ packages:
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
+
+  /underscore@1.13.6:
+    resolution: {integrity: sha512-+A5Sja4HP1M08MaXya7p5LvjuM7K6q/2EaC0+iovj/wOcMsTzMvDFbasi/oSapiwOlt252IqsKqPjCl7huKS0A==}
+    dev: false
 
   /unplugin-vue-components@0.25.2(vue@3.3.7):
     resolution: {integrity: sha512-OVmLFqILH6w+eM8fyt/d/eoJT9A6WO51NZLf1vC5c1FZ4rmq2bbGxTy8WP2Jm7xwFdukaIdv819+UI7RClPyCA==}
