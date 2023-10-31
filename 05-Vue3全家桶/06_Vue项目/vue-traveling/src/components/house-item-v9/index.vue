@@ -53,6 +53,7 @@ const price = computed(() => {
     color: #fff;
 
     .summary {
+      padding: 0 4px;
       margin-bottom: 10px;
       font-size: 12px;
     }
@@ -68,10 +69,10 @@ const price = computed(() => {
     }
 
     .other {
-      padding: 10px 0;
+      padding: 10px 4px;
 
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       font-size: 12px;
       font-weight: bold;
     }

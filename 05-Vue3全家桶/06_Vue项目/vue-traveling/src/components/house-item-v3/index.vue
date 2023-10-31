@@ -54,7 +54,7 @@ const remark = computed(() => {
 <style lang="less" scoped>
 .house-item-v3 {
   .infos {
-    padding: 10px 0;
+    padding: 10px 4px;
 
     .name {
       overflow: hidden;
