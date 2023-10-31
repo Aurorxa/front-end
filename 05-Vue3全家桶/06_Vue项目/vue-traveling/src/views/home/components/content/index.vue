@@ -2,7 +2,16 @@
   <div class="content">
     <h2 class="title">热门精选</h2>
     <div class="list">
-      列表数据
+      <van-grid :border="false" :column-num="2" :gutter="5">
+        <template v-for="(item,index) in houseList" :key="index">
+          <van-grid-item v-if="item.discoveryContentType === 9">
+            <HouseItemV9></HouseItemV9>
+          </van-grid-item>
+          <van-grid-item v-if="item.discoveryContentType === 3">
+            <HouseItemV3></HouseItemV3>
+          </van-grid-item>
+        </template>
+      </van-grid>
     </div>
   </div>
 </template>
@@ -10,6 +19,8 @@
 <script setup>
 import {useHomeStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia"
+import HouseItemV9 from '@/components/house-item-v9/index.vue'
+import HouseItemV3 from '@/components/house-item-v3/index.vue'
 
 const homeStore = useHomeStore()
 const {houseList} = storeToRefs(homeStore)
@@ -23,7 +34,9 @@ console.log('@@@ -> home list', houseList)
   margin-top: 10px;
 
   .title {
-    font-size: 22px;
+    padding: 0 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 }
 </style>
