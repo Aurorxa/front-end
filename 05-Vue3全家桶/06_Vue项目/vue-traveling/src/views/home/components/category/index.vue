@@ -1,11 +1,13 @@
 <template>
   <div class="category">
-    <template v-for="(item,index) in categories" :key="index">
-      <div class="item">
-        <img :src="item.pictureUrl" alt="" class="pic">
-        <span class="title">{{ item.title }}</span>
-      </div>
-    </template>
+    <van-swipe class="swipe" indicator-color="#ff9854">
+      <template v-for="(category,index) in categories" :key="index">
+        <van-swipe-item>
+          <img :src="category.pictureUrl" alt="" class="pic">
+          <span class="title">{{ category.title }}</span>
+        </van-swipe-item>
+      </template>
+    </van-swipe>
   </div>
 </template>
 
@@ -22,29 +24,30 @@ console.log('@@@', categories)
 
 <style lang="less" scoped>
 .category {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 0 40px;
 
-  display: flex;
-  overflow-x: auto;
+  .swipe {
 
-  .item {
-    display: flex;
-    width: 70px;
-    flex-shrink: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    :deep(.van-swipe-item) {
+      background-color: #f5f5f5;
+      height: 70px;
+      display: flex;
+      width: 70px;
+      flex-shrink: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-    .pic {
-      width: 32px;
-      height: 32px;
+      .pic {
+        width: 32px;
+        height: 32px;
+      }
+
+      .title {
+        font-size: 13px;
+      }
     }
-
-    .title {
-      font-size: 13px;
-    }
-
   }
 }
 </style>
