@@ -1,5 +1,4 @@
 import {defineStore} from "pinia"
-import {showNotify} from "vant";
 import {getAllCity} from "@/services/index.js";
 
 export const useCityStore = defineStore('city', {
@@ -13,7 +12,7 @@ export const useCityStore = defineStore('city', {
                 const {data} = await getAllCity()
                 this.allCities = data
             } catch (error) {
-                showNotify({type: 'danger', message: error});
+                console.error('fetchAllCity error', error)
                 // 让表单组件显示错误
                 return error
             }
