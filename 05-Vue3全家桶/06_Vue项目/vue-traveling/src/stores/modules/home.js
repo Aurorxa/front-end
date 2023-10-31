@@ -6,7 +6,8 @@ export const useHomeStore = defineStore('home', {
     state: () => ({
         hotSuggests: [],
         categories: [],
-        houseList: []
+        houseList: [],
+        currentHousePage: 1, // 当前页码
     }),
     actions: {
         async fetchHotSuggests() {
@@ -29,10 +30,11 @@ export const useHomeStore = defineStore('home', {
                 return error
             }
         },
-        async fetchHouseList(page = 1) {
+        async fetchHouseList() {
             try {
-                const {data} = await getHouseList(page)
-                this.houseList = data
+                const {data} = await getHouseList(this.currentHousePage)
+                this.houseList.push(...data)
+                this.currentHousePage++
             } catch (error) {
                 showNotify({type: 'danger', message: error});
                 // 让表单组件显示错误
