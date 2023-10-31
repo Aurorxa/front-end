@@ -8,14 +8,10 @@
     <div class="infos">
       <div class="summary">{{ itemData.summaryText }}</div>
       <div class="name">{{ itemData.houseName }}</div>
-      <van-row class="other" justify="space-around">
-        <van-col>
-          <van-rate v-model="score" :size="12" allow-half class="rate" readonly/>
-        </van-col>
-        <van-col class="price">
-          {{ price }}
-        </van-col>
-      </van-row>
+      <div class="other">
+        <van-rate v-model="score" :size="12" allow-half class="rate" readonly/>
+        <div class="price">{{ price }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -67,14 +63,16 @@ const price = computed(() => {
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       font-size: 10px;
+      margin-bottom: 10px;
     }
 
     .other {
-      margin: 10px 0;
+      padding: 10px 0;
 
-      .price {
-        font-size: 12px;
-      }
+      display: flex;
+      justify-content: space-around;
+      font-size: 12px;
+      font-weight: bold;
     }
   }
 }
