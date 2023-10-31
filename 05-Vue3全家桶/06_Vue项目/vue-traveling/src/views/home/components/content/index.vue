@@ -5,10 +5,10 @@
       <van-grid :border="false" :column-num="2" :gutter="5">
         <template v-for="(item,index) in houseList" :key="index">
           <van-grid-item v-if="item.discoveryContentType === 9">
-            <HouseItemV9></HouseItemV9>
+            <HouseItemV9 :item-data="item.data"></HouseItemV9>
           </van-grid-item>
           <van-grid-item v-if="item.discoveryContentType === 3">
-            <HouseItemV3></HouseItemV3>
+            <HouseItemV3 :item-data="item.data"></HouseItemV3>
           </van-grid-item>
         </template>
       </van-grid>
@@ -37,6 +37,15 @@ console.log('@@@ -> home list', houseList)
     padding: 0 5px;
     font-size: 16px;
     margin-bottom: 10px;
+  }
+
+  :deep(.van-grid-item__content) {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0;
+    height: 100%;
+    background: var(--van-grid-item-content-background)
   }
 }
 </style>

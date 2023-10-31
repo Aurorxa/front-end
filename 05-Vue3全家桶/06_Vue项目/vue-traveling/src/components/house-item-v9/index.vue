@@ -1,17 +1,81 @@
 <template>
   <div class="house-item-v9">
-    <h2>v9</h2>
-    <van-image
-        src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
-        style="background-color:pink"
-    />
+    <div class="cover">
+      <van-image
+          :src="itemData.image.url"
+      />
+    </div>
+    <div class="infos">
+      <div class="summary">{{ itemData.summaryText }}</div>
+      <div class="name">{{ itemData.houseName }}</div>
+      <van-row class="other" justify="space-around">
+        <van-col>
+          <van-rate v-model="score" :size="12" allow-half class="rate" readonly/>
+        </van-col>
+        <van-col class="price">
+          {{ price }}
+        </van-col>
+      </van-row>
+    </div>
   </div>
 </template>
 
 <script setup>
+import {computed, toRefs} from "vue";
+
+const props = defineProps({
+  itemData: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
+const {itemData} = toRefs(props)
+
+const score = computed(() => {
+  return Number(itemData.value.commentScore)
+})
+
+const price = computed(() => {
+  return `${'¥ ' + itemData.value.finalPrice}`
+})
+
 
 </script>
 
 <style lang="less" scoped>
+.house-item-v9 {
 
+  .cover {
+    width: 100%;
+  }
+
+  .infos {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+
+    .summary {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      font-size: 10px;
+    }
+
+    .other {
+      margin: 10px 0;
+
+      .price {
+        font-size: 12px;
+      }
+    }
+  }
+}
 </style>
