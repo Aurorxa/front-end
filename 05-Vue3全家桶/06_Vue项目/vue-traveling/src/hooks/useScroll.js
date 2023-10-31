@@ -15,7 +15,7 @@ export function useScroll() {
             console.log('滚动到底部了')
             isReachBottom.value = true
         }
-    }, 1000)
+    }, 100)
     onMounted(() => {
         window.addEventListener('scroll', scrollListenerHandler)
     })
