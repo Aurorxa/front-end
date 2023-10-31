@@ -1,4 +1,4 @@
-import {onActivated, onDeactivated, onMounted, onUnmounted, ref} from "vue";
+import {onActivated, onDeactivated, onMounted, onUnmounted, ref} from "vue"
 
 export function useScroll() {
     
