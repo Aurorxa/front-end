@@ -1,6 +1,6 @@
 <template>
   <div class="category">
-    <van-swipe class="swipe" indicator-color="#ff9854">
+    <van-swipe :autoplay="3000" class="swipe" indicator-color="#ff9854">
       <template v-for="(category,index) in categories" :key="index">
         <van-swipe-item>
           <img :src="category.pictureUrl" alt="" class="pic">
@@ -12,8 +12,8 @@
 </template>
 
 <script setup>
-import {useHomeStore} from "@/stores/index.js";
-import {storeToRefs} from "pinia";
+import {useHomeStore} from "@/stores/index.js"
+import {storeToRefs} from "pinia"
 
 const homeStore = useHomeStore()
 
