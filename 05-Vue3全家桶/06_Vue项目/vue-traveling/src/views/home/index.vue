@@ -31,6 +31,16 @@ const homeStore = useHomeStore()
 homeStore.fetchHotSuggests()
 homeStore.fetchCategories()
 homeStore.fetchHouseList()
+
+// 监听 window 的滚动
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+  const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+  const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
+  if (scrollHeight <= clientHeight + scrollTop) {
+    homeStore.fetchHouseList()
+  }
+})
 </script>
 
 <style lang="less" scoped>
