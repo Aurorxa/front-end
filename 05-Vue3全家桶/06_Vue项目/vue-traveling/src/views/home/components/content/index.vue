@@ -8,6 +8,12 @@
 </template>
 
 <script setup>
+import {useHomeStore} from "@/stores/index.js"
+import {storeToRefs} from "pinia"
+
+const homeStore = useHomeStore()
+const {houseList} = storeToRefs(homeStore)
+console.log('@@@ -> home list', houseList)
 
 </script>
 

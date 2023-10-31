@@ -7,3 +7,12 @@ export const getHotSuggests = () => {
 export const getCategories = () => {
     return axiosRequest.get('/home/categories')
 }
+
+export const getHouseList = (page = 1) => {
+    return axiosRequest.request({
+        url: `/home/houselist`,
+        params: {
+            page
+        }
+    })
+}

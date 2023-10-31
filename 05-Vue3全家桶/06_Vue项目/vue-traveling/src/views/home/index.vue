@@ -30,6 +30,7 @@ import Content from "@/views/home/components/content/index.vue"
 const homeStore = useHomeStore()
 homeStore.fetchHotSuggests()
 homeStore.fetchCategories()
+homeStore.fetchHouseList()
 </script>
 
 <style lang="less" scoped>
