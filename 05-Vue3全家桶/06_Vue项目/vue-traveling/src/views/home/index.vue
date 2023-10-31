@@ -26,19 +26,21 @@ import SearchBox from '@/views/Home/components/search-box/index.vue'
 import Category from '@/views/Home/components/category/index.vue'
 import {useHomeStore} from "@/stores/index.js"
 import Content from "@/views/home/components/content/index.vue"
+import {useScroll} from "@/hooks/useScroll.js";
+import {watchEffect} from "vue";
 // 从 store 中获取数据
 const homeStore = useHomeStore()
 homeStore.fetchHotSuggests()
 homeStore.fetchCategories()
 homeStore.fetchHouseList()
 
-// 监听 window 的滚动
-window.addEventListener('scroll', () => {
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-  const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
-  const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
-  if (scrollHeight <= clientHeight + scrollTop) {
-    homeStore.fetchHouseList()
+const {isReachBottom} = useScroll()
+
+watchEffect(() => {
+  if (isReachBottom.value) {
+    homeStore.fetchHouseList().then(() => {
+      isReachBottom.value = false
+    })
   }
 })
 </script>

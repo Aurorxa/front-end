@@ -26,6 +26,7 @@ const homeStore = useHomeStore()
 const {houseList} = storeToRefs(homeStore)
 console.log('@@@ -> home list', houseList)
 
+
 </script>
 
 <style lang="less" scoped>

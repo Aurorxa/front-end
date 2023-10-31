@@ -15,7 +15,8 @@ export const useHomeStore = defineStore('home', {
                 const {data} = await getHotSuggests()
                 this.hotSuggests = data
             } catch (error) {
-                showNotify({type: 'danger', message: error});
+                console.error('fetchHotSuggests error', error)
+                showNotify({type: 'danger', message: error.message});
                 // 让表单组件显示错误
                 return error
             }
@@ -25,7 +26,8 @@ export const useHomeStore = defineStore('home', {
                 const {data} = await getCategories()
                 this.categories = data
             } catch (error) {
-                showNotify({type: 'danger', message: error});
+                console.error('fetchCategories error', error)
+                showNotify({type: 'danger', message: error.message});
                 // 让表单组件显示错误
                 return error
             }
@@ -36,7 +38,8 @@ export const useHomeStore = defineStore('home', {
                 this.houseList.push(...data)
                 this.currentHousePage++
             } catch (error) {
-                showNotify({type: 'danger', message: error});
+                console.error('fetchHouseList error', error)
+                showNotify({type: 'danger', message: error.message});
                 // 让表单组件显示错误
                 return error
             }

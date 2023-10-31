@@ -15,5 +15,14 @@ export default defineConfig({
         alias: {
             "@": fileURLToPath(new URL('./src', import.meta.url))
         }
+    },
+    server: {
+        proxy: {
+            '/api': {
+                target: 'http://www.codercba.com:1888/api/',
+                changeOrigin: true,
+                rewrite: path => path.replace(/^\/api/, '')
+            }
+        }
     }
 })
