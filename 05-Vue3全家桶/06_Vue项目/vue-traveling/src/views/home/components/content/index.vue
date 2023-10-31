@@ -44,8 +44,12 @@ console.log('@@@ -> home list', houseList)
     flex-direction: column;
     box-sizing: border-box;
     padding: 0;
-    height: 100%;
+    height: 188px;
     background: var(--van-grid-item-content-background)
+  }
+
+  :deep(.van-grid-item__content--center) {
+    justify-content: space-between;
   }
 }
 </style>

@@ -9,7 +9,7 @@
     --van-tabbar-item-active-color: var(--primary-color);
     --van-tabs-bottom-bar-color: var(--primary-color);
     --van-index-anchor-text-color: var(--primary-color);
-    --van-grid-item-content-background: pink;
+    /*--van-grid-item-content-background: pink;*/
 }
 
 body {

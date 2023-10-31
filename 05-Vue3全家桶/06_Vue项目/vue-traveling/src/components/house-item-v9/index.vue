@@ -41,6 +41,7 @@ const price = computed(() => {
 
 <style lang="less" scoped>
 .house-item-v9 {
+  position: relative;
 
   .cover {
     width: 100%;
