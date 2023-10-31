@@ -1,6 +1,6 @@
 import {onActivated, onDeactivated, onMounted, onUnmounted, ref} from "vue";
 
-export function useScroll(callback) {
+export function useScroll() {
     
     const isReachBottom = ref(false)
     const scrollListenerHandler = () => {
