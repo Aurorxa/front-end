@@ -6,7 +6,7 @@ export const useHomeStore = defineStore('home', {
         hotSuggests: [],
         categories: [],
         houseList: [],
-        currentHousePage: 30, // 当前页码
+        currentHousePage: 1, // 当前页码
     }),
     actions: {
         async fetchHotSuggests() {
