@@ -3,11 +3,14 @@ import {onActivated, onDeactivated, onMounted, onUnmounted, ref} from "vue";
 export function useScroll() {
     
     const isReachBottom = ref(false)
+    const scrollTop = ref(0)
+    const scrollHeight = ref(0)
+    const clientHeight = ref(0)
     const scrollListenerHandler = () => {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-        const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
-        const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
-        if (scrollHeight <= clientHeight + scrollTop) {
+        scrollTop.value = document.documentElement.scrollTop || document.body.scrollTop
+        scrollHeight.value = document.documentElement.scrollHeight || document.body.scrollHeight
+        clientHeight.value = document.documentElement.clientHeight || document.body.clientHeight
+        if (scrollHeight.value <= clientHeight.value + scrollTop.value) {
             console.log('滚动到底部了')
             isReachBottom.value = true
         }
@@ -26,6 +29,9 @@ export function useScroll() {
     })
     
     return {
-        isReachBottom
+        isReachBottom,
+        scrollTop,
+        scrollHeight,
+        clientHeight
     }
 }
