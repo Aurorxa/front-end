@@ -38,7 +38,7 @@ const props = defineProps({
 const {itemData} = toRefs(props)
 
 const price = computed(() => {
-  return `${'¥ ' + itemData.value.finalPrice}`
+  return `${'¥' + itemData.value.finalPrice}`
 })
 
 const oldPrice = computed(() => {
