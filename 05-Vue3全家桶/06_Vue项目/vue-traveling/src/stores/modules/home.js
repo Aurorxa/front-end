@@ -1,5 +1,4 @@
 import {defineStore} from "pinia"
-import {showNotify} from "vant"
 import {getCategories, getHotSuggests, getHouseList} from "@/services/index.js"
 
 export const useHomeStore = defineStore('home', {
@@ -7,7 +6,7 @@ export const useHomeStore = defineStore('home', {
         hotSuggests: [],
         categories: [],
         houseList: [],
-        currentHousePage: 1, // 当前页码
+        currentHousePage: 30, // 当前页码
     }),
     actions: {
         async fetchHotSuggests() {
@@ -16,7 +15,6 @@ export const useHomeStore = defineStore('home', {
                 this.hotSuggests = data
             } catch (error) {
                 console.error('fetchHotSuggests error', error)
-                showNotify({type: 'danger', message: error.message});
                 // 让表单组件显示错误
                 return error
             }
@@ -27,7 +25,6 @@ export const useHomeStore = defineStore('home', {
                 this.categories = data
             } catch (error) {
                 console.error('fetchCategories error', error)
-                showNotify({type: 'danger', message: error.message});
                 // 让表单组件显示错误
                 return error
             }
@@ -39,7 +36,6 @@ export const useHomeStore = defineStore('home', {
                 this.currentHousePage++
             } catch (error) {
                 console.error('fetchHouseList error', error)
-                showNotify({type: 'danger', message: error.message});
                 // 让表单组件显示错误
                 return error
             }

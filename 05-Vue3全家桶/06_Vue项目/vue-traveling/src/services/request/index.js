@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {BASE_URL, TIMEOUT} from "@/services/request/config.js"
+import {showNotify} from "vant";
 
 class AxiosRequest {
     
@@ -8,6 +9,16 @@ class AxiosRequest {
             baseURL,
             timeout
         })
+        
+        // 响应拦截器
+        this.instance.interceptors.response.use(function (response) {
+            
+            return response;
+        }, function (error) {
+            const {config: {url}, message} = error.toJSON()
+            showNotify({type: 'danger', message: `${url} ${message}`});
+            return Promise.reject(error);
+        });
     }
     
     request(config) {
