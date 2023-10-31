@@ -9,7 +9,7 @@
       <div class="summary">{{ itemData.summaryText }}</div>
       <div class="name">{{ itemData.houseName }}</div>
       <div class="other">
-        <van-rate v-model="score" :size="12" allow-half class="rate" readonly/>
+        <van-rate v-model="score" :size="12" allow-half class="rate" color="#fff" readonly/>
         <div class="price">{{ price }}</div>
       </div>
     </div>
