@@ -55,14 +55,7 @@
     </van-row>
     <!-- 搜索按钮   -->
     <van-row class="search-btn">
-      <van-button :to="{
-        path: '/search',
-        query: {
-          city: currentCityName,
-          startDate: startDate,
-          endDate: endDate,
-        }
-      }" block color="#ff9854" round>
+      <van-button block color="#ff9854" round @click="handleSearchClick">
         开始搜索
       </van-button>
     </van-row>
@@ -129,6 +122,17 @@ const handleConfirmCalendar = (values) => {
   showCalendar.value = false
   // 设置对应的天数
   stay.value = formatDiffDay(start, end)
+}
+
+const handleSearchClick = () => {
+  router.push({
+    path: '/search',
+    query: {
+      city: currentCityName.value,
+      startDate: startDate.value,
+      endDate: endDate.value
+    }
+  })
 }
 
 </script>
