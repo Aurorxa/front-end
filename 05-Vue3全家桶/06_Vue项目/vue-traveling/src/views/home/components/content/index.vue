@@ -6,11 +6,11 @@
           <div class="select-time">
             <div class="item start">
               <div class="name">住</div>
-              <div class="date">{{ 7.29 }}</div>
+              <div class="date">{{ startDateStr }}</div>
             </div>
             <div class="item end">
               <div class="name">离</div>
-              <div class="date">{{ 8.30 }}</div>
+              <div class="date">{{ endDateStr }}</div>
             </div>
           </div>
         </van-col>
@@ -46,14 +46,16 @@
 </template>
 
 <script setup>
-import {useHomeStore} from "@/stores/index.js"
+import {useHomeStore, useMainStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia"
 import HouseItemV9 from '@/components/house-item-v9/index.vue'
 import HouseItemV3 from '@/components/house-item-v3/index.vue'
 import {computed, ref} from "vue"
 import {useScroll} from "@/hooks/useScroll.js"
+import {currentMonthDaySimple, nextMonthDaySimple} from "@/utils/formatDate.js"
 
 const homeStore = useHomeStore()
+const mainStore = useMainStore()
 const {houseList} = storeToRefs(homeStore)
 console.log('@@@ -> home list', houseList)
 
@@ -63,6 +65,10 @@ const showSearchBar = computed(() => {
   console.log(scrollTop.value)
   return scrollTop.value > 440
 })
+
+const {startDate, endDate} = storeToRefs(mainStore)
+const startDateStr = computed(() => currentMonthDaySimple(startDate.value))
+const endDateStr = computed(() => nextMonthDaySimple(endDate.value))
 
 const searchValue = ref('')
 
