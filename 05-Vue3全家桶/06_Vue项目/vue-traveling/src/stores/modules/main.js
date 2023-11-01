@@ -4,7 +4,7 @@ import dayjs from "dayjs"
 export const useMainStore = defineStore('main', {
     state: () => ({
         startDate: new Date(),
-        endDate: dayjs().add(1, 'day'),
+        endDate: dayjs(new Date()).add(1, 'day'),
     }),
     actions: {},
     getters: {},

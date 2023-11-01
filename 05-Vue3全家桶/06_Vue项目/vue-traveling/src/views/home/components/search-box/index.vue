@@ -15,14 +15,14 @@
     >
       <van-col class="item start">
         <span class="tip">入住</span>
-        <span class="date">{{ startDate }}</span>
+        <span class="date">{{ startDateStr }}</span>
       </van-col>
       <van-col class="item stay">
         <span>共{{ stay }}晚</span>
       </van-col>
       <van-col class="item end">
         <span class="tip">离店</span>
-        <span class="date">{{ endDate }}</span>
+        <span class="date">{{ endDateStr }}</span>
       </van-col>
     </van-row>
     <!-- 日历组件   -->
@@ -64,13 +64,13 @@
 </template>
 
 <script setup>
-import {ref, watch} from "vue"
+import {computed, ref, watch} from "vue"
 
 import {useRouter} from "vue-router"
 
-import {useCityStore, useHomeStore} from "@/stores/index.js"
+import {useCityStore, useHomeStore, useMainStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia"
-import {currentMonthDay, formatDiffDay, formatMonthDay, nextMonthDay} from "@/utils/formatDate.js"
+import {currentMonthDay, formatDiffDay, nextMonthDay} from "@/utils/formatDate.js"
 import {useLocation} from "@/hooks/useLocation.js";
 
 const cityStore = useCityStore()
@@ -105,10 +105,13 @@ const positionClick = async () => {
 
   currentCityName.value = `${city}`
 }
+const mainStore = useMainStore()
+
+const {startDate, endDate} = storeToRefs(mainStore)
 
 // 时间范围
-const startDate = ref(currentMonthDay())
-const endDate = ref(nextMonthDay())
+const startDateStr = computed(() => currentMonthDay(startDate.value))
+const endDateStr = computed(() => nextMonthDay(endDate.value))
 const stay = ref(1)
 
 const showCalendar = ref(false)
@@ -116,12 +119,12 @@ const showCalendar = ref(false)
 const handleConfirmCalendar = (values) => {
   // 设置日期
   const [start, end] = values
-  startDate.value = formatMonthDay(start)
-  endDate.value = formatMonthDay(end)
+  startDate.value = start
+  endDate.value = end
   // 隐藏日历
   showCalendar.value = false
   // 设置对应的天数
-  stay.value = formatDiffDay(start, end)
+  stay.value = formatDiffDay(startDate.value, endDate.value)
 }
 
 const handleSearchClick = () => {
