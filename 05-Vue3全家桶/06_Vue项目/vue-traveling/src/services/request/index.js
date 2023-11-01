@@ -17,7 +17,6 @@ class AxiosRequest {
                 loadingType: 'spinner',
                 duration: 0
             })
-            console.log('this', this.loadingToast)
             return config;
         }, (error) => {
             const {loadingToast} = this
