@@ -1,20 +1,34 @@
 <template>
   <div class="content">
-    <div v-if="showSearchBar" class="search-bar">
-      <van-search
-          v-model="searchValue"
-          class="search-bar-content"
-          placeholder="关键字/位置/民宿"
-          show-action
-          @search="onSearch"
-      >
-        <template #action>
-          <div @click="onClickButton">搜索</div>
-        </template>
-      </van-search>
+    <div v-if="showSearchBar">
+      <van-row class="search-bar" justify="space-between">
+        <van-col span="4">
+          <div class="select-time">
+            <div class="item start">
+              <div class="name">住</div>
+              <div class="date">{{ 7.29 }}</div>
+            </div>
+            <div class="item end">
+              <div class="name">离</div>
+              <div class="date">{{ 8.30 }}</div>
+            </div>
+          </div>
+        </van-col>
+        <van-col span="20">
+          <van-search
+              v-model="searchValue"
+              class="van-search-content"
+              placeholder="关键字/位置/民宿"
+              show-action
+              @search="onSearch"
+          >
+            <template #action>
+              <div @click="onClickButton">搜索</div>
+            </template>
+          </van-search>
+        </van-col>
+      </van-row>
     </div>
-
-
     <h2 class="title">热门精选</h2>
     <div class="list">
       <van-grid :border="false" :column-num="2" :gutter="5">
@@ -73,7 +87,52 @@ const onSearch = (value) => {
     left: 0;
     right: 0;
     z-index: 100;
-    background-color: #f2f4f6;
+    background-color: #fff;
+
+    .select-time {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 15px;
+      height: 54px;
+
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+
+        .name {
+          font-size: 10px;
+        }
+
+        .date {
+          position: relative;
+          color: #333;
+          margin: 0 10px 0 3px;
+          font-weight: 500;
+        }
+      }
+
+      .end {
+        .date::after {
+          content: " ";
+          width: 0;
+          height: 0;
+          border: 4px solid transparent;
+          border-right-color: #666;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          position: absolute;
+          bottom: 0;
+          right: -12px;
+        }
+      }
+    }
+
   }
 
   .title {
