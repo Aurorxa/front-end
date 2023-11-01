@@ -61,7 +61,6 @@ const {houseList} = storeToRefs(homeStore)
 // 显示搜索栏
 const {scrollTop} = useScroll()
 const showSearchBar = computed(() => {
-  console.log(scrollTop.value)
   return scrollTop.value > 440
 })
 
