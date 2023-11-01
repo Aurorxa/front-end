@@ -126,6 +126,7 @@ const handleConfirmCalendar = (values) => {
   stay.value = formatDiffDay(startDate.value, endDate.value)
 }
 
+// 开始搜索
 const handleSearchClick = () => {
   router.push({
     path: '/search',
