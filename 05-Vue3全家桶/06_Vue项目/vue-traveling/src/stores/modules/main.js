@@ -8,7 +8,7 @@ export const useMainStore = defineStore('main', {
     }),
     actions: {},
     getters: {},
-    persist: true,
+    // persist: true,
 })
 
 
