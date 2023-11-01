@@ -4,7 +4,7 @@
       <van-search
           v-model="searchValue"
           class="search-bar-content"
-          placeholder="请输入搜索关键词"
+          placeholder="关键字/位置/民宿"
           show-action
           @search="onSearch"
       >
@@ -73,6 +73,7 @@ const onSearch = (value) => {
     left: 0;
     right: 0;
     z-index: 100;
+    background-color: #f2f4f6;
   }
 
   .title {
