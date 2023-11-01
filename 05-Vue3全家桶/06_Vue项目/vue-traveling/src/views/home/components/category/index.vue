@@ -25,7 +25,7 @@ console.log('@@@', categories)
 <style lang="less" scoped>
 .category {
   margin-top: 10px;
-  padding: 0 40px;
+  padding: 0 20px;
 
   .swipe {
 

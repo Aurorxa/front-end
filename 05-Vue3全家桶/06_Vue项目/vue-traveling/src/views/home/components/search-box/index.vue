@@ -70,7 +70,7 @@ import {useRouter} from "vue-router"
 
 import {useCityStore, useHomeStore, useMainStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia"
-import {currentMonthDay, formatDiffDay, nextMonthDay} from "@/utils/formatDate.js"
+import {formatDiffDay, formatMonthDay} from "@/utils/formatDate.js"
 import {useLocation} from "@/hooks/useLocation.js";
 
 const cityStore = useCityStore()
@@ -109,8 +109,8 @@ const positionClick = async () => {
 
 // 时间范围
 const {startDate, endDate} = storeToRefs(mainStore)
-const startDateStr = computed(() => currentMonthDay(startDate.value))
-const endDateStr = computed(() => nextMonthDay(endDate.value))
+const startDateStr = computed(() => formatMonthDay(startDate.value))
+const endDateStr = computed(() => formatMonthDay(endDate.value))
 const stay = ref(1)
 
 const showCalendar = ref(false)
@@ -142,7 +142,7 @@ const handleSearchClick = () => {
 
 <style lang="less" scoped>
 .search-box {
-  padding: 0 40px;
+  padding: 0 20px;
 
   .location {
 

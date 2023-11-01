@@ -35,7 +35,7 @@
 import {useScroll} from "@/hooks/useScroll.js"
 import {computed, ref} from "vue"
 import {storeToRefs} from "pinia"
-import {currentMonthDaySimple, nextMonthDaySimple} from "@/utils/formatDate.js"
+import {formatMonthDaySimple} from "@/utils/formatDate.js"
 import {useMainStore} from "@/stores/index.js"
 
 const props = defineProps({
@@ -51,8 +51,8 @@ const showSearchBar = computed(() => {
 })
 const mainStore = useMainStore()
 const {startDate, endDate} = storeToRefs(mainStore)
-const startDateStr = computed(() => currentMonthDaySimple(startDate.value))
-const endDateStr = computed(() => nextMonthDaySimple(endDate.value))
+const startDateStr = computed(() => formatMonthDaySimple(startDate.value))
+const endDateStr = computed(() => formatMonthDaySimple(endDate.value))
 
 const searchValue = ref('')
 

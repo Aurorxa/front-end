@@ -30,7 +30,7 @@ const {houseList} = storeToRefs(homeStore)
 
 <style lang="less" scoped>
 .content {
-  padding: 0 40px;
+  padding: 0 20px;
   margin-top: 10px;
 
 

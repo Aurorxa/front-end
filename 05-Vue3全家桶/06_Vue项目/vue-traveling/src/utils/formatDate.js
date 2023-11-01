@@ -2,24 +2,12 @@ import dayjs from "dayjs";
 
 dayjs.locale('zh-cn')
 
-export function currentMonthDay(date) {
-    return dayjs(date).format('MM月DD日')
-}
-
-export function currentMonthDaySimple(date) {
-    return dayjs(date).subtract(1, 'day').format('MM.DD')
-}
-
-export function nextMonthDay(date) {
-    return dayjs(date).add(1, 'day').format('MM月DD日')
-}
-
-export function nextMonthDaySimple(date) {
-    return dayjs(date).add(1, 'day').format('MM.DD')
-}
-
 export function formatMonthDay(date) {
     return dayjs(date).format('MM月DD日')
+}
+
+export function formatMonthDaySimple(date) {
+    return dayjs(date).format('MM.DD')
 }
 
 export function formatDiffDay(startDate, endDate) {
