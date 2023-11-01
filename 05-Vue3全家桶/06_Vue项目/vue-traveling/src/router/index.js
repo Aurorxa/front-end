@@ -56,6 +56,22 @@ const router = createRouter({
             children: []
         },
         {
+            path: '/house',
+            name: 'House',
+            // redirect: '/house/detail',
+            children: [
+                {
+                    path: 'detail/:id',
+                    name: 'HouseDetail',
+                    component: () => import('@/views/house/detail/index.vue'),
+                    meta: { /*自定义属性*/
+                        hideTabBar: true // 隐藏 tab-bar
+                    },
+                    children: []
+                },
+            ]
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'NotFound',
             component: () => import('@/components/not-found/index.vue'),
