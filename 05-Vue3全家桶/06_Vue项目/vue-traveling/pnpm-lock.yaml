@@ -27,8 +27,8 @@ dependencies:
     specifier: ^1.13.6
     version: 1.13.6
   vant:
-    specifier: ^4.7.2
-    version: 4.7.2(vue@3.3.7)
+    specifier: ^4.7.3
+    version: 4.7.3(vue@3.3.7)
   vue:
     specifier: ^3.3.7
     version: 3.3.7
@@ -1069,8 +1069,8 @@ packages:
       webpack-virtual-modules: 0.5.0
     dev: true
 
-  /vant@4.7.2(vue@3.3.7):
-    resolution: {integrity: sha512-rRVyEA8HwDKaHDLnT8x9pHv2bYfziKO76yH13Us2aUMEhx5AM/rNDJIMz0mn4G4pTKRR/UTkuqk3kVFf1Mn0wA==}
+  /vant@4.7.3(vue@3.3.7):
+    resolution: {integrity: sha512-nb0pXxKSOaE9CvH//KozKDivqhjE4ZRvx1b/RCWFL4H3tZ5l+HhWtwK1yJx5AkO1Pm/IYQY86yZa1tums8DfsQ==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:

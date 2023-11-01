@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {BASE_URL, TIMEOUT} from "@/services/request/config.js"
-import {showNotify} from "vant";
+import {showLoadingToast, showNotify} from "vant";
 
 class AxiosRequest {
     
@@ -10,19 +10,37 @@ class AxiosRequest {
             timeout
         })
         
-        this.instance.interceptors.request.use(function (config) {
+        this.instance.interceptors.request.use((config) => {
+            this.loadingToast = showLoadingToast({
+                message: '加载中...',
+                forbidClick: true,
+                loadingType: 'spinner',
+                duration: 0
+            })
+            console.log('this', this.loadingToast)
             return config;
-        }, function (error) {
+        }, (error) => {
+            const {loadingToast} = this
+            if (loadingToast) {
+                loadingToast.close()
+            }
             return Promise.reject(error);
         })
         
         // 响应拦截器
-        this.instance.interceptors.response.use(function (response) {
-            
+        this.instance.interceptors.response.use((response) => {
+            const {loadingToast} = this
+            if (loadingToast) {
+                loadingToast.close()
+            }
             return response;
-        }, function (error) {
-            const {config: {url}, message} = error.toJSON()
-            showNotify({type: 'danger', message: `${url} ${message}`});
+        }, (error) => {
+            const {loadingToast} = this
+            if (loadingToast) {
+                loadingToast.close()
+            }
+            const {config: {url}, message} = error
+            showNotify({type: 'danger', message: `${url} ${message}`})
             return Promise.reject(error);
         });
     }
