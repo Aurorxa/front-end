@@ -5,7 +5,8 @@
         <van-tabbar-item :to="item.path">
           <span>{{ item.text }}</span>
           <template #icon="props">
-            <img :alt="item.text" :src="props.active ? getAssetsUrl(item.activeImage) : getAssetsUrl(item.image)"/>
+            <img :alt="item.text"
+                 :src="props.active ? getAssetsUrl(item.activeImage) : getAssetsUrl(item.image)"/>
           </template>
         </van-tabbar-item>
       </template>

@@ -26,8 +26,8 @@ import SearchBox from '@/views/Home/components/search-box/index.vue'
 import Category from '@/views/Home/components/category/index.vue'
 import {useHomeStore} from "@/stores/index.js"
 import Content from "@/views/home/components/content/index.vue"
-import {useScroll} from "@/hooks/useScroll.js";
-import {watchEffect} from "vue";
+import {useScroll} from "@/hooks/useScroll.js"
+import {watchEffect} from "vue"
 // 从 store 中获取数据
 const homeStore = useHomeStore()
 homeStore.fetchHotSuggests()
