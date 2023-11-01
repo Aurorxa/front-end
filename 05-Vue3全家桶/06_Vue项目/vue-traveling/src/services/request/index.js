@@ -10,6 +10,12 @@ class AxiosRequest {
             timeout
         })
         
+        this.instance.interceptors.request.use(function (config) {
+            return config;
+        }, function (error) {
+            return Promise.reject(error);
+        })
+        
         // 响应拦截器
         this.instance.interceptors.response.use(function (response) {
             
