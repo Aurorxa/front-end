@@ -57,7 +57,6 @@ import {currentMonthDaySimple, nextMonthDaySimple} from "@/utils/formatDate.js"
 const homeStore = useHomeStore()
 const mainStore = useMainStore()
 const {houseList} = storeToRefs(homeStore)
-console.log('@@@ -> home list', houseList)
 
 // 显示搜索栏
 const {scrollTop} = useScroll()
