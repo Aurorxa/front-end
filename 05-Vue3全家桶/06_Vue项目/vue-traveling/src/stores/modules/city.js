@@ -18,7 +18,8 @@ export const useCityStore = defineStore('city', {
             }
         }
     },
-    getters: {}
+    getters: {},
+    persist: true,
 })
 
 

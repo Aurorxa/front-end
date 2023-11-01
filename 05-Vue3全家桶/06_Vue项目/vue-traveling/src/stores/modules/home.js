@@ -41,7 +41,8 @@ export const useHomeStore = defineStore('home', {
             }
         }
     },
-    getters: {}
+    getters: {},
+    persist: true,
 })
 
 
