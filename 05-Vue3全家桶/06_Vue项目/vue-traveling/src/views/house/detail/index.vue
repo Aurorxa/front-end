@@ -1,17 +1,25 @@
 <template>
   <div class="house-detail">
-    详情页面
+    <van-nav-bar
+        left-arrow
+        left-text="返回"
+        title="房屋详情"
+        @click-left="handleClickLeft"
+    />
   </div>
 </template>
 
 <script setup>
-import {useRoute} from "vue-router"
+import {useRoute, useRouter} from "vue-router"
 
 const route = useRoute()
+const router = useRouter()
 
 const {id} = route.params
 
-console.log('@@@@@@@@', id)
+const handleClickLeft = () => {
+  router.back()
+}
 
 </script>
 
