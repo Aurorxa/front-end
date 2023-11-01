@@ -75,6 +75,7 @@ import {useLocation} from "@/hooks/useLocation.js";
 
 const cityStore = useCityStore()
 const homeStore = useHomeStore()
+const mainStore = useMainStore()
 
 const {hotSuggests} = storeToRefs(homeStore)
 
@@ -105,11 +106,9 @@ const positionClick = async () => {
 
   currentCityName.value = `${city}`
 }
-const mainStore = useMainStore()
-
-const {startDate, endDate} = storeToRefs(mainStore)
 
 // 时间范围
+const {startDate, endDate} = storeToRefs(mainStore)
 const startDateStr = computed(() => currentMonthDay(startDate.value))
 const endDateStr = computed(() => nextMonthDay(endDate.value))
 const stay = ref(1)
