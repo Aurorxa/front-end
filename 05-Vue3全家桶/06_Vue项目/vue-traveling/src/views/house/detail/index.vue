@@ -27,16 +27,18 @@ const houseStore = useHouseStore()
 
 const {id} = route.params
 
+// 处理返回按钮
 const handleClickLeft = () => {
   router.back()
 }
 
 // 获取数据
 houseStore.fetchHouseDetail(id)
-
 const {detail} = storeToRefs(houseStore)
 
+// 轮播图数据
 const mainPart = computed(() => detail.value.mainPart)
+
 </script>
 
 <style lang="less" scoped>
