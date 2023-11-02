@@ -9,7 +9,7 @@
               <div class="text">{{ item?.groupName }}</div>
             </div>
             <div class="list">
-              <template v-for="(item2, indey) in item?.facilitys.slice(0, 4)" :key="indey">
+              <template v-for="(item2, index2) in item?.facilitys.slice(0, 4)" :key="index2">
                 <div class="item2">
                   <i class="icon_check icon">
                     <van-icon name="passed"/>
