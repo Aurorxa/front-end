@@ -8,9 +8,15 @@ export function useScroll(elRef) {
     const scrollHeight = ref(0)
     const clientHeight = ref(0)
     const scrollListenerHandler = throttle(() => {
-        scrollTop.value = document.documentElement.scrollTop || document.body.scrollTop
-        scrollHeight.value = document.documentElement.scrollHeight || document.body.scrollHeight
-        clientHeight.value = document.documentElement.clientHeight || document.body.clientHeight
+        if (el === window) {
+            scrollTop.value = document.documentElement.scrollTop || document.body.scrollTop
+            scrollHeight.value = document.documentElement.scrollHeight || document.body.scrollHeight
+            clientHeight.value = document.documentElement.clientHeight || document.body.clientHeight
+        } else {
+            scrollTop.value = el.scrollTop
+            scrollHeight.value = el.scrollHeight
+            clientHeight.value = el.clientHeight
+        }
         if (scrollHeight.value <= clientHeight.value + scrollTop.value) {
             console.log('滚动到底部了')
             isReachBottom.value = true
