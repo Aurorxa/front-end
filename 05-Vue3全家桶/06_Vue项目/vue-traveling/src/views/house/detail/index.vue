@@ -32,10 +32,13 @@
       <HouseNotice :order-rules="mainPart.dynamicModule.rulesModule.orderRules"></HouseNotice>
     </div>
     <!--  地图 -->
-    <div v-if="mainPart" class="notice">
+    <div v-if="mainPart" class="map">
       <HouseMap></HouseMap>
     </div>
-
+    <!-- 价格说明 -->
+    <div v-if="mainPart" class="price">
+      <HousePriceDesc :price-desc="mainPart.introductionModule"></HousePriceDesc>
+    </div>
 
   </div>
 </template>
@@ -51,6 +54,7 @@ import HouseFacility from '@/views/house/detail/components/facility/index.vue'
 import HouseLandlord from '@/views/house/detail/components/landlord/index.vue'
 import HouseComment from '@/views/house/detail/components/comment/index.vue'
 import HouseNotice from '@/views/house/detail/components/notice/index.vue'
+import HousePriceDesc from '@/views/house/detail/components/price-desc/index.vue'
 import HouseMap from '@/views/house/detail/components/map/index.vue'
 
 const route = useRoute()
