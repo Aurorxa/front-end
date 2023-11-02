@@ -25,6 +25,10 @@
       <!-- 价格说明 -->
       <HouseIntro :intro-data="mainPart.introductionModule"/>
     </div>
+    <div class="footer">
+      <img alt="" src="@/assets/images/house/detail/icon_ensure.png">
+      <div class="text">人在旅途, 永无止境!</div>
+    </div>
   </div>
 </template>
 
@@ -68,5 +72,23 @@ const mainPart = computed(() => detail.value.mainPart)
   width: 100%;
   height: 100%;
   background-color: #fff;
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+
+    img {
+      width: 123px;
+    }
+
+    .text {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #7688a7;
+    }
+  }
 }
 </style>
