@@ -15,7 +15,7 @@
     <div v-if="mainPart" class="info">
       <HouseDetailTopInfo :top-info="mainPart.topModule"/>
     </div>
-    <!--  房屋设施 facility -->
+    <!--  房屋设施 -->
     <div v-if="mainPart" class="facility">
       <HouseFacility :facility-info="mainPart.dynamicModule.facilityModule.houseFacility"></HouseFacility>
     </div>
