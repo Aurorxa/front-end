@@ -1,29 +1,30 @@
 <template>
   <div class="top-info">
-    <div class="name">{{ topInfo.houseName }}</div>
+    <div class="name">{{ topInfo?.houseName }}</div>
     <div class="tags">
-      <template v-for="(item,index) in topInfo.houseTags" :key="index">
-        <span v-if="item.tagText" :style="{color: item.tagText.color,backgroundColor: item.tagText.background.color}"
+      <template v-for="(item,index) in topInfo?.houseTags" :key="index">
+        <span v-if="item?.tagText"
+              :style="{color: item?.tagText?.color,backgroundColor: item?.tagText?.background?.color}"
               class="item">
-          {{ item.tagText.text }}
+          {{ item?.tagText?.text }}
         </span>
       </template>
     </div>
     <div class="extra comment">
       <div class="left">
-        <span class="score">{{ topInfo.commentBrief.overall }}</span>
-        <span class="title">{{ topInfo.commentBrief.scoreTitle }}</span>
-        <span class="brief">{{ topInfo.commentBrief.commentBrief }}</span>
+        <span class="score">{{ topInfo?.commentBrief?.overall }}</span>
+        <span class="title">{{ topInfo?.commentBrief?.scoreTitle }}</span>
+        <span class="brief">{{ topInfo?.commentBrief?.commentBrief }}</span>
       </div>
       <div class="right">
         <span class="count">
-          {{ topInfo.commentBrief.totalCount }}条评论
+          {{ topInfo?.commentBrief?.totalCount }}条评论
           <van-icon name="arrow"/>
         </span>
       </div>
     </div>
     <div class=" extra location">
-      <div class="left address">{{ topInfo.nearByPosition.address }}</div>
+      <div class="left address">{{ topInfo?.nearByPosition?.address }}</div>
       <div class="right">
         地图·周边
         <van-icon name="arrow"/>
