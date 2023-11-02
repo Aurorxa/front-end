@@ -9,9 +9,8 @@
     />
     <!-- 轮播图 -->
     <div v-if="mainPart" class="swipe">
-      <HouseDetailSwipe :swipe-data="mainPart?.topModule?.housePicture?.housePics"></HouseDetailSwipe>
+      <HouseDetailSwipe :swipe-data="mainPart.topModule.housePicture.housePics"></HouseDetailSwipe>
     </div>
-
   </div>
 </template>
 
