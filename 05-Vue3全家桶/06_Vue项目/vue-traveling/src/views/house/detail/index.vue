@@ -15,6 +15,10 @@
     <div v-if="mainPart" class="info">
       <HouseDetailTopInfo :top-info="mainPart.topModule"/>
     </div>
+    <!--  房屋设施 facility -->
+    <div v-if="mainPart" class="facility">
+      <HouseFacility :facility-info="mainPart.dynamicModule.facilityModule"></HouseFacility>
+    </div>
 
   </div>
 </template>
@@ -26,6 +30,7 @@ import {storeToRefs} from "pinia"
 import {computed} from "vue"
 import HouseDetailSwipe from '@/views/house/detail/components/swipe/index.vue'
 import HouseDetailTopInfo from '@/views/house/detail/components/top-info/index.vue'
+import HouseFacility from '@/views/house/detail/components/facility/index.vue'
 
 const route = useRoute()
 const router = useRouter()
