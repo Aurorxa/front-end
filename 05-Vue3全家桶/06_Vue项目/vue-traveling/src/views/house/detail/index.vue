@@ -19,6 +19,10 @@
     <div v-if="mainPart" class="facility">
       <HouseFacility :facility-info="mainPart.dynamicModule.facilityModule.houseFacility"></HouseFacility>
     </div>
+    <!--  房东介绍 -->
+    <div v-if="mainPart" class="landlord">
+      <HouseLandlord :landlord-info="mainPart.dynamicModule.landlordModule"></HouseLandlord>
+    </div>
 
   </div>
 </template>
@@ -31,6 +35,7 @@ import {computed} from "vue"
 import HouseDetailSwipe from '@/views/house/detail/components/swipe/index.vue'
 import HouseDetailTopInfo from '@/views/house/detail/components/top-info/index.vue'
 import HouseFacility from '@/views/house/detail/components/facility/index.vue'
+import HouseLandlord from '@/views/house/detail/components/landlord/index.vue'
 
 const route = useRoute()
 const router = useRouter()

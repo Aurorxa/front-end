@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import DetailSection from "@/components/detail-section/index.vue";
+import DetailSection from "@/components/detail-section/index.vue"
 
 defineProps({
   facilityInfo: {
