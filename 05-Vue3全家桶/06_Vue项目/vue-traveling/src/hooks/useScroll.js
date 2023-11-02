@@ -1,8 +1,8 @@
 import {onActivated, onDeactivated, onMounted, onUnmounted, ref} from "vue"
 import {throttle} from "underscore"
 
-export function useScroll() {
-    
+export function useScroll(elRef) {
+    let el = window
     const isReachBottom = ref(false)
     const scrollTop = ref(0)
     const scrollHeight = ref(0)
@@ -17,16 +17,28 @@ export function useScroll() {
         }
     }, 100)
     onMounted(() => {
-        window.addEventListener('scroll', scrollListenerHandler)
+        if (elRef) {
+            el = elRef.value
+        }
+        el.addEventListener('scroll', scrollListenerHandler)
     })
     onActivated(() => {
-        window.addEventListener('scroll', scrollListenerHandler)
+        if (elRef) {
+            el = elRef.value
+        }
+        el.addEventListener('scroll', scrollListenerHandler)
     })
     onUnmounted(() => {
-        window.removeEventListener('scroll', scrollListenerHandler)
+        if (elRef) {
+            el = elRef.value
+        }
+        el.removeEventListener('scroll', scrollListenerHandler)
     })
     onDeactivated(() => {
-        window.removeEventListener('scroll', scrollListenerHandler)
+        if (elRef) {
+            el = elRef.value
+        }
+        el.removeEventListener('scroll', scrollListenerHandler)
     })
     
     return {
