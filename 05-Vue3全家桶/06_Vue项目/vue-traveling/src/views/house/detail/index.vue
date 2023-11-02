@@ -11,6 +11,11 @@
     <div v-if="mainPart" class="swipe">
       <HouseDetailSwipe :swipe-data="mainPart.topModule.housePicture.housePics"/>
     </div>
+    <!-- 信息 -->
+    <div v-if="mainPart" class="info">
+      <HouseDetailTopInfo :top-info="mainPart.topModule"/>
+    </div>
+
   </div>
 </template>
 
@@ -20,6 +25,7 @@ import {useHouseStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia"
 import {computed} from "vue"
 import HouseDetailSwipe from '@/views/house/detail/components/swipe/index.vue'
+import HouseDetailTopInfo from '@/views/house/detail/components/top-info/index.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -36,8 +42,9 @@ const handleClickLeft = () => {
 houseStore.fetchHouseDetail(id)
 const {detail} = storeToRefs(houseStore)
 
-// 轮播图数据
+// props 数据
 const mainPart = computed(() => detail.value.mainPart)
+
 
 </script>
 

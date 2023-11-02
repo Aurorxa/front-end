@@ -18,6 +18,7 @@ export const useHouseStore = defineStore('house', {
             }
             
         },
+        
     },
     getters: {},
 })
