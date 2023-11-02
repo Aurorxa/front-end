@@ -2,11 +2,11 @@
   <div class="price-desc">
     <van-row>
       <van-col span="24">
-        <h2 class="title">{{ priceDesc.title }}</h2>
+        <h2 class="title">{{ introData.title }}</h2>
       </van-col>
       <van-col span="24">
         <van-text-ellipsis
-            :content="priceDesc.introduction"
+            :content="introData.introduction"
             class="content"
             collapse-text="收起"
             expand-text="展开"
@@ -20,13 +20,13 @@
 
 <script setup>
 const props = defineProps({
-  priceDesc: {
+  introData: {
     type: Object,
     default: () => ({})
   }
 })
 
-console.log('price desc', props.priceDesc)
+console.log('price desc', props.introData)
 </script>
 
 <style lang="less" scoped>

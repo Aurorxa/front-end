@@ -37,7 +37,7 @@
     </div>
     <!-- 价格说明 -->
     <div v-if="mainPart" class="price">
-      <HousePriceDesc :price-desc="mainPart.introductionModule"></HousePriceDesc>
+      <HouseIntro :intro-data="mainPart.introductionModule"></HouseIntro>
     </div>
 
   </div>
@@ -54,7 +54,7 @@ import HouseFacility from '@/views/house/detail/components/facility/index.vue'
 import HouseLandlord from '@/views/house/detail/components/landlord/index.vue'
 import HouseComment from '@/views/house/detail/components/comment/index.vue'
 import HouseNotice from '@/views/house/detail/components/notice/index.vue'
-import HousePriceDesc from '@/views/house/detail/components/price-desc/index.vue'
+import HouseIntro from '@/views/house/detail/components/intro/index.vue'
 import HouseMap from '@/views/house/detail/components/map/index.vue'
 
 const route = useRoute()
