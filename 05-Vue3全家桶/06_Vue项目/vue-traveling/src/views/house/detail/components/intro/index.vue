@@ -25,8 +25,6 @@ const props = defineProps({
     default: () => ({})
   }
 })
-
-console.log('price desc', props.introData)
 </script>
 
 <style lang="less" scoped>
