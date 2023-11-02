@@ -23,6 +23,10 @@
     <div v-if="mainPart" class="landlord">
       <HouseLandlord :landlord-info="mainPart.dynamicModule.landlordModule"></HouseLandlord>
     </div>
+    <!--  热门评论 -->
+    <div v-if="mainPart" class="comment">
+      <HouseComment :comment-info="mainPart.dynamicModule.commentModule"></HouseComment>
+    </div>
 
   </div>
 </template>
@@ -36,6 +40,7 @@ import HouseDetailSwipe from '@/views/house/detail/components/swipe/index.vue'
 import HouseDetailTopInfo from '@/views/house/detail/components/top-info/index.vue'
 import HouseFacility from '@/views/house/detail/components/facility/index.vue'
 import HouseLandlord from '@/views/house/detail/components/landlord/index.vue'
+import HouseComment from '@/views/house/detail/components/comment/index.vue'
 
 const route = useRoute()
 const router = useRouter()
