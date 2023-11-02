@@ -1,10 +1,10 @@
 <template>
   <div class="price-desc">
     <van-row>
-      <van-col span="22">
+      <van-col span="24">
         <h2 class="title">{{ priceDesc.title }}</h2>
       </van-col>
-      <van-col span="22">
+      <van-col span="24">
         <van-text-ellipsis
             :content="priceDesc.introduction"
             class="content"
@@ -31,7 +31,6 @@ console.log('price desc', props.priceDesc)
 
 <style lang="less" scoped>
 .price-desc {
-  width: 100%;
   padding: 0 15px;
   margin-top: 120px;
 
