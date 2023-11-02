@@ -7,39 +7,24 @@
         title="房屋详情"
         @click-left="handleClickLeft"
     />
-    <!-- 轮播图 -->
-    <div v-if="mainPart" class="swipe">
+    <div v-if="mainPart" class="main">
+      <!-- 轮播图 -->
       <HouseDetailSwipe :swipe-data="mainPart.topModule.housePicture.housePics"/>
-    </div>
-    <!-- 信息 -->
-    <div v-if="mainPart" class="info">
+      <!-- 信息 -->
       <HouseDetailTopInfo :top-info="mainPart.topModule"/>
+      <!--  房屋设施 -->
+      <HouseFacility :facility-info="mainPart.dynamicModule.facilityModule.houseFacility"/>
+      <!--  房东介绍 -->
+      <HouseLandlord :landlord-info="mainPart.dynamicModule.landlordModule"/>
+      <!--  热门评论 -->
+      <HouseComment :comment-info="mainPart.dynamicModule.commentModule"/>
+      <!--  预定须知 -->
+      <HouseNotice :order-rules="mainPart.dynamicModule.rulesModule.orderRules"/>
+      <!--  地图 -->
+      <HouseMap/>
+      <!-- 价格说明 -->
+      <HouseIntro :intro-data="mainPart.introductionModule"/>
     </div>
-    <!--  房屋设施 -->
-    <div v-if="mainPart" class="facility">
-      <HouseFacility :facility-info="mainPart.dynamicModule.facilityModule.houseFacility"></HouseFacility>
-    </div>
-    <!--  房东介绍 -->
-    <div v-if="mainPart" class="landlord">
-      <HouseLandlord :landlord-info="mainPart.dynamicModule.landlordModule"></HouseLandlord>
-    </div>
-    <!--  热门评论 -->
-    <div v-if="mainPart" class="comment">
-      <HouseComment :comment-info="mainPart.dynamicModule.commentModule"></HouseComment>
-    </div>
-    <!--  预定须知 -->
-    <div v-if="mainPart" class="notice">
-      <HouseNotice :order-rules="mainPart.dynamicModule.rulesModule.orderRules"></HouseNotice>
-    </div>
-    <!--  地图 -->
-    <div v-if="mainPart" class="map">
-      <HouseMap></HouseMap>
-    </div>
-    <!-- 价格说明 -->
-    <div v-if="mainPart" class="price">
-      <HouseIntro :intro-data="mainPart.introductionModule"></HouseIntro>
-    </div>
-
   </div>
 </template>
 
