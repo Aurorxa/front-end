@@ -27,6 +27,10 @@
     <div v-if="mainPart" class="comment">
       <HouseComment :comment-info="mainPart.dynamicModule.commentModule"></HouseComment>
     </div>
+    <!--  预定须知 -->
+    <div v-if="mainPart" class="notice">
+      <HouseNotice :order-rules="mainPart.dynamicModule.rulesModule.orderRules"></HouseNotice>
+    </div>
 
   </div>
 </template>
@@ -41,6 +45,7 @@ import HouseDetailTopInfo from '@/views/house/detail/components/top-info/index.v
 import HouseFacility from '@/views/house/detail/components/facility/index.vue'
 import HouseLandlord from '@/views/house/detail/components/landlord/index.vue'
 import HouseComment from '@/views/house/detail/components/comment/index.vue'
+import HouseNotice from '@/views/house/detail/components/notice/index.vue'
 
 const route = useRoute()
 const router = useRouter()
