@@ -29,10 +29,10 @@ const handler = ({BMap, map}) => {
 
 <style lang="less" scoped>
 .house-map {
-  height: 300px;
+  height: 250px;
 
   .bm-view {
-    height: 300px;
+    height: 250px;
   }
 
 }
