@@ -17,7 +17,7 @@
     </div>
     <!--  房屋设施 facility -->
     <div v-if="mainPart" class="facility">
-      <HouseFacility :facility-info="mainPart.dynamicModule.facilityModule"></HouseFacility>
+      <HouseFacility :facility-info="mainPart.dynamicModule.facilityModule.houseFacility"></HouseFacility>
     </div>
 
   </div>
