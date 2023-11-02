@@ -11,7 +11,9 @@
             <div class="list">
               <template v-for="(item2, indey) in item?.facilitys.slice(0, 4)" :key="indey">
                 <div class="item2">
-                  <i class="icon_check icon"></i>
+                  <i class="icon_check icon">
+                    <van-icon name="passed"/>
+                  </i>
                   <span>{{ item2?.name }}</span>
                 </div>
               </template>
