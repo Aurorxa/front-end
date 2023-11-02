@@ -31,6 +31,11 @@
     <div v-if="mainPart" class="notice">
       <HouseNotice :order-rules="mainPart.dynamicModule.rulesModule.orderRules"></HouseNotice>
     </div>
+    <!--  地图 -->
+    <div v-if="mainPart" class="notice">
+      <HouseMap></HouseMap>
+    </div>
+
 
   </div>
 </template>
@@ -46,6 +51,7 @@ import HouseFacility from '@/views/house/detail/components/facility/index.vue'
 import HouseLandlord from '@/views/house/detail/components/landlord/index.vue'
 import HouseComment from '@/views/house/detail/components/comment/index.vue'
 import HouseNotice from '@/views/house/detail/components/notice/index.vue'
+import HouseMap from '@/views/house/detail/components/map/index.vue'
 
 const route = useRoute()
 const router = useRouter()
