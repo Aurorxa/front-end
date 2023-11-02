@@ -98,7 +98,7 @@ console.log('swipe', swipeGroup)
 
     .active {
       background-color: #fff;
-      color: #000;
+      color: #333;
       border-radius: 5px;
       padding: 0 1px;
     }
