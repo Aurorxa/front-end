@@ -32,7 +32,11 @@ export const useHomeStore = defineStore('home', {
         async fetchHouseList() {
             try {
                 const {data} = await getHouseList(this.currentHousePage)
-                this.houseList.push(...data)
+                data.forEach(item => {
+                    if (!this.houseList.includes(item)) {
+                        this.houseList.push(item)
+                    }
+                })
                 this.currentHousePage++
             } catch (error) {
                 console.error('fetchHouseList error', error)

@@ -11,15 +11,27 @@
 
 <script setup>
 import {useRoute, useRouter} from "vue-router"
+import {useHouseStore} from "@/stores/index.js";
+import {onActivated, onMounted} from "vue";
 
 const route = useRoute()
 const router = useRouter()
+const houseStore = useHouseStore()
 
 const {id} = route.params
 
 const handleClickLeft = () => {
   router.back()
 }
+
+onMounted(() => {
+  houseStore.fetchHouseDetail(id)
+})
+
+onActivated(() => {
+  houseStore.fetchHouseDetail(id)
+})
+
 
 </script>
 
