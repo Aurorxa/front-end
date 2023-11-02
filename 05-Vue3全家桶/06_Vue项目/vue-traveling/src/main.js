@@ -21,6 +21,6 @@ app.use(BaiduMap, {
     // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
     ak: 'ilHPdTfTc6wEkoUTifBxfaZi9V6VYmwe',
     // v:'2.0',  // 默认使用3.0
-    type: 'webgl' // ||API 默认API  (使用此模式 BMap=BMapGL)
+    type: 'BMapGL' // ||API 默认API  (使用此模式 BMap=BMapGL)
 });
 app.mount('#app')
