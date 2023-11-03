@@ -32,6 +32,9 @@
       <img alt="" src="@/assets/images/house/detail/icon_ensure.png">
       <div class="text">人在旅途, 永无止境!</div>
     </div>
+    <div class="action-bar">
+      <HouseActionBar/>
+    </div>
   </div>
 </template>
 
@@ -49,6 +52,7 @@ import HouseNotice from '@/views/house/detail/components/notice/index.vue'
 import HouseIntro from '@/views/house/detail/components/intro/index.vue'
 import HouseMap from '@/views/house/detail/components/map/index.vue'
 import HouseTabs from '@/views/house/detail/components/tabs/index.vue'
+import HouseActionBar from '@/views/house/detail/components/action-bar/index.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -94,6 +98,7 @@ const mainPart = computed(() => detail.value.mainPart)
     align-items: center;
     justify-content: center;
     height: 120px;
+    margin-bottom: 30px;
 
     img {
       width: 123px;
