@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rimbu/sorted": "^1.1.0",
     "@vueuse/core": "^10.5.0",
     "axios": "^1.6.0",
     "dayjs": "^1.11.10",
