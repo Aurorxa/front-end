@@ -1,5 +1,7 @@
 <template>
   <div class="house-detail">
+    <!-- tabs   -->
+    <HouseTabs></HouseTabs>
     <!-- 导航条 -->
     <van-nav-bar
         left-arrow
@@ -45,6 +47,7 @@ import HouseComment from '@/views/house/detail/components/comment/index.vue'
 import HouseNotice from '@/views/house/detail/components/notice/index.vue'
 import HouseIntro from '@/views/house/detail/components/intro/index.vue'
 import HouseMap from '@/views/house/detail/components/map/index.vue'
+import HouseTabs from '@/views/house/detail/components/tabs/index.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -64,13 +67,11 @@ const {detail} = storeToRefs(houseStore)
 // props 数据
 const mainPart = computed(() => detail.value.mainPart)
 
-
 </script>
 
 <style lang="less" scoped>
 .house-detail {
   width: 100%;
-  height: 100%;
   background-color: #fff;
 
   .footer {

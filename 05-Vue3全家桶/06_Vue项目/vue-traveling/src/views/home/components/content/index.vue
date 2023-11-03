@@ -46,7 +46,6 @@ const handleHouseItemClick = ({houseId}) => {
   padding: 0 20px;
   margin-top: 10px;
 
-
   .title {
     padding: 0 5px;
     font-size: 16px;
