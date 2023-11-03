@@ -14,7 +14,6 @@
 <script setup>
 import {computed, ref, watch} from "vue"
 import {useScroll} from "@/hooks/useScroll.js"
-import underscore from "underscore";
 
 const active = ref('info')
 
@@ -30,10 +29,18 @@ const props = defineProps({
   }
 })
 
-watch([props.sectionCacheMap, () => scrollTop.value], ([map, targetValue]) => {
-  if (map) {
-    console.log('@@@', underscore.isMap(map))
+watch([props.sectionCacheMap, () => scrollTop.value], ([sectionMap, targetValue]) => {
+  if (!sectionMap || !targetValue) {
+    return
   }
+  
+  const resultArr = [...sectionMap.entries()].find(([_, value]) => value >= targetValue)
+
+  if (!resultArr) {
+    return
+  }
+  const [key] = resultArr
+  active.value = key
 }, {
   deep: true,
   immediate: true
