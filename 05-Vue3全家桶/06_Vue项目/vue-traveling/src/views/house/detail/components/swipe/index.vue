@@ -63,9 +63,6 @@ const computedCurrentItemTitle = (value, active) => {
   const {title, currentIndex, total} = computedCurrentItem(value, active)
   return `${title} ${currentIndex} / ${total}`
 }
-
-
-console.log('swipe', swipeGroup)
 </script>
 
 <style lang="less" scoped>

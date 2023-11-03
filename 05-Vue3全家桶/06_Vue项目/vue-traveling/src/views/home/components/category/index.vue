@@ -19,7 +19,6 @@ const homeStore = useHomeStore()
 
 const {categories} = storeToRefs(homeStore)
 
-console.log('@@@', categories)
 </script>
 
 <style lang="less" scoped>

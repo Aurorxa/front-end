@@ -1,7 +1,7 @@
 <template>
   <div class="house-detail">
     <!-- tabs   -->
-    <HouseTabs @click-tab-event="handleClickTab"></HouseTabs>
+    <HouseTabs :sectionCacheMap="sectionCacheSortedMap" @click-tab-event="handleClickTab"></HouseTabs>
     <!-- 导航条 -->
     <van-nav-bar
         left-arrow
@@ -42,7 +42,7 @@
 import {useRoute, useRouter} from "vue-router"
 import {useHouseStore} from "@/stores/index.js"
 import {storeToRefs} from "pinia"
-import {computed} from "vue"
+import {computed, nextTick, ref} from "vue"
 import HouseDetailSwipe from '@/views/house/detail/components/swipe/index.vue'
 import HouseDetailTopInfo from '@/views/house/detail/components/top-info/index.vue'
 import HouseFacility from '@/views/house/detail/components/facility/index.vue'
@@ -53,6 +53,7 @@ import HouseIntro from '@/views/house/detail/components/intro/index.vue'
 import HouseMap from '@/views/house/detail/components/map/index.vue'
 import HouseTabs from '@/views/house/detail/components/tabs/index.vue'
 import HouseActionBar from '@/views/house/detail/components/action-bar/index.vue'
+import {useScroll} from "@/hooks/useScroll.js"
 
 const route = useRoute()
 const router = useRouter()
@@ -60,19 +61,26 @@ const houseStore = useHouseStore()
 
 const {id} = route.params
 
-const sectionCacheMap = new Map()
+const sectionCacheMap = ref(new Map())
+const {scrollTop} = useScroll()
 const handleClickTab = (name) => {
   document.documentElement.scrollTo({
-    top: sectionCacheMap.get(name).offsetTop - 44,
+    top: sectionCacheMap.value.get(name) - 44,
     behavior: 'smooth'
   })
 }
 
 const getSectionRef = (value) => {
   if (value) {
-    sectionCacheMap.set(value.$el.getAttribute('name'), value.$el)
+    nextTick(() => {
+      sectionCacheMap.value.set(value.$el.getAttribute('name'), value.$el.offsetTop)
+    })
   }
 }
+
+const sectionCacheSortedMap = computed(() => {
+  return sectionCacheMap.value
+})
 
 
 // 处理返回按钮

@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import {computed, ref} from "vue"
+import {computed, ref, watch} from "vue"
 import {useScroll} from "@/hooks/useScroll.js"
 
 const active = ref('info')
@@ -21,6 +21,21 @@ const {scrollTop} = useScroll()
 const showTabs = computed(() => {
   return scrollTop.value >= 200
 })
+
+const props = defineProps({
+  sectionCacheMap: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
+watch([() => props.sectionCacheMap, () => scrollTop.value], ([sectionCacheMap, targetValue]) => {
+  console.log('@@', sectionCacheMap, targetValue)
+}, {
+  deep: true,
+  immediate: true
+})
+
 
 const emits = defineEmits(['click-tab-event'])
 
