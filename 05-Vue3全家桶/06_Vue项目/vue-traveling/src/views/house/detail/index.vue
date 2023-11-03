@@ -1,7 +1,7 @@
 <template>
   <div class="house-detail">
     <!-- tabs   -->
-    <HouseTabs :sectionCacheMap="sectionCacheSortedMap" @click-tab-event="handleClickTab"></HouseTabs>
+    <HouseTabs :sectionCacheMap="sectionCacheMap" @click-tab-event="handleClickTab"></HouseTabs>
     <!-- 导航条 -->
     <van-nav-bar
         left-arrow
@@ -77,11 +77,6 @@ const getSectionRef = (value) => {
     })
   }
 }
-
-const sectionCacheSortedMap = computed(() => {
-  return sectionCacheMap.value
-})
-
 
 // 处理返回按钮
 const handleClickLeft = () => {
