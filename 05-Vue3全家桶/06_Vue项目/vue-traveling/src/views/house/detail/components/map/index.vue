@@ -20,7 +20,7 @@ const center = ref({lng: 0, lat: 0})
 const zoom = ref(15)
 
 const handler = ({BMap, map}) => {
-  console.log(BMap, map);
+  console.log('地图', BMap, map);
   center.value.lng = 116.404
   center.value.lat = 39.915
   zoom.value = 15

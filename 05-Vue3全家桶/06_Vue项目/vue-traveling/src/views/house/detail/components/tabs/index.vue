@@ -22,32 +22,10 @@ const showTabs = computed(() => {
   return scrollTop.value >= 200
 })
 
+const emits = defineEmits(['click-tab-event'])
+
 const handleClickTab = ({name}) => {
-  let top = 0
-  switch (name) {
-    case 'info':
-      top = 200
-      break
-    case 'facility':
-      top = 440
-      break
-    case 'landlord':
-      top = 760
-      break
-    case 'comment':
-      top = 1050
-      break
-    case 'notice':
-      top = 1450
-      break
-    case 'map':
-      top = 1650
-      break
-  }
-  document.documentElement.scrollTo({
-    top,
-    behavior: 'smooth'
-  })
+  emits('click-tab-event', name)
 }
 
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="house-detail">
     <!-- tabs   -->
-    <HouseTabs></HouseTabs>
+    <HouseTabs @click-tab-event="handleClickTab"></HouseTabs>
     <!-- 导航条 -->
     <van-nav-bar
         left-arrow
@@ -9,21 +9,22 @@
         title="房屋详情"
         @click-left="handleClickLeft"
     />
-    <div v-if="mainPart" class="main">
+    <div v-if="mainPart" v-memo="[mainPart]" class="main">
       <!-- 轮播图 -->
       <HouseDetailSwipe :swipe-data="mainPart.topModule.housePicture.housePics"/>
       <!-- 信息 -->
-      <HouseDetailTopInfo :top-info="mainPart.topModule"/>
+      <HouseDetailTopInfo :ref="getSectionRef" :top-info="mainPart.topModule" name="info"/>
       <!--  房屋设施 -->
-      <HouseFacility :facility-info="mainPart.dynamicModule.facilityModule.houseFacility"/>
+      <HouseFacility :ref="getSectionRef" :facility-info="mainPart.dynamicModule.facilityModule.houseFacility"
+                     name="facility"/>
       <!--  房东介绍 -->
-      <HouseLandlord :landlord-info="mainPart.dynamicModule.landlordModule"/>
+      <HouseLandlord :ref="getSectionRef" :landlord-info="mainPart.dynamicModule.landlordModule" name="landlord"/>
       <!--  热门评论 -->
-      <HouseComment :comment-info="mainPart.dynamicModule.commentModule"/>
+      <HouseComment :ref="getSectionRef" :comment-info="mainPart.dynamicModule.commentModule" name="comment"/>
       <!--  预定须知 -->
-      <HouseNotice :order-rules="mainPart.dynamicModule.rulesModule.orderRules"/>
+      <HouseNotice :ref="getSectionRef" :order-rules="mainPart.dynamicModule.rulesModule.orderRules" name="notice"/>
       <!--  地图 -->
-      <HouseMap/>
+      <HouseMap :ref="getSectionRef" name="map"/>
       <!-- 价格说明 -->
       <HouseIntro :intro-data="mainPart.introductionModule"/>
     </div>
@@ -54,6 +55,19 @@ const router = useRouter()
 const houseStore = useHouseStore()
 
 const {id} = route.params
+
+const sectionCacheMap = new Map()
+const handleClickTab = (name) => {
+  document.documentElement.scrollTo({
+    top: sectionCacheMap.get(name).offsetTop - 44,
+    behavior: 'smooth'
+  })
+}
+
+const getSectionRef = (value) => {
+  sectionCacheMap.set(value.$el.getAttribute('name'), value.$el)
+}
+
 
 // 处理返回按钮
 const handleClickLeft = () => {
