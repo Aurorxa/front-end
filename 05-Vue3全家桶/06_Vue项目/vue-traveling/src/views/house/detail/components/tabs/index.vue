@@ -46,7 +46,8 @@ const handleClickTab = ({name}) => {
       break
   }
   document.documentElement.scrollTo({
-    top
+    top,
+    behavior: 'smooth'
   })
 }
 
