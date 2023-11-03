@@ -32,7 +32,7 @@ const handleClickTab = ({name}) => {
       top = 440
       break
     case 'landlord':
-      top = 760 // 625
+      top = 760
       break
     case 'comment':
       top = 1050
@@ -42,7 +42,6 @@ const handleClickTab = ({name}) => {
       break
     case 'map':
       top = 1650
-      console.log('map')
       break
   }
   document.documentElement.scrollTo({
