@@ -33,8 +33,8 @@ watch([props.sectionCacheMap, () => scrollTop.value], ([sectionMap, targetValue]
   if (!sectionMap || !targetValue) {
     return
   }
-  
-  const resultArr = [...sectionMap.entries()].find(([_, value]) => value >= targetValue)
+
+  const resultArr = [...sectionMap.entries()].find(([_, value]) => targetValue <= value)
 
   if (!resultArr) {
     return
