@@ -69,12 +69,15 @@ const handleClickTab = (name) => {
 }
 
 const getSectionRef = (value) => {
-  sectionCacheMap.set(value.$el.getAttribute('name'), value.$el)
+  if (value) {
+    sectionCacheMap.set(value.$el.getAttribute('name'), value.$el)
+  }
 }
 
 
 // 处理返回按钮
 const handleClickLeft = () => {
+  console.log('@@@@@ handleClickLeft @@@@@ ')
   router.back()
 }
 
