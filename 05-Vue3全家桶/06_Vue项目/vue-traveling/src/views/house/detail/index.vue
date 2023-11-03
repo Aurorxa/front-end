@@ -77,7 +77,6 @@ const getSectionRef = (value) => {
 
 // 处理返回按钮
 const handleClickLeft = () => {
-  console.log('@@@@@ handleClickLeft @@@@@ ')
   router.back()
 }
 
