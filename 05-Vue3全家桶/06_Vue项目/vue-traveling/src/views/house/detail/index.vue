@@ -64,9 +64,13 @@ const {id} = route.params
 const sectionCacheMap = ref(new Map())
 const {scrollTop} = useScroll()
 const handleClickTab = (name) => {
-  console.log('@@@@@@', sectionCacheMap.value.get(name))
+  let instance = sectionCacheMap.value.get(name)
+  // 如果是 info 的时候，就不减 44 ，是因为 info 的时候是 246 ，如果减少了44 ，scrollTop 就会变为 < 246 ,就会隐藏 tab 页了
+  if (name !== 'info') {
+    instance -= 44
+  }
   document.documentElement.scrollTo({
-    top: sectionCacheMap.value.get(name) - 44,
+    top: instance,
     behavior: 'smooth'
   })
 }
