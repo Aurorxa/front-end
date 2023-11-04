@@ -4,11 +4,12 @@
     <render></render>
     <divRender></divRender>
     <jsxRender></jsxRender>
+    <counter></counter>
   </div>
 </template>
 
 <script lang="jsx" setup>
-import {h} from "vue"
+import {h, ref} from "vue"
 
 // 第一种写法
 function render() {
@@ -23,11 +24,31 @@ function jsxRender() {
       <div style={{color: 'red'}} className="abc">我是div元素</div>
   )
 }
+
+const count = ref(0)
+
+const add = () => {
+  count.value++
+}
+
+function counter() {
+  return (
+      <div className="counter">
+        <div>当前计数为：{count.value}</div>
+        <button onClick={add}>点我+1</button>
+      </div>
+  )
+}
+
 </script>
 
 
 <style scoped>
 .abc {
   background-color: pink;
+}
+
+.counter {
+  background-color: skyblue;
 }
 </style>
