@@ -2,10 +2,12 @@
   <div class="app">
     <h2>我是h2元素</h2>
     <render></render>
+    <divRender></divRender>
+    <jsxRender></jsxRender>
   </div>
 </template>
 
-<script setup>
+<script lang="jsx" setup>
 import {h} from "vue"
 
 // 第一种写法
@@ -14,7 +16,13 @@ function render() {
 }
 
 // 第二种写法
-// const divRender = () => (h('div', {class: 'bar', innerHTML: 'hello', title: '我是div元素', style: {color: 'red'}}, []))
+const divRender = () => (h('div', {class: 'bar', innerHTML: 'hello', title: '我是div元素', style: {color: 'red'}}, []))
+
+function jsxRender() {
+  return (
+      <div style={{color: 'red'}}>我是div元素</div>
+  )
+}
 </script>
 
 
