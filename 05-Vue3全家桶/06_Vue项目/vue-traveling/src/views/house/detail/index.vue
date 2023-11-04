@@ -1,7 +1,8 @@
 <template>
   <div class="house-detail">
     <!-- tabs   -->
-    <HouseTabs :sectionCacheMap="sectionCacheMap" @click-tab-event="handleClickTab"></HouseTabs>
+    <HouseTabs :isClickTab="isClickTab" :sectionCacheMap="sectionCacheMap"
+               @click-tab-event="handleClickTab"></HouseTabs>
     <!-- 导航条 -->
     <van-nav-bar
         left-arrow
@@ -63,7 +64,12 @@ const {id} = route.params
 
 const sectionCacheMap = ref(new Map())
 const {scrollTop} = useScroll()
+
+
+const isClickTab = ref(false)
+
 const handleClickTab = (name) => {
+  isClickTab.value = true
   let instance = sectionCacheMap.value.get(name)
   instance -= 40
   document.documentElement.scrollTo({
