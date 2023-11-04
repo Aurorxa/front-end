@@ -20,12 +20,14 @@ const divRender = () => (h('div', {class: 'bar', innerHTML: 'hello', title: '我
 
 function jsxRender() {
   return (
-      <div style={{color: 'red'}}>我是div元素</div>
+      <div style={{color: 'red'}} className="abc">我是div元素</div>
   )
 }
 </script>
 
 
 <style scoped>
-
+.abc {
+  background-color: pink;
+}
 </style>
