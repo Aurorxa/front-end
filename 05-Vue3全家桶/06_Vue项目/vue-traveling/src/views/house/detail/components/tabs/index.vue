@@ -20,8 +20,7 @@ const active = ref('info')
 
 const {scrollTop} = useScroll()
 const showTabs = computed(() => {
-  console.log('@@@ scrollTop.value', scrollTop.value)
-  return scrollTop.value >= 206
+  return scrollTop.value >= 200
 })
 
 const props = defineProps({
