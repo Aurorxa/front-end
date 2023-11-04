@@ -1,5 +1,5 @@
 <template>
-  <input v-focus/>
+  <input v-focus type="text"/>
 </template>
 
 <script setup>
