@@ -1,11 +1,20 @@
 <template>
-
+  <div class="app">
+    <h2>我是h2元素</h2>
+    <divRender></divRender>
+  </div>
 </template>
 
 <script setup>
 import {h} from "vue"
 
-h('div', {class: 'bar', innerHTML: 'hello'}, [])
+// 第一种写法
+function divRender() {
+  return (h('div', {class: 'bar', innerHTML: 'hello', title: '我是div元素', style: {color: 'red'}}, []))
+}
+
+// 第二种写法
+// const divRender = () => (h('div', {class: 'bar', innerHTML: 'hello', title: '我是div元素', style: {color: 'red'}}, []))
 </script>
 
 
