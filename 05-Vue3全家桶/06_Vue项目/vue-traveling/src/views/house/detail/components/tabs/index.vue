@@ -14,6 +14,7 @@
 <script setup>
 import {computed, ref, watch} from "vue"
 import {useScroll} from "@/hooks/useScroll.js"
+import {findTabKey} from "@/utils/map.js"
 
 const active = ref('info')
 
@@ -34,12 +35,11 @@ watch([props.sectionCacheMap, () => scrollTop.value], ([sectionMap, targetValue]
     return
   }
 
-  const resultArr = [...sectionMap.entries()].find(([_, value]) => targetValue <= value)
-
-  if (!resultArr) {
+  const key = findTabKey(sectionMap, targetValue)
+  if (!key) {
     return
   }
-  const [key] = resultArr
+
   active.value = key
 }, {
   deep: true,
