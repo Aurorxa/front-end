@@ -27,17 +27,10 @@ const props = defineProps({
   sectionCacheMap: {
     type: Object,
     default: () => ({})
-  },
-  isClickTab: {
-    type: Boolean,
-    default: false
   }
 })
 
-watch([() => props.sectionCacheMap, () => props.isClickTab, () => scrollTop.value], ([sectionMap, isClickTab, targetValue]) => {
-  if (isClickTab) {
-    return
-  }
+watch([() => props.sectionCacheMap, () => props.isClickTab, () => scrollTop.value], ([sectionMap, targetValue]) => {
   if (!sectionMap || !targetValue) {
     return
   }

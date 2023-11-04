@@ -1,7 +1,7 @@
 <template>
   <div class="house-detail">
     <!-- tabs   -->
-    <HouseTabs :isClickTab="isClickTab" :sectionCacheMap="sectionCacheMap"
+    <HouseTabs :sectionCacheMap="sectionCacheMap"
                @click-tab-event="handleClickTab"></HouseTabs>
     <!-- 导航条 -->
     <van-nav-bar
@@ -66,14 +66,11 @@ const sectionCacheMap = ref(new Map())
 const {scrollTop} = useScroll()
 
 
-const isClickTab = ref(false)
-
 const handleClickTab = (name) => {
-  isClickTab.value = true
-  let instance = sectionCacheMap.value.get(name)
-  instance -= 40
+  let distance = sectionCacheMap.value.get(name)
+  distance -= 40
   document.documentElement.scrollTo({
-    top: instance,
+    top: distance,
     behavior: 'smooth'
   })
 }
