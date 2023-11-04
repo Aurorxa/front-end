@@ -37,8 +37,6 @@ watch([() => props.sectionCacheMap, () => scrollTop.value], ([sectionMap, target
 
   const key = findTabKey(sectionMap, targetValue)
 
-  console.log('house-tabs', key)
-
   if (!key) {
     return
   }
