@@ -7,7 +7,7 @@
       </keep-alive>
     </router-view>
     <!-- TabBar -->
-    <TabBar v-if="!hideTabBarRef"></TabBar>
+    <TabBar v-show="!hideTabBarRef"></TabBar>
   </div>
 </template>
 
