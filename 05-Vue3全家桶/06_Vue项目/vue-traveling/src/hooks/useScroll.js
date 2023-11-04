@@ -17,6 +17,7 @@ export function useScroll(elRef) {
             scrollHeight.value = el.scrollHeight
             clientHeight.value = el.clientHeight
         }
+        console.log(el, scrollHeight.value, clientHeight.value, scrollTop.value)
         if (scrollHeight.value <= clientHeight.value + scrollTop.value) {
             isReachBottom.value = true
         }
@@ -34,15 +35,9 @@ export function useScroll(elRef) {
         el.addEventListener('scroll', scrollListenerHandler)
     })
     onUnmounted(() => {
-        if (elRef) {
-            el = elRef.value
-        }
         el.removeEventListener('scroll', scrollListenerHandler)
     })
     onDeactivated(() => {
-        if (elRef) {
-            el = elRef.value
-        }
         el.removeEventListener('scroll', scrollListenerHandler)
     })
     
