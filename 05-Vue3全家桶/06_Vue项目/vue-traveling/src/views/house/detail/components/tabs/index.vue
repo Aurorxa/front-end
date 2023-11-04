@@ -1,6 +1,6 @@
 <template>
   <div v-if="showTabs" class="house-tabs">
-    <van-tabs v-model:active="active" @click-tab="handleClickTab">
+    <van-tabs v-model:active="active" :show-header="showTabs" animated @click-tab="handleClickTab">
       <van-tab name="info" title="描述"></van-tab>
       <van-tab name="facility" title="设施"></van-tab>
       <van-tab name="landlord" title="房东"></van-tab>
@@ -36,6 +36,9 @@ watch([props.sectionCacheMap, () => scrollTop.value], ([sectionMap, targetValue]
   }
 
   const key = findTabKey(sectionMap, targetValue)
+
+  console.log('house-tabs', key)
+
   if (!key) {
     return
   }
@@ -61,6 +64,6 @@ const handleClickTab = ({name}) => {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9;
+  z-index: 999;
 }
 </style>

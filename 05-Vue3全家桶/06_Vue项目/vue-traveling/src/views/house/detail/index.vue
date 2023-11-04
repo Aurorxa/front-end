@@ -64,6 +64,7 @@ const {id} = route.params
 const sectionCacheMap = ref(new Map())
 const {scrollTop} = useScroll()
 const handleClickTab = (name) => {
+  console.log('@@@@@@', sectionCacheMap.value.get(name))
   document.documentElement.scrollTo({
     top: sectionCacheMap.value.get(name) - 44,
     behavior: 'smooth'
