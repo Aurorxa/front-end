@@ -30,6 +30,7 @@
 
     function watchFn(fn) {
       reactiveFns.push(fn)
+      fn()
     }
 
     watchFn(foo)
