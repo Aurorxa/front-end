@@ -20,19 +20,20 @@ const change = () => {
 
 
 <style scoped>
-.v-enter-from {
+.v-enter-from, .v-leave-to {
   opacity: 0;
   transform: scale(0.5);
 }
 
-.v-leave-to {
+.v-enter-to, .v-leave-from {
   opacity: 1;
   transform: scale(1);
 }
 
-.v-enter-active {
+.v-enter-active, .v-leave-active {
   transition: all 2s ease;
 
 }
+
 
 </style>
