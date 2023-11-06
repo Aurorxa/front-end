@@ -1,4 +1,4 @@
-function getLength(args: string[] | string) {
+function getLength(args: any[] | string) {
     return args.length
 }
 
