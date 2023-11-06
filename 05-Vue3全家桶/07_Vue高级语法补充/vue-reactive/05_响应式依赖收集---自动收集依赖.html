@@ -33,10 +33,6 @@
       reactiveFn = null
     }
 
-    const obj = {
-      name: '许大仙',
-      age: 18
-    }
 
     // 封装函数：通过 obj 的 key 获取对应的 Depend 对象
     const objMap = new WeakMap()
@@ -55,41 +51,41 @@
       return dep
     }
 
-    Object.keys(obj).forEach(key => {
-      let value = obj[key]
-      Object.defineProperty(obj, key, {
-        configurable: true,
-        enumerable: true,
-        get() {
-          const dep = getDepend(obj, key)
-          dep.addDepend(reactiveFn)
-          return value
-        },
-        set(newVal) {
-          value = newVal
-          const dep = getDepend(obj, key)
-          dep.notify()
-        }
+    function reactive(obj) {
+      Object.keys(obj).forEach(key => {
+        let value = obj[key]
+        Object.defineProperty(obj, key, {
+          configurable: true,
+          enumerable: true,
+          get() {
+            const dep = getDepend(obj, key)
+            dep.addDepend(reactiveFn)
+            return value
+          },
+          set(newVal) {
+            value = newVal
+            const dep = getDepend(obj, key)
+            dep.notify()
+          }
+        })
       })
+      return obj
+    }
+
+
+    // ------- 业务 ------
+    const obj = reactive({
+      name: '许大仙',
+      age: 18
     })
 
-    function foo() {
-      console.log('foo 函数')
-      console.log('foo name', obj.name)
-      console.log('foo age', obj.age)
-    }
+    watchFn(() => {
+      console.log('watch', obj.name)
+    })
 
-    function bar() {
-      console.log('bar 函数')
-      console.log('bar age', obj.age + 2)
-    }
-
-
-    watchFn(foo)
-    watchFn(bar)
-
-    // 修改了 obj 的属性
     obj.name = '李四'
+
+
   </script>
 </body>
 </html>
