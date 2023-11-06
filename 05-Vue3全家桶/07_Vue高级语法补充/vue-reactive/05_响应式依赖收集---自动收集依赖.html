@@ -10,12 +10,12 @@
   <script>
     class Depend {
       constructor() {
-        this.reactiveFns = []
+        this.reactiveFns = new Set()
       }
 
       addDepend(fn) {
         if (fn) {
-          this.reactiveFns.push(fn)
+          this.reactiveFns.add(fn)
         }
       }
 
