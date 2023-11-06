@@ -24,26 +24,13 @@
       }
     }
 
+    // 设计专门执行响应式函数的函数
+    const dep = new Depend()
 
     const obj = {
       name: '许大仙',
       age: 18
     }
-
-    function foo() {
-      console.log('foo', obj.name)
-      console.log('foo', obj.age)
-      console.log('foo 函数')
-    }
-
-    function bar() {
-      console.log('bar', obj.name + 'bar')
-      console.log('bar', obj.age + 2)
-      console.log('bar 函数')
-    }
-
-    // 设计专门执行响应式函数的函数
-    const dep = new Depend()
 
     Object.keys(obj).forEach(key => {
       let value = obj[key]
@@ -63,6 +50,19 @@
     function watchFn(fn) {
       dep.addDepend(fn)
     }
+
+    function foo() {
+      console.log('foo', obj.name)
+      console.log('foo', obj.age)
+      console.log('foo 函数')
+    }
+
+    function bar() {
+      console.log('bar', obj.name + 'bar')
+      console.log('bar', obj.age + 2)
+      console.log('bar 函数')
+    }
+
 
     watchFn(foo)
     watchFn(bar)
