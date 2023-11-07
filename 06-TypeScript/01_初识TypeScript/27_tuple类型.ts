@@ -1,4 +1,4 @@
-const info: [number, string, boolean] = [1, "abc", true]
+const info: [string, number, number] = ["张三", 18, 1.88]
 
 const a = info[0]
 const b = info[1]
