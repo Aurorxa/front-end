@@ -1,6 +1,6 @@
 function handleMessage(message: string | number | boolean) {
     switch (typeof message) {
-        case'string':
+        case 'string':
             console.log(message.length)
             break
         case 'number':
