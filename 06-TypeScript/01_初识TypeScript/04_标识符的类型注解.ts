@@ -1,6 +1,10 @@
 // 定义标识符
-let message: string = "Hello World"
+let name: string = "张三"
 
-console.log(message)
+const age: number = 18
+
+const height: number = 1.88
+
+console.log(name, age, height)
 
 export {}
