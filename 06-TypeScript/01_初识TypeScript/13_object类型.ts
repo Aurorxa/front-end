@@ -1,4 +1,4 @@
-const obj: { name: string, age: number } = {
+const obj: { name: string, age: number, height?: number } = {
     name: "张三",
     age: 18
 }
