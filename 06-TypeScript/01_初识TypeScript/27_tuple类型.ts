@@ -6,4 +6,8 @@ const c = info[2]
 
 console.log(a, b, c)
 
+const [name, age, height] = info
+
+console.log(name, age, height)
+
 export {}
