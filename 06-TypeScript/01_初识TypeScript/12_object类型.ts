@@ -1,8 +1,7 @@
-const obj: object = {
-    name: "张三",
-    age: 18
-}
+let a: object = []; // 数组
+let b: object = {}; // 对象
+let c: object = () => ({}); // 函数
 
-console.log(obj)
+console.log(a, b, c)
 
 export {}
