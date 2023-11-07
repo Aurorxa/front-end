@@ -1,4 +1,6 @@
+// @ts-ignore
 const s1: symbol = Symbol("title")
+// @ts-ignore
 const s2: symbol = Symbol("title")
 
 const obj: { [x: symbol]: string } = {
