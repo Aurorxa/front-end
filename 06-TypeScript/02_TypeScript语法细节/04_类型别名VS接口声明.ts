@@ -14,11 +14,11 @@ function printPoint(point: Point): void {
 
 
 interface Animal {
-    name: string;
+    name: string
 }
 
 interface Bear extends Animal {
-    honey: boolean;
+    honey: boolean
 }
 
 
