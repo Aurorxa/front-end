@@ -1,14 +1,8 @@
-interface IPerson {
-    name: string
-    age: number
-    friends?: string []
+function liveDangerously(x?: number | null) {
+    // No error
+    console.log(x!.toFixed());
 }
 
-const person: IPerson = {
-    name: '张三',
-    age: 18,
-}
-
-console.log(person!.friends)
+liveDangerously();
 
 export {}
