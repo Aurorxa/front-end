@@ -1,26 +1,7 @@
-type DirectionType = 'left' | 'right' | 'up' | 'down'
+let num1 = 10
 
-function changeDirection(direction: DirectionType) {
-    switch (direction) {
-        case 'left':
-            console.log('left')
-            break
-        case 'right':
-            console.log('right')
-            break
-        case 'up':
-            console.log('up')
-            break
-        case 'down':
-            console.log('down')
-            break
-        default:
-            console.log('default')
-            break
-    }
-}
+const num2 = 200
 
-changeDirection('left');
-
+console.log(num1, num2)
 
 export {}
