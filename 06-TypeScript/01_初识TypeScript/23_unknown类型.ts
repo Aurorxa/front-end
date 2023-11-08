@@ -8,5 +8,4 @@ if (typeof foo === 'string') { // 类型缩小
     console.log(foo.length)
 }
 
-
 export {}
