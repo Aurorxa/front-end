@@ -14,6 +14,7 @@ function add(num1: number, num2: number): number {
 
 calc(add)
 
+// TS 对于传入的函数类型的参数个数不进行检测（校验）
 function sub(num1: number, num2: number): number {
     return num1 - num2
 }
