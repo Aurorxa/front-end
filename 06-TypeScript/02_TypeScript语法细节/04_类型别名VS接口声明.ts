@@ -13,4 +13,13 @@ function printPoint(point: Point): void {
 }
 
 
+interface Animal {
+    name: string;
+}
+
+interface Bear extends Animal {
+    honey: boolean;
+}
+
+
 export {}
