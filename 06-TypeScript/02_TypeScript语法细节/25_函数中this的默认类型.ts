@@ -13,7 +13,7 @@ obj.eating()
 
 // 普通函数
 function foo(this: { name: string }, info: { name: string }) {
-  console.log(this)
+  console.log(this, info)
 }
 
 foo.call({name: "abc"}, {name: "bcd"})
