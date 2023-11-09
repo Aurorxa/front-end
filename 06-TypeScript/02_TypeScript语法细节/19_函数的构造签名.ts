@@ -1,4 +1,3 @@
-
 class Person {
 
 }
@@ -15,4 +14,6 @@ function Factory(fn: IPersonConstructor) {
 Factory(Person)
 
 
-export { }
+Array
+
+export {}
