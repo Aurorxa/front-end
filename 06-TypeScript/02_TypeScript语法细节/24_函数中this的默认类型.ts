@@ -13,10 +13,10 @@ obj.eating()
 obj.eating()
 
 // 普通函数
-function foo() {
-  console.log(this, 'foo')
-}
+// function foo() {
+//   console.log(this, 'foo')
+// }
+//
+// foo()
 
-foo()
-
-export { }
+export {}
