@@ -1,5 +1,5 @@
 // 联合类型实现
-function getLength(args: string | string[]): number {
+function getLength(args: string | any[]): number {
   return args.length
 }
 
