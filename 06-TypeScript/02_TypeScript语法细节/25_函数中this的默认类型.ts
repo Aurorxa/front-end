@@ -16,6 +16,13 @@ function foo(this: { name: string }, info: { name: string }) {
   console.log(this, info)
 }
 
-foo.call({name: "abc"}, {name: "bcd"})
+foo.call({ name: "abc" }, { name: "bcd" })
+
+// 普通函数
+function bar(this: Window) {
+  console.log(this)
+}
+
+bar.call(window)
 
 export {}

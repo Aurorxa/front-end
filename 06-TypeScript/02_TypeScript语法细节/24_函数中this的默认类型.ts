@@ -12,11 +12,10 @@ const obj = {
 obj.eating()
 obj.eating()
 
-// 普通函数
-// function foo() {
-//   console.log(this, 'foo')
-// }
-//
-// foo()
+function foo() {
+  console.log(this, 'foo')
+}
 
-export {}
+foo()
+
+export { }

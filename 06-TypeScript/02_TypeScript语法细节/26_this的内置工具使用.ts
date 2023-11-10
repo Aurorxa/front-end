@@ -1,6 +1,6 @@
 
 // 普通函数
-function foo(this: { name: string }, info: { name: string }) {
+function foo(this: { name: string }, info: { name: string }): void {
 
   console.log(this, info)
 }
@@ -13,7 +13,7 @@ type fooThisType = ThisParameterType<fooType>
 // 移除函数类型中的 this 的类型
 type argsType = OmitThisParameter<fooType>
 
-// ThisType 用于绑定一个额上下文的 this
+// ThisType 用于绑定一个上下文的 this
 interface IState {
   name: string
   age: number
