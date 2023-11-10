@@ -1,9 +1,7 @@
 class Person {
-  private name: string // 私有属性，仅在本类中可见
-  protected age: number // 受保护的，仅在本类及其子类中可见
-  gender: string // 不写，默认就是 public，在任何地方都可见
-
-  constructor(name: string, age: number, gender: string) {
+  // 参数属性：TypeScript 提供了特殊的语法，用于将构造函数参数转换为具有相同名称和值的类属性。
+  // 这些称为参数属性，是通过在构造函数参数前加上可见性修饰符 public、private、protected 或 readonly 之一来创建的。
+  constructor(private name: string, protected age: number, public gender: string) {
     this.name = name
     this.age = age
     this.gender = gender
