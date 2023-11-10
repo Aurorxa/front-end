@@ -12,10 +12,10 @@ const obj = {
 obj.eating()
 obj.eating()
 
-function foo() {
-  console.log(this, 'foo')
-}
+// function foo() {
+//   console.log(this, 'foo')
+// }
+//
+// foo()
 
-foo()
-
-export { }
+export {}
