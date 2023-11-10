@@ -1,4 +1,3 @@
-
 // 普通函数
 function foo(this: { name: string }, info: { name: string }): void {
 
@@ -24,6 +23,7 @@ interface IStore {
   eating: () => void
   running: () => void
 }
+
 const store: IStore & ThisType<IState> = {
   state: {
     name: '张三',
@@ -38,7 +38,8 @@ const store: IStore & ThisType<IState> = {
 }
 
 store.eating.call(store.state)
+store.running.call(store.state)
 
 console.log()
 
-export { }
+export {}
