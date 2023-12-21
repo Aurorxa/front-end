@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {PureComponent} from 'react'
 import Banner from "@/components/Banner"
 import ProductList from "@/components/ProductList"
 
-class Main extends React.Component {
+class Main extends PureComponent {
   
   constructor(props) {
     super(props);
@@ -13,14 +13,22 @@ class Main extends React.Component {
   
   render() {
     const {message} = this.state
+    console.log('Main render')
     return (
-      <div style={{backgroundColor: 'orange', padding: '5px',marginTop: '20px',marginBottom: '20px', border: "1px solid black"}}>
+      <div style={{
+        backgroundColor: 'orange',
+        padding: '5px',
+        marginTop: '20px',
+        marginBottom: '20px',
+        border: "1px solid black"
+      }}>
         <h2>{message}</h2>
         <Banner/>
         <ProductList/>
       </div>
     )
   }
+  
 }
 
 export default Main

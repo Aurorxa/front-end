@@ -1,7 +1,6 @@
-import React from 'react'
+import React, {PureComponent} from 'react'
 
-class Banner extends React.Component {
-  
+class Banner extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,12 +10,14 @@ class Banner extends React.Component {
   
   render() {
     const {message} = this.state
+    console.log('Banner render')
     return (
-      <div style={{backgroundColor: 'mediumseagreen',  padding: '5px',marginBottom: '20px', border: "1px solid black"}}>
+      <div style={{backgroundColor: 'mediumseagreen', padding: '5px', marginBottom: '20px', border: "1px solid black"}}>
         <h2>{message}</h2>
       </div>
     )
   }
+  
 }
 
 export default Banner

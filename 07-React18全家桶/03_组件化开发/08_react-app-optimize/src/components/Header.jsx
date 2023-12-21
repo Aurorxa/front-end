@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {PureComponent} from 'react'
 
-class Header extends React.Component {
+class Header extends PureComponent {
   
   constructor(props) {
     super(props);
@@ -11,12 +11,14 @@ class Header extends React.Component {
   
   render() {
     const {message} = this.state
+    console.log('Header render')
     return (
       <div style={{backgroundColor: 'skyblue', padding: '5px', border: "1px solid black"}}>
         <h2>{message}</h2>
       </div>
     )
   }
+  
 }
 
 export default Header

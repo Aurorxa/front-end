@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {PureComponent} from 'react'
 
-class ProductList extends React.Component {
+class ProductList extends PureComponent {
   
   constructor(props) {
     super(props);
@@ -11,12 +11,14 @@ class ProductList extends React.Component {
   
   render() {
     const {message} = this.state
+    console.log('ProductList render')
     return (
-      <div style={{backgroundColor: 'lightsalmon',  padding: '5px', border: "1px solid black"}}>
+      <div style={{backgroundColor: 'lightsalmon', padding: '5px', border: "1px solid black"}}>
         <h2>{message}</h2>
       </div>
     )
   }
+  
 }
 
 export default ProductList
