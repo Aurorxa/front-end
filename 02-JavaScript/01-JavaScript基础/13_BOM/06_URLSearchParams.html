@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var urlSearchParams = new URLSearchParams("?name=许大仙&age=18")
+    // 获取搜索参数的值
+    console.log(`获取搜索参数的值：${urlSearchParams.get("name")}`) // 许大仙
+    // 设置一个搜索参数和值
+    urlSearchParams.set("name", "许仙")
+    console.log(`获取搜索参数的值：${urlSearchParams.get("name")}`) // 仙
+    // 追加一个搜索参数和值
+    urlSearchParams.append("gender", "男")
+    console.log(`获取搜索参数的值：${urlSearchParams.get("gender")}`) // 男
+    // 判断是否有某个搜索参数
+    console.log(`判断是否有某个搜索参数：${urlSearchParams.has("gender")}`) // rue
+  </script>
+</body>
+</html>

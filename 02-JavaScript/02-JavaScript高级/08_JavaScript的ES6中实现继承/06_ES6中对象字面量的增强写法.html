@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    // 属性的增强
+    var name = "张三"
+
+    var obj = {
+      name,
+      age: 18
+    }
+
+    console.log(obj.name)
+
+    // 方法的增强
+    obj = {
+      name: "张三",
+      saying: function () {
+        console.log(this.name + "正在唱歌....")
+      },
+      flying() {
+        console.log(this.name + "正在飞行....")
+      }
+    }
+
+    obj.saying()
+    obj.flying()
+
+    // 计算属性的简写
+    var key = "address"
+    obj = {
+      [key]: "上海"
+    }
+
+    console.log(obj[key])
+  </script>
+</body>
+</html>

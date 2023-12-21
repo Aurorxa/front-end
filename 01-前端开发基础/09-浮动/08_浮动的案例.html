@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Document</title>
+  <style>
+    .box .top {
+      height: 40px;
+      background-color: #333;
+    }
+
+    .box .header {
+      width: 1226px;
+      height: 100px;
+      background-color: #ffc0cb;
+      margin: 0 auto;
+    }
+
+    .box .content {
+      width: 1226px;
+      height: 460px;
+      margin: 0 auto;
+    }
+
+    .box .content .left {
+      float: left;
+      width: 234px;
+      height: 460px;
+      background-color: #ffa500;
+    }
+
+    .box .content .right {
+      float: right;
+      width: 992px;
+      height: 460px;
+      background-color: #87ceeb;
+    }
+
+    /*
+        CSS 书写顺序：
+        ① 浮动 或 display
+        ② 盒子模型相关属性：margin、border、padding 、宽度、高度、背景色
+        ③ 文字样式
+     */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <!-- 通栏的盒子：宽度和浏览器宽度一样大 -->
+    <div class="top"></div>
+    <div class="header">头部</div>
+    <div class="content">
+      <div class="left">left</div>
+      <div class="right">right</div>
+    </div>
+  </div>
+</body>
+
+</html>

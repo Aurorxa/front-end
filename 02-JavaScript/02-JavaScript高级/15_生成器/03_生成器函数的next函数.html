@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+    * 生成器函数：
+    * ① function 后面会跟上 *
+    * ② 代码的执行可以被 yield 控制
+    * ③ 生成器函数默认在执行的时候，返回的是一个生成器对象
+    *    要想执行执行函数内部的代码，需要生成器对象，调用它的 next 方法，并且当遇到 yield 的时候就会中断执行
+    */
+    function* foo() {
+      console.log("内部代码：1111111")
+      console.log("内部代码：2222222")
+      yield "aaa"
+      console.log("内部代码：3333333")
+      console.log("内部代码：4444444")
+      yield "bbb"
+      console.log("内部代码：5555555")
+      console.log("内部代码：6666666")
+    }
+
+    // 调用生成器函数，返回一个生成器对象
+    const generator = foo()
+    console.log(generator.next()) // {value: 'aaa', done: false}
+    console.log(generator.next()) // {value: 'bbb', done: false}
+    console.log(generator.next()) // {value: undefined, done: true}
+  </script>
+</body>
+</html>

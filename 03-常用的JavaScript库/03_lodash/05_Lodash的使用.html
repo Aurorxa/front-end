@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script src="./js/lodash_4.17.21.js"></script>
+  <script>
+    const obj = {
+      name: '张三',
+      age: 18,
+      friends: [
+        {name: '李四', age: 18},
+        {name: '王五', age: 19},
+        {name: '赵六', age: 20},
+      ]
+    }
+    console.log(_.pick(obj, ['name', 'age'])) // 浅拷贝
+    console.log(_.omit(obj, ['name', 'age'])) // 浅拷贝
+    console.log(_.clone(obj)) // 浅拷贝
+    console.log(_.cloneDeep(obj)) // 深拷贝
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 暂时性死区和定义的位置没有关系，而和代码的执行顺序有关系。 */
+    function foo() {
+      console.log(message)
+    }
+
+    let message = "Hello World"
+    foo()
+
+    /* 暂时性死区形成之后，在该区域内的这个标识符不能被访问。 */
+    function bar() {
+      console.log(message) // Uncaught ReferenceError: Cannot access 'message' before initialization
+
+      let message = "baz"
+    }
+
+    bar()
+
+  </script>
+</body>
+</html>

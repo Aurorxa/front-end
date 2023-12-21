@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    body {
+      height: 2000px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      border: 20px solid red;
+      background-color: pink;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    Java 是一种通用的、高级的编程语言，它在许多方面都有一些优点和特点：
+    1. 跨平台性： Java 是一种跨平台的语言，一次编写多处运行。Java 程序可以在任何支持 Java 虚拟机 (JVM) 的平台上运行，如
+    Windows、macOS、Linux 等，而不需要修改代码。
+    2. 面向对象： Java 是一种面向对象的编程语言，这意味着它支持面向对象的设计原则，如封装、继承和多态，使得代码更加结构化、可维护和可扩展。
+    3. 安全性： Java 对安全性有很高的重视，它提供了安全管理机制和运行时环境，可以防止潜在的安全漏洞，使得 Java
+    应用程序在网络环境中更为安全。
+    4. 大型社区和库： Java 拥有庞大的开发者社区和丰富的第三方库和框架，这些资源使得 Java 开发更加高效，并且可以快速解决常见的问题。
+    5. 多用途： Java 可以用于构建各种类型的应用程序，包括桌面应用程序、Web 应用程序、移动应用程序、企业级应用程序等。
+    然而，Java 也有一些缺点：
+    1. 冗长的语法： Java 的语法相对较为冗长，编写代码时可能需要更多的代码行数，这可能使得一些任务变得相对繁琐。
+    2. 较慢的执行速度： 相对于一些编译型语言，Java 的执行速度可能较慢。虽然 Java 程序的性能在不断提升，但在某些高性能要求的场景中可能不是最佳选择。
+    3. 内存消耗： Java 应用程序的内存消耗较大，尤其是在启动时，因为需要加载 JVM 和运行时库。
+    4. 学习曲线： 对于完全没有编程经验的初学者来说，Java 可能有一定的学习曲线，特别是对于理解面向对象的概念和一些高级特性。
+    总的来说，Java
+    是一门功能强大且广泛使用的编程语言，在许多应用领域都表现优异。但是否适合你的项目取决于你的需求、团队的技能水平以及项目的特点。对于特定的情况，也可以考虑其他编程语言的优势和特点。最终，选择一门编程语言时应该根据实际情况来决定。
+  </div>
+
+  <script>
+    var boxEl = document.querySelector(".box")
+
+    console.log(`box的width：${getComputedStyle(boxEl).width}`)
+    console.log(`box的height：${getComputedStyle(boxEl).height}`)
+
+    console.log(`clientWidth：${boxEl.clientWidth}`) // 223
+    console.log(`clientHeight：${boxEl.clientHeight}`) // 240
+    console.log(`clientTop：${boxEl.clientTop}`) // 20
+    console.log(`clientLeft：${boxEl.clientLeft}`) // 20
+    
+    console.log(`offsetWidth：${boxEl.offsetWidth}`) // 280
+    console.log(`offsetHeight：${boxEl.offsetHeight}`) // 280
+    console.log(`offsetLeft：${boxEl.offsetLeft}`) // 8
+    console.log(`offsetTop：${boxEl.offsetTop}`) // 8
+
+    console.log(`scrollTop：${boxEl.scrollTop}`) // 0
+    console.log(`scrollHeight：${boxEl.scrollHeight}`) // 1447
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 创建 Set 集合对象
+    const set = new Set()
+    // 向集合中添加元素
+    set.add(1)
+    set.add(2)
+    set.add(1)
+    set.add({name: "张三"})
+    // 查看集合中元素的个数
+    console.log(`查看集合中元素的个数：${set.size}`) // 查看集合中元素的个数：3
+    // 删除元素
+    set.delete(2)
+    console.log(`查看集合中元素的个数：${set.size}`) // 查看集合中元素的个数：2
+    // 判断集合中是否包含指定的元素
+    console.log(`判断集合中是否包含指定的元素：${set.has(1)}`) // 判断集合中是否包含指定的元素：true
+    // 遍历集合
+    set.forEach(item => {
+      console.log(item)
+    })
+    // 清空集合
+    set.clear()
+    // 查看集合中元素的个数
+    console.log(`查看集合中元素的个数：${set.size}`) // 查看集合中元素的个数：0
+  </script>
+</body>
+</html>

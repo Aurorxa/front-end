@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+      隐式绑定：当`函数`作为`对象`的`方法`调用时，this 指向调用该方法的对象。换言之，它的调用位置是通过某个对象发起的函数调用。
+    */
+    function foo() {
+      console.log('foo', this) // obj1
+    }
+
+
+    var obj1 = {
+      name: '张三',
+      foo: foo
+    }
+
+    var obj2 = {
+      name: '李四',
+      obj1: obj1
+    }
+
+
+    obj2.obj1.foo()
+
+  </script>
+</body>
+</html>

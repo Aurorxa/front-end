@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+
+  <script>
+    const btnEls = document.querySelectorAll("button");
+    for (const btn of btnEls) {
+      btn.addEventListener("click", function () {
+        console.log(this.innerHTML);
+      })
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <style>
+    .abc {
+      background-color: pink;
+    }
+
+    .active {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class='app'></div>
+
+  <!-- react：React 的核心 -->
+  <script src='./js/react18.development.js'></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script src='./js/react-dom18.development.js'></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script src='./js/babel.js'></script>
+
+  <script type='text/babel'>
+    // 创建根元素
+    const app = ReactDOM.createRoot(document.querySelector('.app'))
+
+    // 创建一个组件
+    class App extends React.Component {
+      // 组件数据
+      state = {
+        title: '哈哈哈',
+        imgUrl: 'https://t7.baidu.com/it/u=4071610061,2917123939&fm=193&f=GIF',
+        href: 'https://www.baidu.com/',
+        isActive: true,
+        objStyle: {
+          color: 'blue',
+          fontSize: '18px'
+        }
+      }
+
+      // 渲染内容 render 方法
+      render() {
+        const { title, imgUrl, href, isActive, objStyle } = this.state
+        // class 绑定写法一：字符串的拼接
+        const activeClassName = `abc cba ${isActive ? 'active' : ''}`
+        // class 绑定写法二：数组的拼接
+        const classList = ['abc', 'cba']
+        if (isActive) {
+          classList.push('active')
+        }
+        // class 绑定写法三：classnames 第三方库
+
+        return (
+          <div>
+            { /* 基本属性绑定 */}
+            <h2 title={title}>我是h2元素</h2>
+            <img src={imgUrl} alt='' width='200px' /> <br />
+            <a href={href} target='_blank'>百度一下，你就知道</a>
+            { /* class属性的绑定 */}
+            <h2 className='abc'>哈哈哈</h2>
+            <h2 className={`abc cba ${isActive ? 'active' : ''}`}>哈哈哈</h2>
+            <h2 className={activeClassName}>哈哈哈</h2>
+            <h2 className={classList.join(' ')}>哈哈哈</h2>
+            { /* 绑定 style 属性 */}
+            <h2 style={{ color: 'red', fontSize: 14 + 'px' }}>呵呵呵</h2>
+            <h2 style={objStyle}>呵呵呵</h2>
+          </div>
+        )
+      }
+    }
+
+    // 渲染组件
+    app.render(<App />)
+  </script>
+
+</body>
+</html>

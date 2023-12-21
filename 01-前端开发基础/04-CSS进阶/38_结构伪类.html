@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    /*
+      之所以失效的原因就在于：先找到所有的兄弟元素，然后会发现第 4 个元素不是 li 。
+    */
+    li:nth-child(4) {
+      background-color: green;
+    }
+
+    /*
+      基于`相同类型（标签名称）`的兄弟元素中的位置来匹配元素的。
+      将所有相同标签名称的 li 都找出来，然后再选择第 4 个 li 元素。
+    */
+    li:nth-of-type(4) {
+      background-color: pink;
+    }
+
+  </style>
+</head>
+<body>
+  <ul>
+    <li>这是第1个li</li>
+    <li>这是第2个li</li>
+    <li>这是第3个li</li>
+    <!--  了解即可，实际开发中，不会这么干的，一般都是通过 JS 生成 li 的。  -->
+    <div>呵呵哒</div>
+    <li>这是第4个li</li>
+    <li>这是第5个li</li>
+    <li>这是第6个li</li>
+    <li>这是第7个li</li>
+    <li>这是第8个li</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function Student(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    Student.prototype.running = function () {
+      console.log(`${this.name}正在跑 ....`)
+    }
+
+    Student.prototype.address = "中国"
+
+    var stu1 = new Student("张三", 20)
+    stu1.address = "北京"
+    console.log(stu1.address)
+    stu1.running()
+
+    var stu2 = new Student("李四", 30)
+    console.log(stu2.address)
+    stu2.running()
+
+    console.dir(stu1)
+    console.dir(stu2)
+
+  </script>
+</body>
+</html>

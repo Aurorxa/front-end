@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <style>
+    .active {
+      color: red;
+    }
+  </style>
+  <!-- react：React 的核心 -->
+  <script src='./js/react18.development.js'></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script src='./js/react-dom18.development.js'></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script src='./js/babel.js'></script>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class='app'></div>
+
+  <script type='text/babel'>
+    // 创建根元素
+    const app = ReactDOM.createRoot(document.querySelector('.app'))
+
+    // 创建一个组件
+    class App extends React.Component {
+      // 组件数据
+      state = {
+        movies: ['星际穿越', '大话西游', '梦幻西游', '诛仙'], // 电影列表数据
+        currentIndex: 0 // 当前的索引
+      }
+
+      // 改变当前选中的索引
+      changeCurrentIndex(index) {
+        this.setState({
+          currentIndex: index
+        })
+      }
+
+      render() {
+        const {movies, currentIndex} = this.state
+        return (
+            <div>
+              <h2>电影列表</h2>
+              <ul>
+                {
+                  movies.map((movie, index) => {
+                    return (
+                        <li key={index} className={currentIndex === index ? 'active' : ''}
+                            onClick={() => this.changeCurrentIndex(index)}>
+                          {movie}
+                        </li>)
+                  })
+                }
+              </ul>
+            </div>
+        )
+      }
+    }
+
+    // 渲染组件
+    app.render(<App/>)
+  </script>
+
+</body>
+</html>

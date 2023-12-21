@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function execCode(counter, successCallback, errorCallback) {
+      // 异步任务
+      setTimeout(() => {
+        if (counter < 0) {
+          errorCallback(`${counter} 不合法`)
+        } else {
+          let total = 0
+          for (let i = 0; i <= counter; i++) {
+            total += i
+          }
+          // 在某个时刻只需要回调传入的函数
+          successCallback(total)
+        }
+      }, 3000)
+    }
+
+    execCode(100, (total) => {
+      console.log(`执行成功：${total}`)
+    }, (err) => {
+      console.log(`执行失败：${err}`)
+    })
+  </script>
+</body>
+</html>

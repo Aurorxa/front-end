@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // flat 会将一个数组，按照指定的深度进行遍历，并将遍历到的元素和子数组中的元素组成一个新的数组，然后返回
+    const arr = [1, 2, [11, 22], [33, 44], [[55, 66, 77]], [33, 44]]
+    let newArr = arr.flat(1)
+    console.log(newArr) // [1, 2, 11, 22, 33, 44, Array(3), 33, 44]
+    newArr = arr.flat(2)
+    console.log(newArr) // [1, 2, 11, 22, 33, 44, 55, 66, 77, 33, 44]
+  </script>
+</body>
+</html>

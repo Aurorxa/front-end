@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+    * slice 是一个纯函数，无论你怎么调用，都不会对原函数产生任何影响
+    */
+    
+    var arr = [1, 2, 3]
+
+    var newArr = arr.slice(1, 2)
+    console.log(`arr：${arr}`) // arr：1,2,3
+    console.log(`newArr：${newArr}`) // newArr：2
+
+
+    console.log("======== 等价于 ========")
+
+    var newArr2 = [].slice.call(arr, 1, 2)
+    console.log(`arr：${arr}`) // arr：1,2,3
+    console.log(`newArr2：${newArr2}`) // newArr2：2
+
+  </script>
+</body>
+</html>

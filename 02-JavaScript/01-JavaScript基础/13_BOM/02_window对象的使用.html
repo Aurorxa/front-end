@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <a href="https://www.baidu.com">百度一下</a>
+  <a href="https://www.baidu.com" target="_blank">百度一下</a>
+  <!--  通过 button 来模拟 a 元素  -->
+  <button class="btn1">百度一下</button>
+  <button class="btn2">百度一下</button>
+
+  <script>
+    console.log(globalThis === window)
+
+    var btn1 = document.querySelector(".btn1")
+    var btn2 = document.querySelector(".btn2")
+
+    btn1.addEventListener('click', function () {
+      window.open("https://www.baidu.com", "_self")
+    })
+
+    btn2.addEventListener('click', function () {
+      window.open("https://www.baidu.com", "_blank")
+    })
+  </script>
+</body>
+</html>

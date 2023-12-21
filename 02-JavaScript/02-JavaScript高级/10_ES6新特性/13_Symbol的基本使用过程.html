@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // ES6 中引入 Symbol 来生成一个独一无二的值
+    const s1 = Symbol("name")
+    const s2 = Symbol("age")
+    const obj = {
+      [s1]: "张三",
+      [s2]: 18
+    }
+    console.log(s1 === s2) // false
+    console.log(obj) // {Symbol(name): '张三', Symbol(age): 18}
+  </script>
+</body>
+</html>

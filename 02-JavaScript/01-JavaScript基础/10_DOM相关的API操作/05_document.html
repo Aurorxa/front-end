@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <h1>我是head元素</h1>
+  <a href="#">我是超链接</a>
+
+  <script>
+    var htmlEl = document.documentElement
+    console.log(`html: ${htmlEl}`) // html 元素
+    var headEl = document.head
+    console.log(`head: ${headEl}`) // head 元素
+    var bodyEl = document.body
+    console.log(`body:${bodyEl}`) // body 元素
+    var doctype = document.doctype
+    console.log(`doctype:${doctype}`) // doctype
+  </script>
+</body>
+</html>

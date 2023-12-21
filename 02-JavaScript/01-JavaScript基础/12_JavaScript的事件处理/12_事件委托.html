@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!--
+    某些事件委托可能需要对具体的子组件进行区分，这个时候我们可以使用 data-* 对其进行标记
+  -->
+  <div class="box">
+    <button data-action="new">新增</button>
+    <button data-action="search">搜索</button>
+    <button data-action="delete">删除</button>
+  </div>
+
+  <script>
+    let boxEl = document.querySelector(".box")
+
+    boxEl.addEventListener('click', function (event) {
+      const {dataset: {action}, textContent} = event.target
+      switch (action) {
+        case "new":
+          console.log(textContent)
+          break
+        case "search":
+          console.log(textContent)
+          break
+        case "delete":
+          console.log(textContent)
+          break
+      }
+    })
+
+  </script>
+
+</body>
+</html>

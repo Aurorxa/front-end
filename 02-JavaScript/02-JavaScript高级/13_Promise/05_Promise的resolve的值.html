@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const promise = new Promise((resolve, reject) => {
+      // resolve(1)
+      // resolve("1")
+      // resolve({name: "张三"})
+      resolve([1, 2, 3])
+    })
+
+    console.log(promise.state())
+
+    promise.then(res => {
+      console.log(typeof res) // [1, 2, 3]
+    }).catch(err => {
+      console.log(err)
+    })
+
+  </script>
+</body>
+</html>

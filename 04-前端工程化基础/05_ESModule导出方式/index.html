@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script type="module">
+    import {name as demoName, age} from './js/demo.js'
+    import {fooName, fooAge} from './js/foo.js'
+    import {name as barName, age as barAge} from './js/bar.js'
+    import {name as bazName, address as bazAddress} from './js/baz.js'
+
+    console.log(demoName, age)
+    console.log(fooName, fooAge)
+    console.log(barName, barAge)
+    console.log(bazName, bazAddress)
+  </script>
+</body>
+</html>

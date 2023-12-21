@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 标签模板字符串的使用 */
+    function foo(...args) {
+      console.log(args)
+    }
+
+    foo(1, 2, 3)
+
+    let name = "许大仙"
+    let age = 18
+
+    foo`我的姓名是：${name}，我的年龄是：${age}`
+  </script>
+</body>
+</html>

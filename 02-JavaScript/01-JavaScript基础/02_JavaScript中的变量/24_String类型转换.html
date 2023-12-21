@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    let num = 42;
+    let bool = true;
+    let arr = [1, 2, 3];
+    let obj = {name: "John", age: 30};
+    let obj2 = {
+      name: "John", age: 30, toString: function () {
+        return `name:${this.name}，age:${this.age}`
+      }
+    };
+    
+    let strNum = String(num);
+    let strBool = String(bool);
+    let strArr = String(arr);
+    let strObj = String(obj);
+    let strObj2 = String(obj2);
+
+    console.log(strNum); // "42"
+    console.log(strBool); // "true"
+    console.log(strArr); // "1,2,3"
+    console.log(strObj); // "[object Object]"
+    console.log(strObj2); // "name:John，age:30"
+
+
+  </script>
+</body>
+</html>

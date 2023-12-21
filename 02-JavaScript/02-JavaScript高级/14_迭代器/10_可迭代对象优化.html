@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 可迭代对象 */
+    /*
+    * 必须实现特定的函数： [Symbol.iterator]
+    * 函数需要返回一个迭代器
+    */
+    const infos = {
+      name: '许大仙',
+      age: 18,
+      height: 1.8,
+      [Symbol.iterator]: function () {
+        const entries = Object.entries(this)
+        let index = 0
+        const iterator = {
+          next: function () {
+            if (index < entries.length) {
+              return {
+                done: false,
+                value: entries[index++]
+              }
+            } else {
+              return {
+                done: true
+              }
+            }
+          }
+        }
+        return iterator
+      },
+    }
+
+    // 使用迭代器对象遍历
+    const iterator = infos[Symbol.iterator]()
+    for (let next = iterator.next(); !next.done; next = iterator.next()) {
+      console.log(next.value)
+    }
+
+    console.log('---------------------')
+
+    // 可迭代对象可以使用 for...of 操作
+    for (const [key, value] of infos) {
+      console.log(key, value)
+    }
+
+  </script>
+</body>
+</html>

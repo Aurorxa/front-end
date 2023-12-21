@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <button>我是按钮</button>
+
+  <script>
+    function isIterable(obj) {
+      // 检查 null 和 undefined
+      if (obj == null) {
+        return false;
+      }
+      // 检查 Symbol.iterator 属性是否是一个函数
+      return typeof obj[Symbol.iterator] === 'function';
+    }
+
+    const arr = [1, 2, 3]
+    console.log(`数组是可迭代对象：${isIterable(arr)}`) // 数组是可迭代对象：true
+
+    let str = "123"
+    console.log(`字符串是可迭代对象：${isIterable(str)}`) // 字符串是可迭代对象：true
+
+    const map = new Map()
+    console.log(`map对象是可迭代对象：${isIterable(map)}`) // map对象是可迭代对象：true
+
+    const set = new Set()
+    console.log(`set对象是可迭代对象：${isIterable(set)}`) // set对象是可迭代对象：true
+
+    const btnEls = document.querySelectorAll('button')
+    console.log(`NodeList对象是可迭代对象：${isIterable(btnEls)}`) // NodeList对象是可迭代对象：true
+
+    const obj = {
+      name: "许大仙"
+    }
+
+    console.log(`普通对象是可迭代对象：${isIterable(obj)}`) // 普通对象是可迭代对象：false
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 对象属性的读取和设置 */
+    const obj = {
+      name: "张三",
+      age: 18,
+      sex: "男"
+    }
+
+    // 使用 Reflect 对象获取属性
+    const age = Reflect.get(obj, "age")
+    console.log(age) // 18
+    // 使用 Reflect 对象设置属性
+    Reflect.set(obj, "age", 20)
+    console.log(obj.age) // 20
+  </script>
+</body>
+</html>

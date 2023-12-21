@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h2>{{message}}</h2>
+    <!-- v-bind 指令用来绑定属性 -->
+    <!-- 绑定 img 的 src 属性 -->
+    <img alt="" v-bind:src="imgUrl">
+    <!-- 绑定 a 的超链接 -->
+    <a v-bind:href="href">百度一下，你就知道</a>
+    <button @click="switchImage">切换图片</button>
+    <!-- 语法糖 -->
+    <img :src="imgUrl" alt="">
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          message: 'Hello World',
+          imgUrl: './assets/nhlt.jpg',
+          href: "https://www.baidu.com"
+        }
+      },
+      methods: {
+        switchImage() {
+          this.imgUrl = './assets/zznh.png'
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>

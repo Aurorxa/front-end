@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 使用 Reflect 创建对象实例 */
+    const newObj = Reflect.construct(Object, []);
+    console.log(newObj); // {}
+
+    // 使用 Reflect 创建带参数的对象实例
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+    }
+
+    const person = Reflect.construct(
+        Person,
+        ['Bob', 30]
+    );
+    console.log(person); //  { name: 'Bob', age: 30 }
+  </script>
+</body>
+</html>

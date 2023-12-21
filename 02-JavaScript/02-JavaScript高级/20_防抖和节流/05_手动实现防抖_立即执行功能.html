@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <input type="text">
+  <button>取消</button>
+
+  <script>
+    /**
+     * 防抖函数
+     * @param {*} fn 回调函数
+     * @param {number} time 延迟时间
+     * @param {boolean} immediate 立即执行
+     */
+    function debounce(fn, time, immediate = false) {
+      // 用于记录上一次事件触发的 timer
+      let timer = null
+      let isInvoke = false
+      const _debounce = function (...args) {
+        console.log('_debounce中的this：' + this)
+        // 如果再次触发，就取消上一次的事件
+        if (timer) {
+          clearTimeout(timer)
+        }
+        // 第一次操作，是不需要延迟的
+        if (immediate && !isInvoke) {
+          fn.apply(this, args)
+          isInvoke = true
+          return
+        }
+        // 延迟执行对应的 fn 函数
+        timer = setTimeout(() => {
+          fn.apply(this, args)
+          // 执行完函数之后，将 timer 进行重置
+          timer = null
+          // 重置
+          isInvoke = false
+        }, time)
+      }
+
+      // 给 _debounce 绑定一个取消的函数
+      _debounce.cancel = function () {
+        if (timer) {
+          clearTimeout(timer)
+          timer = null
+          isInvoke = false
+        }
+      }
+
+      // 返回一个新的函数
+      return _debounce
+    }
+  </script>
+
+  <script>
+    const inputEl = document.querySelector("input")
+    const cancelBtnEl = document.querySelector("button")
+
+    const debounceFn = debounce(function (event) {
+      console.log(event)
+      console.log(`发送网络请求${counter++}`, this.value)
+    }, 5000)
+
+    let counter = 1
+    inputEl.addEventListener("input", debounceFn)
+
+    cancelBtnEl.addEventListener("click", function () {
+      debounceFn.cancel()
+    })
+  </script>
+</body>
+</html>

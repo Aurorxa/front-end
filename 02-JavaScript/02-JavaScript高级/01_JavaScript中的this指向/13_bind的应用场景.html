@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <button>按钮</button>
+
+  <script>
+    /*
+    * 需求：按钮点击之后，60 秒之后才能再次点击
+    */
+    var btn = document.querySelector("button")
+
+    btn.addEventListener('click', function () {
+      // 倒计时的时间
+      let count = 60
+      // 禁用按钮
+      this.disabled = true
+      // 更新按钮文本
+      this.textContent = `还剩${count}秒`
+      // 倒计时
+      let timerId = setInterval(function () {
+        // 更新倒计时的时间
+        count--
+        // 更新按钮文本
+        this.textContent = `还剩${count}秒`
+        // 如果倒计时已经过去，取消禁用按钮并停止倒计时
+        if (count <= 0) {
+          clearInterval(timerId)
+          this.textContent = '按钮'
+          this.disabled = false
+        }
+      }.bind(this), 1000)
+    })
+
+  </script>
+
+</body>
+</html>

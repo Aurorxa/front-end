@@ -1,0 +1,37 @@
+{
+  "name": "vue3-vant-demo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host --force",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "pinia": "^2.1.7",
+    "vant": "^4.7.3",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5",
+    "@vueuse/core": "^10.6.1",
+    "axios": "^1.6.1",
+    "dayjs": "^1.11.10",
+    "default-passive-events": "^2.0.0",
+    "normalize.css": "^8.0.1",
+    "underscore": "^1.13.6"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.5.1",
+    "@vant/auto-import-resolver": "^1.0.2",
+    "@vitejs/plugin-vue": "^4.4.1",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-vue": "^9.18.1",
+    "prettier": "^3.1.0",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^4.5.0",
+    "less": "^4.2.0",
+    "postcss-px-to-viewport-8-plugin": "^1.2.3"
+  }
+}

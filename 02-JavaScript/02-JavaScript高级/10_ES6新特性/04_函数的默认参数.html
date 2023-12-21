@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* ES6 之后新增了函数的默认参数 */
+    function foo(a, b = 2) {
+      console.log(a, b);
+    }
+
+    foo(1, "") // 1 ''
+    foo(1, false) // 1 false
+    foo(1, 0) // 1 0
+    foo(1, undefined) // 1 2
+    foo(1, null) // 1 null
+    foo(1, 10) // 1 10
+
+  </script>
+</body>
+</html>

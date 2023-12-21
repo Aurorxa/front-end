@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: "张三",
+      age: 18,
+      address: "中国"
+    }
+
+    const entries = Object.entries(obj)
+    console.log(entries) // [['name', '张三'],['age', 18],['address', '中国']]
+
+    const resultObj = Object.fromEntries(entries)
+    console.log(resultObj) // {name: '张三', age: 18, address: '中国'}
+  </script>
+</body>
+</html>

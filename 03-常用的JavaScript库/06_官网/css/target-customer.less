@@ -1,0 +1,63 @@
+.target-customer {
+  background-color: var(--bg-target-color);
+  min-height: 265px;
+
+  // 标题
+  .title {
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
+    color: var(--title-color);
+    font-weight: normal;
+  }
+
+  .container-fluid {
+    position: relative;
+
+    .row {
+
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 135px;
+        cursor: pointer;
+        overflow: hidden;
+
+        .sub-title {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: top 0.6s ease;
+          font-size: 24px;
+          color: var(--title-color);
+        }
+
+        .desc {
+          position: absolute;
+          top: 120%;
+          opacity: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 0.6s ease;
+          width: 100%;
+          color: var(--text-color);
+        }
+
+        &:hover .sub-title {
+          top: 40%;
+        }
+
+        &:hover .desc {
+          opacity: 1;
+          top: 75%;
+        }
+
+        &:not(:last-child) {
+          border-right: 1px solid var(--border-color);
+        }
+      }
+    }
+  }
+}

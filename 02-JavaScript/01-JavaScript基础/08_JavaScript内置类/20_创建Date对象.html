@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var date = new Date()
+    console.log(`当前时间：${date}`) // 当前时间：Wed Jul 26 2023 07:58:02 GMT+0800 (中国标准时间)
+    date = new Date(1000);
+    console.log(`自 1970 年 1 月 1 日 00:00:00 UTC（the Unix epoch）以来的毫秒数：${date}`) // 自 1970 年 1 月 1 日 00:00:00 UTC（the Unix epoch）以来的毫秒数：Thu Jan 01 1970 08:00:01 GMT+0800 (中国标准时间)
+    date = new Date("2023-01-01")
+    console.log(`指定的日期和时间：${date}`) // 指定的日期和时间：Sun Jan 01 2023 08:00:00 GMT+0800 (中国标准时间)
+    date = new Date(2023, 1, 1, 0, 0, 0)
+    console.log(`指定的日期和时间：${date}`) // 指定的日期和时间：Wed Feb 01 2023 00:00:00 GMT+0800 (中国标准时间)
+  </script>
+</body>
+</html>

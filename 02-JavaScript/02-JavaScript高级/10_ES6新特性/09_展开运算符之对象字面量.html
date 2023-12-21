@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 可以使用展开运算符将一个或多个对象或者其他可迭代对象展开为对象的属性
+    let obj1 = {name: "许大仙", age: 18}
+    let obj2 = {address: "北京"}
+
+    // 不使用展开运算符
+    let obj3 = Object.assign({}, obj1, obj2)
+    console.log(obj3) // {name: '许大仙', age: 18, address: '北京'}
+
+    // 使用展开运算符
+    let obj4 = {...obj1, ...obj2}
+    console.log(obj4) // {name: '许大仙', age: 18, address: '北京'}
+
+  </script>
+</body>
+</html>

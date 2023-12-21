@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.tabs {
+    display: flex;
+    align-content: center;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.tabs li {
+    flex: 1;
+}
+
+.active {
+    color: red;
+}
+
+.active .text {
+    padding: 3px;
+    border-bottom: 3px solid red;
+}

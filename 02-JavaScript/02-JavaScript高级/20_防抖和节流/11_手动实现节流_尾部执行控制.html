@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <input type="text">
+
+  <script>
+    /**
+     * 节流函数
+     * @param {*} fn
+     * @param {number} interval
+     * @param leading
+     * @param trailing
+     */
+    function throttle(fn, interval, leading = true, trailing = false) {
+      // 开始时间
+      let startTime = 0
+
+      let timer = null
+      const _throttle = function (...args) {
+        // 当前时间
+        let nowTime = new Date().getTime()
+        // 对立即执行进行控制
+        if (!leading && startTime === 0) {
+          startTime = nowTime
+        }
+        // 等待时间
+        let waitTime = interval - (nowTime - startTime)
+        // 如果等待的时间 小于 0
+        if (waitTime <= 0) {
+          if (timer) {
+            clearTimeout(timer)
+          }
+          // 执行函数
+          fn.apply(this, args)
+          // 重置当前时间
+          startTime = nowTime
+          // 重置
+          timer = null
+          return
+        }
+        // 是否需要执行尾部
+        if (trailing && !timer) {
+          timer = setTimeout(() => {
+            fn.apply(this, args)
+            // 重置当前时间
+            startTime = new Date().getTime()
+            // 重置
+            timer = null
+          }, waitTime)
+        }
+
+      }
+      return _throttle
+    }
+  </script>
+
+  <script>
+    const inputEl = document.querySelector("input")
+
+    let counter = 1
+    inputEl.addEventListener("input", throttle(function () {
+      console.log(`发送网络请求${counter++}`, this.value)
+    }, 1000, false, true))
+  </script>
+</body>
+</html>

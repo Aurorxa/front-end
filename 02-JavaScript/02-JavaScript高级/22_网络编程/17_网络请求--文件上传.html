@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <input class="file" type="file">
+  <button class="upload">上传文件</button>
+
+  <script>
+    const uploadBtn = document.querySelector(".upload")
+    uploadBtn.addEventListener("click", () => {
+      const formData = new FormData()
+      const fileEl = document.querySelector(".file")
+      console.dir(fileEl.files)
+      formData.append('avatar', fileEl.files[0])
+      fetch("http://123.207.32.32:1888/02_param/upload", {
+        method: 'POST',
+        body: formData
+      }).then(res => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json()
+      }).then(res => {
+        console.log("上传成功", res)
+      }).catch(err => {
+        if (err.name === 'AbortError') {
+          console.log("请求已被取消")
+        } else {
+          console.log("其他网络请求错误")
+        }
+      })
+    })
+
+  </script>
+</body>
+</html>

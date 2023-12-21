@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const p1 = Promise.resolve(1)
+    const p2 = Promise.resolve(2)
+    const p3 = Promise.reject(1)
+
+    /* Promise.allSettled 的结果一定是 then ，不会执行 catch */
+    const p = Promise.allSettled([p1, p2, p3])
+    p.then(result => {
+      result.forEach(res => {
+        const {status, value, reason} = res
+        console.log('then', status, value, reason)
+      })
+    }).catch(err => {
+      console.log('catch', err)
+    }).finally(() => {
+      console.log('finally') // finally
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var obj = {
+      firstName: "",
+      lastName: "",
+      // 也称为 setter
+      set fullName(value) {
+        const name = value.split("-")
+        this.firstName = name[0]
+        this.lastName = name[1]
+      },
+      // 也称为 getter
+      get fullName() {
+        return `${this.firstName}${this.lastName}`
+      }
+    }
+
+    obj.fullName = "许-大仙"
+    console.log(obj.firstName) // 许
+    console.log(obj.lastName) // 大仙
+    console.log(obj.fullName) // 许大仙
+  </script>
+</body>
+</html>

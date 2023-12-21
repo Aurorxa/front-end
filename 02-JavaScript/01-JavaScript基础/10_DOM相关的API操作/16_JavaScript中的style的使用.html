@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    div {
+      transition: all 0.5s;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="box">我是div元素</div>
+  <button class="btn">按钮</button>
+
+  <script>
+    var btn = document.querySelector(".btn")
+    var box = document.querySelector(".box")
+
+    btn.onclick = function () {
+      // 直接修改 style ，为什么这样使用，因为 style 是全局属性，所以 JavaScript 可以通过 Property 的形式来直接访问和修改
+      box.style.color = 'white'
+      box.style.backgroundColor = 'pink'
+      box.style.width = '200px'
+      box.style.height = '200px'
+
+    }
+  </script>
+
+</body>
+</html>

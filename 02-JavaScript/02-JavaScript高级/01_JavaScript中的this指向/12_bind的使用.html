@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function foo() {
+      console.log('foo', this);
+    }
+
+    var obj = {name: "张三"}
+
+    // 需求：调用 foo 的时候，希望将其绑定到 obj 对象上
+
+    var bind = foo.bind(obj)
+
+    bind()
+    bind()
+    bind()
+    bind()
+    bind()
+
+  </script>
+</body>
+</html>

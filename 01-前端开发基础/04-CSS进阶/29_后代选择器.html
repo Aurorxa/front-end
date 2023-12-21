@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Document</title>
+  <style>
+    /* 后代选择器 */
+    div p {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 后代包括：儿子、孙子、重孙子…… -->
+  <p>这是一个p标签</p>
+  <div>
+    <p>这是div中的p标签</p>
+    <div>
+      <p>这也是div中的p标签</p>
+    </div>
+  </div>
+</body>
+
+</html>

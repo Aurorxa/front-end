@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 原始对象（目标对象）
+    const obj = {
+      name: "张三",
+      age: 18,
+      height: 1.8
+    }
+
+    // 创建一个代理对象
+    const proxy = new Proxy(obj, {
+      set(target, key, newValue) {
+        console.log('set捕获器')
+        target[key] = newValue
+      },
+      get(target, key) {
+        console.log('get捕获器')
+        return target[key]
+      }
+    })
+
+    // 对代理对象做各种操作
+    proxy.name = "李四"
+    console.log(proxy.name)
+    proxy.age = 20
+    console.log(proxy.age)
+    proxy.height = 1.7
+    console.log(proxy.height)
+
+  </script>
+</body>
+</html>

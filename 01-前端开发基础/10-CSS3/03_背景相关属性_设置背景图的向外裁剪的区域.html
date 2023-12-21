@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: skyblue;
+      margin: 50px auto;
+      font-size: 40px;
+      padding: 50px;
+      border: 50px dashed rgba(255, 0, 0, 0.7);
+
+      background-image: url("./images/bg02.jpg");
+      background-repeat: no-repeat;
+      /*
+        background-origin: padding-box;
+
+        padding-box ：从 padding 区域开始显示背景图像。—— 默认值
+        border-box ： 从 border 区域开始显示背景图像。
+        content-box ： 从 content 区域开始显示背景图像。
+      */
+      /*background-origin: border-box;*/
+
+      /*
+        设置背景图的向外裁剪的区域。
+        border-box ： 从 border 区域开始向外裁剪背景。 —— 默认值
+        padding-box ： 从 padding 区域开始向外裁剪背景。
+        content-box ： 从 content 区域开始向外裁剪背景。
+        text ：背景图只呈现在文字上。
+      */
+      background-clip: text;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">你好啊</div>
+</body>
+</html>

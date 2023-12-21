@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var arr = ["张三", "李四", "王五"]
+
+    // 版本③ ：通过在 Array.prototype 中添加 XForEach 函数，并在 XForEach 中通过 this 关键字
+
+    Array.prototype.XForEach = function (fn) {
+      for (let i = 0; i < this.length; i++) {
+        fn(this[i], i, this)
+      }
+    }
+
+    arr.XForEach(function (item, index, arr) {
+      console.log(item, index, arr)
+    })
+
+    console.log('--------------------------')
+
+    arr.forEach(function (item, index, arr) {
+      console.log(item, index, arr)
+    })
+
+  </script>
+</body>
+</html>

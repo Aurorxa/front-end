@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 普通函数
+    function add(a, b, c) {
+      return a + b + c
+    }
+
+    // 调用普通函数
+    console.log(add(1, 2, 3)) // 6
+
+    // 柯里化函数
+    function add2(a) {
+      return function (b) {
+        return function (c) {
+          return a + b + c
+        }
+      }
+    }
+
+    // 柯里化函数
+    var add3 = (a) => {
+      return (b) => {
+        return (c) => {
+          return a + b + c;
+        }
+      }
+    }
+
+    // 调用柯里化函数
+    console.log(add2(1)(2)(3)) // 6
+
+    // 柯里化函数的箭头函数的表达形式
+    const add4 = a => b => c => a + b + c
+    console.log(add4(1)(2)(3)) // 6
+
+  </script>
+</body>
+</html>

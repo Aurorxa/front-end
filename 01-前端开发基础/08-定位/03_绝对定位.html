@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .outer {
+      position: relative;
+
+      width: 500px;
+      background-color: gray;
+      border: 1px solid black;
+      padding: 20px;
+      margin: 20px auto;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+
+      border: 1px solid black;
+    }
+
+    .box1 {
+      background-color: red;
+    }
+
+    .box2 {
+      background-color: skyblue;
+      /*
+        绝对定位是相对于定位的邻近祖先元素。
+      */
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .box3 {
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+
+    .active {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+
+  <script>
+
+    /*
+    在 DOM 操作中插入元素不推荐使用 innerHTML 的原因有以下几点：
+    1. 安全性问题：使用 innerHTML 插入的内容会被浏览器解析为 HTML 代码，并执行其中的脚本。如果插入的内容来自用户输入或不受信任的来源，可能会导致 XSS 攻击等安全问题。
+    2. 性能问题：使用 innerHTML 会导致浏览器重新解析整个 HTML 结构，重新构建 DOM 树，这个过程比较耗时。而使用原生的 DOM API，如 createElement、append 等，可以更精确地控制插入位置和方式，减少不必要的 DOM 重构，提高性能。
+    3. 代码可维护性问题：使用 innerHTML 插入大段的 HTML 代码会使代码结构变得混乱，难以维护。而使用原生的 DOM API，可以更好地组织代码，提高可读性和可维护性。
+    4. 丢失事件处理程序：使用 innerHTML 插入元素时，如果已经为某些元素绑定了事件处理程序，那么这些事件处理程序会丢失，需要重新绑定。而使用原生的 DOM API ，可以避免这个问题。
+    虽然 innerHTML 在某些情况下使用起来更方便，但在大多数情况下，为了安全性、性能和代码可维护性考虑，推荐使用原生的 DOM API 来操作 DOM 元素等内容。
+    */
+    var boxEl = document.querySelector(".box")
+
+    boxEl.innerHTML = `<h2 class="title">我是标题</h2>`
+
+    setTimeout(() => {
+      var h2El = document.querySelector(".title")
+      h2El.classList.add("active")
+    }, 2000)
+  </script>
+
+</body>
+</html>

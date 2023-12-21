@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .clearfix::before,
+    .clearfix::after {
+      content: '';
+      display: table;
+    }
+
+    .clearfix::after {
+      clear: both;
+    }
+
+    .wrapper {
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      text-align: center;
+      width: 960px;
+      margin-top: 50px;
+    }
+
+    .top-bar .box {
+      float: left;
+      height: 80px;
+      line-height: 80px;
+      background-color: #ddd;
+    }
+
+    .top-bar .logo {
+      width: 200px;
+    }
+
+    .top-bar .banner1 {
+      width: 540px;
+      margin: 0 10px;
+    }
+
+    .top-bar .banner2 {
+      width: 200px;
+    }
+
+    .nav {
+      width: 960px;
+      height: 30px;
+      background-color: #ddd;
+      margin: 10px auto;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .main {
+      width: 960px;
+    }
+
+    .main .left {
+      float: left;
+    }
+
+    .main .left .top .item {
+      float: left;
+      width: 370px;
+      height: 200px;
+      border: 1px solid #000;
+      margin-right: 10px;
+      text-align: center;
+      line-height: 200px;
+    }
+
+    .main .left .top .item:last-child {
+      margin-right: 0;
+    }
+
+    .main .left .bottom {
+      margin: 10px auto;
+    }
+
+    .main .left .bottom .item {
+      float: left;
+      width: 180px;
+      height: 200px;
+      border: 1px solid #000;
+      margin-right: 10px;
+      text-align: center;
+      line-height: 200px;
+    }
+
+    .main .left .bottom .item:last-child {
+      margin-right: 0;
+    }
+
+    .main .right {
+      float: right;
+    }
+
+    .main .right .item {
+      width: 200px;
+      height: 130px;
+      border: 1px solid #000;
+      text-align: center;
+      line-height: 130px;
+    }
+
+    .main .right .item:nth-child(2) {
+      margin: 10px 0;
+    }
+
+    .footer {
+      width: 960px;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar clearfix wrapper">
+    <div class="box logo">logo</div>
+    <div class="box banner1">banner1</div>
+    <div class="box banner2">banner2</div>
+  </div>
+  <div class="nav wrapper">菜单</div>
+  <div class="main wrapper clearfix">
+    <div class="left">
+      <div class="top clearfix">
+        <div class="item">栏目一</div>
+        <div class="item">栏目二</div>
+      </div>
+      <div class="bottom clearfix">
+        <div class="item">栏目三</div>
+        <div class="item">栏目四</div>
+        <div class="item">栏目五</div>
+        <div class="item">栏目六</div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="item">栏目七</div>
+      <div class="item">栏目八</div>
+      <div class="item">栏目九</div>
+    </div>
+  </div>
+  <div class="footer wrapper">页脚</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var obj = {
+      name: "许大仙",
+      age: 18
+    }
+    // 直接在一个对象上定义多个新的属性或修改现有属性，并且返回该对象
+    Object.defineProperties(obj, {
+      name: {
+        configurable: false,
+        enumerable: false,
+        writable: false,
+        value: `${obj.name}，是吗`
+      },
+      age: {
+        configurable: false,
+        enumerable: false,
+        writable: false,
+        value: `多大`
+      }
+    })
+
+    console.log(obj)
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 非纯函数示例：修改外部状态
+    let total = 0;
+
+    function addToTotal(number) {
+      total += number;
+    }
+
+    addToTotal(5);
+    console.log(total); // 输出: 5，外部状态已被修改
+    addToTotal(5);
+    console.log(total); // 输出: 10，外部状态再次被修改
+  </script>
+</body>
+</html>

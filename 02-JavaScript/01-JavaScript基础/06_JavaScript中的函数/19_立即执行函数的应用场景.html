@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+
+<body>
+
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+
+  <script>
+    let btns = document.querySelectorAll('button');
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function () {
+        console.log(`第${i}个按钮被点击了`);
+      })
+    }
+  </script>
+</body>
+</html>

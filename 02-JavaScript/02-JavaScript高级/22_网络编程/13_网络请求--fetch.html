@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <script>
+    async function getData() {
+      const response = await fetch('https://api.paugram.com/netease/?id=517567145')
+      const data = await response.json()
+      console.log(data)
+    }
+
+    getData()
+
+  </script>
+</body>
+</html>

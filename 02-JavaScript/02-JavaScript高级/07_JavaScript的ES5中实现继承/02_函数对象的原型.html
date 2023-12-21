@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function foo() {
+      console.log('foo函数')
+    }
+
+    console.dir(foo)
+
+    // 将函数看做是一个对象的时候，具备 __proto__ 属性，也称为隐式原型
+    // 作用：查找 key 对应的 value 时，会找到原型身上
+    console.dir(foo.__proto__)
+    // 将函数看成是一个函数的时候，具备 prototype 属性，也称为显示原型
+    // 用来构造对象的时候，给对象设置隐式原型的
+    // console.log(foo.prototype)
+  </script>
+</body>
+</html>

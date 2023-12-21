@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 方案④
+    function inherit(SubType, SuperType) {
+      SubType.prototype = Object.create(SuperType.prototype)
+      Object.defineProperty(SubType, "constructor", {
+        enumerable: false,
+        value: SubType
+      })
+    }
+  </script>
+  <script>
+    function Person() {
+
+    }
+
+    function Student() {
+
+    }
+
+    // 方案①：
+    var obj = {}
+    // obj.__proto__ = Person.prototype // 存在兼容性问题
+    Object.setPrototypeOf(obj, Person.prototype)
+    Student.prototype = obj
+
+    // 方案②：
+    function F() {
+    }
+
+    F.prototype = Person.prototype
+    Student.prototype = new F()
+
+    // 方案③：
+    var obj = Object.create(Person.prototype)
+    console.log(obj.__proto__ === Person.prototype)
+    Student.prototype = obj
+
+
+  </script>
+</body>
+</html>

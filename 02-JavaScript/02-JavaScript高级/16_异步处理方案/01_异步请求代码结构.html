@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function requestDate(url) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(url)
+        }, 2000)
+      })
+    }
+
+    /* 需求：依次发送多次请求 */
+    function getData() {
+      requestDate("https://www.a.com").then(res => {
+        console.log(`第一次请求的结果：${res}`)
+
+        return requestDate(`https://www.b.com?name=${res}`)
+      }).then(res => {
+        console.log(`第二次请求的结果：${res}`)
+
+        return requestDate(`https://www.c.com?name=${res}`)
+      }).then(res => {
+        console.log(`第三次请求的结果：${res}`)
+      }).catch(err => {
+        console.log(`请求中出现的错误信息：${err}`)
+      })
+    }
+
+    getData()
+
+  </script>
+</body>
+</html>

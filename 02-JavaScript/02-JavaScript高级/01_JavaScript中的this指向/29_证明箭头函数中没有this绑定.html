@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    /**
+     * 普通函数
+     */
+    function foo() {
+      console.log('foo', arguments)
+      console.log('foo', this)
+    }
+
+
+    foo() // 普通函数中是有 arguments 对象的
+
+
+    /**
+     * 箭头函数
+     */
+    var bar = () => {
+      console.log('bar', arguments)
+      console.log('bar', this)
+    }
+
+    bar() // arguments is not defined
+
+
+  </script>
+</body>
+</html>

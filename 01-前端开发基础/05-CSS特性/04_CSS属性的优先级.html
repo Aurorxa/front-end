@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Document</title>
+  <style>
+    body {
+      color: red;
+    }
+
+    * {
+      color: aqua;
+    }
+
+    div {
+      color: green !important;
+    }
+
+    .box {
+      color: blue;
+    }
+
+    #box {
+      color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 意义：不同的选择器具有不同的优先级，优先级高的选择器样式会覆盖优先级低的选择器样式。 -->
+  <div class="box" id="box" style="color: chartreuse;">测试优先级</div>
+</body>
+
+</html>

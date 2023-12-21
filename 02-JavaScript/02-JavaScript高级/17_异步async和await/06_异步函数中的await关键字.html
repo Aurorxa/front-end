@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // await 必须在异步函数中使用
+
+    function bar() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve('bar')
+        }, 2000)
+      })
+    }
+
+    async function foo() {
+      console.log("-------------------")
+      const result = await 123
+      console.log(result)
+      console.log("###################")
+      // await 后面如果是 Promise 对象，那么会等待 Promise 对象的状态变为 fulfilled 之后，才会继续执行
+      const res = await bar()
+      console.log(res)
+      return "aaa"
+    }
+
+    foo().then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log("捕获到的异常信息：" + err)
+    })
+
+  </script>
+</body>
+</html>

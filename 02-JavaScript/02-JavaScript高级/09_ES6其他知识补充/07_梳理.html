@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function formatCurrency(strings, ...values) {
+      const formattedValues = values.map(value => `$${value.toFixed(2)}`);
+      return strings.reduce((prev, next, index) => {
+        return prev + next + (formattedValues[index] || '');
+      }, '');
+    }
+
+    const price = 19.99;
+    const quantity = 3;
+    const total = formatCurrency`Total: ${price * quantity}`;
+
+    console.log(total); // 输出：Total: $59.97
+
+  </script>
+</body>
+</html>

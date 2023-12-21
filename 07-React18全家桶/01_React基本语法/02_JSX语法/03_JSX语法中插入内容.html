@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <!-- react：React 的核心 -->
+  <script src='./js/react18.development.js'></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script src='./js/react-dom18.development.js'></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script src='./js/babel.js'></script>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class='app'></div>
+
+  <script type='text/babel'>
+    // 创建根元素
+    const app = ReactDOM.createRoot(document.querySelector('.app'))
+
+    // 创建一个组件
+    class App extends React.Component {
+      // 组件数据
+      state = {
+        message: '你好，React',
+        movies: ['星际穿越', '大话西游', '梦幻西游', '诛仙'],
+        aaa: undefined,
+        bbb: null,
+        ccc: true,
+        obj: { name: '张三', age: 18 },
+        firstName: '李',
+        lastName: '四'
+      }
+
+      // 渲染内容 render 方法
+      render() {
+        const { message, movies, aaa, bbb, ccc, obj, firstName, lastName } = this.state
+        return (
+          <div>
+            {
+              /* jsx 中嵌入变量作为子元素 */
+              /* ① 当变量是 Number、String、Array 类型的时候，直接显示。 */
+              /* ②
+                当变量是 null、undefined、Boolean 类型的时候，内容为空
+                如果希望可以显示 null、undefined、Boolean ，可以将其转换为字符串。如：toString()、和 '' 拼接、String(xxx) 等方式
+              */
+              /* ③ Object 对象类型不能作为子元素 */
+            }
+            <h2>{message}</h2>
+            <ul>
+              {movies.map((item, index) => <li key={index}> {item} </li>)}
+            </ul>
+            <div>{aaa}</div>
+            <div>{bbb}</div>
+            <div>{ccc}</div>
+            <div>{ccc.toString()}</div>
+            <div>{obj.name} - {obj.age}</div>
+            { /*
+              插入表达式：
+                ① 运算表达式
+                ② 三元运算符
+                ③ 执行一个函数
+            */}
+            <h2>{10 + 20}</h2>
+            <h2>{firstName + '-' + lastName}</h2>
+          </div>
+        )
+      }
+    }
+
+    // 渲染组件
+    app.render(<App />)
+  </script>
+
+</body>
+</html>

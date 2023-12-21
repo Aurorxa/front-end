@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    /**
+     * 普通函数
+     */
+    function foo() {
+      console.log('foo', this)
+    }
+
+
+    // 定义对象
+    var obj = {
+      name: '张三',
+      foo: foo
+    }
+
+    // 普通函数根据调用方式和上下文的不同，this 值可能也不同
+    obj.foo() // obj
+
+    var bar = obj.foo
+    bar() // window
+
+    // 箭头函数中没有 this 绑定，并且无论在哪里调用箭头函数，它的 this 值都不会改变
+    var obj2 = {
+      name: '李四',
+      foo: () => { // 箭头函数
+        console.log('foo', this)
+      }
+    }
+
+    obj2.foo() // window
+    var bar2 = obj2.foo
+    bar2() // window
+
+
+  </script>
+</body>
+</html>
