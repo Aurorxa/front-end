@@ -1,25 +1,34 @@
-import React from 'react'
+import React, {forwardRef} from 'react'
 
-class App extends React.Component {
+const HelloWorld = forwardRef(function HelloWorld(props, ref) {
+  
+  const [message] = React.useState('我是 HelloWorld 组件')
+  
+  return (
+    <div style={{backgroundColor: 'skyblue', padding: '5px'}}>
+      <h2 ref={ref}>{message}</h2>
+    </div>
+  )
+})
+
+class App extends React.PureComponent {
   
   state = {
-    message: 'Hello React'
+    message: '我是 App 组件'
   }
   
-  // ① 定义一个 Ref 变量
-  h2Ref = null
-  
-  getH2Dom() {
-    /* ③ 在 this 身上获取即可 */
-    console.log('h2',this.h2Ref)
-  }
+  helloWorldRef = React.createRef()
   
   render() {
+    const {message} = this.state
     return (
-      <div>
-        {/* ② 在 ref 中传入一个回调函数，该函数会在 DOM 被挂载的时候回调，并将当前元素作为参数，传入进来 */}
-        <h2 ref={el => this.h2Ref = el}>{this.state.message}</h2>
-        <button onClick={() => this.getH2Dom()}>获取 h2 元素</button>
+      <div style={{backgroundColor: 'pink', padding: '5px', width: '500px'}}>
+        <h2>{message}</h2>
+        <button onClick={() => console.log(this.helloWorldRef.current)}
+                style={{marginBottom: '5px'}}>
+          访问 HelloWorld 组件的 h2 元素
+        </button>
+        <HelloWorld ref={this.helloWorldRef}/>
       </div>
     )
   }
