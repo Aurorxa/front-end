@@ -2,123 +2,34 @@ import React from 'react'
 
 class App extends React.PureComponent {
   
-  state = {
-    username: '',
-    password: '',
-    agree: true,
-    hobbies: [
-      {value: 'eat', text: '吃饭', isChecked: false},
-      {value: 'sleep', text: '睡觉', isChecked: false},
-      {value: 'play', text: '玩游戏', isChecked: true},
-    ],
-    fruit: "lime",
-    fruits: ["lime", "coconut"]
-  }
+  usernameRef = null;
+  passwordRef = null;
   
   handleSubmit(event) {
     event.preventDefault()
-    const {username, password, agree, hobbies} = this.state
-    console.log('handleSubmit', username, password, agree, hobbies)
-  }
-  
-  // 处理常规输入
-  handleInput(e) {
-    const name = e.target.name
-    this.setState({
-      [name]: e.target.value
-    })
-  }
-  
-  /* 处理单选 checkbox */
-  handleAgree(e) {
-    this.setState({
-      agree: e.target.checked
-    })
-  }
-  
-  /* 处理多选 checkbox */
-  handleHobbies(e, index) {
-    const hobbies = [...this.state.hobbies]
-    hobbies[index].isChecked = e.target.checked
-    this.setState({
-      hobbies
-    })
-  }
-  
-  handleFruit(e){
-    this.setState({
-      fruit: e.target.value
-    })
-  }
-  
-  // select 多选
-  handleMultipleFruit(e){
-    this.setState({
-      fruits: Array.from(e.target.selectedOptions).map(o => o.value)
-    })
+    const {usernameRef, passwordRef} = this
+    console.log('handleSubmit', usernameRef.value, passwordRef.value)
   }
   
   render() {
-    const {username, password, agree, hobbies,fruit,fruits} = this.state
     return (
       <div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <div>
+            {/* 非受控组件中，通过 ref 获取 DOM 节点上表单的数据 */}
             <label htmlFor="username">
-              用户名：<input type="text" name="username" id="username" value={username}
-                            onChange={(e) => this.handleInput(e)}/>
+              用户名：<input type="text" id="username" ref={el => this.usernameRef = el}
+                           defaultValue={"admin"}/>
             </label>
           </div>
           <div>
+            {/* 非受控组件中，通过 ref 获取 DOM 节点上表单的数据 */}
             <label htmlFor="password">
-              密码：<input type="password" name="password" id="password" value={password}
-                          onChange={(e) => this.handleInput(e)}/>
+              密码：<input type="password" id="password" ref={el => this.passwordRef = el}
+                          />
             </label>
           </div>
-          {/* 兴趣 */}
-          <div>
-            兴趣：
-            {
-              hobbies.map((hobby, index) => (
-                <label htmlFor={hobby.value} key={index}>
-                  <input type="checkbox" name={hobby.value} id={hobby.value} checked={hobby.isChecked}
-                         onChange={(e) => this.handleHobbies(e, index)}/>
-                  <span>{hobby.text}</span>
-                </label>
-              ))
-            }
-          </div>
-          {/* select 单选 */}
-          <div>
-            选择你喜欢的一个水果:
-            <label>
-              <select value={fruit} onChange={(e) => this.handleFruit(e)} name="fruit">
-                <option value="grapefruit">葡萄柚</option>
-                <option value="lime">酸橙</option>
-                <option value="coconut">椰子</option>
-                <option value="mango">芒果</option>
-              </select>
-            </label>
-          </div>
-          {/* select 多选 */}
-          <div>
-            选择你喜欢的几个水果:
-            <label>
-              <select value={fruits} onChange={(e) => this.handleMultipleFruit(e)} name="fruit" multiple>
-                <option value="grapefruit">葡萄柚</option>
-                <option value="lime">酸橙</option>
-                <option value="coconut">椰子</option>
-                <option value="mango">芒果</option>
-              </select>
-            </label>
-          </div>
-          {/* 单选 */}
-          <div>
-            <label htmlFor="agree">
-              同意：<input type="checkbox" name="agree" id="agree" checked={agree}
-                          onChange={(e) => this.handleAgree(e)}/>
-            </label>
-          </div>
+         
           <input type="submit" value="登录"/>
         </form>
       </div>
