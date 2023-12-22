@@ -2,40 +2,54 @@ import React from 'react'
 
 class App extends React.PureComponent {
   
-  state = { // ① state 中维护表单数据
+  state = {
     username: '',
     password: '',
-    agree: true
+    agree: true,
+    hobbies: [
+      {value: 'eat', text: '吃饭', isChecked: false},
+      {value: 'sleep', text: '睡觉', isChecked: false},
+      {value: 'play', text: '玩游戏', isChecked: true},
+    ]
   }
   
   handleSubmit(event) {
-    // 阻止表单自动提交
     event.preventDefault()
-    const {username, password} = this.state
-    console.log('handleSubmit', username, password)
+    const {username, password, agree, hobbies} = this.state
+    console.log('handleSubmit', username, password, agree, hobbies)
   }
   
-  // 处理输入
+  // 处理常规输入
   handleInput(e) {
     const name = e.target.name
-    // value 需要判断下，是否是 checkbox ？如果是，就取 checked ；否则，取 value
-    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
-    console.log('handleInput', name, value)
     this.setState({
-      [name]: value
+      [name]: e.target.value
+    })
+  }
+  
+  /* 处理单选 checkbox */
+  handleAgree(e) {
+    this.setState({
+      agree: e.target.checked
+    })
+  }
+  
+  /* 处理多选 checkbox */
+  handleHobbies(e, index) {
+    const hobbies = [...this.state.hobbies]
+    hobbies[index].isChecked = e.target.checked
+    this.setState({
+      hobbies
     })
   }
   
   render() {
-    const {username, password, agree} = this.state
+    const {username, password, agree, hobbies} = this.state
     return (
       <div>
-        {/* ② onSubmit 中阻止表单自动提交，并在对应的事件处理函数中获取 state 中的数据，然后使用 Ajax 提交到服务器中 */}
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <div>
             <label htmlFor="username">
-              {/* ③ 通过 value 获取 state 中维护的数据，这样显示的值就始终是 this.state.username，这就使得 React 中的 state 成为唯一的数据源 */}
-              {/* ③ 一旦用户输入数据，将自动执行 onChange 事件，这样我们就可以编写逻辑，将数据更新到 React 中的 state 中*/}
               用户名：<input type="text" name="username" id="username" value={username}
                             onChange={(e) => this.handleInput(e)}/>
             </label>
@@ -46,10 +60,24 @@ class App extends React.PureComponent {
                           onChange={(e) => this.handleInput(e)}/>
             </label>
           </div>
+          {/* 兴趣 */}
+          <div>
+            兴趣：
+            {
+              hobbies.map((hobby, index) => (
+                <label htmlFor={hobby.value} key={index}>
+                  <input type="checkbox" name={hobby.value} id={hobby.value} checked={hobby.isChecked}
+                         onChange={(e) => this.handleHobbies(e, index)}/>
+                  <span>{hobby.text}</span>
+                </label>
+              ))
+            }
+          </div>
+          {/* 单选 */}
           <div>
             <label htmlFor="agree">
               同意：<input type="checkbox" name="agree" id="agree" checked={agree}
-                          onChange={(e) => this.handleInput(e)}/>
+                          onChange={(e) => this.handleAgree(e)}/>
             </label>
           </div>
           <input type="submit" value="登录"/>
