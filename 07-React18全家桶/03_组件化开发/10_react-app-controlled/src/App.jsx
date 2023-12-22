@@ -10,7 +10,9 @@ class App extends React.PureComponent {
       {value: 'eat', text: '吃饭', isChecked: false},
       {value: 'sleep', text: '睡觉', isChecked: false},
       {value: 'play', text: '玩游戏', isChecked: true},
-    ]
+    ],
+    fruit: "lime",
+    fruits: ["lime", "coconut"]
   }
   
   handleSubmit(event) {
@@ -43,8 +45,21 @@ class App extends React.PureComponent {
     })
   }
   
+  handleFruit(e){
+    this.setState({
+      fruit: e.target.value
+    })
+  }
+  
+  // select 多选
+  handleMultipleFruit(e){
+    this.setState({
+      fruits: Array.from(e.target.selectedOptions).map(o => o.value)
+    })
+  }
+  
   render() {
-    const {username, password, agree, hobbies} = this.state
+    const {username, password, agree, hobbies,fruit,fruits} = this.state
     return (
       <div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
@@ -72,6 +87,30 @@ class App extends React.PureComponent {
                 </label>
               ))
             }
+          </div>
+          {/* select 单选 */}
+          <div>
+            选择你喜欢的一个水果:
+            <label>
+              <select value={fruit} onChange={(e) => this.handleFruit(e)} name="fruit">
+                <option value="grapefruit">葡萄柚</option>
+                <option value="lime">酸橙</option>
+                <option value="coconut">椰子</option>
+                <option value="mango">芒果</option>
+              </select>
+            </label>
+          </div>
+          {/* select 多选 */}
+          <div>
+            选择你喜欢的几个水果:
+            <label>
+              <select value={fruits} onChange={(e) => this.handleMultipleFruit(e)} name="fruit" multiple>
+                <option value="grapefruit">葡萄柚</option>
+                <option value="lime">酸橙</option>
+                <option value="coconut">椰子</option>
+                <option value="mango">芒果</option>
+              </select>
+            </label>
           </div>
           {/* 单选 */}
           <div>
