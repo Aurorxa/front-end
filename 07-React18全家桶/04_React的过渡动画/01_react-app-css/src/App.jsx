@@ -6,7 +6,7 @@ class App extends React.PureComponent{
   
   state = {
     message: '我是 App 组件',
-    isShow: false
+    isShow: true
   }
   
   h2Ref = React.createRef()
@@ -23,7 +23,7 @@ class App extends React.PureComponent{
     return (
       <div>
         <button onClick={() => this.change()}>切换</button>
-        <CSSTransition in={isShow} nodeRef={this.h2Ref} classNames="h2" timeout={2000} unmountOnExit>
+        <CSSTransition in={isShow} nodeRef={this.h2Ref} classNames="h2" timeout={2000} unmountOnExit appear>
           <h2 ref={this.h2Ref}>{this.state.message}</h2>
         </CSSTransition>
       </div>
