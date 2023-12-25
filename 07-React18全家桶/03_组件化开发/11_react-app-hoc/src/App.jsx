@@ -1,28 +1,35 @@
 import React, {PureComponent} from 'react'
-import Home from "@/components/Home"
-import ThemeContext, {themes} from "@/context/themeContext"
+import Cart from "@/components/Cart"
 
 class App extends PureComponent {
   
   state = {
     message: '我是 App 组件',
-    theme: themes.light
+    isLogin: false
   }
   
-  changeTheme() {
-    this.setState(state => ({
-      theme: state.theme === themes.dark ? themes.light : themes.dark,
-    }));
+  btnLogin() {
+    localStorage.setItem('token', 'token')
+    this.setState({
+      isLogin: true
+    })
+  }
+  
+  btnLogout() {
+    localStorage.removeItem('token')
+    this.setState({
+      isLogin: false
+    })
   }
   
   render() {
+    const {isLogin} = this.state
     return (
       <div style={{backgroundColor: 'pink', padding: '10px', width: '500px'}}>
         <h2>{this.state.message}</h2>
-        <button onClick={() => this.changeTheme()}>切换主题</button>
-        <ThemeContext.Provider value={this.state.theme}>
-          <Home/>
-        </ThemeContext.Provider>
+        {!isLogin ? <button onClick={() => this.btnLogin()}>登录</button> :
+          <button onClick={() => this.btnLogout()}>注销</button>}
+        <Cart/>
       </div>
     )
   }
