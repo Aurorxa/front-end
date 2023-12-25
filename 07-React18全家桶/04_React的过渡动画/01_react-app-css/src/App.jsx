@@ -22,7 +22,7 @@ class App extends React.PureComponent{
     return (
       <div>
         <button onClick={() => this.change()}>切换</button>
-        <CSSTransition in={isShow} nodeRef={this.h2Ref} classNames="h2" timeout={200} unmountOnExit>
+        <CSSTransition in={isShow} nodeRef={this.h2Ref} classNames="h2" timeout={2000} unmountOnExit>
           <h2 ref={this.h2Ref}>{this.state.message}</h2>
         </CSSTransition>
       </div>
