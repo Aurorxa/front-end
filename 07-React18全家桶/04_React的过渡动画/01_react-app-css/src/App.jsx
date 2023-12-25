@@ -10,6 +10,7 @@ class App extends React.PureComponent{
   }
   
   h2Ref = React.createRef()
+  
   change(){
     this.setState({
       isShow:!this.state.isShow
