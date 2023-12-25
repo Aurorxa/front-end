@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class Login extends Component {
   
   state = {
-    message: '我是 Cart 组件',
+    message: '我是 Login 组件',
   }
   render() {
     return (
