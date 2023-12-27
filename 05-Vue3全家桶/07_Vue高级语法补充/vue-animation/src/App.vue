@@ -32,8 +32,5 @@ const change = () => {
 
 .v-enter-active, .v-leave-active {
   transition: all 2s ease;
-
 }
-
-
 </style>
