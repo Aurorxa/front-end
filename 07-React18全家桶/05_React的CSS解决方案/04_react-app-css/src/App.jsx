@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
-import {AppWrapper, Button, NewButton} from "@/App.style"
+import {AppWrapper} from "@/App.style"
+import Home from "@/components/Home";
 
 
 class App extends PureComponent {
@@ -9,10 +10,11 @@ class App extends PureComponent {
   }
   
   render() {
+    const {message} = this.state
     return (
       <AppWrapper>
-        <Button>正常的按钮</Button>
-        <NewButton>新的按钮</NewButton>
+        <div className="appWrapper-title">{message}</div>
+        <Home/>
       </AppWrapper>
     )
   }
