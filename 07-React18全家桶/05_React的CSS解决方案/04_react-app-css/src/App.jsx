@@ -1,21 +1,24 @@
 import React, {PureComponent} from 'react'
-import {AppWrapper} from "@/App.style"
-import Home from "@/components/Home";
+import classNames from "classnames";
 
 
 class App extends PureComponent {
   
-  state = {
-    message: '我是 App 组件',
-  }
+  state = {}
   
   render() {
-    const {message} = this.state
     return (
-      <AppWrapper>
-        <div className="appWrapper-title">{message}</div>
-        <Home/>
-      </AppWrapper>
+      <div>
+        <div className={classNames('foo', 'bar')}>'foo bar'</div>
+        <div className={classNames('foo', {bar: true})}>'foo bar'</div>
+        <div className={classNames({'foo-bar': true})}>'foo-bar'</div>
+        <div className={classNames({'foo-bar': false})}>''</div>
+        <div className={classNames({foo: true}, {bar: true})}>'foo bar'</div>
+        <div className={classNames({foo: true, bar: true})}>'foo bar'</div>
+        <div className={classNames('foo', {bar: true, duck: false}, 'baz', {qux: true})}>'foo bar baz qux'</div>
+        <div className={classNames(null, false, 'bar', undefined, 0, 1, {baz: null}, '')}>'bar 1'</div>
+        <div className={classNames('a', ['b', {c: true, d: false}])}>'a b c'</div>
+      </div>
     )
   }
 }
