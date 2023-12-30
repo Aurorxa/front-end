@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import store from "@/store"
+import {addCountAction, subCountAction} from "@/store/actionCreateor"
 
 class App extends PureComponent {
   
@@ -8,11 +9,11 @@ class App extends PureComponent {
   }
   
   add(num) {
-    store.dispatch({type: 'INCREMENT', payload: num})
+    store.dispatch(addCountAction(num))
   }
   
   sub(num) {
-    store.dispatch({type: 'DECREMENT', payload: num})
+    store.dispatch(subCountAction(num))
   }
   
   componentDidMount() {
