@@ -1,4 +1,4 @@
-import * as ActionTypes from './Constant'
+import * as ActionTypes from './constant'
 
 /**
  * 添加计数器

@@ -1,4 +1,4 @@
-import * as ActionTypes from './Constant'
+import * as ActionTypes from './constant'
 // 初始化的 state
 const initialState = {
   count: 0
