@@ -8,7 +8,6 @@ class Home extends PureComponent {
     message: '我是 Home 组件',
   }
   
-  
   render() {
     const {message} = this.state
     console.log('Home props', this.props)
@@ -31,26 +30,10 @@ class Home extends PureComponent {
 // connect(fn1,fn2) 函数的返回值是高阶组件
 // 其中， fn1 是将 state 映射到 props 上，通常命名为 mapStateToProps
 // 其中，fn2 是将 dispatch 映射到 props 上，通常命名为 mapDispatchToProps
-// connect(mapStateToProps, mapDispatchToProps)(Home)
-
-/*function mapStateToProps(state) {
-  return {
-    count: state.count
-  }
-}*/
 
 const mapStateToProps = (state) => ({
   count: state.count
 })
-
-/*
-function mapDispatchToProps(dispatch) {
-  return {
-    add: (num) => dispatch(addCountAction(num)),
-    sub: (num) => dispatch(subCountAction(num))
-  }
-}
-*/
 
 const mapDispatchToProps = (dispatch) => ({
   add: (num) => dispatch(addCountAction(num)),
