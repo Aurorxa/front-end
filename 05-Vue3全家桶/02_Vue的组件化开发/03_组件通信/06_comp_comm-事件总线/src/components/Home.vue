@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    Home
+    Counter
     <HomeBanner/>
   </div>
 </template>
@@ -9,7 +9,7 @@
 import HomeBanner from "@/components/HomeBanner.vue";
 
 export default {
-  name: "Home",
+  name: "Counter",
   components: {
     HomeBanner
   }

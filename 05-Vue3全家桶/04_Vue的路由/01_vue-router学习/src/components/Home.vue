@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    我是 Home 组件
+    我是 Counter 组件
   </div>
 </template>
 

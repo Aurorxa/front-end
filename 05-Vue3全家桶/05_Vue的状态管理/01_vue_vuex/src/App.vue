@@ -3,14 +3,14 @@
     <h2>App 组件，当前计数为：{{ count }}</h2>
     <h2>App 组件，名字：{{ name }}</h2>
     <h2>App 组件，年龄：{{ age }}</h2>
-    <Home/>
+    <Counter/>
   </div>
 </template>
 
 <script setup>
 import {computed} from "vue";
 import {useStore} from "vuex";
-import Home from "@/components/Home.vue";
+import Counter from "@/components/Counter.vue";
 import useState from "@/hooks/useState";
 
 const store = useStore()

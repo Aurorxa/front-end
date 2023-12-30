@@ -1,19 +1,19 @@
 <template>
   <div class="app">
     <h2>当前计数：{{ count }}</h2>
-    <Home/>
+    <Counter/>
     <button @click="count++">点我+1</button>
   </div>
 </template>
 
 <script>
-import Home from "@/components/Home.vue";
+import Counter from "@/components/Counter.vue";
 import {computed} from "vue";
 
 export default {
   name: 'App',
   components: {
-    Home
+    Counter
   },
   data() {
     return {

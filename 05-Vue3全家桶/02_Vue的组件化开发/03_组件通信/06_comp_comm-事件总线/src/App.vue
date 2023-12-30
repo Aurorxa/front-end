@@ -1,20 +1,20 @@
 <template>
   <div class="app">
     <h2>当前计数：{{ count }}</h2>
-    <Home v-if="isShow"/>
+    <Counter v-if="isShow"/>
     <button @click="handleClick">点我+1</button>
     <button @click="handleShow">是否显示</button>
   </div>
 </template>
 
 <script>
-import Home from "@/components/Home.vue";
+import Counter from "@/components/Counter.vue";
 import emitter from "@/utils/event-bus";
 
 export default {
   name: 'App',
   components: {
-    Home
+    Counter
   },
   data() {
     return {
