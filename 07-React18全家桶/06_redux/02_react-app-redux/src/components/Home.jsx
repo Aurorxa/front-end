@@ -39,7 +39,9 @@ class Home extends PureComponent {
   }
 }*/
 
-const mapStateToProps = (state) => ({count: state.count})
+const mapStateToProps = (state) => ({
+  count: state.count
+})
 
 /*
 function mapDispatchToProps(dispatch) {
