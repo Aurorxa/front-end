@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import store from "@/store"
-import {addCountAction, subCountAction} from "@/store/actionCreateor"
+import {addCountAction, subCountAction} from "@/store/actionCreators"
 
 class Counter extends PureComponent {
   
