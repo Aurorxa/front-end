@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import {addBannerAction} from "@/store/actionCreators";
+import {addBannerAction} from "@/store/actionCreators"
 
 class Banner extends PureComponent {
   
