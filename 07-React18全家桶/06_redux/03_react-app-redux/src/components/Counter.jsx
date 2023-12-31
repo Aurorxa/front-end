@@ -26,7 +26,7 @@ class Counter extends PureComponent {
 }
 
 // connect(fn1,fn2) 函数的返回值是高阶组件
-// 其中， fn1 是将 state 映射到 props 上，通常命名为 mapStateToProps
+// 其中，fn1 是将 state 映射到 props 上，通常命名为 mapStateToProps
 // 其中，fn2 是将 dispatch 映射到 props 上，通常命名为 mapDispatchToProps
 
 const mapStateToProps = (state) => ({
