@@ -35,6 +35,7 @@ export const addBannerAction = (payload) => ({
  */
 export const addAsyncBannerAction = () => {
   return (dispatch, getState) => {
+    // 执行异步逻辑操作
     console.log('addAsyncBannerAction', getState())
     setTimeout(() => {
       dispatch(addBannerAction(["banner1", "banner2", "banner3", "banner4"]))
