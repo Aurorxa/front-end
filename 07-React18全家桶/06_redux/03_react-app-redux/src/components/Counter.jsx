@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import {addCountAction, subCountAction} from "@/store/actionCreators"
+import {addCountAction, subCountAction} from "@/store/counter"
 
 class Counter extends PureComponent {
   
@@ -30,7 +30,7 @@ class Counter extends PureComponent {
 // 其中，fn2 是将 dispatch 映射到 props 上，通常命名为 mapDispatchToProps
 
 const mapStateToProps = (state) => ({
-  count: state.count
+  count: state.counter.count // 注意：此处是通过 state.counter.count 获取数据了
 })
 
 const mapDispatchToProps = (dispatch) => ({

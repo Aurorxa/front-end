@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import {addAsyncBannerAction,} from "@/store/actionCreators"
+import {addAsyncBannerAction} from "@/store/banner"
 
 class Banner extends PureComponent {
   
@@ -40,7 +40,7 @@ class Banner extends PureComponent {
 // 其中，fn2 是将 dispatch 映射到 props 上，通常命名为 mapDispatchToProps
 
 const mapStateToProps = (state) => ({
-  banners: state.banners
+  banners: state.banner.banners // 注意：此处是通过 state.banner.banners 获取数据了
 })
 
 const mapDispatchToProps = (dispatch) => ({
