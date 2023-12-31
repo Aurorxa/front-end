@@ -29,3 +29,15 @@ export const addBannerAction = (payload) => ({
   type: ActionTypes.ADD_BANNER,
   payload
 })
+
+/**
+ * 异步添加轮播图
+ */
+export const addAsyncBannerAction = () => {
+  return (dispatch, getState) => {
+    console.log('addAsyncBannerAction', getState())
+    setTimeout(() => {
+      dispatch(addBannerAction(["banner1", "banner2", "banner3", "banner4"]))
+    }, 2000)
+  }
+}

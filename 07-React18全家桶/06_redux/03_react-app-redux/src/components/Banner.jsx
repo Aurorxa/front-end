@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import {addBannerAction} from "@/store/actionCreators"
+import {addAsyncBannerAction,} from "@/store/actionCreators"
 
 class Banner extends PureComponent {
   
@@ -30,10 +30,8 @@ class Banner extends PureComponent {
   }
   
   componentDidMount() {
-    setTimeout(() => {
-      const {add} = this.props
-      add(["banner1", "banner2", "banner3", "banner4"])
-    }, 2000)
+    const {addAsync} = this.props
+    addAsync()
   }
 }
 
@@ -46,7 +44,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  add: (banners) => dispatch(addBannerAction(banners)),
+  addAsync: () => dispatch(addAsyncBannerAction())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner)
