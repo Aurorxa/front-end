@@ -7,10 +7,7 @@ const counterSlice = createSlice({
   },
   reducers: { // 相当于之前的 reducer 函数，即 reducer(state=initialState,action) {}；是对象类型，可以添加很多函数
     increment(state, action) { // 相当于之前的 case 语句
-      return {
-        ...state,
-        count: state.count + action.payload
-      }
+      state.count = state.count + action.payload
     },
     decrement: (state, action) => { // 相当于之前的 case 语句
       return {
