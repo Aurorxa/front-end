@@ -7,7 +7,6 @@ class App extends PureComponent {
   
   
   render() {
-    const {isLogin} = this.state
     return (
       <div>
       
