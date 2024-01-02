@@ -21,21 +21,22 @@ const bannerSlice = createSlice({
       state.banners.push(action?.payload)
     }
   },
-  extraReducers: {
-    [fetchAsyncBannerAction.pending](state, action) {
-      state.status = 'loading'
-      state.loading = true
-    },
-    [fetchAsyncBannerAction.fulfilled](state, action) {
-      state.status = 'succeeded'
-      state.loading = false
-      state.banners = action.payload
-    },
-    [fetchAsyncBannerAction.rejected](state, action) {
-      state.status = 'failed'
-      state.loading = false
-      state.error = action.error.message
-    }
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchAsyncBannerAction.pending, (state) => {
+        state.status = 'loading'
+        state.loading = true
+      })
+      .addCase(fetchAsyncBannerAction.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.loading = false
+        state.banners = action.payload
+      })
+      .addCase(fetchAsyncBannerAction.rejected, (state, action) => {
+        state.status = 'failed'
+        state.loading = false
+        state.error = action?.error?.message
+      })
   }
 })
 
