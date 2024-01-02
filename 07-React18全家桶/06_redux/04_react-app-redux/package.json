@@ -40,6 +40,6 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "code-inspector-plugin": "^0.3.1"
+    "code-inspector-plugin": "^0.3.2"
   }
 }
