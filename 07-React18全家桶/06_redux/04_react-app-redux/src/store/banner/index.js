@@ -11,18 +11,31 @@ export const fetchAsyncBannerAction = createAsyncThunk('banner/fetchAsyncBanner'
 const bannerSlice = createSlice({
   name: 'banner',
   initialState: {
-    banners: []
+    banners: [],
+    status: 'idle', // status: 'idle' | 'loading' | 'succeeded' | 'failed'
+    loading: false,
+    error: null //  error: string | null
   },
-  reducers: {
+  reducers: { // 同步
     addBanner(state, action) {
       state.banners.push(action?.payload)
     }
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchAsyncBannerAction.fulfilled, (state, action) => {
-        state.banners = action.payload
-      })
+  extraReducers: {
+    [fetchAsyncBannerAction.pending](state, action) {
+      state.status = 'loading'
+      state.loading = true
+    },
+    [fetchAsyncBannerAction.fulfilled](state, action) {
+      state.status = 'succeeded'
+      state.loading = false
+      state.banners = action.payload
+    },
+    [fetchAsyncBannerAction.rejected](state, action) {
+      state.status = 'failed'
+      state.loading = false
+      state.error = action.error.message
+    }
   }
 })
 
