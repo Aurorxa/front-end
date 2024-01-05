@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-
+import {withRouter} from "@/hoc/withRouter"
 
 class Home extends PureComponent {
   
@@ -8,13 +8,15 @@ class Home extends PureComponent {
   }
   
   render() {
+    const {router: {navigate}} = this.props
     const {message} = this.state
     return (
       <div>
         <h2>{message}</h2>
+        <button onClick={() => navigate("/about")}>跳转到 About 页面</button>
       </div>
     )
   }
 }
 
-export default Home
+export default withRouter(Home)
