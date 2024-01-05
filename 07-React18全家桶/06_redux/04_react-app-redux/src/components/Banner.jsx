@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from "react-redux";
-import {fetchAsyncBannerAction} from "@/store/banner"
+import {addAsyncBanner} from "@/store/banner"
 
 class Banner extends PureComponent {
   
@@ -11,11 +11,11 @@ class Banner extends PureComponent {
   render() {
     const {message} = this.state
     console.log('Banner', this.props)
-    const {banners, addAsyncBanner} = this.props
+    const {banners, addBanner} = this.props
     return (
       <div>
         <h2>{message}</h2>
-        <button onClick={() => addAsyncBanner()}>异步获取数据</button>
+        <button onClick={() => addBanner()}>异步获取数据</button>
         <h3>轮播图的数据：</h3>
         <ul>
           {
@@ -34,6 +34,6 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  addAsyncBanner: () => dispatch(fetchAsyncBannerAction()),
+  addBanner: () => dispatch(addAsyncBanner()),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Banner)
