@@ -4,7 +4,7 @@ import {composeWithDevToolsDevelopmentOnly} from '@redux-devtools/extension'
 import combination from "@/store/reducers"
 
 const composeEnhancers = composeWithDevToolsDevelopmentOnly({
-    trace: true // 跟踪源码
+  trace: true // 跟踪源码
 });
 
 // 创建 Store 对象
