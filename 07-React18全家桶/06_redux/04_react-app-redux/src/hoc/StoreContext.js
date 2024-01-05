@@ -4,4 +4,6 @@ import {createContext} from 'react'
 const StoreContext = createContext({})
 
 // 导出
-export default StoreContext
+export {
+  StoreContext
+}

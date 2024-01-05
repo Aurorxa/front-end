@@ -1,5 +1,5 @@
 import {PureComponent} from "react"
-import {connect} from "@/hoc/connect"
+import {connect} from "@/hoc"
 import {decrement, increment} from "@/store/counter"
 
 class Home extends PureComponent {

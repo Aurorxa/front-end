@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from '@/App'
 import store from "@/store"
-import StoreContext from "@/context/StoreContext"
+import {StoreContext} from "@/hoc"
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

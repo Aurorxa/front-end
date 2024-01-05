@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-import {connect} from "react-redux";
+import {connect} from "@/hoc"
 import {addAsyncBanner} from "@/store/banner"
 
 class Banner extends PureComponent {

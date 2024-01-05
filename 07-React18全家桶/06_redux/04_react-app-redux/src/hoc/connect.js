@@ -1,5 +1,5 @@
 import {PureComponent} from "react"
-import StoreContext from "@/context/StoreContext"
+import {StoreContext} from "./StoreContext"
 
 /**
  * connect
