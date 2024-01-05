@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-import {NavLink, Route, Routes} from "react-router-dom"
+import {Navigate, NavLink, Route, Routes} from "react-router-dom"
 import Home from "@/components/Home"
 import '@/App.css'
 import About from "@/components/About"
@@ -36,7 +36,7 @@ class App extends PureComponent {
                   注册路由的映射关系：path ==> Component
                 */}
                 <Routes>
-                  <Route path={"/"} element={<Home/>}></Route>
+                  <Route path={"/"} element={<Navigate to={"/home"}/>}></Route>
                   <Route path={"/home"} element={<Home/>}></Route>
                   <Route path={"/about"} element={<About/>}></Route>
                 </Routes>
