@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from '@/App'
-import {Provider} from "react-redux"
 import store from "@/store"
+import StoreContext from "@/context/StoreContext"
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <Provider store={store}>
+  <StoreContext.Provider value={store}>
     <React.StrictMode>
       <App/>
     </React.StrictMode>
-  </Provider>
+  </StoreContext.Provider>
 )
 

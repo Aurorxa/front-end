@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react'
-import Counter from "@/components/Counter"
-import Banner from "@/components/Banner"
+import Home from "@/components/Home"
 
 class App extends PureComponent {
   
@@ -10,10 +9,13 @@ class App extends PureComponent {
     return (
       <div>
         <div style={{background: "pink", padding: '10px', width: '500px'}}>
-          <Counter/>
+          {/*<Counter/>*/}
         </div>
         <div style={{background: "skyblue", padding: '10px', width: '500px'}}>
-          <Banner/>
+          {/*<Banner/>*/}
+        </div>
+        <div style={{background: "orange", padding: '10px', width: '500px'}}>
+          <Home/>
         </div>
       </div>
     )
