@@ -1,19 +1,19 @@
 import React, {PureComponent} from 'react'
-import CounterClass from "@/components/CounterClass"
-import CounterFunction from "@/components/CounterFunction"
+import ClockFunction from "@/components/ClockFunction"
 
 class App extends PureComponent {
   
-  state = {}
+  state = {
+    isClassShow: true,
+    isFunctionShow: true,
+  }
   
   render() {
+    const {isClassShow, isFunctionShow} = this.state
     return (
       <div>
-        <div style={{background: 'pink', padding: "20px"}}>
-          <CounterClass/>
-        </div>
         <div style={{background: 'skyblue', padding: "20px"}}>
-          <CounterFunction/>
+          {isFunctionShow && <ClockFunction/>}
         </div>
       </div>
     )
