@@ -6,6 +6,14 @@ class CounterClass extends PureComponent {
     count: 0
   }
   
+  componentDidMount() {
+    document.title = `类式组件，点击了 ${this.state.count} 次`
+  }
+  
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    document.title = `类式组件，点击了 ${this.state.count} 次`
+  }
+  
   add() {
     this.setState({
       count: this.state.count + 1

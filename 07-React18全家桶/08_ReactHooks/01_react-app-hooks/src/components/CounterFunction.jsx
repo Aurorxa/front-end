@@ -1,8 +1,13 @@
-import {memo, useState} from "react"
+import {memo, useEffect, useState} from "react"
 
 function CounterFunction() {
   
   const [count, setCount] = useState(0)
+  
+  useEffect(() => {
+    document.title = `函数式组件：点击了 ${count} 次`
+  })
+  
   
   return (
     <div>
