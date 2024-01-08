@@ -16,7 +16,7 @@ class CounterClass extends PureComponent {
     const {count} = this.state
     return (
       <div>
-        <h2>当前计数为：{count}</h2>
+        <h2>类式组件，当前计数为：{count}</h2>
         <button onClick={() => this.add()}>点我+1</button>
       </div>
     )

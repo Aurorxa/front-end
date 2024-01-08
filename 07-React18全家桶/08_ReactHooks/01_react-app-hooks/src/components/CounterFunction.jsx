@@ -6,7 +6,7 @@ function CounterFunction() {
   
   return (
     <div>
-      <h2>当前计数为：{count}</h2>
+      <h2>函数式组件，当前计数为：{count}</h2>
       <button onClick={() => setCount(count + 1)}>点我+1</button>
     </div>
   )
