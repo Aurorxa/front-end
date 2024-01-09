@@ -1,6 +1,6 @@
-import {createContext} from "react";
+import {createContext} from "react"
 
-export const themes = {
+export const themes = { // 主题
   light: {
     foreground: "red",
     background: "pink"
@@ -11,4 +11,5 @@ export const themes = {
   }
 };
 
+// 主题上下文
 export const ThemeContext = createContext(themes.light)
