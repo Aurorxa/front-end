@@ -6,6 +6,6 @@ export function useLoggingLifeCycle(componentName) {
     return () => {
       console.log(`${componentName}组件被销毁了`)
     }
-  }, [])
+  }, [componentName])
 }
 
