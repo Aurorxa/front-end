@@ -5,15 +5,16 @@ import {Provider} from "react-redux"
 import store from '@/store'
 import '@/index.css'
 import {NextUIProvider} from "@nextui-org/react";
+import {enableMapSet} from "immer"
+
+enableMapSet()
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <NextUIProvider>
-        <App/>
-      </NextUIProvider>
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <NextUIProvider>
+      <App/>
+    </NextUIProvider>
+  </Provider>
 )
 

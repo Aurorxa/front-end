@@ -1,6 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
 import axios from "axios";
 
+import {produce} from "immer"
+
+
 const BASE_URL = "https://jsonplaceholder.typicode.com/posts"
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
@@ -20,7 +23,6 @@ export const deletePost = createAsyncThunk("post/deletePost", async (initialPost
   }
 })
 
-
 const postSlice = createSlice({
   name: "posts",
   initialState: {
@@ -35,8 +37,10 @@ const postSlice = createSlice({
         state.status = "loading"
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
-        state.status = "succeeded"
-        state.posts = state.posts.concat(action.payload);
+        return produce(state, draftState => {
+          draftState.status = "succeeded";
+          draftState.posts = Array.from(new Set([...draftState.posts, ...action.payload]));
+        });
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed"

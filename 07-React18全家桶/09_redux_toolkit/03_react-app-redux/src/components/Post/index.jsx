@@ -53,7 +53,7 @@ function Post() {
             <TableBody items={posts}>
               {
                 (item) => (
-                  <TableRow key={item.key}>
+                  <TableRow key={item.id}>
                     {
                       (columnKey) => {
                         if (columnKey === "author") {
