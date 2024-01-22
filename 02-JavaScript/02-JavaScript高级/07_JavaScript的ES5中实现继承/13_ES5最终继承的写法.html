@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function inherit(SubType, SuperType) {
+      SubType.prototype = Object.create(SuperType.prototype)
+      Object.defineProperty(SubType, "constructor", {
+        enumerable: false,
+        value: SubType
+      })
+    }
+  </script>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    Person.prototype.running = function () {
+      console.log(this.name + " is running")
+    }
+
+    function Student(name, age, score) {
+      Person.call(this, name, age)
+      this.score = score
+    }
+
+    // 将父类的所有方法继承过来
+    inherit(Student, Person)
+
+    var stu = new Student("张三", 18, 20)
+    console.log(stu)
+    stu.running()
+
+  </script>
+</body>
+</html>

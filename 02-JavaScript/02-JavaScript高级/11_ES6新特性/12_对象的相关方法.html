@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: "张三"
+    }
+
+    obj.__proto__.age = 10
+
+    console.log(Object.hasOwn(obj, "name")) // true
+    console.log(Object.hasOwn(obj, "age")) // false
+
+    const obj2 = Object.create(null)
+    obj2.name = "李四"
+
+    console.log(Object.hasOwn(obj2, "name")) // true
+
+  </script>
+</body>
+</html>

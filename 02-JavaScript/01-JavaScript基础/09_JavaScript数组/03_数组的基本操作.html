@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title></title>
+</head>
+<body>
+  <script>
+    /* 数组的声明语法 */
+    var arr = ['张三', '李四', '王五', '赵六'];
+    /* 访问数组中的元素 */
+    console.log(arr[0]) // 张三
+    // 修改数组中的元素
+    arr[0] = "田七"
+    console.log(arr[0]) // 田七
+    // 新增数组中的元素（了解）
+    arr[arr.length] = "呵呵哒"
+    console.log(arr) // ['田七', '李四', '王五', '赵六', '呵呵哒']
+    // 删除数组中的元素 （了解）
+    delete arr[0]
+    console.log(arr) // [empty, '李四', '王五', '赵六', '呵呵哒']
+  </script>
+</body>
+</html>

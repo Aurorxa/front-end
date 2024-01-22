@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <p>我是p元素</p>
+  </div>
+  <button class="btn">按钮</button>
+
+  <script>
+    // 获取 box 元素
+    var boxEl = document.querySelector(".box")
+    // 获取按钮元素
+    var btnEl = document.querySelector(".btn")
+    // 获取 body 元素
+    var bodyEl = document.body
+    // 添加点击事件
+    btnEl.onclick = function () {
+      // 复制元素
+      var cloneEl = boxEl.cloneNode()
+      // 插入到页面上
+      bodyEl.append(cloneEl)
+    }
+  </script>
+
+</body>
+</html>

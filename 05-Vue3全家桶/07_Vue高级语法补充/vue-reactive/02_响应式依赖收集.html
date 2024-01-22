@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: '许大仙',
+      age: 18
+    }
+
+    function foo() {
+      console.log('foo', obj.name)
+      console.log('foo', obj.age)
+      console.log('foo 函数')
+    }
+
+    function bar() {
+      console.log('bar', obj.name + 'foo')
+      console.log('bar', obj.age + 2)
+      console.log('bar 函数')
+    }
+
+    // 设计专门执行响应式函数的函数
+    const reactiveFns = []
+
+    function watchFn(fn) {
+      reactiveFns.push(fn)
+      fn()
+    }
+
+    watchFn(foo)
+    watchFn(bar)
+
+    // 修改了 obj 的属性
+    console.log('name 发生了变化 。。。。。。。。。。。。')
+    obj.name = '李四'
+    reactiveFns.forEach(fn => fn())
+
+  </script>
+</body>
+</html>

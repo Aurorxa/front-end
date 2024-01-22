@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function Foo() {
+      // ① 创建空对象
+      // ② 将 Foo 的 prototype 原型赋值给空对象的 __proto__
+    }
+
+    console.log(Foo.prototype)
+
+    var f1 = new Foo()
+    var f2 = new Foo()
+    var f3 = new Foo()
+    var f4 = new Foo()
+
+    console.log(f1.__proto__ == Foo.prototype) // true
+    console.log(f2.__proto__ == Foo.prototype) // true
+    console.log(f3.__proto__ == Foo.prototype) // true
+    console.log(f4.__proto__ == Foo.prototype) // true
+
+  </script>
+</body>
+</html>

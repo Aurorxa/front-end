@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <button class="home">跳转到home页面</button>
+  <button class="about">跳转到about页面</button>
+  <button class="contact">跳转到contact页面</button>
+
+  <script>
+    // 定义路由表
+    const routes = {
+      '/home': '主页',
+      '/about': '关于',
+      '/contact': '联系我'
+    }
+
+    // 监听 hash 的变化
+    window.addEventListener('popstate', function () {
+      const path = window.location.pathname
+      console.log(`path：${path}`)
+      const app = document.querySelector("#app")
+
+      // 根据哈希值找到对应的页面内容或逻辑
+      if (routes[path]) {
+        app.innerHTML = routes[path];
+      } else {
+        app.innerHTML = '页面走了~';
+      }
+    })
+
+    // 获取元素
+    let homeEl = document.querySelector(".home")
+    let aboutEl = document.querySelector(".about")
+    let contactEl = document.querySelector(".contact")
+
+    // 注册事件监听器
+    homeEl.addEventListener('click', function () {
+      window.history.pushState({}, '', "/home")
+      window.dispatchEvent(new PopStateEvent('popstate'))
+    })
+    aboutEl.addEventListener('click', function () {
+      window.history.pushState({}, '', "/about")
+      window.dispatchEvent(new PopStateEvent('popstate'))
+    })
+    contactEl.addEventListener('click', function () {
+      window.history.pushState({}, '', "/contact")
+      window.dispatchEvent(new PopStateEvent('popstate'))
+    })
+
+  </script>
+</body>
+</html>

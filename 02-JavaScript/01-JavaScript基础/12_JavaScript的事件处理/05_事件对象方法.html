@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <button class="btn">按钮</button>
+  </div>
+
+  <script>
+    // 获取元素
+    var boxEl = document.querySelector(".box")
+    var btnEl = document.querySelector(".btn")
+    var bodyEl = document.body
+    // 添加事件
+    btnEl.addEventListener("click", function () {
+      console.log("btn发生了点击")
+    })
+    boxEl.addEventListener("click", function (event) {
+      // 阻止事件的进一步传递（传播）
+      event.stopPropagation()
+    })
+    bodyEl.addEventListener("click", function () {
+      console.log("body发生了点击")
+    })
+  </script>
+</body>
+</html>

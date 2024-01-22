@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function Person(name, age, gender) {
+      this.name = name
+      this.age = age
+      this.gender = gender
+    }
+
+    Person.prototype.running = function () {
+      console.log(`${this.name}正在跑步...`)
+    }
+
+    Person.prototype.eating = function () {
+      console.log(`${this.name}正在吃饭...`)
+    }
+
+    Person.prototype.sleeping = function () {
+      console.log(`${this.name}正在睡觉...`)
+    }
+
+    function Student(name, age, gender, score) {
+      Person.call(this, name, age, gender)
+      this.score = score
+    }
+
+    Student.prototype = new Person()
+
+    Student.prototype.studying = function () {
+      console.log(`${this.name}正在学习...，考了 ${this.score} 分`)
+    }
+
+    var stu1 = new Student("张三", 18, "男", 60)
+    var stu2 = new Student("李四", 28, "女", 80)
+
+    console.dir(stu1)
+
+    stu1.running()
+    stu1.studying()
+    stu2.eating()
+    stu2.sleeping()
+
+  </script>
+</body>
+</html>

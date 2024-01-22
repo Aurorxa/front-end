@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <div class="counter">0</div>
+  <button class="btn">点击+1</button>
+
+  <script>
+    var counterEl = document.querySelector(".counter")
+    var btnEl = document.querySelector(".btn")
+
+    btnEl.onclick = function () {
+      var count = Number(counterEl.textContent)
+      ++count
+      counterEl.textContent = count.toString()
+    }
+  </script>
+
+</body>
+</html>

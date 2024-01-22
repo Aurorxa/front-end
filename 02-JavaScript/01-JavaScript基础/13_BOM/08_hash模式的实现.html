@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <button class="home">跳转到home页面</button>
+  <button class="about">跳转到about页面</button>
+  <button class="contact">跳转到contact页面</button>
+
+  <script>
+    // 定义路由表
+    const routes = {
+      '#/home': '主页',
+      '#/about': '关于',
+      '#/contact': '联系我'
+    }
+
+    // 监听 hash 的变化
+    window.addEventListener('hashchange', function () {
+      const hash = window.location.hash
+      console.log(`hash：${hash}`)
+      const app = document.querySelector("#app")
+
+      // 根据哈希值找到对应的页面内容或逻辑
+      if (routes[hash]) {
+        app.innerHTML = routes[hash];
+      } else {
+        app.innerHTML = '页面走了~';
+      }
+    })
+
+    // 获取元素
+    let homeEl = document.querySelector(".home")
+    let aboutEl = document.querySelector(".about")
+    let contactEl = document.querySelector(".contact")
+
+    // 注册事件监听器
+    homeEl.addEventListener('click', function () {
+      window.location.hash = "/home"
+    })
+    aboutEl.addEventListener('click', function () {
+      window.location.hash = "/about"
+    })
+    contactEl.addEventListener('click', function () {
+      window.location.hash = "/contact"
+    })
+
+  </script>
+</body>
+</html>

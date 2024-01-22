@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 定义一个非纯函数
+    function printInfo(info) {
+      console.log(info.name, info.age, info.message) // 张三 18 呵呵
+      info.flag = "已经打印结束"
+    }
+
+    var obj = {
+      name: "张三",
+      age: 18,
+      message: "呵呵"
+    }
+
+    printInfo(obj)
+
+    console.log(obj) // {name: '张三', age: 18, message: '呵呵', flag: '已经打印结束'}
+  </script>
+</body>
+</html>

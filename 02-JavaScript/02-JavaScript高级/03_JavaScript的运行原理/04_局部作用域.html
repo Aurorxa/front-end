@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 局部作用域是指在函数内部声明的变量和函数，它们只能在函数内部访问。 */
+    function localScope() {
+      var localVariable = 20;
+      console.log(localVariable) // 输出 20
+    }
+
+    localScope()
+    console.log(localVariable) // 报错，无法访问局部变量 localVariable is not defined
+
+  </script>
+</body>
+</html>

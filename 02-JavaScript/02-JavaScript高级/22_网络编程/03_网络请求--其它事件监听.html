@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // ① 创建 XMLHttpRequest 对象
+    const xhr = new XMLHttpRequest()
+    // ② 监听 XMLHttpRequest 对象状态的变化
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        console.log(xhr.responseText)
+
+        const json = JSON.parse(xhr.responseText)
+        console.log(json)
+      }
+    }
+    // 请求开始
+    xhr.onloadstart = function (ev) {
+      console.log('请求开始', ev)
+    }
+    // 请求结束
+    xhr.onloadend = function (ev) {
+      console.log('请求结束', ev)
+    }
+    // ③ 配置网络请求
+    xhr.open('GET', 'http://123.207.32.32:8000/home/multidata')
+    // ④ 发送网络请求
+    xhr.send()
+  </script>
+</body>
+</html>

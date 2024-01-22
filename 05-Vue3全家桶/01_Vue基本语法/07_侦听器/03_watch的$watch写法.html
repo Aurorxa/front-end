@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h2>{{message}}</h2>
+    <div>
+      <h2>个人信息</h2>
+      <p>姓名：{{info.name}}</p>
+      <p>年龄：{{info.age}}</p>
+    </div>
+    <button @click="changeMessage">点我</button>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          message: 'Hello World',
+          info: {
+            name: '张三',
+            age: 18
+          }
+        }
+      },
+      methods: {
+        changeMessage() {
+          this.message = '你好，李焕英~'
+          this.info.name = "李焕英"
+        }
+      },
+      watch: {
+        message(newValue, oldValue) {
+          console.log('message发生了变化', newValue, oldValue)
+        },
+        /*
+          watch 默认是浅层的：被侦听的属性，仅在被赋新值时，才会触发回调函数——而嵌套属性的变化不会触发。
+          如果想侦听所有嵌套的变更，你需要深层侦听器。
+        */
+        // info: {
+        //   handler(newValue, oldValue) {
+        //     console.log('info发生了变化', newValue, oldValue)
+        //   },
+        //   deep: true,
+        //   // 第一次渲染的时候直接执行一次监听器
+        //   immediate: true
+        // }
+      },
+      // 生命周期函数
+      created() {
+        this.$watch('info', (newValue, oldValue) => {
+          console.log('info发生了变化', newValue, oldValue)
+        }, {
+          deep: true,
+          immediate: true
+        })
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>

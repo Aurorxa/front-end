@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 存储
+    localStorage.setItem("name", "张三")
+    localStorage.setItem("age", "18")
+    localStorage.setItem("address", "江苏南京")
+    // 获取
+    console.log(localStorage.getItem("name")) // 张三
+    console.log(localStorage.getItem("age")) // 18
+    console.log(localStorage.getItem("address")) // 江苏南京
+    console.log(localStorage.getItem("school")) // null
+    // 获取存储在 Storage 对象中的数据项数量
+    console.log(localStorage.length) // 3
+    // 根据指定的 key 删除数据项
+    localStorage.removeItem("name")
+    console.log(localStorage.length) // 2
+    // 清空
+    localStorage.clear()
+    console.log(localStorage.length) // 0
+  </script>
+</body>
+</html>

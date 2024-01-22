@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script src="./js/lodash_4.17.21.js"></script>
+  <script>
+    const arr = ['red', 'red', 'green', 'green', 'blue', ['orange', 'purple']]
+    console.log(_.uniq(arr)) // 数组去重
+    console.log(_.flatten(arr)) // 数组扁平化
+    console.log(_.compact([...arr, false, 0, undefined, null, ''])) // 过滤掉非假值
+  </script>
+</body>
+</html>

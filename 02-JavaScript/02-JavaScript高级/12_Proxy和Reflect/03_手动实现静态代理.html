@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 定义一个代理类
+    class Proxy {
+      constructor(target) {
+        this.target = target
+      }
+
+      eating() {
+        console.log("代理对象的请求方法前")
+        this.target.eating()
+        console.log("代理对象的请求方法后")
+      }
+    }
+
+    // 定义一个目标类
+    class Person {
+      constructor(name) {
+        this.name = name
+      }
+
+      eating() {
+        console.log(`${this.name}正在吃饭...`)
+      }
+    }
+
+    // 创建一个人
+    let person = new Person("张三")
+    // 创建一个代理对象
+    let proxy = new Proxy(person)
+    // 通过代理对象调用方法
+    proxy.eating()
+
+  </script>
+</body>
+</html>

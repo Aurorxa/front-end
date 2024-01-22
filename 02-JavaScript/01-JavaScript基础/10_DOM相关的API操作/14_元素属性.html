@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <!--
+      HTML 元素中的属性就是 Attribute
+   -->
+  <div age="18" class="box" id="abc" name="张三" title="box"></div>
+
+  <input checked type="checkbox">
+
+  <script>
+    var boxEl = document.querySelector(".box")
+
+    console.log(`title：${boxEl.title}`) // title：box
+
+    var checkboxEl = document.querySelector("[type=checkbox]")
+    console.log(`checked：${checkboxEl.checked}`) // checked：true
+  </script>
+</body>
+</html>

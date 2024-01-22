@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <!--
+    id、title、class 是全局属性
+    而 name 和 age 是自定义属性
+   -->
+  <div age="18" class="box" id="abc" name="张三" title="box"></div>
+  <a href="#">百度一下</a>
+
+  <script>
+    var boxEl = document.querySelector(".box")
+    // 获取元素中的 attr 对象的集合
+    for (let attribute of boxEl.attributes) {
+      console.log(`属性名：${attribute.name}，属性值：${attribute.value}`)
+    }
+
+    // 判断该元素中是否包含指定名称的属性(Attribute)
+    console.log(boxEl.hasAttribute("name")) // true
+
+    // 获取元素中指定名称的属性值
+    var nameAttributeValue = boxEl.getAttribute("name");
+    console.log(nameAttributeValue) // 张三
+
+    // 根据给定的名称修改元素中的属性值
+    boxEl.setAttribute("name", "李四")
+    nameAttributeValue = boxEl.getAttribute("name");
+    console.log(nameAttributeValue) // 李四
+
+    // 删除元素中指定名称的属性
+    boxEl.removeAttribute("name")
+    console.log(boxEl.hasAttribute("name")) // false
+
+  </script>
+</body>
+</html>

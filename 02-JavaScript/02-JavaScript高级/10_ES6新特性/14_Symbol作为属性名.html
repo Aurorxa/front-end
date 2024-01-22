@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const s1 = Symbol("name")
+    const s2 = Symbol("age")
+
+    // 直接加入到对象中
+    const obj = {
+      [s1]: "许大仙",
+      [s2]: 18
+    }
+
+    console.log(obj) // {Symbol(name): '许大仙', Symbol(age): 18}
+
+  </script>
+</body>
+</html>

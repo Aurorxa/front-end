@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 函数作为头等公民 */
+
+    // ① 函数表达式写法：函数可以被赋予变量
+    var foo = function () {
+      console.log('foo函数被执行');
+    }
+
+    foo()
+
+    // ② 让函数在变量之间来回传递
+    var bar = foo
+    bar()
+
+    // ③ 函数可以作为另外一个函数的参数
+    function baz(fn) {
+      fn()
+    }
+
+    baz(foo)
+
+    // ④ 函数作为另外一种函数的返回值
+    function qux() {
+      return foo
+    }
+
+    var foo2 = qux()
+    foo2()
+
+    // ⑤ 将函数存储在另外一种数据结构中
+    var arr = [foo, bar]
+    arr[0]()
+    arr[1]()
+  </script>
+</body>
+</html>

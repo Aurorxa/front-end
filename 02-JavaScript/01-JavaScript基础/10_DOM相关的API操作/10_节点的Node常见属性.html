@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <!-- 我是注释 -->
+  我是文本
+  <div class="box">
+    我是div元素
+  </div>
+
+  <script>
+    var commentNode = document.body.childNodes[1]
+    var textNode = document.body.childNodes[2]
+    var boxEl = document.body.childNodes[3]
+
+    console.log(commentNode.nodeName)
+    console.log(textNode.nodeName)
+    console.log(boxEl.nodeName, boxEl.tagName)
+
+  </script>
+</body>
+</html>

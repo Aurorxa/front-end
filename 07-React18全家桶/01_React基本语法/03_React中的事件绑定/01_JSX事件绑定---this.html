@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <!-- react：React 的核心 -->
+  <script src='./js/react18.development.js'></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script src='./js/react-dom18.development.js'></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script src='./js/babel.js'></script>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class='app'></div>
+
+  <script type='text/babel'>
+    // 创建根元素
+    const app = ReactDOM.createRoot(document.querySelector('.app'))
+
+    // 创建一个组件
+    class App extends React.Component {
+
+      state = {
+        count: 0
+      }
+
+      btnClick() {
+        this.setState({
+          count: this.state.count + 1
+        })
+      }
+
+      btnClick2 = () => {
+        this.setState({
+          count: this.state.count + 1
+        })
+      }
+
+      btnClick3() {
+        this.setState({
+          count: this.state.count + 1
+        })
+      }
+
+      render() {
+        const {count} = this.state
+        return (
+            <div>
+              <h2>当前计数为：{count}</h2>
+              {/* 之所以也可以成功，是因为 render 方法中是可以访问 this 的，而我们就可以手动的通过 bind 来对 btnClick 方法进行 this 绑定了*/}
+              <button onClick={this.btnClick.bind(this)}>点我</button>
+              {/* ES6 的 class fields */}
+              <button onClick={this.btnClick2}>点我</button>
+              {/* 直接传入一个箭头函数 */}
+              <button onClick={() => alert("abc")}>点我</button>
+              <button onClick={() => this.btnClick3()}>点我</button>
+            </div>
+        )
+      }
+    }
+
+    // 渲染组件
+    app.render(<App/>)
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function foo(a, b) {
+      b = (b === undefined || b === null) ? "我是默认值" : b
+      console.log(a, b)
+    }
+
+    foo(1, false) // 1 false
+    foo(1, '') // 1 ''
+    foo(1, undefined) // 1 '我是默认值'
+    foo(1, null) // 1 '我是默认值'
+    foo(1, 0) // 1 0
+    foo(1, 2) // 1 2
+
+
+    // ES6+ 之后新增了 ??
+    function foo2(a, b) {
+      b = b ?? "我是默认值"
+      console.log(a, b)
+    }
+
+    foo2(1, false) // 1 false
+    foo2(1, '') // 1 ''
+    foo2(1, undefined) // 1 '我是默认值'
+    foo2(1, null) // 1 '我是默认值'
+    foo2(1, 0) // 1 0
+    foo2(1, 2) // 1 2
+
+  </script>
+</body>
+</html>

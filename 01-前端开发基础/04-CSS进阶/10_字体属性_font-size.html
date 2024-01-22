@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .home {
+      font-size: 20px;
+    }
+
+    .box {
+      /*
+        .box 盒子会继承 .home 盒子的 font-size ，即 20px ；所以，.box 盒子的 font-size 就是 20px;
+        而 2em = 2 * font-size = 2 * 20px = 40px 。
+      */
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="home">
+    <div class="box">我是div元素</div>
+  </div>
+</body>
+</html>

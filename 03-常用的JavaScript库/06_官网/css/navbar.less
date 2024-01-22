@@ -1,0 +1,97 @@
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 16px);
+    width: 100%;
+    margin: 0 -16px;
+    color: var(--bg-color);
+    background-color: var(--bg-nav-color);
+    opacity: 0.9;
+    z-index: 100;
+
+    .link-text {
+      a {
+        color: var(--bg-color) !important;
+
+        &:hover {
+          text-decoration: none;
+          border-bottom: 2px solid var(--theme-color);
+          color: var(--theme-color);
+        }
+      }
+    }
+
+    .active {
+      a {
+        color: var(--theme-color) !important;
+        border-bottom: 2px solid var(--theme-color);
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  margin: 16px 0;
+
+  .container-fluid {
+    max-width: var(--content-width);
+    // logo
+    .navbar-brand {
+      .logo {
+        height: 26px;
+        padding-right: 25px;
+      }
+    }
+
+    // 按钮
+    .navbar-toggler {
+      border: 0;
+      padding: 0;
+
+      .expand-icon {
+        height: 20px;
+      }
+    }
+
+    // 导航列表
+    .navbar-nav {
+      margin-right: auto;
+
+      .link-text {
+        padding: 8px 25px;
+        font-size: var(--font-size);
+
+        a {
+          color: var(--text-color);
+
+          &:hover {
+            text-decoration: none;
+            border-bottom: 2px solid var(--theme-color);
+            color: var(--theme-color);
+          }
+        }
+      }
+
+      .active {
+        a {
+          color: var(--theme-color);
+          border-bottom: 2px solid var(--theme-color);
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .hot-line {
+      padding: 8px 25px;
+      font-size: var(--font-size);
+    }
+
+  }
+}

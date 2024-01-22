@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var arr = [
+      {id: 100, name: "张三", age: 18, keywords: ["aa", "bb"]},
+      {id: 200, name: "李四", age: 19, keywords: ["aa"]},
+      {id: 300, name: "王五", age: 20, keywords: ["bb", "dd"]},
+      {id: 400, name: "赵六", age: 21, keywords: ["aa", "bb", "cc"]},
+      {id: 500, name: "田七", age: 22, keywords: ["dd", "cc"]},
+    ]
+
+    // 过滤出 arr 中 keywords 含有 [aa,dd] 的数据
+    let filterKeywords = ["cc", "dd"]
+
+    // 过滤 arr 中的元素，判断每个元素的 keywords 中是否包含 filterKeywords 中的每个元素
+    var filterArr = arr.filter(function (item) {
+      const {keywords} = item
+      return filterKeywords.every(value => keywords.includes(value))
+    })
+
+    console.log(filterArr)
+
+  </script>
+</body>
+</html>

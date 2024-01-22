@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <!-- react：React 的核心 -->
+  <script crossorigin src="https://cdn.bootcdn.net/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script crossorigin src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script crossorigin src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.22.17/babel.js"></script>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class="root"></div>
+
+  <script type="text/babel">
+    // 创建一个虚拟 DOM
+    let message = "你好，React"
+    const vDOM = (
+        <h1>
+          {/* 可以使用 {} 来外部的变量或表达式 */ }
+          {message}
+        </h1>
+    )
+    // 将虚拟 DOM 渲染到页面上
+    // React 18之前
+    // ReactDOM.render(vDOM, document.querySelector('.root'))
+    // React 18之后
+    const root = ReactDOM.createRoot(document.querySelector('.root'))
+    root.render(vDOM)
+  </script>
+
+</body>
+</html>

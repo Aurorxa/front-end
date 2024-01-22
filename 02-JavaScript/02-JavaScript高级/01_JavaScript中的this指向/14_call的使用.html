@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function foo(a, b) {
+      console.log('foo', this, a, b)
+      return a + b
+    }
+
+    // 原始调用
+    var result = foo(10, 20)
+    console.log(result) // 30
+
+    // call 调用
+    // 第一个参数：绑定 this
+    // 第二个参数：实际参数列表，以,隔开
+    result = foo.call("abc", 50, 10)
+    console.log(result) // 60
+
+
+  </script>
+</body>
+</html>

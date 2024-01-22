@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 描述一个人，定义对象
+    var person = {
+      name: "许大仙", // 属性
+      age: 18, // 属性
+      eating: function () { // 行为（方法）
+        console.log("正在吃饭^_^")
+      }
+    }
+
+    // 使用（调用）对象中的属性和行为
+    console.log(person.name)
+    console.log(person.age)
+    person.eating()
+
+    // 描述一辆车，定义对象
+    var car = {
+      color: "红色", // 属性
+      driver: function () { // 行为（方法）
+        console.log("正在驾驶")
+      }
+    }
+
+    // 使用（调用）对象中的属性和行为
+    console.log(car.color)
+    car.driver()
+  </script>
+</body>
+</html>

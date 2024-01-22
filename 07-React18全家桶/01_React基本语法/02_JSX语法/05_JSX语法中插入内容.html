@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <!-- react：React 的核心 -->
+  <script src='./js/react18.development.js'></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script src='./js/react-dom18.development.js'></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script src='./js/babel.js'></script>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class='app'></div>
+
+  <script type='text/babel'>
+    // 创建根元素
+    const app = ReactDOM.createRoot(document.querySelector('.app'))
+
+    // 创建一个组件
+    class App extends React.Component {
+
+      state = {
+        isHot: false
+      }
+
+      show(){
+        return this.state.isHot
+      }
+
+      // 渲染内容 render 方法
+      render() {
+        const {isHot} = this.state
+        return (
+            <div>
+              {/* jsx 中嵌入变量作为子元素 */}
+              {/* 插入表达式： 运算表达式 */}
+              <div>{10 + 20}</div>
+              <div>{"张" + "三"}</div>
+              {/* 插入表达式： 三元运算符 */}
+              <div>今天天气很{isHot ? '炎热' : '凉爽'}</div>
+              {/* 插入表达式： 执行一个函数 */}
+              <div>{this.show().toString()}</div>
+            </div>
+        )
+      }
+    }
+
+    // 渲染组件
+    app.render(<App/>)
+  </script>
+
+</body>
+</html>

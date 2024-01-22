@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    let num = 2
+
+    // 先对数字*2
+    function double(num) {
+      return num * 2
+    }
+
+    // 再对数字进行平方
+    function square(num) {
+      return num ** 2
+    }
+
+
+    console.log(square(double(num)))
+    console.log(square(double(22)))
+    console.log(square(double(99)))
+
+    // 将上面的两个函数组合在一起，生成一个新的函数
+    function composeFn(num) {
+      return square(double(num))
+    }
+
+    console.log(composeFn(num))
+
+    // 通用性的组合函数
+    function pipeline(...fns) {
+      // 边界判断
+      fns.forEach((item, index) => {
+        if (typeof item !== 'function') {
+          throw new Error(`位置 ${index} 必须是函数`)
+        }
+      })
+      return function (args) {
+        return fns.reduce((prev, curr) => {
+          return curr(prev)
+        }, args)
+      }
+    }
+
+    const fn = pipeline(double, square)
+    console.log(fn(num))
+
+    function pipedFunction(...fns) {
+      return function (args) {
+        return fns.reduce((pre, next) => {
+          return next(pre)
+        }, args)
+      }
+    }
+
+    const pipe = pipedFunction(double, square)
+    console.log(pipe(num))
+  </script>
+</body>
+</html>

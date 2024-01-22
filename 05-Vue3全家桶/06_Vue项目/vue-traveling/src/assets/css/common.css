@@ -1,0 +1,20 @@
+:root {
+    --primary-color: #ff9854;
+}
+
+:root:root {
+    --primary-color: #ff9854;
+    --van-search-label-color: var(--primary-color);
+    --van-search-left-icon-color: var(--primary-color);
+    --van-tabbar-item-active-color: var(--primary-color);
+    --van-tabs-bottom-bar-color: var(--primary-color);
+    --van-index-anchor-text-color: var(--primary-color);
+    --van-nav-bar-icon-color: var(--primary-color);
+    --van-nav-bar-text-color: var(--primary-color);
+    --van-nav-bar-title-text-color: var(--primary-color);
+}
+
+body {
+    font-size: 14px;
+    touch-action: pan-y;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <input class="file" type="file">
+  <button class="upload">上传文件</button>
+
+  <script>
+    const uploadBtn = document.querySelector(".upload")
+    uploadBtn.addEventListener("click", () => {
+      // 创建 XMLHttpRequest 对象
+      const xhr = new XMLHttpRequest()
+      // 监听 XMLHttpRequest 对象状态的变化
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+          console.log(xhr.response)
+        }
+      }
+      // 监听上传进度
+      xhr.upload.onprogress = function (event) {
+        if (event.lengthComputable) {
+          // 计算出上传进度。
+          let progress = ((event.loaded / event.total) * 100).toFixed(2) + "%";
+          // 更新进度条。
+          console.log('上传进度', progress)
+        }
+      }
+      // 告知 xhr 获取数据的类型
+      xhr.responseType = 'json'
+      // 配置网络请求
+      xhr.open('POST', 'http://123.207.32.32:1888/02_param/upload')
+      const formData = new FormData()
+      const fileEl = document.querySelector(".file")
+      console.dir(fileEl.files)
+      formData.append('avatar', fileEl.files[0])
+      // 发送网络请求
+      xhr.send(formData)
+    })
+
+  </script>
+</body>
+</html>

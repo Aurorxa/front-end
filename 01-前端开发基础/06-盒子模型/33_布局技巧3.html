@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .outer {
+      width: 300px;
+      height: 100px;
+      background-color: gray;
+      text-align: center;
+      line-height: 100px;
+      font-size: 0;
+      border-radius: 20px;
+    }
+
+    .outer .inner {
+      font-size: 20px;
+      vertical-align: middle;
+      background-color: orange;
+    }
+
+    .outer img {
+      width: 80px;
+      vertical-align: middle;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .outer img:hover {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <span class="inner">出来玩啊</span>
+    <img alt="" src="./images/1.jpg">
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 定义普通函数
+    function foo(a, b) {
+      return a + b
+    }
+
+    // 函数的常用属性
+    console.log(`函数的名称: ${foo.name}`) // 函数的名称: foo
+    console.log(`函数的形参个数: ${foo.length}`) // 函数的形参个数: 2
+
+    // 定义形参有剩余参数的函数
+    function bar(a, b, ...nums) {
+      return a + b + nums.reduce((x, y) => x + y)
+    }
+
+    console.log(`函数的名称: ${bar.name}`) // 函数的名称: bar
+    console.log(`函数的形参个数: ${bar.length}`) // 函数的形参个数: 2
+
+
+    // 定义形参有默认值的函数
+    function baz(a = 1, b = 2) {
+      return a + b
+    }
+
+    console.log(`函数的名称: ${baz.name}`) // 函数的名称: baz
+    console.log(`函数的形参个数: ${baz.length}`) // 函数的形参个数: 0
+  </script>
+</body>
+</html>

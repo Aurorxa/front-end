@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+    }
+
+    .box1 {
+      background-color: skyblue;
+    }
+
+    .box2 {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+
+  <script src="./js/jquery-3.7.1.js"></script>
+
+  <script>
+    const $box1 = $(".box1")
+    console.log($box1.width())
+
+    const $box2 = $(".box2")
+    $box2.width(200)
+  </script>
+</body>
+</html>

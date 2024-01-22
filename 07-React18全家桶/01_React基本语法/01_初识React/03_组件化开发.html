@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <!-- react：React 的核心 -->
+  <script src='./js/react18.development.js'></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script src='./js/react-dom18.development.js'></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script src='./js/babel.js'></script>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class='app'></div>
+
+  <script type='text/babel'>
+    // 创建一个组件
+    class App extends React.Component {
+      // 组件数据
+      constructor() {
+        super()
+        // 参与界面更新的数据，需要写在 this.state 中
+        this.state = {
+          isHot: false
+        }
+        // 绑定 this
+        this.change = this.change.bind(this)
+      }
+
+      // 组件方法
+      change() {
+        // 内部完成了两件事情
+        // ① 将 state 中的 isHot 修改了
+        // ② 自动重新执行 render 函数
+        this.setState({
+          isHot: !this.state.isHot
+        })
+      }
+
+      // 渲染内容 render 方法
+      render() {
+        const {isHot} = this.state
+        return (
+            <div>
+              <h2>{'今天天气很' + (isHot ? '炎热' : '凉爽')}</h2>
+              <button onClick={this.change}>改变内容</button>
+            </div>
+        )
+      }
+    }
+
+    // 创建根元素
+    const app = ReactDOM.createRoot(document.querySelector('.app'))
+    // 渲染组件
+    app.render(<App/>)
+  </script>
+
+</body>
+</html>

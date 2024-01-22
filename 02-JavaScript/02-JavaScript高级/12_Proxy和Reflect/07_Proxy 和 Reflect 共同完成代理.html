@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* Proxy 和 Reflect 共同完成代理 */
+    const obj = {
+      name: "张三",
+      age: 18
+    }
+
+    const proxy = new Proxy(obj, {
+      set(target, p, newValue, receiver) {
+        // 优点：① 不需要直接操作目标对象 ② Reflect.set 返回一个 boolean 值，用来判断本次操作是否成功
+        const isSuccess = Reflect.set(target, p, newValue, receiver)
+        if (!isSuccess) {
+          throw new Error(`设置 ${key} 失败`)
+        }
+      },
+      get(target, p, receiver) {
+        return Reflect.get(target, p, receiver)
+      }
+    })
+
+    proxy.name = "李四"
+    console.log(proxy.name)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <button class="btn">按钮</button>
+
+  <script>
+    var btnEl = document.querySelector(".btn")
+
+    function foo() {
+      console.log('按钮被点击了')
+    }
+
+    // 添加点击事件
+    btnEl.addEventListener('click', foo)
+
+    // 移除点击事件
+    setTimeout(function () {
+      btnEl.removeEventListener('click', foo)
+    }, 5000)
+
+  </script>
+</body>
+</html>

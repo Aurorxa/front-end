@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 原始对象（目标对象）
+    const obj = {
+      name: "张三",
+      age: 18,
+      height: 1.8
+    }
+
+    // 创建一个代理对象
+    const proxy = new Proxy(obj, {
+      set(target, key, newValue) {
+        console.log('set捕获器')
+        target[key] = newValue
+      },
+      get(target, key) {
+        console.log('get捕获器')
+        return target[key]
+      },
+      has(target, key) {
+        console.log('has捕获器')
+        return key in target
+      },
+      deleteProperty(target, key) {
+        console.log('deleteProperty捕获器')
+        delete target[key]
+      }
+    })
+
+    // 对代理对象做各种操作：新增属性、访问属性、删除属性、修改属性
+    proxy.address = "北京" // 新增属性
+    proxy.name = "李四" // 修改属性
+    delete proxy.name // 删除属性
+    console.log(proxy.age) // 访问属性
+    console.log('height' in proxy) // in 操作
+
+  </script>
+</body>
+</html>

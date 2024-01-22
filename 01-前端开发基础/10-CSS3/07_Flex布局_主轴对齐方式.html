@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .outer {
+      width: 1000px;
+      height: 600px;
+      background-color: gray;
+      margin: 50px auto 0;
+      /* 开启 Flex 布局 */
+      display: flex;
+      /* 主轴换行方式：换行 */
+      flex-wrap: wrap;
+      /* 主轴方向 */
+      flex-direction: row;
+      /*
+        主轴对齐方式
+          space-around 项目均匀的分布在一行中，项目和项目之间的距离是项目距离边缘的2倍
+       */
+      justify-content: space-between;
+
+    }
+
+    .inner {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner">1</div>
+    <div class="inner">2</div>
+    <div class="inner">3</div>
+  </div>
+</body>
+</html>

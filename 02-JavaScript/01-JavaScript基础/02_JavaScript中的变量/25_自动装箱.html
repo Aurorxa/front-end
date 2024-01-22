@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <script>
+    let num = 42 // 定义一个基本数据类型
+    // 在基本数据类型上调用 toString() 方法的时候，会自动进行装箱（将基本数据类型转换为对应的包装对象）
+    let strNum = num.toString() // 相当于 new Number(num).toString()
+
+    console.log("num", num, typeof num)
+    console.log("strNum", strNum, typeof strNum)
+  </script>
+
+</body>
+</html>

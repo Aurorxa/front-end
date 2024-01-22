@@ -1,0 +1,71 @@
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 16px);
+    width: 100%;
+    margin: 0 -16px;
+    color: var(--bg-color);
+    background-color: var(--bg-nav-color);
+    opacity: 0.9;
+    z-index: 100;
+  }
+  .navbar-collapse .link-text a {
+    color: var(--bg-color) !important;
+  }
+  .navbar-collapse .link-text a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid var(--theme-color);
+    color: var(--theme-color);
+  }
+  .navbar-collapse .active a {
+    color: var(--theme-color) !important;
+    border-bottom: 2px solid var(--theme-color);
+  }
+  .navbar-collapse .active a:hover {
+    text-decoration: none;
+  }
+}
+.navbar {
+  margin: 16px 0;
+}
+.navbar .container-fluid {
+  max-width: var(--content-width);
+}
+.navbar .container-fluid .navbar-brand .logo {
+  height: 26px;
+  padding-right: 25px;
+}
+.navbar .container-fluid .navbar-toggler {
+  border: 0;
+  padding: 0;
+}
+.navbar .container-fluid .navbar-toggler .expand-icon {
+  height: 20px;
+}
+.navbar .container-fluid .navbar-nav {
+  margin-right: auto;
+}
+.navbar .container-fluid .navbar-nav .link-text {
+  padding: 8px 25px;
+  font-size: var(--font-size);
+}
+.navbar .container-fluid .navbar-nav .link-text a {
+  color: var(--text-color);
+}
+.navbar .container-fluid .navbar-nav .link-text a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid var(--theme-color);
+  color: var(--theme-color);
+}
+.navbar .container-fluid .navbar-nav .active a {
+  color: var(--theme-color);
+  border-bottom: 2px solid var(--theme-color);
+}
+.navbar .container-fluid .navbar-nav .active a:hover {
+  text-decoration: none;
+}
+.navbar .container-fluid .hot-line {
+  padding: 8px 25px;
+  font-size: var(--font-size);
+}
+/*# sourceMappingURL=navbar.css.map */

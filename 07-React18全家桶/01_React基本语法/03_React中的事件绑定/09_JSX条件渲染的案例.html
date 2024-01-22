@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class='app'></div>
+
+  <!-- react：React 的核心 -->
+  <script src='./js/react18.development.js'></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script src='./js/react-dom18.development.js'></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script src='./js/babel.js'></script>
+
+  <script type='text/babel'>
+    // 创建根元素
+    const app = ReactDOM.createRoot(document.querySelector('.app'))
+
+    // 创建一个组件
+    class App extends React.Component {
+      // 组件数据
+      state = {
+        message: '你好，React',
+        isShow: true
+      }
+
+      changeShow() {
+        const {isShow} = this.state
+        this.setState({
+          isShow: !isShow
+        })
+      }
+
+      render() {
+        const {message, isShow} = this.state
+        return (
+            <div>
+              <button onClick={() => this.changeShow()}>切换</button>
+              {/* 逻辑&& */}
+              {isShow && (<h2>{message}</h2>)}
+            </div>
+        )
+
+      }
+    }
+
+    // 渲染组件
+    app.render(<App/>)
+  </script>
+
+</body>
+</html>

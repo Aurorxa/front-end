@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    function foo() {
+      console.log('foo', this)
+    }
+
+    var obj1 = {
+      name: "张三",
+      foo: foo
+    }
+
+    var obj2 = {
+          name: "李四"
+        }
+
+    ;(obj2.foo = obj1.foo)() // window
+
+
+  </script>
+</body>
+</html>

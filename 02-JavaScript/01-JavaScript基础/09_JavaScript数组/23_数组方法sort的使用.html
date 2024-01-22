@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var arr = [
+      {id: 200, name: "张三", age: 18},
+      {id: 100, name: "李四", age: 19},
+      {id: 500, name: "王五", age: 20},
+      {id: 400, name: "赵六", age: 21},
+      {id: 300, name: "田七", age: 22},
+    ]
+
+    // 根据 id ，对数组中的元素进行排序
+    var result = arr.sort(function (item1, item2) {
+      return item1.id - item2.id
+    })
+
+    console.log(arr)
+    console.log(result)
+
+  </script>
+</body>
+</html>

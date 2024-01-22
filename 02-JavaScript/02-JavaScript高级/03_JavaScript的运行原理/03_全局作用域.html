@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 全局作用域是指在整个 JavaScript 程序中都可访问的变量和函数。在全局作用域中声明的变量和函数可以在任何地方被访问。 */
+    var globalVariable = 10
+
+    function globalFunction() {
+      console.log('这个定义在全局作用域的函数')
+    }
+
+    console.log(globalVariable) // 10
+    globalFunction() // 这个定义在全局作用域的函数
+
+  </script>
+</body>
+</html>

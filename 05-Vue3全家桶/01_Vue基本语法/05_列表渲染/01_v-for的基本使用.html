@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="js/vue@3.3.4.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h2>喜欢的电影：</h2>
+    <ul>
+      <li v-for="(item,index) in movies">
+        {{index}} - {{item}}
+      </li>
+    </ul>
+    <h2>产品列表</h2>
+    <ul>
+      <li v-for="(item,index) in productList">
+        <h3>商品编号：{{item.id}}</h3>
+        <p>商品名称：{{item.name}}</p>
+        <p>商品价格：{{item.price}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          movies: ['大话西游', '盗梦空间', '初恋那件小事', '星际穿越'],
+          productList: [
+            {id: '001', name: 'iphone 14', price: 4000},
+            {id: '002', name: 'iphone 15', price: 5000},
+            {id: '003', name: '小米', price: 2999},
+            {id: '004', name: '华为', price: 1}
+          ]
+        }
+      },
+      methods: {}
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>

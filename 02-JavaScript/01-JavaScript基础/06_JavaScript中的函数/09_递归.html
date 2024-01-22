@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+      使用递归实现幂函数
+        x^n = x * x ^(n-1)
+    */
+    function pow(x, n) {
+      if (n === 0) {
+        return 1
+      } else {
+        return x * pow(x, n - 1)
+      }
+    }
+
+    let result = pow(2, 0)
+    console.log(result) // 1
+    result = pow(2, 1)
+    console.log(result) // 2
+    result = pow(2, 2)
+    console.log(result) // 4
+  </script>
+</body>
+</html>

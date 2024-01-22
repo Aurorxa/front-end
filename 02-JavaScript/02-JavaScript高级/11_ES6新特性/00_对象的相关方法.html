@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      name: "张三",
+      age: 18,
+      address: "中国"
+    }
+
+    let values = Object.values(obj)
+
+    console.log(values) // ['张三', 18, '中国']
+
+    let str = "HelloWorld"
+    values = Object.values(str)
+
+    console.log(values) // ['H', 'e', 'l', 'l', 'o', 'W', 'o', 'r', 'l', 'd']
+    
+  </script>
+</body>
+</html>

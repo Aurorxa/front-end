@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // ES5 之前的写法
+    function bar(a, b) {
+      b = b ? b : "我是默认值"
+      console.log(a, b)
+    }
+
+    bar(1, false) // 1 '我是默认值'
+    bar(1, '') // 1 '我是默认值'
+    bar(1, undefined) // 1 '我是默认值'
+    bar(1, null) // 1 '我是默认值'
+    bar(1, 0) // 1 '我是默认值'
+    bar(1, 2) // 1 2
+
+    function baz(a, b) {
+      b = b || "我是默认值"
+      console.log(a, b)
+    }
+
+    baz(1, false) // 1 '我是默认值'
+    baz(1, '') // 1 '我是默认值'
+    baz(1, undefined) // 1 '我是默认值'
+    baz(1, null) // 1 '我是默认值'
+    baz(1, 0) // 1 '我是默认值'
+    baz(1, 2) // 1 2
+
+    // 上面的写法不严谨
+  </script>
+</body>
+</html>

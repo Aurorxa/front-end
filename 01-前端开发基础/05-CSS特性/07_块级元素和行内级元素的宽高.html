@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    span {
+      /* 行内（非替换）级元素设置宽度和高度不生效！ */
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    img {
+      /*
+        img 是行内替换元素。
+        行内替换元素的特点：
+          ① 和其它的行内级元素在同一行显示。
+          ② 可以设置宽度和高度。
+      */
+      width: 200px;
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">我是div元素</div>
+  <span>我是span元素</span>
+  <img alt="" src="./images/1.jpg">
+</body>
+</html>

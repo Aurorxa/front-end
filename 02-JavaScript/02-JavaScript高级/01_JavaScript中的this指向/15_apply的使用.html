@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+
+    var arr = [1, 2, 3]
+
+    // apply 的主要应用，如：可以利用 apply 借助于数学内置对象对数组求最值
+    var max = Math.max.apply(Math, arr)
+    console.log(`max: ${max}`)
+
+    var min = Math.min.apply(Math, arr)
+    console.log(`min: ${min}`)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const arr = [1, 2, 3]
+    const names = ["张三", "李四", "王五", "赵六"]
+
+    // 将生成迭代器对象的函数放到 Array 的显示原型对象上
+    Array.prototype.customIterator = function () {
+      let index = 0;
+      return {
+        next: () => {
+          if (index < this.length) {
+            return {
+              done: false,
+              value: this[index++]
+            }
+          } else {
+            return {
+              done: true
+            }
+          }
+        }
+      }
+    }
+
+    // 使用迭代器遍历
+    let arrIterator = arr.customIterator()
+    for (let next = arrIterator.next(); !next.done; next = arrIterator.next()) {
+      console.log(next.value)
+    }
+
+    console.log('-----------------------------')
+
+    arrIterator = names.customIterator()
+    for (let next = arrIterator.next(); !next.done; next = arrIterator.next()) {
+      console.log(next.value)
+    }
+
+  </script>
+</body>
+</html>

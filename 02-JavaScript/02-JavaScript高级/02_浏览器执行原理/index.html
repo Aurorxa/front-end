@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    body {
+      font-size: 16px;
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    p span {
+      color: red;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      position: fixed;
+    }
+  </style>
+  <!-- 从某种角度来说，defer可以提高页面的性能，并且推荐放到head元素中  -->
+  <script defer src="./js/index.js"></script>
+</head>
+<body>
+  <p>你好啊<span>呵呵哒</span></p>
+
+  <div class="box"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      console.log(abc)
+    })
+  </script>
+</body>
+</html>

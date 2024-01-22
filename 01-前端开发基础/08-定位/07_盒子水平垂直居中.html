@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .outer {
+      /* 设置父级盒子相对定位 */
+      position: relative;
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+
+    .outer > .inner {
+      /* 设置子级盒子绝对定位 */
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 块级盒子水平、垂直居中 -->
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+</body>
+</html>

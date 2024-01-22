@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <button class="btn">按钮</button>
+
+  <script>
+
+    // 定时器中的函数
+    setTimeout(function () {
+      console.log('setTimeout', this)
+    }, 1000)
+
+    // 按钮的点击事件
+    var btn = document.querySelector(".btn")
+    btn.addEventListener('click', function () {
+      console.log('click', this)
+    })
+
+    // foreach
+    var arr = [1, 2, 3]
+    arr.forEach(function (item) {
+      console.log("forEach", item, this)
+    })
+
+  </script>
+</body>
+</html>

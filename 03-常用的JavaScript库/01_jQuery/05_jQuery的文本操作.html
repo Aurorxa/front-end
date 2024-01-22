@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <ul class="box">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+
+  <script src="./js/jquery-3.7.1.js"></script>
+
+  <script>
+    // 获取文本
+    console.log($(".box").text())
+    // 设置文本，会给匹配到的所有元素设置文本
+    $(".box li").text("li元素")
+    // 获取 html
+    console.log($(".box li").html())
+  </script>
+</body>
+</html>

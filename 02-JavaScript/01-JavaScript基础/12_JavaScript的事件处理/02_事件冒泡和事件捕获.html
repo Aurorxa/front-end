@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .box .inner {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="inner"></div>
+  </div>
+
+  <script>
+    // 获取元素
+    var boxEl = document.querySelector(".box")
+    var innerEl = document.querySelector(".inner")
+    var bodyEl = document.body
+    // // 添加事件，默认情况下是事件冒泡
+    boxEl.addEventListener("click", function () {
+      console.log("box被点击了")
+    })
+    innerEl.addEventListener("click", function () {
+      console.log("inner被点击了")
+    })
+    bodyEl.addEventListener("click", function () {
+      console.log("body被点击了")
+    })
+    // 添加事件，可以设置为事件捕获
+    boxEl.addEventListener("click", function () {
+      console.log("box被点击了")
+    }, true)
+    innerEl.addEventListener("click", function () {
+      console.log("inner被点击了")
+    }, true)
+    bodyEl.addEventListener("click", function () {
+      console.log("body被点击了")
+    }, true)
+  </script>
+</body>
+</html>

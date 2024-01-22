@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 函数定义在对象中，但是独立调用的
+    var obj = {
+      name: "张三",
+      age: 18,
+      bar: function () {
+        console.log('bar', this); // window
+      }
+    }
+
+    var baz = obj.bar
+    baz()
+    
+  </script>
+</body>
+</html>

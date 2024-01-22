@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    div {
+      transition: all 0.5s;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="box" style="display: none;width: 200px;height: 200px;background-color:pink;">我是div元素</div>
+  <button class="btn">按钮</button>
+
+  <script>
+    var btn = document.querySelector(".btn")
+    var box = document.querySelector(".box")
+
+    btn.onclick = function () {
+      // 如果我们通过 style 将某个 CSS 的属性值设置为 "" ，那么就会使用 CSS 的默认值；对于 div 来说，不就是 block 吗？
+      box.style.display = ""
+      console.log(box.style.display)
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Promise的基本使用</title>
+</head>
+<body>
+  <script>
+    /*
+    * 1. 重要语法
+    *   ① new Promise(executor)构造函数
+    *   ② Promise.prototype.then 方法
+    * 2. 基本编码流程
+    *   ① 创建 Promise 的实例对象（pending状态），传入 executor 函数。
+    *   ② 在 executor 中启动异步任务（定时器、Ajax 请求）。
+    *   ③ 根据异步任务的结果，做不同的结果：
+    *      1）如果异步任务成功了，就调用 resolve(value) ，将 Promise 实例的状态变为成功（fulfilled），同时指定成功的 value 。
+    *      2）如果异步任务失败了，就调用 reject(reason)，将 Promise 实例的状态变为失败（rejected），同时指定失败的 reason 。
+    *   ④ 通过 then 方法为 Promise 实例指定成功、失败的回调函数，来获取成功的 value 和失败的 reason 。
+    *      注意：then 方法里面指定的成功和失败的回调函数，都是异步的回调函数。
+    * 3. 关于状态的注意点
+    *   ① 三个状态：
+    *       pending：未确定的 --- 初始化状态
+    *       fulfilled：成功的 --- 调用 resolve() 后的状态
+    *       rejected：失败的 --- 调用 reject() 后的状态
+    *   ② 两种状态改变：
+    *       pending --> fulfilled
+    *       pending --> rejected
+    *   ③ 状态只能修改一次！！
+    *   ④ 一个 Promise 实例指定了多个成功/失败的回调函数，都会调用。
+    */
+    // 创建一个 Promise 实例对象
+    const promise = new Promise((resolve, reject) => {
+      // 启动异步任务
+      setTimeout(() => {
+        let flag = true;
+        let data = '用户数据';
+        if (flag) {
+          // 异步任务成功，就调用 resolve(value)
+          resolve(data);
+        } else {
+          // 异步任务失败，就调用 reject(reason)
+          reject(data);
+        }
+      }, 1000);
+    });
+
+    promise.then(value => {
+      // 成功的回调--异步
+      console.log('成功的回调1', value);
+    }, reason => {
+      // 失败的回调--异步
+      console.error('失败的回调1', reason);
+    });
+
+    promise.then(value => {
+      // 成功的回调--异步
+      console.log('成功的回调2', value);
+    }, reason => {
+      // 失败的回调--异步
+      console.error('失败的回调2', reason);
+    });
+
+  </script>
+</body>
+</html>

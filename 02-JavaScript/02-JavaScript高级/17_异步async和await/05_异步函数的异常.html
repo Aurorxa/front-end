@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 如果异步函数中出现了异常，相当于 Promise.reject(e)
+    async function foo() {
+      if (1) {
+        throw new Error("出错啦~")
+      }
+      return 1
+    }
+
+    foo().then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log("捕获到的异常信息：" + err)
+    })
+
+  </script>
+</body>
+</html>

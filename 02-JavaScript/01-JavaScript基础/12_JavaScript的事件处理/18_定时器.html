@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <button class="btn-start">启动定时器</button>
+  <button class="btn-end">停止定时器</button>
+
+  <script>
+    // 获取元素
+    var btnStartEl = document.querySelector(".btn-start")
+    var btnEndEl = document.querySelector(".btn-end")
+    // 添加事件监听
+    var timeId
+    btnStartEl.addEventListener('click', function () {
+      // 添加定时器
+      timeId = setTimeout(function () {
+        console.log("定时器执行了~~")
+      }, 2000)
+
+    })
+    btnEndEl.addEventListener('click', function () {
+      // 取消定时器
+      clearTimeout(timeId)
+    })
+  </script>
+</body>
+</html>

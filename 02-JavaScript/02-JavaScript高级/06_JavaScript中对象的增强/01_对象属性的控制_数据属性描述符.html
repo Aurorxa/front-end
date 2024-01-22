@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 数据属性描述符 */
+    var obj = {
+      name: "许大仙",
+      age: 18
+    }
+
+    var nameOwnPropertyDescriptor = Object.getOwnPropertyDescriptor(obj, "name");
+    console.log(`查看 name 属性对象的数据属性描述符：${nameOwnPropertyDescriptor}`)
+
+    // 对对象中属性进行精准的限制
+    Object.defineProperty(obj, "name", {
+      // 告诉 JS 引擎，obj 对象的 name 属性不能被删除
+      configurable: false,
+      // 告诉 JS 引擎，obj 对象的 name 属性不能通过 for...in 遍历
+      enumerable: false,
+      // 告诉 JS 引擎，obj 对象的 name 属性不能被修改
+      writable: false,
+      // 告诉 JS 引擎，返回的值
+      value: `${obj.name}，是吗`
+    })
+
+    console.log(obj)
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+
+<body>
+
+  <button>1</button>
+  <button>2</button>
+  <button>3</button>
+
+  <script>
+    // 早期的解决方案
+    var btns = document.querySelectorAll('button');
+    for (var i = 0; i < btns.length; i++) {
+      ;(function (m) {
+        btns[m].addEventListener('click', function () {
+          console.log(`第${m}个按钮被点击了`);
+        })
+      })(i)
+    }
+
+    // 相当于
+    /*
+    ;(function (m) {
+      btns[m].addEventListener('click', function () {
+        console.log(`第${m}个按钮被点击了`);
+      })
+    })(0)
+    ;(function (m) {
+      btns[m].addEventListener('click', function () {
+        console.log(`第${m}个按钮被点击了`);
+      })
+    })(1)
+    ;(function (m) {
+      btns[m].addEventListener('click', function () {
+        console.log(`第${m}个按钮被点击了`);
+      })
+    })(2)
+     */
+
+  </script>
+</body>
+</html>

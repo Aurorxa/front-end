@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const s1 = Symbol.for("abc")
+    const s2 = Symbol.for("abc")
+
+    console.log(s1 === s2) // true
+
+    const key = Symbol.keyFor(s1);
+    console.log(key) // abc
+
+    console.log(s1 === Symbol.for(key)) // true
+
+  </script>
+</body>
+</html>

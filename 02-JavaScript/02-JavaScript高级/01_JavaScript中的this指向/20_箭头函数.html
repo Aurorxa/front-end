@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    // 函数声明
+    function add(a, b) {
+      return a + b
+    }
+
+    // 调用函数
+    console.log(add(1, 2)) // 3
+
+    // 函数表达式
+    var add2 = function (a, b) {
+      return a + b;
+    }
+    // 调用函数
+    console.log(add2(1, 2)) // 3
+
+    // 箭头函数
+    var add3 = (a, b) => {
+      return a + b
+    }
+
+    // 调用函数
+    console.log(add3(1, 2)) // 3
+  </script>
+</body>
+</html>

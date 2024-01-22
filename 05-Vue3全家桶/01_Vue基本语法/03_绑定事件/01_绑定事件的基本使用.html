@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <script src="js/vue@3.3.4.js"></script>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+    }
+
+    .box1 {
+      background-color: pink;
+    }
+
+    .box2 {
+      background-color: red;
+    }
+
+    .box3 {
+      background-color: skyblue;
+    }
+
+    .box4 {
+      background-color: #1DC128;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <!-- v-on 用于绑定事件 -->
+    <div class="box box1" v-on:click="divClick"></div>
+    <!-- 语法糖 -->
+    <div @click="divClick" class="box box2"></div>
+    <!-- 绑定方法的位置也可以写成表达式【了解】 -->
+    <h2>{{count}}</h2>
+    <button @click="count++">点我+1</button>
+    <!-- 绑定其他事件 -->
+    <div @mousemove="divMousemove" class="box box3"></div>
+    <!-- 绑定多个事件 -->
+    <div @click="divClick" @mousemove="divMousemove" class="box box4"></div>
+  </div>
+
+  <script>
+    const {createApp} = Vue
+
+    const app = createApp({
+      data() {
+        return {
+          count: 0
+        }
+      },
+      methods: {
+        divClick() {
+          console.log('click')
+        },
+        divMousemove() {
+          console.log('move')
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+
+</body>
+</html>

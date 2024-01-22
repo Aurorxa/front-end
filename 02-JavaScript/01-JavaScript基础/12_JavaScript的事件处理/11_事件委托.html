@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      width: 50px;
+      margin: 50px auto;
+    }
+
+    .active {
+      color: red;
+      font-size: 20px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="box">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <script>
+    var boxEl = document.querySelector(".box")
+    // 需求：点击某个 li，其它的 li 移除 active
+    var activeEl = null // 使用变量记录含有 active 的 li
+    boxEl.addEventListener('click', function (event) {
+      // 判断是否存在某个 li 含有 active
+      if (activeEl) {
+        activeEl.classList.remove("active")
+      }
+      // 在目标 li 上添加 active
+      event.target.classList.add("active")
+      // 缓存 li
+      activeEl = event.target
+    })
+
+  </script>
+
+</body>
+</html>

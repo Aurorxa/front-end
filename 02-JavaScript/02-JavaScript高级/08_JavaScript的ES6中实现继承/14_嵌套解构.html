@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const user = {
+      username: 'example',
+      email: 'example@example.com',
+      details: {
+        age: 30,
+        country: 'USA'
+      }
+    };
+
+    const {username, details: {age, country}} = user;
+    console.log(username); // 输出: 'example'
+    console.log(age);      // 输出: 30
+    console.log(country);  // 输出: 'USA'
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <button class="forward">前进</button>
+  <button class="back">后退</button>
+
+  <script>
+    // 获取元素
+    var forwardBtn = document.querySelector(".forward")
+    var backBtn = document.querySelector(".back")
+    // 添加事件监听
+    forwardBtn.addEventListener('click', function () {
+      // 前进下一页
+      history.forward()
+    })
+    backBtn.addEventListener('click', function () {
+      // 返回上一页
+      history.back()
+    })
+  </script>
+
+</body>
+</html>

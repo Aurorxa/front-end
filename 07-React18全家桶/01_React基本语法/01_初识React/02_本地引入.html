@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+  <!-- react：React 的核心 -->
+  <script src='./js/react18.development.js'></script>
+  <!-- React-DOM：React 渲染在不同平台上所需要的核心代码 -->
+  <script src='./js/react-dom18.development.js'></script>
+  <!-- babel：将 jsx 转换为 React 代码的工具 -->
+  <script src='./js/babel.js'></script>
+</head>
+<body>
+
+  <!-- 准备一个容器 -->
+  <div class='app'></div>
+
+  <script type='text/babel'>
+    // 创建根元素
+    const app = ReactDOM.createRoot(document.querySelector('.app'))
+    // 定义变量
+    let message = '你好，React'
+    // 定义方法
+    const change = () => {
+      // 修改数据
+      message = '你好，React18'
+      // 重新渲染页面
+      appRender()
+    }
+
+    // 渲染页面
+    appRender()
+
+    function appRender() {
+      // 创建一个虚拟 DOM
+      const vDOM = (
+          <div>
+            <h1>{message}</h1>
+            { /* 注意此处：
+              ① 在 React 中，事件的名称是以 onXxx() 的形式，小驼峰的命名规则
+              ② onClick 中传入的是函数的名称，如：change，而不是 change() ；否则，当点击的时候，就会没有效果，因为 change() 返回的是 undefined
+            */ }
+            <button onClick={change}>改变文本</button>
+          </div>
+      )
+      // 将虚拟 DOM 渲染到页面上
+      app.render(vDOM)
+    }
+
+  </script>
+
+</body>
+</html>

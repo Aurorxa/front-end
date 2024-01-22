@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+  <style>
+    /* 超小设备 */
+    @media screen and  (max-width: 768px) {
+      .box {
+        background-color: red;
+      }
+    }
+
+    /* 中等屏幕 */
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      .box {
+        background-color: black;
+      }
+    }
+
+    /* 大屏幕 */
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      .box {
+        background-color: skyblue;
+      }
+    }
+
+    /* 超大屏幕 */
+    @media screen and (min-width: 1200px) {
+      .box {
+        background-color: pink;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box">我是div元素</div>
+</body>
+</html>

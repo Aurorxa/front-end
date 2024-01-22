@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 函数调用，可以将一个数组或者其他可迭代对象展开为函数的参数 */
+    let arr = [1, 2, 3, 4, 5]
+
+    function sum(...args) {
+      return args.reduce((prev, curr) => {
+        return prev + curr
+      })
+    }
+
+    // 不使用展开运算符
+    let result = sum.apply(null, arr)
+    console.log(result) // 15
+
+    // 使用展开运算符
+    result = sum(...arr)
+    console.log(result) // 15
+  </script>
+</body>
+</html>

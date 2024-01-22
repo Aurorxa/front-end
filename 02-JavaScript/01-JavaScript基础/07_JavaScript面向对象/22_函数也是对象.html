@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+      以下的三种方式都是定义函数的方式，某种意义上都是等价的。
+      在开发中，我们使用的函数声明和函数表达式的方式都是 new Function 的简写方式而已
+     */
+    function add1(a, b) {
+      return a + b
+    }
+
+    var add2 = function (a, b) {
+      return a + b
+    }
+
+    var add3 = new Function('a', 'b', 'return a + b')
+  </script>
+</body>
+</html>

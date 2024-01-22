@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    var obj = {}
+    // 添加属性
+    obj.name = "许大仙"
+    obj.age = 18
+    // 添加方法
+    obj.running = function () {
+      console.log(`${this.name}正在跑步~`)
+    }
+
+    console.log(obj.name)
+    console.log(obj.age)
+    obj.running()
+  </script>
+</body>
+</html>

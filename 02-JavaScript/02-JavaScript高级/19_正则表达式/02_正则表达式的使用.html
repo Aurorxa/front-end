@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    const message = "abcdfgeqreqwd abc4dfghijklmnopqr stuvABCwxy"
+    const reg = /abc/ig
+
+    // 使用字符串的方法
+    // 需求： 将所有的 abc(忽略大小写) 替换为 cba
+    let newMessage = message.replaceAll("abc", "cba")
+    console.log(newMessage)
+    newMessage = message.replaceAll(reg, "cba")
+    console.log(newMessage)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /* 普通函数既有显式原型，也有隐式原型 */
+    function foo() {
+      console.log('foo函数')
+    }
+
+    console.log(foo.__proto__ === Function.prototype) // true
+    console.log(foo.prototype === new foo().__proto__) // true
+
+    /* 箭头函数只有隐式原型 */
+    const bar = () => {
+      console.log('bar函数')
+    }
+
+    console.log(bar.__proto__ === Function.prototype) // true
+    console.log(bar.prototype) // undefined
+
+  </script>
+</body>
+</html>

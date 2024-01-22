@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    /*
+      猜数字游戏
+       电脑随机生成一个0~100之间的数字；
+       玩家有7次猜测的机会；
+       玩家猜测一个数字, 输入到程序中；
+       电脑根据输入的数字打印: 猜大了/猜小了/猜对了的情况；
+       猜对了, 那么游戏结束，显示恭喜您；
+       7次机会用完打印: 您的次数用完了, 您失败了；
+    */
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+    }
+
+    // 随机数
+    var random = getRandomIntInclusive(0, 100)
+    // 统计猜测的次数
+    var count = 7
+    // 保存结果
+    var result = ''
+    while (true) {
+      var guess = Number(prompt(`请输入猜测的数字（随机数是：${random}）：`))
+      if (guess > random) {
+        console.log('猜大了')
+      } else if (guess < random) {
+        console.log('猜小了')
+      } else {
+        result = '恭喜您，猜测成功😄'
+        break
+      }
+      if (--count === 0) {
+        result = '您的次数用完了, 您失败了😂'
+        break
+      }
+    }
+
+    console.log('猜测结果: ' + result)
+
+  </script>
+</body>
+</html>

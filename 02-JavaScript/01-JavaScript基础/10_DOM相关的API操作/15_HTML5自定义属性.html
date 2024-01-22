@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Title</title>
+</head>
+<body>
+
+  <!--
+    对于非标准的 HTML 属性（Attribute），可以使用 HTML5 的 data-* 来自定义属性
+  -->
+  <div class="box" data-age="18" data-name="张三" id="abc" title="box"></div>
+
+  <script>
+    var boxEl = document.querySelector(".box")
+    console.log(`name`, boxEl.dataset.name)
+    console.log(`age`, boxEl.dataset.age)
+  </script>
+</body>
+</html>
