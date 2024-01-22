@@ -1,4 +1,4 @@
-import {Fragment, memo} from "react"
+import { Fragment, useEffect } from "react"
 import {
   Card,
   CardBody,
@@ -13,41 +13,35 @@ import {
   TableHeader,
   TableRow
 } from "@nextui-org/react"
-import {useDispatch, useSelector} from "react-redux"
-import {fetchPosts, getPostsStatus, selectAllPost} from "@/store/post"
+import { useDispatch, useSelector } from "react-redux"
+import {fetchPosts, selectAllPosts} from "@/store/post"
 import AddPost from "@/components/Post/AddPost"
-import {selectAllUsers} from "@/store/user"
+import { selectAllUsers } from "@/store/user";
 
 function Post() {
   const dispatch = useDispatch()
-  
-  const posts = useSelector(selectAllPost)
-  const postsStatus = useSelector(getPostsStatus)
-  
-  // useEffect(() => {
-  //   if (postsStatus === 'idle') {
-  //     dispatch(fetchPosts())
-  //   }
-  // }, [postsStatus, dispatch]);
-  
+
+  const posts  = useSelector(selectAllPosts)
+
+  useEffect(() => {
+    dispatch(fetchPosts())
+  }, [dispatch]);
+
   const users = useSelector(selectAllUsers)
-  
+
   return (
     <Fragment>
       <Card>
         <CardHeader className="flex justify-center">
           <div className="text-center">
             博客管理
-            <button onClick={() => {
-              dispatch(fetchPosts())
-            }}>点我发送消息</button>
           </div>
         </CardHeader>
-        <Divider/>
+        <Divider />
         <CardBody>
-          <AddPost/>
+          <AddPost />
         </CardBody>
-        <Divider/>
+        <Divider />
         <CardFooter>
           <Table aria-label="Example table with dynamic content">
             <TableHeader>
@@ -75,9 +69,9 @@ function Post() {
           </Table>
         </CardFooter>
       </Card>
-    
+
     </Fragment>
   )
 }
 
-export default memo(Post)
+export default Post

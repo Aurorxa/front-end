@@ -11,7 +11,7 @@ import {
   SelectItem,
   useDisclosure
 } from "@nextui-org/react"
-import {addPost} from "@/store/post"
+import {} from "@/store/post"
 import {useDispatch, useSelector} from "react-redux"
 import {selectAllUsers} from "@/store/user";
 
@@ -25,7 +25,7 @@ function AddPost() {
   const users = useSelector(selectAllUsers)
   const handleSubmit = () => {
     if (title && body && userId) {
-      dispatch(addPost(title, body, userId))
+      // dispatch(addPost(title, body, userId))
     }
     setTitle("")
     setBody("")
