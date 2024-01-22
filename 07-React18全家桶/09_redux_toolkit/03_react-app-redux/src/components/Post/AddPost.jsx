@@ -11,7 +11,7 @@ import {
   SelectItem,
   useDisclosure
 } from "@nextui-org/react"
-import {} from "@/store/post"
+import {addPost} from "@/store/post"
 import {useDispatch, useSelector} from "react-redux"
 import {selectAllUsers} from "@/store/user";
 
@@ -25,7 +25,9 @@ function AddPost() {
   const users = useSelector(selectAllUsers)
   const handleSubmit = () => {
     if (title && body && userId) {
-      // dispatch(addPost(title, body, userId))
+      dispatch(addPost({
+        title, body, userId
+      }))
     }
     setTitle("")
     setBody("")
@@ -48,7 +50,7 @@ function AddPost() {
         onClose={() => {
           setTitle("")
           setBody("")
-          setUserId("")
+          setUserId(0)
         }}
       >
         <ModalContent>
@@ -96,7 +98,7 @@ function AddPost() {
                 <Button color="danger" variant="flat" onPress={onClose} onClick={() => {
                   setTitle("")
                   setBody("")
-                  setUserId("")
+                  setUserId(0)
                 }}>
                   取消
                 </Button>

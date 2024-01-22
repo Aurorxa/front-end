@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit"
+import {createAsyncThunk, createSlice, nanoid} from "@reduxjs/toolkit"
 import axios from "axios";
 
 import {produce} from "immer"
@@ -30,7 +30,12 @@ const postSlice = createSlice({
     status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
     error: ""
   },
-  reducers: {},
+  reducers: {
+    addPost: (state, action) => {
+      state.posts =
+        [...state.posts, {...action.payload,id: nanoid()}]
+    }
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchPosts.pending, (state, action) => {
@@ -65,5 +70,7 @@ const postSlice = createSlice({
 export const selectAllPosts = (state) => state.post.posts
 export const getPostsError = (state) => state.post.error
 export const getPostsStatus = (state) => state.post.status
+
+export const {addPost} = postSlice.actions
 
 export default postSlice.reducer

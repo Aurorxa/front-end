@@ -52,19 +52,21 @@ function Post() {
             </TableHeader>
             <TableBody items={posts}>
               {
-                (item) => (
-                  <TableRow key={item.id}>
+                (item) => {
+                  return (<TableRow key={item.id}>
                     {
-                      (columnKey) => {
+                      (
+                        columnKey) => {
                         if (columnKey === "author") {
                           const user = users.find((u) => u.id === item.userId)
-                          return <TableCell>{user ? user.name : "未知用户"}</TableCell>
+                          return (<TableCell >{user ? user.name : "未知用户"}</TableCell>)
                         }
-                        return <TableCell>{getKeyValue(item, columnKey)}</TableCell>
+                        return (<TableCell>{ getKeyValue(item, columnKey)}</TableCell>)
                       }
                     }
-                  </TableRow>
-                )}
+                  </TableRow>)
+                }
+              }
             </TableBody>
           </Table>
         </CardFooter>
