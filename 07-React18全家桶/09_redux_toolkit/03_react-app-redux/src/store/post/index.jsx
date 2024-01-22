@@ -47,20 +47,19 @@ const postSlice = createSlice({
         state.error = action.error.message
       })
       .addCase(deletePost.fulfilled, (state, action) => {
-        if (!action?.payload.id) {
-          console.log("could not delete");
-          console.log(action.payload)
-          return
+          if (!action?.payload.id) {
+            console.log("could not delete");
+            console.log(action.payload)
+            return
+          }
+          const {id} = action.payload;
+          state.posts = state.posts.filter(post =>
+            post.id !== id)
         }
-        
-        const { id } = action.payload;
-        const OldPosts = state.posts.filter(post =>
-          post.id !== id)
-        state.posts = OldPosts
-      })
+      )
+    
   }
 })
-
 
 
 export const selectAllPosts = (state) => state.post.posts
