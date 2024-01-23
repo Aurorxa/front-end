@@ -1,56 +1,62 @@
 import React, {memo, useEffect} from "react"
-import {Outlet} from "react-router-dom"
+import {Outlet, useNavigate} from "react-router-dom"
 import {
-  AppOutline,
-  MessageOutline,
-  UnorderedListOutline,
-  UserOutline,
+  AddCircleOutline,
+  BillOutline,
+  CalculatorOutline,
 } from 'antd-mobile-icons'
 import {TabBar} from "antd-mobile";
 import {useDispatch} from "react-redux";
 import {fetchBillList} from "@/store/common"
+import {LayoutWrapper} from "@/views/Layout/index.style"
 
 function Layout() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   
   useEffect(() => {
     dispatch(fetchBillList())
-  },[dispatch])
+  }, [dispatch])
   
   const tabs = [
     {
-      key: '/home',
-      title: '首页',
-      icon: <AppOutline/>,
+      key: '/',
+      title: '月度账单',
+      icon: <BillOutline/>,
     },
     {
-      key: '/todo',
-      title: '待办',
-      icon: <UnorderedListOutline/>,
+      key: '/new',
+      title: '记账',
+      icon: <AddCircleOutline/>,
     },
     {
-      key: '/message',
-      title: '消息',
-      icon: <MessageOutline/>,
-    },
-    {
-      key: '/me',
-      title: '我的',
-      icon: <UserOutline/>,
-    },
+      key: '/year',
+      title: '年度账单',
+      icon: <CalculatorOutline/>,
+    }
   ]
   
+  const handleChange = (value) => {
+    if(value){
+      navigate(value)
+    }
+  }
+  
   return (
-    <div>
-      <Outlet/>
-      <TabBar>
-        {
-          tabs.map(item => (
-            <TabBar.Item key={item.key} icon={item.icon} title={item.title}></TabBar.Item>)
-          )
-        }
-      </TabBar>
-    </div>
+    <LayoutWrapper>
+      <div className={"container"}>
+        <Outlet/>
+      </div>
+      <div className={"footer"}>
+        <TabBar onChange={value => handleChange(value)}>
+          {
+            tabs.map(item => {
+              return <TabBar.Item key={item.key} icon={item.icon} title={item.title}></TabBar.Item>
+            })
+          }
+        </TabBar>
+      </div>
+    </LayoutWrapper>
   )
 }
 
