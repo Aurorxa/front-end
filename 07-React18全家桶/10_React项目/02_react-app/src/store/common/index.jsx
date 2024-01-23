@@ -17,7 +17,7 @@ const commonSlice = createSliceWithThunks({
     }),
     fetchBillList: create.asyncThunk(async (_,{rejectWithValue}) => {
       try {
-        const res = await fetch("/api/ka1")
+        const res = await fetch("/api/ka")
         return await res.json()
       }catch (error) {
         throw rejectWithValue({error: error.message})

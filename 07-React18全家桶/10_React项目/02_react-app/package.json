@@ -19,11 +19,11 @@
     "web-vitals": "^3.5.1"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "concurrently \"craco start\" \"npm run server\"",
     "build": "craco  build",
     "test": "craco  test",
     "eject": "craco  eject",
-    "serve": "json-server ./server/data.json --port 8889"
+    "server": "json-server ./server/data.json --port 8889"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +46,7 @@
   "devDependencies": {
     "@craco/craco": "^7.1.0",
     "code-inspector-plugin": "^0.4.5",
+    "concurrently": "^8.2.2",
     "craco-less": "^3.0.1",
     "json-server": "^1.0.0-alpha.22"
   }
