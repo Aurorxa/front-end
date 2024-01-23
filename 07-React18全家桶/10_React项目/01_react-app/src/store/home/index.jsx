@@ -1,11 +1,15 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {asyncThunkCreator, buildCreateSlice} from "@reduxjs/toolkit";
 
-const homeSlice = createSlice({
+export const createSliceWithThunks = buildCreateSlice({
+  creators: {asyncThunk: asyncThunkCreator},
+});
+
+const homeSlice = createSliceWithThunks({
   name: "home",
   initialState: {},
   reducers: {}
 })
 
-export const {actions} = homeSlice.actions
+export const {} = homeSlice.actions
 
 export default homeSlice.reducer

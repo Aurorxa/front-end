@@ -59,8 +59,10 @@ module.exports = {
     },
     proxy: { // 配置代理（只在本地开发有效，上线无效）
       '/api': {
-        target: 'http://codercba.com:1888/airbnb/',
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        target: 'http://codercba.com:1888/airbnb/api/',
+        pathRewrite: {
+          "^/api": ''
+        },
         changeOrigin: true,
       },
     }
