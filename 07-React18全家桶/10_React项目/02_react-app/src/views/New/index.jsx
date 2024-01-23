@@ -1,6 +1,6 @@
 import React, {memo} from "react"
-import {NavBar, Toast} from "antd-mobile";
-import {useNavigate} from "react-router-dom";
+import {NavBar} from "antd-mobile"
+import {useNavigate} from "react-router-dom"
 
 function New() {
   const navigate = useNavigate()
