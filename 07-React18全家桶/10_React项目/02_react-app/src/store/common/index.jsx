@@ -9,24 +9,33 @@ const commonSlice = createSliceWithThunks({
   initialState: {
     billList: [],
     loading: false,
+    error: null,
   },
   reducers: (create) => ({
     addBill: create.reducer((state, action) => {
       state.billList.push(action.payload)
     }),
-    fetchBillList: create.asyncThunk(async () => {
-      const res = await fetch("/api/ka")
-      return await res.json()
+    fetchBillList: create.asyncThunk(async (_,{rejectWithValue}) => {
+      try {
+        const res = await fetch("/api/ka1")
+        return await res.json()
+      }catch (error) {
+        throw rejectWithValue({error: error.message})
+      }
     }, {
       pending: (state) => {
         state.loading = true
       },
       rejected: (state, action) => {
         state.loading = false
+        state.error =  action.payload ?? action.error
       },
       fulfilled: (state, action) => {
         state.loading = false
         state.billList.push(...action.payload)
+      },
+      settled: (state, action) => {
+        state.loading = false
       },
     })
   }),
