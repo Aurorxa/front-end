@@ -1,7 +1,7 @@
 import {asyncThunkCreator, buildCreateSlice} from "@reduxjs/toolkit"
 
 const createSliceWithThunks = buildCreateSlice({
-  creators: { asyncThunk: asyncThunkCreator },
+  creators: {asyncThunk: asyncThunkCreator},
 });
 
 const commonSlice = createSliceWithThunks({
@@ -11,13 +11,13 @@ const commonSlice = createSliceWithThunks({
     loading: false,
   },
   reducers: (create) => ({
-    addBill: create.reducer((state,action)=>{
+    addBill: create.reducer((state, action) => {
       state.billList.push(action.payload)
     }),
     fetchBillList: create.asyncThunk(async () => {
       const res = await fetch("/api/ka")
       return await res.json()
-    },{
+    }, {
       pending: (state) => {
         state.loading = true
       },
@@ -32,6 +32,6 @@ const commonSlice = createSliceWithThunks({
   }),
 })
 
-export const {addBill,fetchBillList} = commonSlice.actions
+export const {addBill, fetchBillList} = commonSlice.actions
 
 export default commonSlice.reducer
