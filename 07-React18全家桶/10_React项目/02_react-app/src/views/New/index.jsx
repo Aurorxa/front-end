@@ -1,6 +1,7 @@
 import React, {memo} from "react"
-import {NavBar} from "antd-mobile"
 import {useNavigate} from "react-router-dom"
+import {ArrowLeft} from "@nutui/icons-react"
+import {NavBar, Toast} from "@nutui/nutui-react"
 
 function New() {
   const navigate = useNavigate()
@@ -10,8 +11,18 @@ function New() {
   
   return (
     <div>
-      <NavBar back='返回' onBack={back}>
-        标题
+      <NavBar
+        back={
+          <>
+            <ArrowLeft color="#979797"/>
+            返回
+          </>
+        }
+        onBackClick={back}
+      >
+        <span onClick={(e) => Toast.show("标题")}>
+        新增订单
+        </span>
       </NavBar>
     </div>
   )

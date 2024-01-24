@@ -1,11 +1,15 @@
 import React, {memo} from "react"
-import {NavBar} from "antd-mobile"
+import {NavBar, Toast} from "@nutui/nutui-react";
 
 function Month() {
   
   return (
-    <div >
-      <NavBar backArrow={false}>标题</NavBar>
+    <div>
+      <NavBar>
+        <span onClick={(e) => Toast.show("标题")}>
+        月度收支
+        </span>
+      </NavBar>
     </div>
   )
 }
