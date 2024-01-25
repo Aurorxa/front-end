@@ -1,5 +1,11 @@
-const name:string = "HelloWorld"
+// 定义标识符
+let name: string = "HelloWorld"
+const age: number = 18
+const height: number = 1.78
 
-console.log(name)
+// 给标识符赋值
+name = "呵呵哒"
 
-export {}
+console.log(name, age, height)
+
+export { }
