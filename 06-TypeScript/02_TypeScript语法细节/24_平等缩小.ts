@@ -21,4 +21,4 @@ function move(direction: Direction) {
 
 move('left') // 参数只能是 'left' | 'right' | 'up' | 'down' 中的一个
 
-export {}
+export { }
