@@ -21,4 +21,16 @@ function move(direction: Direction) {
 
 move('left') // 参数只能是 'left' | 'right' | 'up' | 'down' 中的一个
 
+
+interface Options {
+  width: number;
+}
+function configure(x: Options | "auto") {
+  // ...
+}
+configure({ width: 100 });
+configure("auto");
+
+
+
 export { }
