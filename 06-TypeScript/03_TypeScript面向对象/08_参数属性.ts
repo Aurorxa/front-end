@@ -1,8 +1,5 @@
 class Person {
-  constructor(private _name: string, public age: number) {
-    this._name = _name;
-    this.age = age
-  }
+  constructor(private _name: string, public age: number) {}
 
   set name(name) {
     this._name = name
