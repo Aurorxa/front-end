@@ -29,7 +29,7 @@ class Student extends Person {
 }
 
 const student = new Student('John', 20, 90)
-console.log(student.name, student.age, student.score)
+console.log(student.name, student.age, student.score) // 报错
 student.eating()
 student.running()
 student.study()
