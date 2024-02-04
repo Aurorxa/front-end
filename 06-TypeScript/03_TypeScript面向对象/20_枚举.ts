@@ -4,7 +4,7 @@ enum Color { // 定义枚举
   Blue
 }
 
-function getColor(color: Color) { // 参数是枚举类型
+function getColor(color: Color): string { // 参数是枚举类型
   switch (color) {
     case Color.Red: // 判断枚举
       return '红色'
